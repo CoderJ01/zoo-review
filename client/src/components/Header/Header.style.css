@@ -60,19 +60,33 @@ nav a {
     }
 }
 
-/* iPad */
-@media screen and (max-width: 768px) {
-
-}
-
 /* Surface Duo */
 @media screen and (max-width: 540px) {
+    .header-links {
+        font-size: 2rem;
+    }
 
+    .header-buttons {
+        margin-left: 15%;
+        width: 70%;
+    }
+
+    nav input {
+        height: 5vh;
+        width: 75vw;
+    }
 }
 
 /* iPhone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
-   
+    .header-links, 
+    .header-buttons button {
+        font-size: 22px;
+    }
+
+    nav input {
+        height: 4vh;
+    }
 }
 
 /* iPhone 12 Pro */
