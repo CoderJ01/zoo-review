@@ -19,7 +19,7 @@ nav a {
     }
 
     nav h1 {
-        color: black;
+        color: white;
         font-size: 4rem;
     }
 
@@ -27,11 +27,10 @@ nav a {
         display: flex;
         font-size: 2rem;
         justify-content: space-around;
-        margin-top: -3vh;
     }
 
     .header-links text {
-        color: black;
+        color: white;
     }
 
     .header-buttons {
