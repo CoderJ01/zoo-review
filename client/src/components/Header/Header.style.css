@@ -9,6 +9,11 @@ nav a {
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
+
+    .header {
+        background-image: url('./image.jpg');
+    }
+
     nav {
         text-align: center;
     }
