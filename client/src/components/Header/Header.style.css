@@ -12,6 +12,7 @@ nav a {
 
     .header {
         background-image: url('./image.jpg');
+        padding: 3vh;
     }
 
     nav {
@@ -42,6 +43,9 @@ nav a {
     }
 
     .header-buttons button {
+        background-color: rgb(34, 191, 41);
+        border: 1px solid rgb(34, 191, 41);
+        border-radius: 10px;
         height: 3vh;
         font-size: 2rem;
         width: 25%
