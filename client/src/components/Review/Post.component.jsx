@@ -1,7 +1,7 @@
 import React from 'react';
 import './Post.style.css'
 
-const Post = ({ username, avatar, image, zoo, review }) => {
+const Post = ({ username, avatar, image, zoo, review, rating }) => {
     return (
         <div className='review'>
             <div className='review-heading'>
