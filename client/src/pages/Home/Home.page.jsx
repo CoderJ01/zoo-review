@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from '../../components/Review/Post.component';
+import Post from '../../components/Post/Post.component';
 import { sampleData } from './Home.sampledata';
 import './Home.style.css'
 
