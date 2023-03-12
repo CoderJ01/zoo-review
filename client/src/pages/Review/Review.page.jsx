@@ -16,15 +16,15 @@ const Review = () => {
                 <h1>Write Your Review</h1>
                 <div>
                     <label htmlFor='title'>Title:</label><br/>
-                    <input type="text" name="title" onChange={(e) => setTitle(e.target.value)}/>
+                    <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
                 </div>
                 <div>
                     <label htmlFor='content'>Content:</label><br/>
-                    <input type="text" name="content" onChange={(e) => setContent(e.target.value)}/>
+                    <input type="text" name="content" value={content} onChange={(e) => setContent(e.target.value)}/>
                 </div>
                 <div>
-                    <label htmlFor='file'>Content:</label><br/>
-                    <input type="file" name="file" onChange={(e) => setSelectedFile(e.target.value)}/>
+                    <label htmlFor='file'>File:</label><br/>
+                    <input type="file" name="file" value={selectedFile} onChange={(e) => setSelectedFile(e.target.value)}/>
                 </div>
                 <input type="submit" />
             </form>
