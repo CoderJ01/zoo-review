@@ -4,7 +4,7 @@ import './Header.style.css'
 
 const Header = () => {
     return (
-        <div className='header'>
+        <header>
             <nav>
                 <NavLink to='/'><h1>Zelp</h1></NavLink>
                 <div className='header-links'>
@@ -19,7 +19,7 @@ const Header = () => {
                 <input></input>
             </nav>
             <Outlet/>
-        </div>
+        </header>
     );
 }
 
