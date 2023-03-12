@@ -4,7 +4,7 @@
     height: 20%;
 }
 
-.review-avatar {
+.review-heading-avatar {
     border: 1px solid black;
     height: 80%;
     margin-left: 3%;
@@ -12,9 +12,14 @@
     width: 15%;
 }
 
-.review-avatar img {
+.review-heading-avatar img {
     height: 100%;
     width: 100%;
+}
+
+.review-heading-info {
+    border: 1px solid blue;
+    margin-left: 4%;
 }
 
 .review-picture {
