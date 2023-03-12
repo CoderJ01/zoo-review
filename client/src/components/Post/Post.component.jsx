@@ -2,7 +2,7 @@ import React from 'react';
 import './Post.style.css'
 import { displayRating } from './Post.util';
 
-const Post = ({ username, avatar, image, title, post, rating }) => {
+const Post = ({ username, avatar, image, title, post, rating, blog = false }) => {
     let ratingDisplay = displayRating(rating);
     return (
         <div className='review'>

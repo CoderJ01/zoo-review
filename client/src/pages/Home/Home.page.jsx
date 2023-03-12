@@ -18,6 +18,18 @@ const Home = () => {
                     rating={5}
                 />
             </div>
+            <h1>Blogs</h1>
+            <div className='home-reviews'>
+                <Post
+                    username={'joesmith098'}
+                    avatar={sampleData[0]}
+                    image={sampleData[1]}
+                    title={'zoo'}
+                    post={'The quick brown fox jumped over the lazy dog'}
+                    rating={5}
+                    blog={true}
+                />
+            </div>
         </div>
     );
 }
