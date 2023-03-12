@@ -20,12 +20,31 @@ const Post = ({ username, avatar, image, title, post, rating, blog = false }) =>
             </div>
             <div className='review-info'>
                 <h1>{title}</h1>
-                <div className='review-info-rating'>
-                    {ratingDisplay}
-                </div>
-                <text>
-                    {post}
-                </text>
+                {
+                    !blog ? 
+                    (
+                        <>
+                            <div className='review-info-rating'>
+                                {ratingDisplay}
+                            </div>
+                            <text>
+                                {post}
+                            </text>
+                        </>
+                    ) : 
+                    (
+                        <>
+                        <div className='review-info-thumbs'>
+                        <i class="fa fa-thumbs-up"></i>
+                        <i class="fa fa-thumbs-down" style={{marginLeft: 0}}></i>
+                        </div>
+                        <text>
+                            {post}
+                        </text>
+                        </>
+                    )
+                }
+                
             </div>
         </div>
     );
