@@ -1,4 +1,5 @@
 import React from 'react';
+import Review from '../../components/Review/Review.component';
 import './Home.style.css'
 
 const Home = () => {
@@ -7,12 +8,8 @@ const Home = () => {
             <div className='home-top-image'/>
             <h1>Zoo Reviews</h1>
             <div className='home-reviews'>
-                <div className='review'></div>
-                <div className='review'></div>
-                <div className='review'></div>
-                <div className='review'></div>
-                <div className='review'></div>
-                <div className='review'></div>
+                <Review/>
+                <Review/>
             </div>
         </div>
     );
