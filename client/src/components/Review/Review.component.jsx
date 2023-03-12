@@ -24,7 +24,9 @@ const Review = () => {
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                 </div>
-                <text>The quick brown fox jumped over the lazy dog.</text>
+                <text>
+                    The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.
+                </text>
             </div>
         </div>
     );
