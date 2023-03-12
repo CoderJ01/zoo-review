@@ -1,3 +1,37 @@
+.review-heading {
+    border: 1px solid purple;
+    display: flex;
+    height: 20%;
+}
+
+.review-avatar {
+    border: 1px solid black;
+    height: 80%;
+    margin-left: 3%;
+    margin-top: 1%;
+    width: 15%;
+}
+
+.review-avatar img {
+    height: 100%;
+    width: 100%;
+}
+
+.review-picture {
+    border: 1px solid orange;
+    height: 50%;
+}
+
+.review-info {
+    border: 1px solid red;
+    height: 20%;
+}
+
+.review-icons {
+    border: 1px solid brown;
+    height: 10%;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .review {
