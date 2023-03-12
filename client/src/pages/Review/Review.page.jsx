@@ -4,11 +4,10 @@ import { useState } from 'react';
 const Review = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const [selectedFile, setSelectedFile] = useState(null);
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(title)
-        console.log(content)
     }
 
     return (
@@ -24,7 +23,8 @@ const Review = () => {
                     <input type="text" name="content" onChange={(e) => setContent(e.target.value)}/>
                 </div>
                 <div>
-                    <text>Upload image here</text>
+                    <label htmlFor='file'>Content:</label><br/>
+                    <input type="file" name="file" onChange={(e) => setSelectedFile(e.target.value)}/>
                 </div>
                 <input type="submit" />
             </form>
