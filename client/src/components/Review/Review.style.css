@@ -1,11 +1,16 @@
+.review {
+    background-color: rgb(207, 250, 209);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 8px 8px 4px  rgb(174, 182, 191);
+}
+
 .review-heading {
-    border: 1px solid purple;
     display: flex;
     height: 20%;
 }
 
 .review-heading-avatar {
-    border: 1px solid black;
     height: 80%;
     margin-left: 3%;
     margin-top: 1%;
@@ -18,12 +23,10 @@ img {
 }
 
 .review-heading-info {
-    border: 1px solid blue;
     margin-left: 4%;
 }
 
 .review-picture {
-    border: 1px solid orange;
     height: 50%;
 }
 
@@ -36,7 +39,6 @@ img {
 }
 
 .review-info {
-    border: 1px solid red;
     height: 28%;
     overflow: hidden;
 }
@@ -44,7 +46,6 @@ img {
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .review {
-        border: 1px solid blue;
         height: 60vh;
         margin-top: 10vh;
         width: 30vw;
@@ -54,7 +55,6 @@ img {
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
     .review {
-        border: 1px solid green;
         height: 30vh;
         margin-top: 1vh;
         width: 30vh;
