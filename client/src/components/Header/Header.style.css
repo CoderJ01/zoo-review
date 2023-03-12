@@ -2,9 +2,62 @@ nav a {
     text-decoration: none;
 }
 
+nav input {
+    border: 3px solid black;
+    border-radius: 15px;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
+    .header {
+        background-color: rgb(34, 191, 41);
+    }
 
+    nav {
+        display: flex;
+    }
+
+    nav h1 {
+        color: black;
+        font-size: 3rem;
+    }
+
+    .header-links {
+        display: flex;
+        font-size: 25px;
+        justify-content: space-around;
+        margin-left: 50vw;
+        margin-top: 15px;
+        width: 30vw;
+    }
+
+    .header-links text {
+        color: black;
+    }
+
+    .header-buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 14px;
+        width: 12vw;
+    }
+
+    .header-buttons button {
+        background-color: white;
+        border: 1px solid white;
+        border-radius: 10px;
+        color: rgb(29, 146, 34);
+        font-size: 17px;
+        height: 30px;
+    }
+
+    nav input {
+        height: 2rem;
+        margin-left: 27vw;
+        margin-top: 1vh;
+        position: absolute;
+        width: 25vw;
+    }
 }
 
 /* iPad Pro */
@@ -53,7 +106,6 @@ nav a {
 
     nav input {
         border: 5px solid black;
-        border-radius: 15px;
         height: 4vh;
         margin-top: 2vh;
         width: 50vw;
