@@ -13,6 +13,9 @@ const Review = () => {
                     <label htmlFor='content'>Content:</label><br/>
                     <input type="text" name="content" />
                 </div>
+                <div>
+                    <text>Upload image here</text>
+                </div>
             </form>
         </div>
     );
