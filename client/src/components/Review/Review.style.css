@@ -38,6 +38,7 @@ img {
 .review-info {
     border: 1px solid red;
     height: 28%;
+    overflow: hidden;
 }
 
 /* Desktop */
