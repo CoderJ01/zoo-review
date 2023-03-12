@@ -4,7 +4,7 @@ import './Header.style.css'
 
 const Header = () => {
     return (
-        <header>
+        <header className='zelp-header'>
             <nav>
                 <NavLink to='/'><h1>Zelp</h1></NavLink>
                 <div className='header-links'>
