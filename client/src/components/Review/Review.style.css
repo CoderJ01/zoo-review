@@ -27,6 +27,14 @@ img {
     height: 50%;
 }
 
+.review-info-rating {
+    font-size: 25px;
+}
+
+.checked {
+    color: rgb(34, 191, 41);
+}
+
 .review-info {
     border: 1px solid red;
     height: 28%;
