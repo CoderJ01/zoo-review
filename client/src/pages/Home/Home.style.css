@@ -32,5 +32,20 @@
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
+    .reviews {
+        border: 1px solid red;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-left: 5%;
+        margin-top: 1vh;
+        width: 90%;
+    }
 
+    .review {
+        border: 1px solid green;
+        height: 30vh;
+        margin-top: 1vh;
+        width: 30vh;
+    }
 }
