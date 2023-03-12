@@ -49,3 +49,12 @@
         width: 30vh;
     }
 }
+
+/* Surface Duo */
+@media screen and (max-width: 540px) {
+    .review {
+        height: 50vh;
+        margin-top: 4vh;
+        width: 90%;
+    }
+}
