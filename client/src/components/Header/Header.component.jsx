@@ -13,8 +13,8 @@ const Header = () => {
                     <NavLink to='/dashboard'><text>Dashboard</text></NavLink>
                 </div>
                 <div className='header-buttons'>
-                    <button>Log In</button>
-                    <button>Sign Up</button>
+                    <NavLink to='/login'><button>Log In</button></NavLink>
+                    <NavLink to='/signup'><button>Sign Up</button></NavLink>
                 </div>
                 <input></input>
             </nav>
