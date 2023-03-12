@@ -1,15 +1,15 @@
-.review {
+.post {
     background-color: rgb(207, 250, 209);
     border-radius: 20px;
     box-shadow: 8px 8px 4px  rgb(174, 182, 191);
 }
 
-.review-heading {
+.post-heading {
     display: flex;
     height: 20%;
 }
 
-.review-heading-avatar {
+.post-heading-avatar {
     height: 80%;
     margin-left: 3%;
     margin-top: 1%;
@@ -21,15 +21,15 @@ img {
     width: 100%;
 }
 
-.review-heading-info {
+.post-heading-info {
     margin-left: 4%;
 }
 
-.review-picture {
+.post-picture {
     height: 50%;
 }
 
-.review-info-rating {
+.post-info-rating {
     font-size: 25px;
 }
 
@@ -37,25 +37,25 @@ img {
     color: rgb(34, 191, 41);
 }
 
-.review-info {
+.post-info {
     height: 28%;
     overflow: hidden;
 }
 
-.review-info h1 {
+.post-info h1 {
     display: flex;
     font-size: 2rem;
     text-align: left;
 }
 
-.review-info-thumbs {
+.post-info-thumbs {
     font-size: 24px;
     margin-top: -3%; 
 }
 
 /* Desktop */
 @media screen and (min-width: 1280px) {
-    .review {
+    .post {
         height: 60vh;
         margin-top: 10vh;
         width: 30vw;
@@ -64,7 +64,7 @@ img {
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
-    .review {
+    .post {
         height: 30vh;
         margin-top: 1vh;
         width: 30vh;
@@ -73,7 +73,7 @@ img {
 
 /* Surface Duo */
 @media screen and (max-width: 540px) {
-    .review {
+    .post {
         height: 50vh;
         margin-top: 4vh;
         width: 90%;

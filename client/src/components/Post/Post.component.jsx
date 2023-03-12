@@ -5,26 +5,26 @@ import { displayRating } from './Post.util';
 const Post = ({ username, avatar, image, title, post, rating, blog = false }) => {
     let ratingDisplay = displayRating(rating);
     return (
-        <div className='review'>
-            <div className='review-heading'>
-                <div className='review-heading-avatar'>
+        <div className='post'>
+            <div className='post-heading'>
+                <div className='post-heading-avatar'>
                     <img alt='' src={avatar}/>
                 </div>
-                <div className='review-heading-info'>
-                    <div className='review-username'>{username}</div>
+                <div className='post-heading-info'>
+                    <div className='post-username'>{username}</div>
                     <text>Wrote a review</text>
                 </div>
             </div>
-            <div className='review-picture'>
+            <div className='post-picture'>
                 <img alt='' src={image}></img>
             </div>
-            <div className='review-info'>
+            <div className='post-info'>
                 <h1>{title}</h1>
                 {
                     !blog ? 
                     (
                         <>
-                            <div className='review-info-rating'>
+                            <div className='post-info-rating'>
                                 {ratingDisplay}
                             </div>
                             <text>
@@ -34,7 +34,7 @@ const Post = ({ username, avatar, image, title, post, rating, blog = false }) =>
                     ) : 
                     (
                         <>
-                        <div className='review-info-thumbs'>
+                        <div className='post-info-thumbs'>
                         <i class="fa fa-thumbs-up"></i>
                         <i class="fa fa-thumbs-down" style={{marginLeft: 0}}></i>
                         </div>
