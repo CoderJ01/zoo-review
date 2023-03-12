@@ -7,8 +7,8 @@ export const displayRating = (rating) => {
 
     let empty = [];
 
-    for(let i = 0; i < filled.length - 5; i++) {
-        empty[i] = <span class='fa fa-star checked'></span>
+    for(let i = 0; i < 5 - filled.length; i++) {
+        empty[i] = <span class='fa fa-star'></span>
     }
 
     let display = [];
