@@ -3,8 +3,8 @@ import React from 'react';
 const Review = () => {
     return (
         <div className='review'>
-            <h1>Write Your Review</h1>
             <form>
+                <h1>Write Your Review</h1>
                 <div>
                     <label htmlFor='title'>Title:</label><br/>
                     <input type="text" name="title" />
