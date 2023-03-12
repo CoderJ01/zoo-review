@@ -30,10 +30,6 @@ const Home = () => {
                     blog={true}
                 />
             </div>
-            <h1>Categories</h1>
-            <div className='home-posts'>
-                
-            </div>
         </div>
     );
 }
