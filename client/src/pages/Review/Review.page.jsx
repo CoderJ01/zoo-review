@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
+// import axios from 'axios';
 
 const Review = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-    const [selectedFile, setSelectedFile] = useState(null);
+    const [file, setFile] = useState(null)
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -24,7 +25,7 @@ const Review = () => {
                 </div>
                 <div>
                     <label htmlFor='file'>File:</label><br/>
-                    <input type="file" name="file" value={selectedFile} onChange={(e) => setSelectedFile(e.target.value)}/>
+                    <input type="file" name="file" value={file} onChange={(e) => setFile(e.target.files[0])}/>
                 </div>
                 <input type="submit" />
             </form>
