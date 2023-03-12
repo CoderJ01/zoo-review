@@ -59,13 +59,9 @@ nav input {
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
-
-    header {
+    nav {
         background-image: url('./image.jpg');
         padding: 3vh;
-    }
-
-    nav {
         text-align: center;
     }
 
