@@ -35,9 +35,9 @@ const Post = ({ username, avatar, image, title, post, rating, blog = false }) =>
                     (
                         <>
                         <div className='post-info-thumbs'>
-                        <i class="fa fa-thumbs-up"></i>
-                        <i class="fa fa-thumbs-down" style={{marginLeft: 0}}></i>
-                        </div>
+                            <i class="fa fa-thumbs-up"></i>
+                            <i class="fa fa-thumbs-down" style={{marginLeft: '1vw'}}></i>
+                            </div>
                         <text>
                             {post}
                         </text>
