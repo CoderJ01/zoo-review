@@ -2,7 +2,7 @@ import React from 'react';
 import './Post.style.css'
 import { displayRating } from './Post.util';
 
-const Post = ({ username, avatar, image, zoo, review, rating }) => {
+const Post = ({ username, avatar, image, title, post, rating }) => {
     let ratingDisplay = displayRating(rating);
     return (
         <div className='review'>
@@ -19,12 +19,12 @@ const Post = ({ username, avatar, image, zoo, review, rating }) => {
                 <img alt='' src={image}></img>
             </div>
             <div className='review-info'>
-                <h1>{zoo}</h1>
+                <h1>{title}</h1>
                 <div className='review-info-rating'>
                     {ratingDisplay}
                 </div>
                 <text>
-                    {review}
+                    {post}
                 </text>
             </div>
         </div>

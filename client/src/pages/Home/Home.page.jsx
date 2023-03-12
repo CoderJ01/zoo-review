@@ -13,8 +13,8 @@ const Home = () => {
                     username={'joesmith098'}
                     avatar={sampleData[0]}
                     image={sampleData[1]}
-                    zoo={'zoo'}
-                    review={'The quick brown fox jumped over the lazy dog'}
+                    title={'zoo'}
+                    post={'The quick brown fox jumped over the lazy dog'}
                     rating={5}
                 />
             </div>
