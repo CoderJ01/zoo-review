@@ -7,6 +7,10 @@ nav input {
     border-radius: 15px;
 }
 
+.header-buttons button:active {
+    opacity: 0.5;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
     nav {
@@ -55,6 +59,11 @@ nav input {
         position: absolute;
         width: 25vw;
     }
+
+    nav h1:active, 
+    .header-links text:active {
+        color: white;
+    }
 }
 
 /* iPad Pro */
@@ -102,6 +111,11 @@ nav input {
         height: 4vh;
         margin-top: 2vh;
         width: 50vw;
+    }
+
+    nav h1:active, 
+    .header-links text:active {
+        color: rgb(34, 191, 41);
     }
 }
 
