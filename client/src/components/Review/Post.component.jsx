@@ -1,7 +1,7 @@
 import React from 'react';
-import './Review.style.css'
+import './Post.style.css'
 
-const Review = ({ username, avatar, image, zoo, review }) => {
+const Post = ({ username, avatar, image, zoo, review }) => {
     return (
         <div className='review'>
             <div className='review-heading'>
@@ -33,4 +33,4 @@ const Review = ({ username, avatar, image, zoo, review }) => {
     );
 }
 
-export default Review;
+export default Post;
