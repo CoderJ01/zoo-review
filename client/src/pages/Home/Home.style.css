@@ -1,8 +1,10 @@
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .home-top-image {
-        background-image: url('../../components/Header/image.jpg');
-        min-height: 50vh;
+        background-image: url('./leaves.jpg');
+        background-position: 100vw 150vh;
+        background-size: 100vw 280vh;
+        min-height: 65vh;
     }
 }
 
