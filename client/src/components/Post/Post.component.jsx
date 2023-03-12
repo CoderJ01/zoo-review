@@ -1,7 +1,9 @@
 import React from 'react';
 import './Post.style.css'
+import { displayRating } from './Post.util';
 
 const Post = ({ username, avatar, image, zoo, review, rating }) => {
+    let ratingDisplay = displayRating(rating);
     return (
         <div className='review'>
             <div className='review-heading'>
@@ -19,11 +21,7 @@ const Post = ({ username, avatar, image, zoo, review, rating }) => {
             <div className='review-info'>
                 <h1>{zoo}</h1>
                 <div className='review-info-rating'>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+                    {ratingDisplay}
                 </div>
                 <text>
                     {review}
