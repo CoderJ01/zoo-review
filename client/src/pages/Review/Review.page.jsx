@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
+import './Review.style.css'
 
 const Review = () => {
     const [title, setTitle] = useState('');
@@ -40,10 +41,10 @@ const Review = () => {
                     <input type="text" name="content" value={content} onChange={(e) => setContent(e.target.value)}/>
                 </div>
                 <div>
-                    <label htmlFor='file'>File:</label><br/>
+                    <label htmlFor='file'></label><br/>
                     <input type="file" name="file" onChange={(e) => setFile(e.target.files[0])}/>
                 </div>
-                <input type="submit" />
+                <button type="submit">+ New Review</button>
             </form>
         </div>
     );
