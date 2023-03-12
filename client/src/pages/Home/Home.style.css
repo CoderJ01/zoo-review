@@ -3,7 +3,7 @@
     text-align: center;
 }
 
-.home-reviews {
+.home-posts {
     padding-bottom: 10vh;
 }
 
@@ -16,7 +16,7 @@
         min-height: 65vh;
     }
 
-    .home-reviews {
+    .home-posts {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -28,7 +28,7 @@
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
-    .home-reviews {
+    .home-posts {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;

@@ -8,7 +8,7 @@ const Home = () => {
         <div className='home'>
             <div className='home-top-image'/>
             <h1>Zoo Reviews</h1>
-            <div className='home-reviews'>
+            <div className='home-posts'>
                 <Post
                     username={'joesmith098'}
                     avatar={sampleData[0]}
@@ -19,7 +19,7 @@ const Home = () => {
                 />
             </div>
             <h1>Blogs</h1>
-            <div className='home-reviews'>
+            <div className='home-posts'>
                 <Post
                     username={'joesmith098'}
                     avatar={sampleData[0]}
