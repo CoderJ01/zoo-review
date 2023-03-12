@@ -1,11 +1,9 @@
-.home-top-image {
-    background-image: url('../../components/Header/image.jpg');
-    min-height: 50vh;
-}
-
 /* Desktop */
 @media screen and (min-width: 1280px) {
-
+    .home-top-image {
+        background-image: url('../../components/Header/image.jpg');
+        min-height: 50vh;
+    }
 }
 
 /* iPad Pro */
