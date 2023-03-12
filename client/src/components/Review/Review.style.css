@@ -1,0 +1,28 @@
+/* Desktop */
+@media screen and (min-width: 1280px) {
+    .review {
+        border: 1px solid blue;
+        height: 60vh;
+        margin-top: 10vh;
+        width: 30vw;
+    }
+}
+
+/* iPad Pro */
+@media screen and (max-width: 1024px) {
+    .review {
+        border: 1px solid green;
+        height: 30vh;
+        margin-top: 1vh;
+        width: 30vh;
+    }
+}
+
+/* Surface Duo */
+@media screen and (max-width: 540px) {
+    .review {
+        height: 50vh;
+        margin-top: 4vh;
+        width: 90%;
+    }
+}
