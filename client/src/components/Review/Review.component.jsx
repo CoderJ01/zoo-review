@@ -1,4 +1,5 @@
 import React from 'react';
+import './Review.style.css'
 
 const Review = () => {
     return (
