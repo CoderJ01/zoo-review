@@ -127,14 +127,15 @@ form button {
         margin-left: 5%;
         width: 90%;
     }
+
+    form select {
+        width: 30%
+    }
 }
 
 /* iPhone 12 Pro */
 @media screen and (max-width: 390px) {
-
-}
-
-/* iPhone X */
-@media screen and (max-width: 375px) and (max-height: 812px) {
-
+    form {
+        margin-top: 5vh;
+    }
 }
