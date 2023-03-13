@@ -12,7 +12,15 @@ const Post = ({ username, avatar, image, title, post, rating, blog = false }) =>
                 </div>
                 <div className='post-heading-info'>
                     <div className='post-username'>{username}</div>
-                    <text>Wrote a review</text>
+                    {
+                        !blog ? 
+                        (
+                            <text>Wrote a review</text>
+                        ) : 
+                        (
+                            <text>Wrote a blog</text>
+                        )
+                    }
                 </div>
             </div>
             <div className='post-picture'>
