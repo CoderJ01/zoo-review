@@ -3,10 +3,13 @@ import { useState } from 'react';
 import axios from 'axios';
 import './Review.style.css'
 
+const ratings = ['1', '2', '3', '4', '5'];
+
 const Review = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [file, setFile] = useState('');
+    const [select, setSelected] = useState(ratings[0]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
