@@ -4,7 +4,7 @@ import axios from 'axios';
 import { ratings } from './PostForm.utils';
 import './PostForm.style.css'
 
-const PostForm = ({ formHeading, blog = false}) => {
+const PostForm = ({ formHeading, buttonText, blog = false}) => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [file, setFile] = useState('');
@@ -67,7 +67,7 @@ const PostForm = ({ formHeading, blog = false}) => {
                 <label htmlFor='file'></label><br/>
                 <input type="file" name="file" onChange={(e) => setFile(e.target.files[0])}/>
             </div>
-            <button type="submit">+ New Review</button>
+            <button type="submit">+ {buttonText}</button>
         </form>
     );
 }
