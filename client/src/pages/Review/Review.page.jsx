@@ -5,7 +5,7 @@ import PostForm from '../../components/PostForm/PostForm.component';
 const Review = () => {
     return (
         <div className='review'>
-            <PostForm/>
+            <PostForm formHeading={'Write Your Review'}/>
         </div>
     );
 }
