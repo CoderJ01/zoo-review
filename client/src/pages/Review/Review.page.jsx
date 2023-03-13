@@ -2,8 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import './Review.style.css'
-
-const ratings = ['1', '2', '3', '4', '5'];
+import { ratings } from './Review.util';
 
 const Review = () => {
     const [title, setTitle] = useState('');
