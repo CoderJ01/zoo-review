@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import { ratings } from './PostForm.utils';
-import './Postform.style'
+import './PostForm.style.css'
 
 const PostForm = () => {
     const [title, setTitle] = useState('');
