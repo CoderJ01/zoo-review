@@ -1,26 +1,45 @@
 form {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    margin-left: 15%;
+    padding-bottom: 4vh;
+    padding-top: 4vh;
+    width: 70%;
 }
 
 form h1 {
     text-align: center;
 }
 
+form label {
+    margin-left: 10%;
+}
+
+form input {
+    margin-left: 10%;
+    width: 80%;
+}
+
+form select {
+    margin-left: 10%;
+    width: 10%;
+}
+
 form button {
+    background-color: rgb(29, 146, 34);
     border: 2px solid white;
     border-radius: 20px;
-    background-color: rgb(29, 146, 34);
     color: white;
+    height: 7vh;
+    margin-left: 38%;
+    margin-top: 5vh;
+    width: 24%;
 }
 
 /* Desktop */
 @media screen and (min-width: 1280px) {
+
     form {
         margin-top: 10vh;
-        margin-left: 15%;
-        padding-bottom: 4vh;
-        padding-top: 4vh;
-        width: 70%;
     }
 
     form h1 {
@@ -29,31 +48,49 @@ form button {
 
     form label {
         font-size: 20px;
-        margin-left: 10%;
-    }
-
-    form input {
-        margin-left: 10%;
-        width: 80%;
-    }
-
-    form select {
-        margin-left: 10%;
-        width: 10%;
     }
 
     form button {
-        height: 7vh;
         font-size: 17px;
-        margin-left: 38%;
-        margin-top: 5vh;
-        width: 24%;
     }
 }
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
+    .review {
+        background-color: rgb(207, 250, 209);
+        min-height: 80vh;
+        border: 1px solid rgb(207, 250, 209);
+    }
 
+    form {
+        background-color: white;
+        margin-top: 80px;
+    }
+
+    form h1 {
+        font-size: 3rem;
+    }
+
+    form label {
+        font-size: 35px;
+    }
+
+    form input {
+        font-size: 35px;
+    }
+
+    form select {
+        font-size: 2rem;
+        height: 3vh;
+        width: 20%;
+    }
+
+    form button {
+        font-size: 30px;
+        margin-left: 35%;
+        width: 30%;
+    }
 }
 
 /* iPad */
