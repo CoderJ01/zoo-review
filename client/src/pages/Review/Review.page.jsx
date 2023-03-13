@@ -8,7 +8,7 @@ const Review = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [file, setFile] = useState('');
-    const [select, setSelected] = useState(ratings[0]);
+    const [selected, setSelected] = useState(ratings[0]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -41,6 +41,19 @@ const Review = () => {
                 <div>
                     <label htmlFor='content'>Content:</label><br/>
                     <input type="text" name="content" value={content} onChange={(e) => setContent(e.target.value)}/>
+                </div>
+                <div>
+                    <label htmlFor='rating'>Rating:</label><br/>
+                    <select 
+                        value={selected} 
+                        onChange={e => setSelected(e.target.value)}
+                    >
+                        {ratings.map((value) => (
+                        <option value={value} key={value}>
+                            {value}
+                        </option>
+                        ))}
+                    </select>
                 </div>
                 <div>
                     <label htmlFor='file'></label><br/>
