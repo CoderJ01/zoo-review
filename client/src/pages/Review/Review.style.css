@@ -37,6 +37,11 @@ form button {
         width: 80%;
     }
 
+    form select {
+        margin-left: 10%;
+        width: 10%;
+    }
+
     form button {
         height: 7vh;
         font-size: 17px;
