@@ -43,7 +43,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
                 <Modal.Title>Register Here!</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <form onSubmit={handleSubmit}>
+                <form className='registration-form' onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor='firstname'>First Name:</label><br/>
                         <input type='text' name='firstname' value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
