@@ -32,7 +32,7 @@ const PostForm = ({ formHeading, buttonText, blog = false}) => {
         }
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='post-form' onSubmit={handleSubmit}>
             <h1>{formHeading}</h1>
             <div>
                 <label htmlFor='title'>Title:</label><br/>
