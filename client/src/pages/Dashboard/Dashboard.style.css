@@ -1,6 +1,36 @@
 /* Desktop */
 @media screen and (min-width: 1280px) {
+    .dashboard-top-bar {
+        background-color: rgb(133, 146, 158);
+        display: flex;
+        justify-content: space-between;
+        margin-left: 5%;
+        margin-top: 5vh;
+        padding: 10px;
+        width: 90%;
+    }
 
+    .dashboard-top-bar h1 {
+        color: white;
+        font-size: 30px;
+    }
+
+    .dashboard-t-b-buttons {
+        display: flex;
+        justify-content: space-around;
+        width: 30%;
+    }
+
+    .dashboard-t-b-buttons button {
+        background-color: white;
+        border: 2px solid white;
+        border-radius: 20px;
+        color: rgb(34, 191, 41);
+    }
+
+    .dashboard-t-b-buttons button:active {
+        opacity: 0.5;
+    }
 }
 
 /* iPad Pro */
