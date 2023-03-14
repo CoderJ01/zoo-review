@@ -28,8 +28,6 @@ const Dashboard = () => {
                             <img alt='' src=''/>
                             <h3>Title</h3>
                         </div>
-                        <div className='d-b-p-d-f-single-post'></div>
-                        <div className='d-b-p-d-f-single-post'></div>
                     </div>
                 </div>
             </div>
