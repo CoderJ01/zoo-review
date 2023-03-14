@@ -33,7 +33,6 @@
     }
 
     .dashboard-bottom {
-        border: 1px solid red;
         display: flex;
         min-height: 70vh;
         justify-content: space-between;
@@ -41,7 +40,6 @@
 
     .dashboard-b-user-info {
         background-color: rgb(133, 146, 158);
-        border: 1px solid blue;
         width: 20%;
     }
 
