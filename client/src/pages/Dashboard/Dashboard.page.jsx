@@ -14,7 +14,9 @@ const Dashboard = () => {
                         <img alt='' src=''/>
                     </div>
                     <h2 style={{ marginTop: '7%'}}>Your Bio</h2>
-                    <div className='dashboard-b-u-i-bio'></div>
+                    <div className='dashboard-b-u-i-bio'>
+                        <text>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</text>
+                    </div>
                 </div>
                 <div className='dashboard-b-buttons'>
                     <button>See your reviews</button>
