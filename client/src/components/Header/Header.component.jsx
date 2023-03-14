@@ -5,10 +5,10 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 const Header = () => {
-    const [show, setShow] = useState(false);
+    const [showSignup, setShowSignup] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleCloseSignup = () => setShowSignup(false);
+    const handleShowSignup = () => setShowSignup(true);
 
     return (
         <header>
@@ -32,21 +32,21 @@ const Header = () => {
                                 height: '100%', 
                                 width: '100%' 
                             }} 
-                            onClick={handleShow}
+                            onClick={handleShowSignup}
                         >
-                            <div className='header-vanilla-button-text'>Launch demo modal</div>
+                            <div className='header-vanilla-button-text'>Sign Up</div>
                         </Button>
                     </div>
-                    <Modal show={show} onHide={handleClose}>
+                    <Modal show={showSignup} onHide={handleCloseSignup}>
                     <Modal.Header closeButton>
                         <Modal.Title>Modal heading</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
+                        <Button variant="secondary" onClick={handleCloseSignup}>
                         Close
                         </Button>
-                        <Button variant="primary" onClick={handleClose}>
+                        <Button variant="primary" onClick={handleCloseSignup}>
                         Save Changes
                         </Button>
                     </Modal.Footer>
