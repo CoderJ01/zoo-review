@@ -34,6 +34,11 @@ const Header = () => {
                             <div className='header-vanilla-button-text'>Sign Up</div>
                         </Button>
                     </div>
+                    <div className='header-vanilla-button'>
+                        <Button style={buttonStyle}>
+                            <div className='header-vanilla-button-text'>Log In</div>
+                        </Button>
+                    </div>
                     <RegistrationForm showSignup={showSignup} handleCloseSignup={handleCloseSignup}/>
                 </div>
                 <input></input>
