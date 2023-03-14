@@ -4,6 +4,15 @@ import './Header.style.css'
 import Button from 'react-bootstrap/Button';
 import RegistrationForm from '../RegistrationForm/RegistrationForm.component';
 
+const buttonStyle = {
+    backgroundColor: 'white', 
+    border: '1px solid white',
+    borderRadius: '10px',
+    color: 'rgb(29, 146, 34)',
+    height: '100%', 
+    width: '100%' 
+}
+
 const Header = () => {
     const [showSignup, setShowSignup] = useState(false);
 
@@ -21,17 +30,7 @@ const Header = () => {
                 </div>
                 <div className='header-buttons'>
                     <div className='header-vanilla-button'>
-                        <Button 
-                            style={{
-                                backgroundColor: 'white', 
-                                border: '1px solid white',
-                                borderRadius: '10px',
-                                color: 'rgb(29, 146, 34)',
-                                height: '100%', 
-                                width: '100%' 
-                            }} 
-                            onClick={handleShowSignup}
-                        >
+                        <Button style={buttonStyle} onClick={handleShowSignup}>
                             <div className='header-vanilla-button-text'>Sign Up</div>
                         </Button>
                     </div>
