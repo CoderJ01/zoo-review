@@ -1,0 +1,12 @@
+.registration-form {
+    border: 1px solid red;
+}
+
+.registration-form label {
+    margin-left: 2%;
+}
+
+.registration-form input {
+    margin-left: 2%;
+    width: 96%;
+}
