@@ -81,6 +81,10 @@
     .dashboard-b-buttons button:active {
         opacity: 0.5;
     }
+
+    .dashboard-b-p-d-single-post {
+        border: 1px solid blue;
+    }
 }
 
 /* iPad Pro */
