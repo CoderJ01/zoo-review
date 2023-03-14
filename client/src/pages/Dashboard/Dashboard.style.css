@@ -36,16 +36,18 @@
         border: 1px solid red;
         display: flex;
         min-height: 70vh;
+        justify-content: space-between;
     }
 
     .dashboard-b-user-info {
+        background-color: rgb(133, 146, 158);
         border: 1px solid blue;
-        width: 25%;
+        width: 20%;
     }
 
-    .dasboard-b-posts-display {
+    .dashboard-b-posts-display {
         border: 2px solid green;
-        width: 45%;
+        width: 78%;
     }
 
     .dashboard-b-buttons {
