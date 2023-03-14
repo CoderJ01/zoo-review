@@ -3,6 +3,7 @@ import { Outlet, NavLink } from 'react-router-dom';
 import './Header.style.css'
 import Button from 'react-bootstrap/Button';
 import RegistrationForm from '../RegistrationForm/RegistrationForm.component';
+import LoginForm from '../LoginForm/LoginForm';
 
 const buttonStyle = {
     backgroundColor: 'white', 
@@ -39,11 +40,12 @@ const Header = () => {
                         </Button>
                     </div>
                     <div className='header-vanilla-button'>
-                        <Button style={buttonStyle}>
+                        <Button style={buttonStyle} onClick={handleShowLogin}>
                             <div className='header-vanilla-button-text'>Log In</div>
                         </Button>
                     </div>
                     <RegistrationForm showSignup={showSignup} handleCloseSignup={handleCloseSignup}/>
+                    <LoginForm showLogin={showLogin} handleCloseLogin={handleCloseLogin}/>
                 </div>
                 <input></input>
             </nav>
