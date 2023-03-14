@@ -3,6 +3,7 @@ import Home from './pages/Home/Home.page';
 import Header from './components/Header/Header.component';
 import Review from './pages/Review/Review.page';
 import Blog from './pages/Blog/Blog.page';
+import Dashboard from './pages/Dashboard/Dashboard.page';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <Route index element={<Home/>}/>
             <Route path='/write-review' element={<Review/>}/>
             <Route path='/post-blog' element={<Blog/>}/>
+            <Route path='/dashboard' element={<Dashboard/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
