@@ -38,7 +38,6 @@
 }
 
 .d-b-p-d-f-single-post img {
-    border: 1px solid blue;
     height: 80%;
 } 
 
@@ -74,7 +73,6 @@
     }
 
     .dashboard-b-posts-display {
-        border: 2px solid green;
         width: 78%;
     }
 
@@ -92,7 +90,6 @@
     }
 
     .dashboard-b-p-d-flex {
-        border: 1px solid blue;
         display: flex;
         height: 50%;
         justify-content: space-around;
@@ -101,7 +98,6 @@
     .d-b-p-d-f-single-post {
         height: 100%;
         width: 25%;
-        border: 1px solid purple;
     }
 }
 
@@ -139,12 +135,7 @@
         padding-bottom: 0vh;
     }
 
-    .dashboard-b-posts-display {
-        border: 1px solid red;
-    }
-
     .d-b-p-d-f-single-post {
-        border: 1px solid green;
         height: 40vh;
         margin-top: 5vh;
     }
