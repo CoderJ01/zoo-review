@@ -11,6 +11,7 @@ const buttonStyle = {
 const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [avatar, setAvatar] = useState('');
