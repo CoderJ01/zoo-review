@@ -16,8 +16,8 @@ const Dashboard = () => {
                     <button>See your reviews</button>
                     <button>See your blog posts</button>
                 </div>
-                <div classname='dasboard-b-posts-display'>
-                    <div className='dasboard-b-p-d-single-post'></div>
+                <div className='dashboard-b-posts-display'>
+                    <div className='dashboard-b-p-d-single-post'></div>
                 </div>
             </div>
         </div>
