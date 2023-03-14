@@ -22,6 +22,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [bio, setBio] = useState('');
     const [file, setFile] = useState('');
 
     const handleSubmit = (event) => {
@@ -70,6 +71,10 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
                     <div>
                         <label htmlFor='passowrd'>Password:</label><br/>
                         <input type='text' name='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    </div>
+                    <div>
+                        <label htmlFor='bio'>Bio:</label><br/>
+                        <textarea type='text' name='bio' value={bio} onChange={(e) => setBio(e.target.value)}/>
                     </div>
                     <div>
                         <label htmlFor='file'>Avatar:</label><br/>
