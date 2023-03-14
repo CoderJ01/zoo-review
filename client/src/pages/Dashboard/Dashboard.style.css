@@ -1,6 +1,11 @@
-.dashboard-top-bar {
+.dashboard-top-bar,
+.dashboard-bottom {
     margin-left: 5%;
     width: 90%;
+}
+
+.dashboard-bottom {
+    margin-top: 2vh;
 }
 
 .dashboard-b-buttons button {
@@ -25,6 +30,11 @@
     .dashboard-top-bar h1 {
         color: white;
         font-size: 30px;
+    }
+
+    .dashboard-bottom {
+        border: 1px solid red;
+        min-height: 70vh;
     }
 
     .dashboard-b-buttons {
