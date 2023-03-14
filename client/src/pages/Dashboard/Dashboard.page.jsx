@@ -9,7 +9,11 @@ const Dashboard = () => {
             </div>
             <div className='dashboard-bottom'>
                 <div className='dashboard-b-user-info'>
-                    <div className='dashboard-b-u-i-avatar'></div>
+                    <h2>Your Avatar</h2>
+                    <div className='dashboard-b-u-i-avatar'>
+                        <img alt='' src=''/>
+                    </div>
+                    <h2>Your Bio</h2>
                     <div className='dashboard-b-u-i-bio'></div>
                 </div>
                 <div className='dashboard-b-buttons'>
