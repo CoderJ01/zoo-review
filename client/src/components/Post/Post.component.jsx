@@ -2,7 +2,8 @@ import React from 'react';
 import './Post.style.css'
 import { displayRating } from './Post.util';
 
-const Post = ({ username, avatar, image, title, post, rating, blog = false }) => {
+const Post = ({ id, username, avatar, image, title, post, rating, blog = false }) => {
+    id=1;
     let ratingDisplay = displayRating(rating);
     return (
         <div className='post'>
@@ -27,11 +28,11 @@ const Post = ({ username, avatar, image, title, post, rating, blog = false }) =>
                 <img alt='' src={image}></img>
             </div>
             <div className='post-info'>
-                <h1>{title}</h1>
                 {
                     !blog ? 
                     (
                         <>
+                            <h1><a href={`review/${id}`}>{title}</a></h1>
                             <div className='post-info-rating'>
                                 {ratingDisplay}
                             </div>
@@ -42,6 +43,7 @@ const Post = ({ username, avatar, image, title, post, rating, blog = false }) =>
                     ) : 
                     (
                         <>
+                         <h1><a href={`blog-post/${id}`}>{title}</a></h1>
                         <div className='post-info-thumbs'>
                             <i class="fa fa-thumbs-up"></i>
                             <i class="fa fa-thumbs-down" style={{marginLeft: '1vw'}}></i>
