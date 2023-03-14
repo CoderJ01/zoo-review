@@ -24,7 +24,6 @@ const Header = () => {
     const handleCloseSignup = () => setShowSignup(false);
     const handleCloseLogin = () => setShowLogin(false);
 
-
     return (
         <header>
             <nav>
@@ -48,7 +47,7 @@ const Header = () => {
                     <RegistrationForm showSignup={showSignup} handleCloseSignup={handleCloseSignup}/>
                     <LoginForm showLogin={showLogin} handleCloseLogin={handleCloseLogin}/>
                 </div>
-                <input></input>
+                {/* <input></input> */}
             </nav>
             <Outlet/>
         </header>
