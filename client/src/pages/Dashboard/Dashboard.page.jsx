@@ -1,7 +1,8 @@
 import React from 'react';
 import './Dashboard.style.css'
 
-const Dashboard = () => {
+const Dashboard = ({ id }) => {
+    id = 1;
     return (
         <div className='dashboard'>
             <div className='dashboard-top-bar'>
@@ -26,7 +27,7 @@ const Dashboard = () => {
                     <div className='dashboard-b-p-d-flex'>
                         <div className='d-b-p-d-f-single-post'>
                             <img alt='' src=''/>
-                            <h3>Title</h3>
+                            <h3><a href={`/your-post/${id}`}>Title</a></h3>
                         </div>
                     </div>
                 </div>
