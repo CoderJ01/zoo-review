@@ -34,7 +34,18 @@
 
     .dashboard-bottom {
         border: 1px solid red;
+        display: flex;
         min-height: 70vh;
+    }
+
+    .dashboard-b-user-info {
+        border: 1px solid blue;
+        width: 25%;
+    }
+
+    .dasboard-b-posts-display {
+        border: 2px solid green;
+        width: 45%;
     }
 
     .dashboard-b-buttons {
