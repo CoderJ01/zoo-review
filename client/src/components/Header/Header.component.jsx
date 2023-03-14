@@ -20,8 +20,6 @@ const Header = () => {
                     <NavLink to='/dashboard'><text>Dashboard</text></NavLink>
                 </div>
                 <div className='header-buttons'>
-                    {/* <button>Log In</button> */}
-                    {/* <button>Sign Up</button> */}
                     <div className='header-vanilla-button'>
                         <Button 
                             style={{
