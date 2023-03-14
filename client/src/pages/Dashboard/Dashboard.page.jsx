@@ -23,7 +23,11 @@ const Dashboard = () => {
                     <button>See your blog posts</button>
                 </div>
                 <div className='dashboard-b-posts-display'>
-
+                    <div className='dashboard-b-p-d-flex'>
+                        <div className='d-b-p-d-f-single-post'></div>
+                        <div className='d-b-p-d-f-single-post'></div>
+                        <div className='d-b-p-d-f-single-post'></div>
+                    </div>
                 </div>
             </div>
         </div>

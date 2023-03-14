@@ -82,8 +82,17 @@
         opacity: 0.5;
     }
 
-    .dashboard-b-p-d-single-post {
+    .dashboard-b-p-d-flex {
         border: 1px solid blue;
+        display: flex;
+        height: 50%;
+        justify-content: space-around;
+    }
+
+    .d-b-p-d-f-single-post {
+        height: 100%;
+        width: 30%;
+        border: 1px solid purple;
     }
 }
 
