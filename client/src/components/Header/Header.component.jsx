@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Outlet, NavLink } from 'react-router-dom'; 
 import './Header.style.css'
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import RegistrationForm from '../RegistrationForm/RegistrationForm.component';
 
 const Header = () => {
     const [showSignup, setShowSignup] = useState(false);
@@ -35,20 +35,7 @@ const Header = () => {
                             <div className='header-vanilla-button-text'>Sign Up</div>
                         </Button>
                     </div>
-                    <Modal show={showSignup} onHide={handleCloseSignup}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={handleCloseSignup}>
-                        Close
-                        </Button>
-                        <Button variant="primary" onClick={handleCloseSignup}>
-                        Save Changes
-                        </Button>
-                    </Modal.Footer>
-                    </Modal>
+                    <RegistrationForm showSignup={showSignup} handleCloseSignup={handleCloseSignup}/>
                 </div>
                 <input></input>
             </nav>
