@@ -25,7 +25,6 @@ const Home = () => {
                     image={''}
                     title={'zoo'}
                     post={'The quick brown fox jumped over the lazy dog'}
-                    rating={5}
                     blog={true}
                 />
             </div>
