@@ -18,11 +18,12 @@ const Header = () => {
     const [showSignup, setShowSignup] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
 
-    const handleCloseSignup = () => setShowSignup(false);
     const handleShowSignup = () => setShowSignup(true);
-
-    const handleCloseLogin = () => setShowLogin(false);
     const handleShowLogin = () => setShowLogin(true);
+
+    const handleCloseSignup = () => setShowSignup(false);
+    const handleCloseLogin = () => setShowLogin(false);
+
 
     return (
         <header>
