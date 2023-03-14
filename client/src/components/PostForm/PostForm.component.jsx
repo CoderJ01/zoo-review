@@ -40,7 +40,7 @@ const PostForm = ({ formHeading, buttonText, blog = false}) => {
             </div>
             <div>
                 <label htmlFor='content'>Content:</label><br/>
-                <input type='text' name='content' value={content} onChange={(e) => setContent(e.target.value)}/>
+                <textarea type='text' name='content' value={content} onChange={(e) => setContent(e.target.value)}/>
             </div>
             {
                 !blog ? 
