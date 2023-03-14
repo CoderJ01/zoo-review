@@ -43,13 +43,12 @@ nav input {
         width: 12vw;
     }
 
-    .header-buttons button {
-        background-color: white;
-        border: 1px solid white;
-        border-radius: 10px;
-        color: rgb(29, 146, 34);
-        font-size: 17px;
+    .header-vanilla-button {
         height: 30px;
+    }
+
+    .header-vanilla-button-text {
+        margin-top: -4px;
     }
 
     nav input {
