@@ -4,10 +4,16 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import './RegistrationForm.style.css'
 
+const modalHeaderStyle = {
+    display: 'flex', 
+    justifyContent: 'center'
+}
+
 const buttonStyle = {
     backgroundColor: 'rgb(34, 191, 41)', 
     border: '2px solid rgb(34, 191, 41)', 
-    color: 'white'
+    color: 'white',
+    marginLeft: '80%'
 }
 
 const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
@@ -40,7 +46,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
 
     return (
         <Modal show={showSignup} onHide={handleCloseSignup}>
-            <Modal.Header closeButton>
+            <Modal.Header style={modalHeaderStyle}>
                 <Modal.Title>Register Here!</Modal.Title>
             </Modal.Header>
             <Modal.Body>
