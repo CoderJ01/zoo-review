@@ -37,6 +37,15 @@
     color: rgb(34, 191, 41);
 }
 
+.d-b-p-d-f-single-post img {
+    border: 1px solid blue;
+    height: 80%;
+} 
+
+.d-b-p-d-f-single-post h3 {
+    text-align: center;
+} 
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .dashboard-top-bar {
