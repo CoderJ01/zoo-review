@@ -14,7 +14,8 @@
     margin-left: 10%;
 }
 
-.post-form input {
+.post-form input,
+.post-form textarea {
     margin-left: 10%;
     width: 80%;
 }
@@ -70,7 +71,8 @@
         font-size: 35px;
     }
 
-    .post-form input {
+    .post-form input,
+    .post-form textarea {
         font-size: 35px;
     }
 
