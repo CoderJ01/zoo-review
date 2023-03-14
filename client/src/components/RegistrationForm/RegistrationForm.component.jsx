@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
@@ -9,6 +9,16 @@ const buttonStyle = {
 }
 
 const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [avatar, setAvatar] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
+
     return (
         <Modal show={showSignup} onHide={handleCloseSignup}>
             <Modal.Header closeButton>
