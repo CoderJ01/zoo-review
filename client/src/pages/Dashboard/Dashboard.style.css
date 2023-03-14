@@ -105,12 +105,10 @@
     }
 
     .dashboard-bottom {
-        border: 1px solid red;
         min-height: 75vh;
     }
 
     .dashboard-b-u-i-avatar {
-        border: 1px solid blue;
         height: 25vh;
     }
 
@@ -127,7 +125,6 @@
 /* Surface Duo */
 @media screen and (max-width: 540px) {
     .dashboard-b-buttons {
-      border: 1px solid purple;
       margin-left: 10%;
       width: 80%;
     }
@@ -136,7 +133,6 @@
 /* iPhone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
     .dashboard-b-u-i-avatar {
-        border: 1px solid blue;
         height: 20vh;
     }
 }
@@ -144,7 +140,6 @@
 /* iPhone 12 Pro */
 @media screen and (max-width: 390px) {
     .dashboard-b-u-i-avatar {
-        border: 1px solid blue;
         height: 17vh;
     }
 }
