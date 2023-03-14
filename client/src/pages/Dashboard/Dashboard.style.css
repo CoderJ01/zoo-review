@@ -127,6 +127,17 @@
 
     .dashboard-b-buttons {
         margin-top: 3vh;
+        padding-bottom: 0vh;
+    }
+
+    .dashboard-b-posts-display {
+        border: 1px solid red;
+    }
+
+    .d-b-p-d-f-single-post {
+        border: 1px solid green;
+        height: 40vh;
+        margin-top: 5vh;
     }
 }
 
