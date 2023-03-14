@@ -3,7 +3,7 @@
     width: 90%;
 }
 
-.dashboard-t-b-buttons button {
+.dashboard-b-buttons button {
     background-color: white;
     border: 2px solid white;
     border-radius: 20px;
@@ -27,13 +27,16 @@
         font-size: 30px;
     }
 
-    .dashboard-t-b-buttons {
+    .dashboard-b-buttons {
         display: flex;
         justify-content: space-around;
+        margin-left: 125vh;
+        margin-top: -7vh;
+        position: absolute;
         width: 30%;
     }
 
-    .dashboard-t-b-buttons button:active {
+    .dashboard-b-buttons button:active {
         opacity: 0.5;
     }
 }
@@ -51,7 +54,7 @@
         text-align: center;
     }
 
-    .dashboard-t-b-buttons {
+    .dashboard-b-buttons {
         display: flex;
         justify-content: space-around;
         margin-left: 25%;
