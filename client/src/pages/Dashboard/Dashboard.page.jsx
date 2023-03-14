@@ -13,7 +13,7 @@ const Dashboard = () => {
                     <div className='dashboard-b-u-i-avatar'>
                         <img alt='' src=''/>
                     </div>
-                    <h2>Your Bio</h2>
+                    <h2 style={{ marginTop: '7%'}}>Your Bio</h2>
                     <div className='dashboard-b-u-i-bio'></div>
                 </div>
                 <div className='dashboard-b-buttons'>
