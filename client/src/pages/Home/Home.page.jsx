@@ -1,6 +1,5 @@
 import React from 'react';
 import Post from '../../components/Post/Post.component';
-import { sampleData } from './Home.sampledata';
 import './Home.style.css'
 
 const Home = () => {
@@ -11,8 +10,8 @@ const Home = () => {
             <div className='home-posts'>
                 <Post
                     username={'joesmith098'}
-                    avatar={sampleData[0]}
-                    image={sampleData[1]}
+                    avatar={''}
+                    image={''}
                     title={'zoo'}
                     post={'The quick brown fox jumped over the lazy dog'}
                     rating={5}
@@ -22,8 +21,8 @@ const Home = () => {
             <div className='home-posts'>
                 <Post
                     username={'joesmith098'}
-                    avatar={sampleData[0]}
-                    image={sampleData[1]}
+                    avatar={''}
+                    image={''}
                     title={'zoo'}
                     post={'The quick brown fox jumped over the lazy dog'}
                     rating={5}
