@@ -4,7 +4,7 @@ import axios from 'axios';
 import { ratings } from './PostForm.utils';
 import './PostForm.style.css'
 
-const PostForm = () => {
+const PostReview = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [file, setFile] = useState('');
@@ -63,4 +63,4 @@ const PostForm = () => {
     );
 }
 
-export default PostForm;
+export default PostReview;

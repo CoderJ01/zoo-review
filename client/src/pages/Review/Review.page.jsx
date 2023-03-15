@@ -1,11 +1,11 @@
 import React from 'react';
 import './Review.style.css'
-import PostForm from '../../components/PostForm/PostForm.component';
+import PostReview from '../../components/PostForm/PostReview.component';
 
 const Review = () => {
     return (
         <div className='review'>
-            <PostForm formHeading={'Write Your Review'} buttonText={'New Review'}/>
+            <PostReview/>
         </div>
     );
 }
