@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/CoderJ01/zoo-review/issues"
   },
-  "homepage": "https://github.com/CoderJ01/zoo-review#readme"
+  "homepage": "https://github.com/CoderJ01/zoo-review#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
 }
