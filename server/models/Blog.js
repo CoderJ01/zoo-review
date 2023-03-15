@@ -14,6 +14,10 @@ const BlogSchema = mongoose.Schema(
             type: String,
             required: false
         },
+        thumbs: {
+            type: Number,
+            default: 0
+        },
         user: {
             type: mongoose.Types.ObjectId,
             ref: 'User'
