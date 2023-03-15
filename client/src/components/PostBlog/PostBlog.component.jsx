@@ -29,7 +29,7 @@ const PostBlog = () => {
 
     return (
         <form className='post-form' onSubmit={handleSubmit}>
-            <h1>Write a Review</h1>
+            <h1>Write a Blog Post</h1>
             <div>
                 <label htmlFor='title'>Title:</label><br/>
                 <input type='text' name='title' value={title} onChange={(e) => setTitle(e.target.value)}/>
@@ -42,7 +42,7 @@ const PostBlog = () => {
                 <label htmlFor='file'></label><br/>
                 <input type='file' name='file' onChange={(e) => setFile(e.target.files[0])}/>
             </div>
-            <button type='submit'>+ New Review</button>
+            <button type='submit'>+ New Blog</button>
         </form>
     );
 }
