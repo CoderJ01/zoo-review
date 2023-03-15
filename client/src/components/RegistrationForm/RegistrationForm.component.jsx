@@ -74,7 +74,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
                     </div>
                     <div>
                         <label htmlFor='bio'>Bio:</label><br/>
-                        <textarea type='text' name='bio' value={bio} onChange={(e) => setBio(e.target.value)}/>
+                        <textarea maxLength={200} type='text' name='bio' value={bio} onChange={(e) => setBio(e.target.value)}/>
                     </div>
                     <div>
                         <label htmlFor='file'>Avatar:</label><br/>
