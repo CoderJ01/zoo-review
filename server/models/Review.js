@@ -8,11 +8,14 @@ const ReviewSchema = new mongoose.Schema(
         },
         content: {
             type: String,
-            required: true
+            required: true,
+            maxlength: [1000, 'No more than 1000 characters allowed, got {VALUE}']
         },
         rating: {
             type: Number,
-            required: true
+            required: true,
+            min: [1, '1 is the lowest rating allowed, got {VALUE}'],
+            max: [5, '5 is the highest rating allowed, got {VALUE}']
         },
         image: {
             type: String,
