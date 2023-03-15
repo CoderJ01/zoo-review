@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
+import '../PostReview/PostReview.style.css'
 
 const PostBlog = () => {
     const [title, setTitle] = useState('');
