@@ -100,8 +100,8 @@ nav input {
         background-color: rgb(34, 191, 41);
         border: 1px solid rgb(34, 191, 41);
         border-radius: 10px;
-        min-height: 3vh;
         font-size: 2rem;
+        min-height: 3vh;
         min-width: 25%
     }
 
