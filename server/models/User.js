@@ -24,7 +24,8 @@ const UserSchema = new mongoose.Schema(
         },
         bio: {
             type: String,
-            required: false
+            required: false,
+            maxLength: [200, 'No more than 200 characters allowed']
         },
         avatar: {
             type: String,
