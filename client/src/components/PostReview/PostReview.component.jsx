@@ -39,7 +39,7 @@ const PostReview = () => {
             </div>
             <div>
                 <label htmlFor='content'>Content:</label><br/>
-                <textarea type='text' name='content' value={content} onChange={(e) => setContent(e.target.value)}/>
+                <textarea maxLength={1000} type='text' name='content' value={content} onChange={(e) => setContent(e.target.value)}/>
             </div>
                 <div>
                     <label htmlFor='rating'>Rating:</label><br/>
