@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Review = require('../models/Review');
+const User = require('../models/User');
 
 router.post('/', (req, res) => {
     const review = new Review({
@@ -7,10 +8,15 @@ router.post('/', (req, res) => {
         content: req.body.content,
         rating: req.body.rating,
         image: req.body.image,
-        user: req.body.user._id
+        user: req.body.user.id
     });
     review.save();
     res.send(review);
 });
+
+router.get('/', async (req, res) => {
+    const reviews = await Review.find();
+    res.send(reviews);
+})
 
 module.exports = router;
