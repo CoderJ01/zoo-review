@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const Review = require('../models/Review');
-const User = require('../models/User');
 
 router.post('/', (req, res) => {
     const review = new Review({
