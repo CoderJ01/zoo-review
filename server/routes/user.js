@@ -1,14 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+const bcrypt = require('bcrypt');
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
+    const salt = await bcrypt.genSalt(10);
+    const hashedPass = await bcrypt.hash(req.body.password, salt);
+
     const newUser =  new User({
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password,
+        password: hashedPass,
         bio: req.body.bio,
         avatar: req.body.avatar
     });
