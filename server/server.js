@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 require('colors');
-const userRoutes = require('../server/routes/user');
+const routes = require('../server/routes/index');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -13,6 +13,6 @@ app.use(cors());
 
 connectDB();
 
-app.use(userRoutes)
+app.use(routes);
 
 app.listen(PORT, console.log(`Listing on port: ${PORT}...`))
