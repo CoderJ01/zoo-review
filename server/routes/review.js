@@ -17,6 +17,11 @@ router.post('/', (req, res) => {
 router.get('/', async (req, res) => {
     const reviews = await Review.find();
     res.send(reviews);
+});
+
+router.get('/:id', async (req, res) => {
+    const review = await Review.findById({ _id: req.params.id });
+    res.send(review);
 })
 
 module.exports = router;
