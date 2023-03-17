@@ -13,13 +13,11 @@ router.post('/:userId', async (req, res) => {
         user: req.params.userId
     });
     review.save();
-    console.log(review);
 
     const user = await User.findOneAndUpdate({ _id: req.params.userId},
         { $push: { 'reviews': review } },
         { new: true }
     );
-    console.log(user);
 });
 
 router.get('/', async (req, res) => {
@@ -37,10 +35,7 @@ router.patch('/:id', async (req, res) => {
 });
 
 router.delete('/:userId/:reviewId', async (req, res) => {
-    const { userId, reviewId } = req.params;
-    console.log(userId);
-    console.log(reviewId)
-    
+    const { userId, reviewId } = req.params;    
     await User.findOneAndUpdate({_id: userId}, {$pull: {reviews: {_id: reviewId}}}).exec();
     await Review.findOneAndDelete({ _id: reviewId });
 });
