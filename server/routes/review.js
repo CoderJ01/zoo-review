@@ -36,8 +36,13 @@ router.patch('/:id', async (req, res) => {
    
 });
 
-router.delete('/:id', async (req, res) => {
-
+router.delete('/:userId/:reviewId', async (req, res) => {
+    const { userId, reviewId } = req.params;
+    console.log(userId);
+    console.log(reviewId);
+    await Review.findByIdAndDelete(reviewId);
+    const updateUser = await User.findByIdAndUpdate({ _id: userId }, { $pull: { reviews: reviewId } }, { new: true });
+    res.send({ updateUser });
 });
 
 module.exports = router;
