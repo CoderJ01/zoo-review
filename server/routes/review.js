@@ -4,18 +4,18 @@ const ReviewSchema = require('../models/Review');
 const Review = mongoose.model('Review', ReviewSchema);
 const User = require('../models/User');
 
-router.post('/', async (req, res) => {
+router.post('/:userId', async (req, res) => {
     const review = new Review({
         title: req.body.title,
         content: req.body.content,
         rating: req.body.rating,
         image: req.body.image,
-        user: req.body.user
+        user: req.params.userId
     });
     review.save();
     console.log(review);
 
-    const user = await User.findOneAndUpdate(req.body.user,
+    const user = await User.findOneAndUpdate({ _id: req.params.userId},
         { $push: { 'reviews': review } },
         { new: true }
     );
@@ -38,11 +38,9 @@ router.patch('/:id', async (req, res) => {
 
 router.delete('/:userId/:reviewId', async (req, res) => {
     const { userId, reviewId } = req.params;
-    console.log(userId);
-    console.log(reviewId);
-    await Review.findByIdAndDelete(reviewId);
-    const updateUser = await User.findByIdAndUpdate({ _id: userId }, { '$pull': { 'reviews': 'reviewId' } }, { new: true });
-    res.send({ updateUser });
+    User.findOneAndUpdate({ _id: userId }, { $pull: {reviews: { _id: reviewId}}}, function(err, data) {
+        console.log(err, data);
+    });
 });
 
 module.exports = router;
