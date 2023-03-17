@@ -30,4 +30,29 @@ router.get('/:id', async (req, res) => {
     res.send(review);
 })
 
+router.patch('/:id', async (req, res) => {
+    try {
+        const review = await Review.findOne({ _id: req.params.id });
+
+        if(req.body.title) {
+            review.title = req.body.title;
+        }
+
+        if(req.body.content) {
+            review.content = req.body.content;
+        }
+
+        if(req.body.image) {
+            review.image = req.body.image;
+        }
+
+        await review.save();
+        res.send(review);
+    }
+    catch {
+        res.status(404);
+        res.send({ error: 'Review does not exists!'});
+    }
+});
+
 module.exports = router;
