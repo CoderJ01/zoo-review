@@ -55,4 +55,15 @@ router.patch('/:id', async (req, res) => {
     }
 });
 
+router.delete('/:id', async (req,res) => {
+    try {
+        await Review.deleteOne({ _id: req.params.id });
+        res.status(204).send();
+    }
+    catch {
+        res.status(404);
+        res.send({ error: 'Review does not exist' });
+    }
+});
+
 module.exports = router;
