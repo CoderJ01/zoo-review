@@ -32,8 +32,24 @@ router.get('/:id', async (req, res) => {
     res.send(review);
 })
 
-router.patch('/:id', async (req, res) => {
-   
+router.patch('/:userId/:reviewId', async (req, res) => {
+    try {
+        const { userId, reviewId } = req.params;
+        console.log(userId);
+        console.log(reviewId);
+        const review = await Review.findOne({ _id: reviewId });
+
+        if(req.body.content) {
+            review.content = req.body.content;
+        }   
+
+        await review.save(review);
+        res.send(review);
+    }
+    catch {
+        res.status(404);
+        res.send({ error: 'Review does not exists!'});
+    }
 });
 
 router.delete('/:userId/:reviewId', async (req, res) => {
