@@ -38,9 +38,11 @@ router.patch('/:id', async (req, res) => {
 
 router.delete('/:userId/:reviewId', async (req, res) => {
     const { userId, reviewId } = req.params;
-    User.findOneAndUpdate({ _id: userId }, { $pull: {reviews: { _id: reviewId}}}, function(err, data) {
-        console.log(err, data);
-    });
+    console.log(userId);
+    console.log(reviewId)
+    
+    await User.findOneAndUpdate({_id: userId}, {$pull: {reviews: {_id: reviewId}}}).exec();
+    await Review.findOneAndDelete({ _id: reviewId });
 });
 
 module.exports = router;
