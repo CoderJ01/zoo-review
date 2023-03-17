@@ -35,15 +35,21 @@ router.get('/:id', async (req, res) => {
 router.patch('/:userId/:reviewId', async (req, res) => {
     try {
         const { userId, reviewId } = req.params;
-        console.log(userId);
-        console.log(reviewId);
         const review = await Review.findOne({ _id: reviewId });
+        const user = await User.findOne({ _id: userId });
 
         if(req.body.content) {
             review.content = req.body.content;
-        }   
+            for(let i = 0; i < user.reviews.length; i++) {
+                if(user.reviews[i]._id.toString() === reviewId) {
+                    user.reviews[i].content = req.body.content;
+                }
+            }
+        }  
 
         await review.save(review);
+        await user.save(user);
+        
         res.send(review);
     }
     catch {
