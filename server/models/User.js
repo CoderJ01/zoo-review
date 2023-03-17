@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const BlogSchema = require('./Blog');
 const ReviewSchema = require('./Review');
 
 const UserSchema = new mongoose.Schema(
@@ -33,10 +34,7 @@ const UserSchema = new mongoose.Schema(
             required: true
         },
         reviews: [ReviewSchema],
-        blogs: [{
-            type: mongoose.Types.ObjectId,
-            ref: 'Blog'
-        }],
+        blogs: [BlogSchema],
     }, 
     { timestamps: true }
 );
