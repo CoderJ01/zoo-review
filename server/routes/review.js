@@ -14,7 +14,7 @@ router.post('/:userId', async (req, res) => {
     });
     review.save();
 
-    await User.findOneAndUpdate({ _id: req.params.userId},
+    await User.findOneAndUpdate({ _id: req.params.userId },
         { $push: { 'reviews': review } },
         { new: true }
     );
