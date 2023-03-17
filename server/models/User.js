@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const ReviewSchema = require('./Review');
 
 const UserSchema = new mongoose.Schema(
     {
@@ -31,10 +32,7 @@ const UserSchema = new mongoose.Schema(
             type: String,
             required: true
         },
-        reviews: [{
-            type: mongoose.Types.ObjectId,
-            ref: 'Review'
-        }],
+        reviews: [ReviewSchema],
         blogs: [{
             type: mongoose.Types.ObjectId,
             ref: 'Blog'
