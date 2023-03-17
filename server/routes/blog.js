@@ -21,4 +21,14 @@ router.post('/:userId', async (req, res) => {
     );
 });
 
+router.get('/', async (req, res) => {
+    const blogs = await Blog.find();
+    res.send(blogs);
+});
+
+router.get('/:id', async (req, res) => {
+    const blog = await Blog.findById({ _id: req.params.id });
+    res.send(blog);
+});
+
 module.exports = router;
