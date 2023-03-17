@@ -18,6 +18,8 @@ router.post('/:userId', async (req, res) => {
         { $push: { 'reviews': review } },
         { new: true }
     );
+
+    res.send(review);
 });
 
 router.get('/', async (req, res) => {
@@ -38,6 +40,7 @@ router.delete('/:userId/:reviewId', async (req, res) => {
     const { userId, reviewId } = req.params;    
     await User.findOneAndUpdate({_id: userId}, {$pull: {reviews: {_id: reviewId}}}).exec();
     await Review.findOneAndDelete({ _id: reviewId });
+    res.status(204).send();
 });
 
 module.exports = router;
