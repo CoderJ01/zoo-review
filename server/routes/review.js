@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const Review = require('../models/Review');
+const mongoose = require('mongoose');
+const ReviewSchema = require('../models/Review');
+const Review = mongoose.model('Review', ReviewSchema);
 const User = require('../models/User');
 
 router.post('/', async (req, res) => {
@@ -10,14 +12,12 @@ router.post('/', async (req, res) => {
         image: req.body.image,
         user: req.body.user
     });
-
     review.save();
-    res.send(review);
-    
-    await User.findOneAndUpdate(req.body.user,
-        { $push: { 'reviews': review } },
-        { new: true }
-    );
+    console.log(review);
+
+    const user = await User.findOne({ _id: req.body.user });
+    user.reviews.push(review);
+    user.save();
 });
 
 router.get('/', async (req, res) => {
@@ -30,40 +30,40 @@ router.get('/:id', async (req, res) => {
     res.send(review);
 })
 
-router.patch('/:id', async (req, res) => {
-    try {
-        const review = await Review.findOne({ _id: req.params.id });
+// router.patch('/:id', async (req, res) => {
+//     try {
+//         const review = await Review.findOne({ _id: req.params.id });
 
-        if(req.body.title) {
-            review.title = req.body.title;
-        }
+//         if(req.body.title) {
+//             review.title = req.body.title;
+//         }
 
-        if(req.body.content) {
-            review.content = req.body.content;
-        }
+//         if(req.body.content) {
+//             review.content = req.body.content;
+//         }
 
-        if(req.body.image) {
-            review.image = req.body.image;
-        }
+//         if(req.body.image) {
+//             review.image = req.body.image;
+//         }
 
-        await review.save();
-        res.send(review);
-    }
-    catch {
-        res.status(404);
-        res.send({ error: 'Review does not exists!'});
-    }
-});
+//         await review.save();
+//         res.send(review);
+//     }
+//     catch {
+//         res.status(404);
+//         res.send({ error: 'Review does not exists!'});
+//     }
+// });
 
-router.delete('/:id', async (req,res) => {
-    try {
-        await Review.deleteOne({ _id: req.params.id });
-        res.status(204).send();
-    }
-    catch {
-        res.status(404);
-        res.send({ error: 'Review does not exist' });
-    }
-});
+// router.delete('/:id', async (req,res) => {
+//     try {
+//         await Review.deleteOne({ _id: req.params.id });
+//         res.status(204).send();
+//     }
+//     catch {
+//         res.status(404);
+//         res.send({ error: 'Review does not exist' });
+//     }
+// });
 
 module.exports = router;
