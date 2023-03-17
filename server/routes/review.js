@@ -2,7 +2,7 @@ const router = require('express').Router();
 const Review = require('../models/Review');
 const User = require('../models/User');
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     const review = new Review({
         title: req.body.title,
         content: req.body.content,
@@ -12,13 +12,12 @@ router.post('/', (req, res) => {
     });
 
     review.save();
+    res.send(review);
     
-    User.findOneAndUpdate(req.body.user,
+    await User.findOneAndUpdate(req.body.user,
         { $push: { 'reviews': review } },
         { new: true }
     );
-    
-    res.send(review);
 });
 
 router.get('/', async (req, res) => {
