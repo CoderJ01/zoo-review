@@ -39,6 +39,11 @@ router.patch('/:id', async (req, res) => {
         res.status(404);
         res.send({ error: 'Zoo does not exists!'});
     }
-})
+});
+
+router.delete('/:id', async (req, res) => {
+    await Zoo.deleteOne({ _id: req.params.id });
+    res.status(204).send();
+});
 
 module.exports = router;
