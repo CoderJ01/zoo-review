@@ -37,7 +37,7 @@ router.patch('/:id', async (req, res) => {
     }
     catch {
         res.status(404);
-        res.send({ error: 'Post does not exists!'});
+        res.send({ error: 'Zoo does not exists!'});
     }
 })
 
