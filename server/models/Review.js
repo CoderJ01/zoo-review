@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 
+// required should not be set to true in any field; or else, PATCH route will not work
 const ReviewSchema = new mongoose.Schema(
     {
         title: {
             type: String,
-            required: false
+            required: false 
         },
         content: {
             type: String,
