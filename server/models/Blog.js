@@ -5,15 +5,12 @@ const BlogSchema = mongoose.Schema(
     {
         title: {
             type: String,
-            required: false
         },
         content: {
             type: String,
-            required: false
         },
         image: {
             type: String,
-            required: false
         },
         thumbs: {
             type: Number,
