@@ -73,9 +73,10 @@ router.patch('/:userId/:reviewId/:zooId', async (req, res) => {
     }
 });
 
-router.delete('/:userId/:reviewId', async (req, res) => {
-    const { userId, reviewId } = req.params;    
-    await User.findOneAndUpdate({_id: userId}, {$pull: {reviews: {_id: reviewId}}}).exec();
+router.delete('/:userId/:reviewId/:zooId', async (req, res) => {
+    const { userId, reviewId, zooId } = req.params;    
+    await User.findOneAndUpdate({ _id: userId }, { $pull: {reviews: {_id: reviewId}} }).exec();
+    await Zoo.findOneAndUpdate({ _id: zooId }, { $pull: {reviews: {_id: reviewId}} }).exec();
     await Review.findOneAndDelete({ _id: reviewId });
     res.status(204).send();
 });
