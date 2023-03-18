@@ -47,7 +47,7 @@ router.patch('/:userId/:reviewId', async (req, res) => {
             }
         }  
 
-        await review.save(review);
+        await review.save();
         await user.save(user);
         
         res.send(review);

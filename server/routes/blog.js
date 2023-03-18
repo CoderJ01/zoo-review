@@ -55,8 +55,8 @@ router.patch('/:userId/:blogId', async (req, res) => {
             }
         }
 
-        await blog.save(blog);
-        await user.save(user);
+        await blog.save();
+        await user.save();
 
         res.send(blog);
     }
