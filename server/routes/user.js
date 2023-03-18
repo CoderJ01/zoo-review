@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 
-router.post('/', async (req, res) => {
+router.post('/register', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPass = await bcrypt.hash(req.body.password, salt);
 
@@ -18,6 +18,26 @@ router.post('/', async (req, res) => {
     });
     newUser.save();
     res.send(newUser);
+});
+
+router.post('/login', async (req, res) => {
+    try {
+        const user = await User.findOne({ username: req.body.username });
+        if(!user) {
+            res.status(400).json('User does not exist!');
+        }
+
+        const validate = await bcrypt.compare(req.body.password, user.password);
+        if(!validate) {
+            res.status(400).json('Wrong password!');
+        }
+
+        const { password, ...other } = user;
+        res.status(200).json(other);
+    }
+    catch(error) {
+        res.status(500).json(error)
+    }
 });
 
 router.get('/', async (req, res) => {
