@@ -31,4 +31,22 @@ router.get('/:id', async (req, res) => {
     res.send(blog);
 });
 
+router.patch('/:userId/:blogId', async (req, res) => {
+    try {
+        const { userId, blogId } = req.params;
+        const blog = await Blog.findOne({ _id: blogId });
+
+        if(req.body.content) {
+            blog.content = req.body.content;
+        }
+
+        await blog.save(blog);
+        res.send(blog);
+    }
+    catch {
+        res.status(404);
+        res.send({ error: 'Blog does not exist!' });
+    }
+});
+
 module.exports = router;
