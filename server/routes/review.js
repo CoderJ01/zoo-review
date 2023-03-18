@@ -39,11 +39,12 @@ router.get('/:id', async (req, res) => {
     res.send(review);
 })
 
-router.patch('/:userId/:reviewId', async (req, res) => {
+router.patch('/:userId/:reviewId/:zooId', async (req, res) => {
     try {
-        const { userId, reviewId } = req.params;
+        const { userId, reviewId, zooId } = req.params;
         const review = await Review.findOne({ _id: reviewId });
         const user = await User.findOne({ _id: userId });
+        const zoo = await Zoo.findOne({ _id: zooId });
 
         if(req.body.content) {
             review.content = req.body.content;
@@ -52,10 +53,17 @@ router.patch('/:userId/:reviewId', async (req, res) => {
                     user.reviews[i].content = req.body.content;
                 }
             }
+
+            for(let i = 0; i < zoo.reviews.length; i++) {
+                if(zoo.reviews[i]._id.toString() === reviewId) {
+                    zoo.reviews[i].content = req.body.content;
+                }
+            }
         }  
 
         await review.save();
-        await user.save(user);
+        await user.save();
+        await zoo.save();
         
         res.send(review);
     }
