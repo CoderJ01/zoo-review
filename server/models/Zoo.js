@@ -15,4 +15,4 @@ const ZooSchema = new mongoose.Schema(
 );
 
 const Zoo = mongoose.model('Zoo', ZooSchema);
-modules.exports = Zoo;
+module.exports = Zoo;
