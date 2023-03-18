@@ -24,6 +24,10 @@ const ReviewSchema = new mongoose.Schema(
         user: {
             type: mongoose.Types.ObjectId,
             ref: 'User'
+        },
+        zoo: {
+            type: mongoose.Types.ObjectId,
+            ref: 'Zoo'
         }
     },
     { timestamps: true }
