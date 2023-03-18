@@ -36,6 +36,10 @@
     width: 24%;
 }
 
+.post-form button:active {
+    opacity: 0.8;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
 
