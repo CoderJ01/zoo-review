@@ -35,12 +35,29 @@ router.patch('/:userId/:blogId', async (req, res) => {
     try {
         const { userId, blogId } = req.params;
         const blog = await Blog.findOne({ _id: blogId });
+        const user = await User.findOne({ _id: userId });
 
         if(req.body.content) {
             blog.content = req.body.content;
+            for(let i = 0; i < user.blogs.length; i++) {
+                if(user.blogs[i]._id.toString() === blogId) {
+                    user.blogs[i].content = req.body.content;
+                }
+            }
+        }
+
+        if(req.body.image) {
+            blog.image = req.body.image;
+            for(let i = 0; i < user.blogs.length; i++) {
+                if(user.blogs[i]._id.toString() === blogId) {
+                    user.blogs[i].image = req.body.image;
+                }
+            }
         }
 
         await blog.save(blog);
+        await user.save(user);
+
         res.send(blog);
     }
     catch {
