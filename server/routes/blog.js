@@ -49,4 +49,11 @@ router.patch('/:userId/:blogId', async (req, res) => {
     }
 });
 
+router.delete('/:userId/:blogId', async (req, res) => {
+    const { userId, blogId } = req.params;
+    await User.findOneAndUpdate({_id: userId}, {$pull: {blogs: {_id: blogId}}}).exec();
+    await Blog.findOneAndDelete({ _id: blogId });
+    res.status(204).send();
+});
+
 module.exports = router;
