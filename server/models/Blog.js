@@ -4,11 +4,11 @@ const BlogSchema = mongoose.Schema(
     {
         title: {
             type: String,
-            required: true
+            required: false
         },
         content: {
             type: String,
-            required: true
+            required: false
         },
         image: {
             type: String,
