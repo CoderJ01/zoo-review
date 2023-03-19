@@ -6,14 +6,13 @@ require('dotenv').config();
 require('colors');
 const routes = require('../server/routes/index');
 
-const MAX_AGE = 1000 * 60 * 60 * 3;
-
 const mongoDBstore = new MongoDBStore({
     uri: process.env.MONGO_URI,
     collection: 'mySession'
 });
 
 const app = express();
+const MAX_AGE = 1000 * 60 * 60 * 3;
 const PORT = process.env.PORT || 3001;
 const connectDB = require('./config/connection.js');
 
