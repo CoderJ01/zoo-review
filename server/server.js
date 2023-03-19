@@ -6,7 +6,6 @@ const cors = require('cors');
 require('dotenv').config();
 require('colors');
 const routes = require('./routes');
-const loginRouter = require('./routes/login');
 
 const app = express();
 const MAX_AGE = 1000 * 60 * 60 * 3;
@@ -44,7 +43,6 @@ app.use(
 app.use(express.json());
 app.use(cors());
 
-app.use('/users', loginRouter);
 app.use(routes);
 
 app.listen(PORT, console.log(`Listing on port: ${PORT}...`));
