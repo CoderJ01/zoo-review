@@ -14,9 +14,11 @@ router.post('/login', async (req, res) => {
             res.status(400).json('Wrong password!');
         }
 
-        const { password, ...other } = user._doc;
-        res.status(200).json(other);
-        res.send(other);
+        if(validate) {
+           const userSession = { email: user.email };
+           req.session.user = userSession;
+           res.status(200).json({ msg: 'You have logged in successfullly'});
+        }
     }
     catch(error) {
         res.status(500).json(error)
