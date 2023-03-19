@@ -44,7 +44,7 @@ app.use(
 app.use(express.json());
 app.use(cors());
 
-app.use('/api', loginRouter);
+app.use('/users', loginRouter);
 app.use(routes);
 
 app.listen(PORT, console.log(`Listing on port: ${PORT}...`));
