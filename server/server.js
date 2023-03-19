@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const mongoose = require('mongoose');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const cors = require('cors');
 require('dotenv').config();
@@ -43,7 +44,7 @@ app.use(
 app.use(express.json());
 app.use(cors());
 
-app.use('/users', loginRouter);
+app.use('/api', loginRouter);
 app.use(routes);
 
 app.listen(PORT, console.log(`Listing on port: ${PORT}...`));
