@@ -27,18 +27,42 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
     const [bio, setBio] = useState('');
     // const [file, setFile] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
+        // const formData = new FormData();
+        // formData.append('file', formData);
+
+        // try {
+        //     const response = await axios.post(
+        //         `${baseURL}/users/register`,
+        //         formData, {
+        //             headers: {
+        //                 'Content-Type': 'multipart/form-data'
+        //             }
+        //         }
+        //     );
+        //     console.log(response.data);
+        //     console.log(response);
+        // }
+        // catch(error) {
+        //     console.log(error);
+        // }
+
         axios.post(baseURL + '/users/register', {
             firstname: firstName,
             lastname: lastName,
             username: username,
             email: email,
             password: password,
-            bio: bio
+            bio: bio,
+            // avatar: file
         })
-        .then(response => {console.log(response)}, error => {console.log(error)})
+        .then(response => {console.log(response)}, error => {console.log(error)});
     }
+
+    // const handleFileSelect = (event) => {
+    //     setFile(event.target.files[0]);
+    // }
 
     return (
         <Modal show={showSignup} onHide={handleCloseSignup}>
@@ -73,7 +97,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
                     </div>
                     {/* <div>
                         <label htmlFor='file'>Avatar:</label><br/>
-                        <input type='file' name='file' onChange={(e) => setFile(e.target.value)}/>
+                        <input type='file' name='file' onChange={handleFileSelect}/>
                     </div> */}
                     <Button type='submit' style={buttonStyle} onClick={handleCloseSignup}>
                         Sign up
