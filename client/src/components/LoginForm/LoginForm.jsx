@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import '../RegistrationForm/RegistrationForm.style.css';
+import axios from 'axios';
 
 const modalHeaderStyle = {
     display: 'flex', 
@@ -16,6 +17,7 @@ const buttonStyle = {
     marginTop: '3vh'
 }
 
+const baseURL = 'http://localhost:3001';
 
 const LoginForm = ({ showLogin, handleCloseLogin }) => {
     const [username, setUsername] = useState('');
@@ -23,6 +25,11 @@ const LoginForm = ({ showLogin, handleCloseLogin }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault(); 
+        axios.post(baseURL + '/users/login', {
+            username: username,
+            password: password,
+        })
+        .then(response => {console.log(response)}, error => {console.log(error)});
     }
 
     return (
