@@ -6,6 +6,16 @@ const bcrypt = require('bcrypt');
 router.post('/register', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPass = await bcrypt.hash(req.body.password, salt);
+    const username = await User.findOne({ username: req.body.username });
+    const email = await User.findOne({ email: req.body.email });
+   
+    if(username) {
+        return res.status(400).json({ msg: 'Username must be unique!' });
+    }
+
+    if(email) {
+        return res.status(400).json({ msg: 'Email must be unique!' });
+    }
 
     const newUser =  new User({
         firstname: req.body.firstname,
@@ -24,12 +34,12 @@ router.post('/login', async (req, res) => {
     try {
         const user = await User.findOne({ username: req.body.username });
         if(!user) {
-            res.status(400).json('User does not exist!');
+            return res.status(400).json('User does not exist!');
         }
 
         const validate = await bcrypt.compare(req.body.password, user.password);
         if(!validate) {
-            res.status(400).json('Wrong password!');
+            return res.status(400).json('Wrong password!');
         }
 
         if(validate) {
