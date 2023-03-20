@@ -27,22 +27,6 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        const url = 'http://localhost:3000/';
-        const formData = new FormData();
-
-        formData.append('file', file);
-        formData.append('fileName', file.name);
-
-        const config = {
-            headers: {
-                'content-type': 'multipart/form-data',
-            },
-        };
-
-        axios.post(url, formData, config).then((response) => {
-            console.log(response.data);
-        });
     }
 
     return (
