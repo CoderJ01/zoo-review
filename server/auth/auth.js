@@ -5,4 +5,5 @@ export const requireAuth = (req, res, next) => {
             .status(401).
             json({ message: 'Unauthorized '});
     }
+    next();
 }
