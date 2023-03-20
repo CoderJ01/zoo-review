@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import axios from 'axios';
+// import axios from 'axios';
 import './RegistrationForm.style.css'
 
 const modalHeaderStyle = {
@@ -23,7 +23,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [bio, setBio] = useState('');
-    const [file, setFile] = useState('');
+    // const [file, setFile] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -60,10 +60,10 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
                         <label htmlFor='bio'>Bio:</label><br/>
                         <textarea maxLength={200} type='text' name='bio' value={bio} onChange={(e) => setBio(e.target.value)}/>
                     </div>
-                    <div>
+                    {/* <div>
                         <label htmlFor='file'>Avatar:</label><br/>
                         <input type='file' name='file' onChange={(e) => setFile(e.target.value)}/>
-                    </div>
+                    </div> */}
                     <Button type='submit' style={buttonStyle} onClick={handleCloseSignup}>
                         Sign up
                     </Button>
