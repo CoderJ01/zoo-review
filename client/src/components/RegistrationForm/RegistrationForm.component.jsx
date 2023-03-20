@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-// import axios from 'axios';
+import axios from 'axios';
 import './RegistrationForm.style.css'
 
 const modalHeaderStyle = {
@@ -16,6 +16,8 @@ const buttonStyle = {
     marginLeft: '80%'
 }
 
+const baseURL = 'http://localhost:3001';
+
 const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -27,6 +29,15 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        axios.post(baseURL + '/users/register', {
+            firstname: firstName,
+            lastname: lastName,
+            username: username,
+            email: email,
+            password: password,
+            bio: bio
+        })
+        .then(response => {console.log(response)}, error => {console.log(error)})
     }
 
     return (
