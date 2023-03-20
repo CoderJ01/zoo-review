@@ -1,33 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
-import axios from 'axios';
 import { ratings } from './PostReview.utils';
 import './PostReview.style.css'
 
 const PostReview = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-    const [file, setFile] = useState('');
     const [selected, setSelected] = useState(ratings[0]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        const url = 'http://localhost:3000/write-review';
-        const formData = new FormData();
-
-        formData.append('file', file);
-        formData.append('fileName', file.name);
-
-        const config = {
-            headers: {
-                'content-type': 'multipart/form-data',
-            },
-        };
-
-        axios.post(url, formData, config).then((response) => {
-            console.log(response.data);
-        });
     }
 
     return (
@@ -54,10 +36,6 @@ const PostReview = () => {
                         ))}
                     </select>
                 </div>
-            <div>
-                <label htmlFor='file'></label><br/>
-                <input type='file' name='file' onChange={(e) => setFile(e.target.files[0])}/>
-            </div>
             <button type='submit'>+ New Review</button>
         </form>
     );

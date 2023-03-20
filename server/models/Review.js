@@ -15,9 +15,6 @@ const ReviewSchema = new mongoose.Schema(
             min: [1, '1 is the lowest rating allowed, got {VALUE}'],
             max: [5, '5 is the highest rating allowed, got {VALUE}']
         },
-        image: {
-            type: String,
-        },
         averageRating: {
             type: Number,
         },
