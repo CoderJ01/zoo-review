@@ -28,6 +28,7 @@ router.post('/register', async (req, res) => {
     });
     newUser.save();
     res.send(newUser);
+    res.status(200).json({ msg: 'You have registered successfully!'});
 });
 
 router.post('/login', async (req, res) => {
@@ -45,7 +46,7 @@ router.post('/login', async (req, res) => {
         if(validate) {
            const userSession = { email: user.email };
            req.session.user = userSession;
-           res.status(200).json({ msg: 'You have logged in successfullly'});
+           res.status(200).json({ msg: 'You have logged in successfully'});
         }
     }
     catch(error) {
