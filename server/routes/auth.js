@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 router.post('/register', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
@@ -43,13 +44,8 @@ router.post('/login', async (req, res) => {
         }
 
         if(validate) {
-            const { password, ...rest } = user;
-            const userInfo = Object.assign({}, { ...rest });
-            req.session.user = userInfo;
-            console.log(req.session.user);
             res.status(200).json({ 
-                msg: 'You have logged in successfully',
-                session: req.session
+                msg: 'You have logged in successfully'
             });
         }
     }
