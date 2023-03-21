@@ -29,7 +29,14 @@ const LoginForm = ({ showLogin, handleCloseLogin }) => {
             username: username,
             password: password,
         })
-        .then(response => {console.log(response)}, error => {console.log(error)});
+        .then(
+            response => {
+                console.log(response.data.msg)
+            }, 
+            error => {
+                alert(error.response.data);
+            }
+        );
     }
 
     return (
