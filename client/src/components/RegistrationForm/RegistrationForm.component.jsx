@@ -48,7 +48,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
         //     console.log(error);
         // }
 
-        axios.post(baseURL + '/users/register', {
+        axios.post(baseURL + '/auth/register', {
             firstname: firstName,
             lastname: lastName,
             username: username,

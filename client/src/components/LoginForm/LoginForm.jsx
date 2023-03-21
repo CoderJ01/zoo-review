@@ -25,7 +25,7 @@ const LoginForm = ({ showLogin, handleCloseLogin }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault(); 
-        axios.post(baseURL + '/users/login', {
+        axios.post(baseURL + '/auth/login', {
             username: username,
             password: password,
         })
