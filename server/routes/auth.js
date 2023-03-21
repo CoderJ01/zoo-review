@@ -46,6 +46,7 @@ router.post('/login', async (req, res) => {
             const { password, ...rest } = user;
             const userInfo = Object.assign({}, { ...rest });
             req.session.user = userInfo;
+            console.log(req.session.user);
             res.status(200).json({ msg: 'You have logged in successfully'});
         }
     }
