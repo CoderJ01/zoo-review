@@ -32,7 +32,6 @@ router.post('/register', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-    try {
         const user = await User.findOne({ username: req.body.username });
         if(!user) {
             return res.status(400).json('User does not exist!');
@@ -43,18 +42,13 @@ router.post('/login', async (req, res) => {
             return res.status(400).json('Wrong password!');
         }
 
-        if(validate) {
-            const accessToken = jwt.sign(user, process.env.ACCESS_SECRET_TOKEN);
-            res.status(200).json({ 
-                msg: 'You have logged in successfully',
-                data: user,
-                accessToken: accessToken
-            });
-        }
-    }
-    catch(error) {
-        res.status(500).json(error)
-    }
+   
+        const accessToken = jwt.sign(user.toJSON(), process.env.ACCESS_SECRET_TOKEN);
+        res.status(200).json({ 
+            msg: 'You have logged in successfully',
+            data: user,
+            accessToken: accessToken
+        });
 });
 
 router.delete('/logout', (req, res) => {
