@@ -43,9 +43,10 @@ router.post('/login', async (req, res) => {
         }
 
         if(validate) {
-           const userSession = { username: user.username };
-           req.session.username = userSession;
-           res.status(200).json({ msg: 'You have logged in successfully'});
+            const { password, ...rest } = user;
+            const userInfo = Object.assign({}, { ...rest });
+            req.session.user = userInfo;
+            res.status(200).json({ msg: 'You have logged in successfully'});
         }
     }
     catch(error) {
