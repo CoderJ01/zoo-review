@@ -24,11 +24,10 @@ router.post('/register', async (req, res) => {
         email: req.body.email,
         password: hashedPass,
         bio: req.body.bio,
-        avatar: req.body.avatar
+        avatar: req.body.avatar,
     });
     newUser.save();
     res.send(newUser);
-    res.status(200).json({ msg: 'You have registered successfully!'});
 });
 
 router.post('/login', async (req, res) => {

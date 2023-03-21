@@ -59,10 +59,11 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
         })
         .then(
             response => {
-                console.log(response);
+                console.log('You have successfully been registered!');
             }, 
             error => {
                 alert(error.response.data.msg);
+                console.log(error);
             }
         );
     }
