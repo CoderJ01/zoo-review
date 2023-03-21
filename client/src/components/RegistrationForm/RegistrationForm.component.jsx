@@ -57,7 +57,14 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
             bio: bio,
             // avatar: file
         })
-        .then(response => {console.log(response)}, error => {console.log(error)});
+        .then(
+            response => {
+                console.log(response);
+            }, 
+            error => {
+                alert(error.response.data.msg);
+            }
+        );
     }
 
     // const handleFileSelect = (event) => {
