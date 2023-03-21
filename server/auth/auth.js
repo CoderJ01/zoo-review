@@ -1,4 +1,4 @@
-export const requireAuth = (req, res, next) => {
+const requireAuth = (req, res, next) => {
     const { user } = req.session;
     if(!user) {
         return res
@@ -7,3 +7,5 @@ export const requireAuth = (req, res, next) => {
     }
     next();
 }
+
+module.exports = requireAuth;
