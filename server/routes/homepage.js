@@ -5,11 +5,14 @@ const BlogSchema = require('../models/Blog');
 const Review = mongoose.model('Review', ReviewSchema);
 const Blog = mongoose.model('Blog', BlogSchema);
 
-router.get('/', async (req, res) => {
+router.get('/reviews', async (req, res) => {
     const reviews = await Review.find();
+    res.send(reviews);
+});
+
+router.get('/blogs', async (req, res) => {
     const blogs = await Blog.find();
-    console.log(reviews);
-    console.log(blogs);
+    res.send(blogs);
 });
 
 module.exports = router;
