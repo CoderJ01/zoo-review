@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Zoo = require('../models/Zoo');
+const Zoo = require('../../models/Zoo');
 
 router.post('/', async (req, res) => {
     const zoo = await Zoo.create({
