@@ -44,8 +44,11 @@ router.post('/login', async (req, res) => {
         }
 
         if(validate) {
+            const accessToken = jwt.sign(user, process.env.ACCESS_SECRET_TOKEN);
             res.status(200).json({ 
-                msg: 'You have logged in successfully'
+                msg: 'You have logged in successfully',
+                data: user,
+                accessToken: accessToken
             });
         }
     }
