@@ -32,24 +32,38 @@ router.post('/register', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-        const user = await User.findOne({ username: req.body.username });
-        if(!user) {
-            return res.status(400).json('User does not exist!');
-        }
+    const user = await User.findOne({ username: req.body.username });
+    if(!user) {
+        return res.status(400).json('User does not exist!');
+    }
 
-        const validate = await bcrypt.compare(req.body.password, user.password);
-        if(!validate) {
-            return res.status(400).json('Wrong password!');
-        }
+    const validate = await bcrypt.compare(req.body.password, user.password);
+    if(!validate) {
+        return res.status(400).json('Wrong password!');
+    }
 
-   
-        const accessToken = jwt.sign(user.toJSON(), process.env.ACCESS_SECRET_TOKEN);
-        res.status(200).json({ 
-            msg: 'You have logged in successfully',
-            data: user,
-            accessToken: accessToken
-        });
+    const accessToken = jwt.sign(user.toJSON(), process.env.ACCESS_SECRET_TOKEN);
+    res.status(200).json({ 
+        msg: 'You have logged in successfully',
+        data: user,
+        accessToken: accessToken
+    });
 });
+
+function authenticateToken(req, res, next) {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    if(token == null) {
+        return res.send.status(401);
+    }
+    jwt.verify(token, process.env.ACCESS_SECRET_TOKEN, (err, user) => {
+        if(err) {
+            return res.send.status(403);
+        }
+        res.user = user;
+        next();
+    })
+}
 
 router.delete('/logout', (req, res) => {
     if(req.session) {
