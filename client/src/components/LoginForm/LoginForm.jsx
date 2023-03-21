@@ -31,12 +31,10 @@ const LoginForm = ({ showLogin, handleCloseLogin }) => {
         })
         .then(
             response => {
-                // console.log(response.data.msg);
                 console.log('You have succefully logged in!');
             }, 
             error => {
                 alert(error.response.data);
-                console.log(error);
             }
         );
     }
