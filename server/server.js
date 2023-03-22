@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 
-const maxAge = 1000 * 60 * 60 * 3; 
+const maxAge = 1000 * 60 * 60 * 24 * 14; 
 
 app.use(
     session({
