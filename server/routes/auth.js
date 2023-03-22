@@ -43,7 +43,7 @@ router.post('/login', async (req, res) => {
         return res.status(400).json('Wrong password!');
     }
 
-    const sessionUser = { id: user._id, username: user.username };
+    const sessionUser = { id: user._id.toString(), username: user.username };
     req.session.user = sessionUser;
 
     res.status(200).json({ 
