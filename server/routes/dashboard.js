@@ -5,9 +5,10 @@ const ReviewSchema = require('../models/Review');
 const BlogSchema = require('../models/Blog');
 const Review = mongoose.model('Review', ReviewSchema);
 const Blog = mongoose.model('Blog', BlogSchema);
+const run = require('../MongoDB/data');
 
 router.get('/reviews', async (req, res) => {
-  
+    r
 });
 
 router.get('/blogs', async (req, res) => {
