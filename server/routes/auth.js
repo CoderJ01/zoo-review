@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 
 router.post('/register', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
@@ -53,21 +52,6 @@ router.post('/login', async (req, res) => {
         accessToken: accessToken
     });
 });
-
-function authenticateToken(req, res, next) {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1];
-    if(token == null) {
-        return res.send.status(401);
-    }
-    jwt.verify(token, process.env.ACCESS_SECRET_TOKEN, (err, user) => {
-        if(err) {
-            return res.send.status(403);
-        }
-        res.user = user;
-        next();
-    })
-}
 
 router.delete('/logout', (req, res) => {
     if(req.session) {
