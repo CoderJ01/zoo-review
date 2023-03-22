@@ -8,8 +8,7 @@ async function run() {
         const db = client.db(process.env.DB);
         const coll = db.collection('mySessions');
         const cursor = coll.find();
-        let iteration = await cursor.forEach();
-        console.log(iteration);
+        await cursor.forEach(console.log);
     }
     finally {
         await client.close();
