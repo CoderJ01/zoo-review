@@ -27,6 +27,8 @@ router.post('/register', async (req, res) => {
         bio: req.body.bio,
         avatar: req.body.avatar,
     });
+    const sessionUser = { id: newUser._id, username: newUser.username };
+    req.session.user = sessionUser;
     newUser.save();
     res.send(newUser);
 });
@@ -42,7 +44,9 @@ router.post('/login', async (req, res) => {
         return res.status(400).json('Wrong password!');
     }
 
-    const accessToken = jwt.sign(user.toJSON(), process.env.ACCESS_SECRET_TOKEN);
+    const sessionUser = { id: user._id, username: user.username };
+    req.session.user = sessionUser;
+
     res.status(200).json({ 
         msg: 'You have logged in successfully',
         data: user,
