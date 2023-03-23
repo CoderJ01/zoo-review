@@ -11,7 +11,9 @@ async function retrieveSession(id) {
         await cursor.forEach(console.log);
     }
     finally {
-        await client.close();
+        setTimeout(() => {
+            client.close();
+        }, 1500)
     }
 }
 retrieveSession().catch(console.dir);
@@ -25,7 +27,9 @@ async function deleteSession(id) {
         console.log(cursor);
     }
     finally {
-        await client.close();
+        setTimeout(() => {
+            client.close();
+        }, 1500)
     } 
 }
 
