@@ -28,7 +28,7 @@ const LoginForm = ({ showLogin, handleCloseLogin }) => {
         axios.post(baseURL + '/auth/login', {
             username: username,
             password: password,
-        })
+        }, {withCredentials: true})
         .then(
             response => {
                 console.log('You have succefully logged in!');
