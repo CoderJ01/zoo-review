@@ -15,33 +15,34 @@ async function retrieveSession(id) {
     }
 }
 
-async function deleteSession(id) {
-    try {
-        await client.connect()
-        const db = client.db(process.env.DB);
-        const coll = db.collection('mySessions');
-        const cursor = coll.deleteOne({ 'session.user.id': id });
-        await cursor.forEach(console.log);
-    }
-    finally {
-        client.close();
-    } 
-}
+// async function deleteSession(id) {
+//     try {
+//         await client.connect()
+//         const db = client.db(process.env.DB);
+//         const coll = db.collection('mySessions');
+//         const cursor = coll.deleteOne({ 'session.user.id': id });
+//         await cursor.forEach(console.log);
+//     }
+//     finally {
+//         await client.close();
+//     } 
+// }
 
-async function findAllSessions() {
-    try {
-        await client.connect()
-        const db = client.db(process.env.DB);
-        const coll = db.collection('mySessions');
-        const cursor = coll.find();
-        await cursor.forEach(console.log);
-    }
-    finally {
-        await client.close();
-    }
-}
+// async function findAllSessions() {
+//     try {
+//         await client.connect()
+//         const db = client.db(process.env.DB);
+//         const coll = db.collection('mySessions');
+//         const cursor = coll.find();
+//         await cursor.forEach(console.log);
+//     }
+//     finally {
+//         await client.close();
+//     }
+// }
 
 retrieveSession().catch(console.dir);
-deleteSession().catch(console.dir);
+// deleteSession().catch(console.dir);
+// findAllSessions().catch(console.dir);
 
-module.exports = { retrieveSession, deleteSession, findAllSessions };
+module.exports = { retrieveSession };
