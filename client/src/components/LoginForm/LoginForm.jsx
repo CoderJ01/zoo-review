@@ -32,11 +32,10 @@ const LoginForm = ({ showLogin, handleCloseLogin }) => {
         }, {withCredentials: true})
         .then(
             response => {
-                console.log(response.data.session.cookie);
                 const cookies = new Cookies();
                 cookies.set(
                     'zelp-cookie', 
-                    'zoo', 
+                    response.data.data.username, 
                     { 
                         path: baseURL,
                         maxAge: response.data.session.cookie.originalMaxAge,
