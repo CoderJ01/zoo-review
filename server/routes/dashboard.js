@@ -9,7 +9,7 @@ const { retrieveSession } = require('../MongoDB/data');
 router.get('/reviews/:userId', async (req, res) => {
     try {
         let session = await retrieveSession(req.params.userId);
-        let authorizedUser = session.session.user.id;
+        let authorizedUser = session._id;
         if(authorizedUser) {
             let reviews = await Review.find({ user: authorizedUser });
             res.send(reviews);
