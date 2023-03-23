@@ -4,7 +4,6 @@ require('colors');
 const cors = require('cors');
 const session = require('express-session');
 const MongoDBstore = require('connect-mongodb-session')(session);
-const mongoose = require('mongoose');
 const routes = require('./routes');
 
 const app = express();
@@ -19,24 +18,32 @@ const mongoDBstore = new MongoDBstore({
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors());
 
 const maxAge = 1000 * 60 * 60 * 8; 
 
 app.use(
-    session({
-      name: 'express-cookie', 
-      secret: process.env.SECRET,
-      resave: true,
-      saveUninitialized: false,
-      store: mongoDBstore,
-      cookie: {
-        maxAge: maxAge,
-        sameSite: false,
-        secure: true
-      }
-    })
-  );
+  session({
+    name: 'express-cookie', 
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: mongoDBstore,
+    cookie: {
+      maxAge: maxAge,
+      sameSite: false,
+      httpOnly: true,
+      secure: false
+    }
+  })
+);
+
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    methods:['POST', 'GET', 'PUT', 'DELETE'],
+    credentials: true
+  })
+);
 
 app.use(routes);
 
