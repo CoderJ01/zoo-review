@@ -48,6 +48,11 @@ const Header = () => {
                             <div className='header-vanilla-button-text'>Log In</div>
                         </Button>
                     </div>
+                    <div className='header-vanilla-button'>
+                        <Button style={buttonStyle}>
+                            <div className='header-vanilla-button-text'>Log In</div>
+                        </Button>
+                    </div>
                     <RegistrationForm showSignup={showSignup} handleCloseSignup={handleCloseSignup}/>
                     <LoginForm showLogin={showLogin} handleCloseLogin={handleCloseLogin}/>
                 </div>
