@@ -31,7 +31,7 @@ const LoginForm = ({ showLogin, handleCloseLogin }) => {
         }, {withCredentials: true})
         .then(
             response => {
-                console.log('You have succefully logged in!');
+                console.log(response.data.session.cookie);
             }, 
             error => {
                 alert(error.response.data);
