@@ -43,23 +43,34 @@ const Header = () => {
                     <NavLink to='/dashboard'><text>Dashboard</text></NavLink>
                 </div>
                 <div className='header-buttons'>
-                    <div className='header-vanilla-button'>
-                        <Button style={buttonStyle} onClick={handleShowSignup}>
-                            <div className='header-vanilla-button-text'>Sign Up</div>
-                        </Button>
-                    </div>
-                    <div className='header-vanilla-button'>
-                        <Button style={buttonStyle} onClick={handleShowLogin}>
-                            <div className='header-vanilla-button-text'>Log In</div>
-                        </Button>
-                    </div>
-                    <div className='header-vanilla-button'>
-                        <Button style={buttonStyle} onClick={handleLogout}>
-                            <div className='header-vanilla-button-text'>Log Out</div>
-                        </Button>
-                    </div>
-                    <RegistrationForm showSignup={showSignup} handleCloseSignup={handleCloseSignup}/>
-                    <LoginForm showLogin={showLogin} handleCloseLogin={handleCloseLogin}/>
+                    {
+                        !username ? 
+                        (
+                            <>
+                                <div className='header-vanilla-button'>
+                                <Button style={buttonStyle} onClick={handleShowSignup}>
+                                    <div className='header-vanilla-button-text'>Sign Up</div>
+                                </Button>
+                                </div>
+                                <div className='header-vanilla-button'>
+                                    <Button style={buttonStyle} onClick={handleShowLogin}>
+                                        <div className='header-vanilla-button-text'>Log In</div>
+                                    </Button>
+                                </div>
+                                <RegistrationForm showSignup={showSignup} handleCloseSignup={handleCloseSignup}/>
+                                <LoginForm showLogin={showLogin} handleCloseLogin={handleCloseLogin}/>
+                            </>
+                        ) : 
+                        (
+                            <>
+                                <div className='header-vanilla-button'>
+                                    <Button style={buttonStyle} onClick={handleLogout}>
+                                        <div className='header-vanilla-button-text'>Log Out</div>
+                                    </Button>
+                                </div>
+                            </>
+                        )
+                    }
                 </div>
                 {/* <input></input> */}
             </nav>
