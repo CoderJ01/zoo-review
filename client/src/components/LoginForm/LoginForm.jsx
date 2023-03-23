@@ -42,6 +42,7 @@ const LoginForm = ({ showLogin, handleCloseLogin }) => {
                         sameSite: response.data.session.cookie.sameSite
                     }
                 );
+                window.location.reload(false);
             }, 
             error => {
                 alert(error.response.data);
