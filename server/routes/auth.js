@@ -29,7 +29,9 @@ router.post('/register', async (req, res) => {
     });
     const sessionUser = { id: newUser._id.toString(), username: newUser.username };
     req.session.user = sessionUser;
+    
     newUser.save();
+    
     res.status(200).json({
         msg: 'You have successfully been registered!',
         data: newUser,
