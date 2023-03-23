@@ -10,7 +10,6 @@ const retrieveSession = require('../MongoDB/data');
 router.get('/reviews/:userId', async (req, res) => {
     try {
         let user = retrieveSession(req.params.userId);
-        console.log(user);
         if(user) {
             let reviews = await Review.find({ user: req.params.userId });
             res.send(reviews);
@@ -27,7 +26,6 @@ router.get('/reviews/:userId', async (req, res) => {
 router.get('/blogs/:userId', async (req, res) => {
     try {
         let user = retrieveSession(req.params.userId);
-        console.log(user);
         if(user) {
             let blogs = await Blog.find({ user: req.params.userId });
             res.send(blogs);
