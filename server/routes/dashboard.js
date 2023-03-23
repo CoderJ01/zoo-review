@@ -12,8 +12,8 @@ router.get('/reviews/:userId', async (req, res) => {
         let user = retrieveSession(req.params.userId);
         console.log(user);
         if(user) {
-            let review = await Review.find({ user: req.params.userId });
-            res.send(review);
+            let reviews = await Review.find({ user: req.params.userId });
+            res.send(reviews);
         }
     }
     catch(err) {
@@ -24,8 +24,21 @@ router.get('/reviews/:userId', async (req, res) => {
     }
 });
 
-router.get('/blogs', async (req, res) => {
-    
+router.get('/blogs/:userId', async (req, res) => {
+    try {
+        let user = retrieveSession(req.params.userId);
+        console.log(user);
+        if(user) {
+            let blogs = await Blog.find({ user: req.params.userId });
+            res.send(blogs);
+        }
+    }
+    catch(err) {
+        res.send({
+            error: err,
+            msg: 'Invalid authentication!'
+        });
+    }
 });
 
 module.exports = router;
