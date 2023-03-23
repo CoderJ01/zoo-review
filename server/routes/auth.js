@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
+const { retrieveSession, deleteSession } = require('../MongoDB/data');
 
 router.post('/register', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
@@ -53,8 +54,20 @@ router.post('/login', async (req, res) => {
     });
 });
 
-router.delete('/logout', (req, res) => {
-    
+router.delete('/logout/:userId', async (req, res) => {
+    try {
+        let session = retrieveSession(req.params.userId);
+        if(session) {
+            deleteSession(req.params.userId);
+            res.send({ msg: 'Session has been removed'});
+        }
+    }
+    catch(err) {
+        res.send({
+            error: err,
+            msg: 'Session does not exist!'
+        });
+    }
 });
 
 module.exports = router;
