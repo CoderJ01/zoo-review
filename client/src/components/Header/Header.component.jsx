@@ -25,13 +25,12 @@ const Header = () => {
     const handleCloseSignup = () => setShowSignup(false);
     const handleCloseLogin = () => setShowLogin(false);
 
+    const username = Cookie.get('zelp-cookie');
+
     const handleLogout = (event) => {
         event.preventDefault();
         Cookie.remove('zelp-cookie');
     }
-
-    const username = Cookie.get('zelp-cookie');
-    console.log(username);
 
     return (
         <header>
