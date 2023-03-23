@@ -23,19 +23,24 @@ async function retrieveSession(id) {
 }
 
 async function deleteSession(id) {
-    try {
-        await client.connect()
-        const db = client.db(process.env.DB);
-        const coll = db.collection('mySessions');
-        const cursor = coll.deleteOne({ 'session.user.id': id  });
-    }
-    finally {
-        setTimeout(() => {
-            client.close();
-        }, 1500)
-    } 
-}
+    let object;
+    await client.connect()
+    const db = client.db(process.env.DB);
+    const coll = db.collection('mySessions');
+    const cursor = coll.find({ 'session.user.id': id });
+    await cursor.forEach(
+        testing => {
+            object = testing
+        }
+    );
 
-deleteSession().catch(console.dir);
+    console.log(object._id);
+    
+    await coll.deleteOne({ _id: object._id });
+   
+    setTimeout(() => {
+        client.close();
+    }, 1500)
+}
 
 module.exports = { retrieveSession, deleteSession };
