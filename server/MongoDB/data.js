@@ -7,7 +7,7 @@ async function run() {
         await client.connect()
         const db = client.db(process.env.DB);
         const coll = db.collection('mySessions');
-        const cursor = coll.find();
+        const cursor = coll.find({ 'session.user.id': ''});
         await cursor.forEach(console.log);
     }
     finally {
