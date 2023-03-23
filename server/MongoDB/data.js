@@ -10,8 +10,8 @@ async function retrieveSession(id) {
     const coll = db.collection('mySessions');
     const cursor = coll.find({ 'session.user.id': id });
     await cursor.forEach(
-        testing => {
-            object = testing
+        session => {
+            object = session
         }
     );
 
@@ -24,17 +24,16 @@ async function retrieveSession(id) {
 
 async function deleteSession(id) {
     let object;
+    
     await client.connect()
     const db = client.db(process.env.DB);
     const coll = db.collection('mySessions');
     const cursor = coll.find({ 'session.user.id': id });
     await cursor.forEach(
-        testing => {
-            object = testing
+        session => {
+            object = session
         }
     );
-
-    console.log(object._id);
     
     await coll.deleteOne({ _id: object._id });
    
