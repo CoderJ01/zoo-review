@@ -26,9 +26,9 @@ router.get('/reviews/:userId', async (req, res) => {
 router.get('/blogs/:userId', async (req, res) => {
     try {
         let session = await retrieveSession(req.params.userId);
-        let authorizedUser = session.session.user.id;
+        let authorizedUser = session._id;
         if(authorizedUser) {
-            let blogs = await Blog.find({ user: authorizedUser });
+            let blogs = await Blog.find({ user: session.session.user.id });
             res.send(blogs);
         }
     }
