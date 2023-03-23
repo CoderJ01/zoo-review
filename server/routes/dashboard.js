@@ -16,10 +16,7 @@ router.get('/reviews/:userId', async (req, res) => {
         }
     }
     catch(err) {
-        res.send({
-            error: err,
-            msg: 'Invalid authentication!'
-        });
+        res.send({msg: 'Invalid authentication!'});
     }
 });
 
@@ -33,10 +30,7 @@ router.get('/blogs/:userId', async (req, res) => {
         }
     }
     catch(err) {
-        res.send({
-            error: err,
-            msg: 'Invalid authentication!'
-        });
+        res.send({msg: 'Invalid authentication!'});
     }
 });
 
