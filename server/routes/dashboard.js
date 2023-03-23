@@ -5,7 +5,7 @@ const ReviewSchema = require('../models/Review');
 const BlogSchema = require('../models/Blog');
 const Review = mongoose.model('Review', ReviewSchema);
 const Blog = mongoose.model('Blog', BlogSchema);
-const retrieveSession = require('../MongoDB/data');
+const { retrieveSession } = require('../MongoDB/data');
 
 router.get('/reviews/:userId', async (req, res) => {
     try {

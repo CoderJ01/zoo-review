@@ -4,7 +4,7 @@ const ReviewSchema = require('../../models/Review');
 const Review = mongoose.model('Review', ReviewSchema);
 const User = require('../../models/User');
 const Zoo = require('../../models/Zoo');
-const retrieveSession = require('../MongoDB/data');
+const { retrieveSession } = require('../MongoDB/data');
 
 router.post('/post-review/:userId/:zooId', async (req, res) => {
     try {
