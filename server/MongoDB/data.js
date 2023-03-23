@@ -2,7 +2,7 @@ const { MongoClient } = require('mongodb');
 const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri);
 
-async function run() {
+async function retrieveSession() {
     try {
         await client.connect()
         const db = client.db(process.env.DB);
@@ -14,6 +14,6 @@ async function run() {
         await client.close();
     }
 }
-run().catch(console.dir);
+retrieveSession().catch(console.dir);
 
-module.exports = run;
+module.exports = retrieveSession;
