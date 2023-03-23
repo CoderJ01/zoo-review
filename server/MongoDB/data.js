@@ -14,6 +14,21 @@ async function retrieveSession(id) {
         await client.close();
     }
 }
-retrieveSession().catch(console.dir);
 
-module.exports = retrieveSession;
+async function deleteSession(id) {
+    try {
+        await client.connect()
+        const db = client.db(process.env.DB);
+        const coll = db.collection('mySessions');
+        const cursor = coll.deleteOne({ 'session.user.id': id });
+        await cursor.forEach(console.log);
+    }
+    finally {
+        client.close();
+    } 
+}
+
+retrieveSession().catch(console.dir);
+deleteSession().catch(console.dir);
+
+module.exports = { retrieveSession, deleteSession };
