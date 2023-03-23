@@ -50,7 +50,6 @@ router.post('/login', async (req, res) => {
     res.status(200).json({ 
         msg: 'You have logged in successfully',
         data: user,
-        accessToken: accessToken
     });
 });
 
