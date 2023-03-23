@@ -56,8 +56,9 @@ router.post('/login', async (req, res) => {
 router.delete('/logout/:userId', async (req, res) => {
     try {
         let session = await retrieveSession(req.params.userId);
-        let sessionExists = session.session.user.id;
-        if(sessionExists) {
+        let sessionId = session._id;
+        if(sessionId) {
+            let sessionExists = session.session.user.id;
             deleteSession(sessionExists);
             res.send({ msg: 'Session has been successfully removed '});
         }
