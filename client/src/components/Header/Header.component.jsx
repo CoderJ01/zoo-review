@@ -25,6 +25,11 @@ const Header = () => {
     const handleCloseSignup = () => setShowSignup(false);
     const handleCloseLogin = () => setShowLogin(false);
 
+    const handleLogout = (event) => {
+        event.preventDefault();
+        Cookie.remove('zelp-cookie');
+    }
+
     const username = Cookie.get('zelp-cookie');
     console.log(username);
 
@@ -49,8 +54,8 @@ const Header = () => {
                         </Button>
                     </div>
                     <div className='header-vanilla-button'>
-                        <Button style={buttonStyle}>
-                            <div className='header-vanilla-button-text'>Log In</div>
+                        <Button style={buttonStyle} onClick={handleLogout}>
+                            <div className='header-vanilla-button-text'>Log Out</div>
                         </Button>
                     </div>
                     <RegistrationForm showSignup={showSignup} handleCloseSignup={handleCloseSignup}/>
