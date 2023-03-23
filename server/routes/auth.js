@@ -70,8 +70,4 @@ router.delete('/logout/:userId', async (req, res) => {
     }
 });
 
-router.get('/sessions', async (req, res) => {
-
-});
-
 module.exports = router;
