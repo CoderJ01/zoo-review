@@ -11,7 +11,7 @@ router.get('/reviews/:userId', async (req, res) => {
         let session = await retrieveSession(req.params.userId);
         let authorizedUser = session._id;
         if(authorizedUser) {
-            let reviews = await Review.find({ user: authorizedUser });
+            let reviews = await Review.find({ user: session.session.user.id });
             res.send(reviews);
         }
     }
