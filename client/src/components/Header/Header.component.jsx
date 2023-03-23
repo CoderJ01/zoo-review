@@ -4,6 +4,7 @@ import './Header.style.css'
 import Button from 'react-bootstrap/Button';
 import RegistrationForm from '../RegistrationForm/RegistrationForm.component';
 import LoginForm from '../LoginForm/LoginForm';
+import Cookie from 'js-cookie';
 
 const buttonStyle = {
     backgroundColor: 'white', 
@@ -23,6 +24,9 @@ const Header = () => {
 
     const handleCloseSignup = () => setShowSignup(false);
     const handleCloseLogin = () => setShowLogin(false);
+
+    const username = Cookie.get('zelp-cookie');
+    console.log(username);
 
     return (
         <header>
