@@ -8,7 +8,7 @@ const Blog = mongoose.model('Blog', BlogSchema);
 const run = require('../MongoDB/data');
 
 router.get('/reviews', async (req, res) => {
-    r
+    
 });
 
 router.get('/blogs', async (req, res) => {

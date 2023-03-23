@@ -26,7 +26,7 @@ router.post('/register', async (req, res) => {
         bio: req.body.bio,
         avatar: req.body.avatar,
     });
-    const sessionUser = { id: newUser._id, username: newUser.username };
+    const sessionUser = { id: newUser._id.toString(), username: newUser.username };
     req.session.user = sessionUser;
     newUser.save();
     res.send(newUser);
