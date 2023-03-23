@@ -30,7 +30,11 @@ router.post('/register', async (req, res) => {
     const sessionUser = { id: newUser._id.toString(), username: newUser.username };
     req.session.user = sessionUser;
     newUser.save();
-    res.send(newUser);
+    res.status(200).json({
+        msg: 'You have successfully been registered!',
+        data: newUser,
+        session: req.session
+    });
 });
 
 router.post('/login', async (req, res) => {
@@ -48,7 +52,7 @@ router.post('/login', async (req, res) => {
     req.session.user = sessionUser;
 
     res.status(200).json({ 
-        msg: 'You have logged in successfully',
+        msg: 'You have logged in successfully!',
         data: user,
         session: req.session
     });
