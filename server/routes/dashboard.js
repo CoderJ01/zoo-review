@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const mongoose = require('mongoose');
-const requireAuth = require('../auth/auth');
 const ReviewSchema = require('../models/Review');
 const BlogSchema = require('../models/Blog');
 const Review = mongoose.model('Review', ReviewSchema);
