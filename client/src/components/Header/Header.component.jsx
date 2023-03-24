@@ -30,7 +30,7 @@ const Header = () => {
     const handleLogout = (event) => {
         event.preventDefault();
         Cookie.remove('zelp-cookie');
-        window.location.reload(true);
+        window.location.reload(false);
     }
 
     return (
