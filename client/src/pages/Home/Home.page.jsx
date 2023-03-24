@@ -5,11 +5,21 @@ import axios from 'axios';
 
 const baseURL = 'http://localhost:3001';
 
+let reviews = [];
+axios.get(baseURL + '/homepage/reviews')
+.then(
+    response =>  {
+        console.log(response.data)
+        for(let i = 0; i < response.data.length; i++) {
+            reviews[i] = response.data[i];
+        }
+    })
+.catch(err => console.log(err));
+
 let blogs = [];
 axios.get(baseURL + '/homepage/blogs')
 .then(
     response =>  {
-        console.log(response.data.length)
         for(let i = 0; i < response.data.length; i++) {
             blogs[i] = response.data[i];
         }
@@ -23,14 +33,20 @@ const Home = () => {
             <div className='home-top-image'/>
             <h1>Zoo Reviews</h1>
             <div className='home-posts'>
-                <Post
-                    username={'joesmith098'}
-                    avatar={''}
-                    image={''}
-                    title={'zoo'}
-                    post={'The quick brown fox jumped over the lazy dog'}
-                    rating={5}
-                />
+            {
+                reviews.map(review => {
+                    return (
+                        <Post
+                            username={'joesmith098'}
+                            avatar={review.avatar}
+                            image={review.image}
+                            title={review.title}
+                            rating={review.rating}
+                            post={review.content}
+                        />
+                    );
+                })
+            }
             </div>
             <h1>Blogs</h1>
             <div className='home-posts'>
