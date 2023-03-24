@@ -4,7 +4,7 @@ import './Header.style.css'
 import Button from 'react-bootstrap/Button';
 import RegistrationForm from '../RegistrationForm/RegistrationForm.component';
 import LoginForm from '../LoginForm/LoginForm';
-import Cookie from 'js-cookie';
+import cookie from 'js-cookie';
 
 const buttonStyle = {
     backgroundColor: 'white', 
@@ -14,6 +14,8 @@ const buttonStyle = {
     height: '100%', 
     width: '100%' 
 }
+
+let userCookie = cookie.get('zelp-cookie');
 
 const Header = () => {
     const [showSignup, setShowSignup] = useState(false);
@@ -25,11 +27,12 @@ const Header = () => {
     const handleCloseSignup = () => setShowSignup(false);
     const handleCloseLogin = () => setShowLogin(false);
 
-    const username = Cookie.get('zelp-cookie');
+    let username = [];
+    username.push(userCookie);
 
     const handleLogout = (event) => {
         event.preventDefault();
-        Cookie.remove('zelp-cookie');
+        cookie.remove('zelp-cookie');
         window.location.reload(false);
     }
 
@@ -38,7 +41,7 @@ const Header = () => {
             <nav>
                 <NavLink to='/'><h1>Zelp</h1></NavLink>
                 {
-                    !username ? 
+                    !username[0] ? 
                     (
                         <>
                             <div className='header-buttons'>
@@ -59,7 +62,7 @@ const Header = () => {
                     ) : 
                     (
                         <>
-                            <text className='header-greeting'>Hello, {username}</text>
+                            <text className='header-greeting'>Hello, {username[0]}</text>
                             <div className='header-links'>
                                 <NavLink to='/post-blog'><text>Post a Blog</text></NavLink>
                                 <NavLink to='/write-review'><text>Write a Review</text></NavLink>
