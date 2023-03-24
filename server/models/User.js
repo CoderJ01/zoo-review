@@ -33,6 +33,9 @@ const UserSchema = new mongoose.Schema(
         avatar: {
             type: String,
         },
+        randomString: {
+            type: String
+        },
         reviews: [ReviewSchema],
         blogs: [BlogSchema],
     }, 
