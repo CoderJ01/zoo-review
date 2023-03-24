@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
-import './RegistrationForm.style.css'
+import './RegistrationForm.style.css';
+import Cookies from 'universal-cookie';
 
 const modalHeaderStyle = {
     display: 'flex', 
@@ -59,7 +60,17 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
         })
         .then(
             response => {
-                console.log('You have successfully been registered!');
+                const cookies = new Cookies();
+                cookies.set(
+                    'zelp-cookie', 
+                    response.data.data.username, 
+                    { 
+                        path: baseURL,
+                        maxAge: response.data.session.cookie.originalMaxAge,
+                        sameSite: response.data.session.cookie.sameSite
+                    }
+                );
+                window.location.reload(false);
             }, 
             error => {
                 alert(error.response.data.msg);
