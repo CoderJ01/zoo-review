@@ -23,6 +23,14 @@ nav input {
         font-size: 3rem;
     }
 
+    .header-greeting {
+        color: white;
+        font-size: 17px;
+        margin-left: 8vw;
+        margin-top: 20px;
+        position: absolute;
+    }
+
     .header-links {
         display: flex;
         font-size: 25px;
@@ -36,11 +44,21 @@ nav input {
         color: black;
     }
 
-    .header-buttons {
+    .header-buttons,
+    .header-buttons-logout {
         display: flex;
         justify-content: space-around;
         margin-top: 18px;
-        width: 12vw;
+    }
+
+    .header-buttons {
+        margin-left: 72vw;
+        width: 17vw;
+    }
+
+    .header-buttons-logout {
+        margin-left: 1vw;
+        width: 10vw;
     }
 
     .header-vanilla-button {

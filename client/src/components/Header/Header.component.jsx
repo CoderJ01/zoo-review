@@ -37,20 +37,15 @@ const Header = () => {
         <header>
             <nav>
                 <NavLink to='/'><h1>Zelp</h1></NavLink>
-                <div className='header-links'>
-                    <NavLink to='/post-blog'><text>Post a Blog</text></NavLink>
-                    <NavLink to='/write-review'><text>Write a Review</text></NavLink>
-                    <NavLink to='/dashboard'><text>Dashboard</text></NavLink>
-                </div>
-                <div className='header-buttons'>
-                    {
-                        !username ? 
-                        (
-                            <>
+                {
+                    !username ? 
+                    (
+                        <>
+                            <div className='header-buttons'>
                                 <div className='header-vanilla-button'>
-                                <Button style={buttonStyle} onClick={handleShowSignup}>
-                                    <div className='header-vanilla-button-text'>Sign Up</div>
-                                </Button>
+                                    <Button style={buttonStyle} onClick={handleShowSignup}>
+                                        <div className='header-vanilla-button-text'>Sign Up</div>
+                                    </Button>
                                 </div>
                                 <div className='header-vanilla-button'>
                                     <Button style={buttonStyle} onClick={handleShowLogin}>
@@ -59,20 +54,27 @@ const Header = () => {
                                 </div>
                                 <RegistrationForm showSignup={showSignup} handleCloseSignup={handleCloseSignup}/>
                                 <LoginForm showLogin={showLogin} handleCloseLogin={handleCloseLogin}/>
-                            </>
-                        ) : 
-                        (
-                            <>
+                            </div>
+                        </>
+                    ) : 
+                    (
+                        <>
+                            <text className='header-greeting'>Hello, {username}</text>
+                            <div className='header-links'>
+                                <NavLink to='/post-blog'><text>Post a Blog</text></NavLink>
+                                <NavLink to='/write-review'><text>Write a Review</text></NavLink>
+                                <NavLink to='/dashboard'><text>Dashboard</text></NavLink>
+                            </div>
+                            <div className='header-buttons-logout'>
                                 <div className='header-vanilla-button'>
                                     <Button style={buttonStyle} onClick={handleLogout}>
                                         <div className='header-vanilla-button-text'>Log Out</div>
                                     </Button>
                                 </div>
-                            </>
-                        )
-                    }
-                </div>
-                {/* <input></input> */}
+                            </div>
+                        </>
+                    )
+                }
             </nav>
             <Outlet/>
         </header>
