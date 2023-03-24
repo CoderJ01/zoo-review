@@ -52,7 +52,7 @@ router.post('/login', async (req, res) => {
         return res.status(400).json('Wrong password!');
     }
 
-    user.randomString = 'toady';
+    user.randomString = makeCookieValue(80);
     user.save();
 
     const sessionUser = { id: user._id.toString(), username: user.username };
