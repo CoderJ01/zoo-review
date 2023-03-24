@@ -2,7 +2,7 @@ import React from 'react';
 import './Post.style.css'
 import { displayRating } from './Post.util';
 
-const Post = ({ id, username, avatar, image, title, post, rating, blog = false }) => {
+const Post = ({ id, user, avatar, image, title, post, rating, blog = false }) => {
     id=1;
     let ratingDisplay = displayRating(rating);
     return (
@@ -12,7 +12,7 @@ const Post = ({ id, username, avatar, image, title, post, rating, blog = false }
                     <img alt='' src={avatar}/>
                 </div>
                 <div className='post-heading-info'>
-                    <div className='post-username'>{username}</div>
+                    <div className='post-username'>{user}</div>
                     {
                         !blog ? 
                         (
