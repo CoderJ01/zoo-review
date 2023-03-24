@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import '../RegistrationForm/RegistrationForm.style.css';
 import axios from 'axios';
+import uniCookie from 'universal-cookie';
 import jsCookie from 'js-cookie';
 
 const modalHeaderStyle = {
@@ -30,19 +31,29 @@ const LoginForm = ({ showLogin, handleCloseLogin }) => {
     const handleSubmit = (event) => {
         event.preventDefault(); 
         axios.post(baseURL + '/auth/login', 
-            {
-                username: username,
-                password: password,
-            }, 
-            {
-                withCredentials: true,
-                credentials: 'include'
-            }
+        {
+            username: username,
+            password: password,
+        }, 
+        {
+            withCredentials: true,
+            credentials: 'include'
+        }
         )
         .then(
             response => {
-                // window.location.reload(false)
-                console.log(response);
+                const cookies = new uniCookie();
+                cookies.set(
+                    'zelp-cookie', 
+                    response.data.data.randomString, 
+                    { 
+                        path: baseURL,
+                        maxAge: response.data.session.cookie.originalMaxAge,
+                        sameSite: response.data.session.cookie.sameSite
+                    }
+                );
+                console.log(response.data.data.randomString);
+                window.location.reload(false);
             }, 
             error => {
                 alert(error.response.data);
