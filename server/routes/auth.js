@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const { retrieveSession, deleteSession, getAllSessions } = require('../MongoDB/data');
+const makeCookieValue = require('../cookie/randomString');
 
 router.post('/register', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
@@ -26,6 +27,7 @@ router.post('/register', async (req, res) => {
         password: hashedPass,
         bio: req.body.bio,
         avatar: req.body.avatar,
+        randomString: makeCookieValue(80)
     });
     const sessionUser = { id: newUser._id.toString(), username: newUser.username };
     req.session.user = sessionUser;
@@ -49,6 +51,8 @@ router.post('/login', async (req, res) => {
     if(!validate) {
         return res.status(400).json('Wrong password!');
     }
+
+    user.randomString = makeCookieValue(80);
 
     const sessionUser = { id: user._id.toString(), username: user.username };
     req.session.user = sessionUser;
