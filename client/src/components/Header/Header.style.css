@@ -7,6 +7,10 @@ nav input {
     border-radius: 15px;
 }
 
+.header-greeting {
+    color: white;
+}
+
 .header-buttons button:active {
     opacity: 0.5;
 }
@@ -24,7 +28,6 @@ nav input {
     }
 
     .header-greeting {
-        color: white;
         font-size: 17px;
         margin-left: 8vw;
         margin-top: 20px;
