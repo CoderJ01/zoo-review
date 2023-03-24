@@ -42,4 +42,24 @@ async function deleteSession(id) {
     }, 1500)
 }
 
-module.exports = { retrieveSession, deleteSession };
+async function getAllSessions() {
+    let object;
+
+    await client.connect()
+    const db = client.db(process.env.DB);
+    const coll = db.collection('mySessions');
+    const cursor = coll.find();
+    await cursor.forEach(
+        session => {
+            object = session
+        }
+    );
+
+    setTimeout(() => {
+        client.close();
+    }, 1500)
+
+    return object;
+}
+
+module.exports = { retrieveSession, deleteSession, getAllSessions };
