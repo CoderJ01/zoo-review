@@ -11,13 +11,10 @@ axios.get(baseURL + '/homepage/blogs')
     response =>  {
         console.log(response.data.length)
         for(let i = 0; i < response.data.length; i++) {
-            // blogs.push(response.data[i]);
             blogs[i] = response.data[i];
         }
     })
 .catch(err => console.log(err));
-
-console.log(blogs);
 
 const Home = () => {
 
@@ -38,17 +35,17 @@ const Home = () => {
             <h1>Blogs</h1>
             <div className='home-posts'>
             {
-                Array.apply(0, Array(3)).map(function(x, i) {
+                blogs.map(blog => {
                     return (
                         <Post
                             username={'joesmith098'}
-                            avatar={''}
-                            image={''}
-                            title={'zoo'}
-                            post={'The quick brown fox jumped over the lazy dog'}
+                            avatar={blog.avatar}
+                            image={blog.image}
+                            title={blog.title}
+                            post={blog.post}
                             blog={true}
                         />
-                    )
+                    );
                 })
             }
             </div>
