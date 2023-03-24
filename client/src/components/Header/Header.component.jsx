@@ -34,8 +34,6 @@ const Header = () => {
     axios.get(baseURL + '/api/users')
     .then(
         response => {
-            console.log(response.data[0].randomString);
-            console.log(userCookie);
             for(let i = 0; i < response.data.length; i++) {
                 if(response.data[i].randomString === userCookie) {
                     username = response.data[i].username;
