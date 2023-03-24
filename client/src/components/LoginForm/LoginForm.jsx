@@ -3,7 +3,6 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import '../RegistrationForm/RegistrationForm.style.css';
 import axios from 'axios';
-import uniCookie from 'universal-cookie';
 import jsCookie from 'js-cookie';
 
 const modalHeaderStyle = {
@@ -42,16 +41,6 @@ const LoginForm = ({ showLogin, handleCloseLogin }) => {
         )
         .then(
             response => {
-                const cookies = new uniCookie();
-                cookies.set(
-                    'zelp-cookie', 
-                    '', 
-                    { 
-                        path: baseURL,
-                        maxAge: response.data.session.cookie.originalMaxAge,
-                        sameSite: response.data.session.cookie.sameSite
-                    }
-                );
                 // window.location.reload(false)
                 console.log(response);
             }, 
