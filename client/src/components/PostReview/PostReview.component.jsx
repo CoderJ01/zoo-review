@@ -12,7 +12,7 @@ const PostReview = () => {
     const [selected, setSelected] = useState(ratings[0]);
     const [zoos, setZoos] = useState([]);
     
-    useState(() => { 
+    useEffect(() => { 
         const fetchZoos = async () => {
             try {
                 const response = await axios.get(baseURL + '/api/zoos');
