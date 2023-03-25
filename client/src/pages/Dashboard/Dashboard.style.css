@@ -37,6 +37,10 @@
     color: rgb(34, 191, 41);
 }
 
+.dashboard-b-buttons button:active {
+    opacity: 0.5;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .dashboard-top-bar {
@@ -71,10 +75,6 @@
         margin-top: -9vh;
         position: absolute;
         width: 25%;
-    }
-
-    .dashboard-b-buttons button:active {
-        opacity: 0.5;
     }
 }
 
