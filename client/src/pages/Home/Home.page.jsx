@@ -1,32 +1,50 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Post from '../../components/Post/Post.component';
 import './Home.style.css'
 import axios from 'axios';
 
 const baseURL = 'http://localhost:3001';
 
-let reviews = [];
-axios.get(baseURL + '/homepage/reviews')
-.then(
-    response =>  {
-        console.log(response.data)
-        for(let i = 0; i < response.data.length; i++) {
-            reviews[i] = response.data[i];
-        }
-    })
-.catch(err => console.log(err));
-
-let blogs = [];
-axios.get(baseURL + '/homepage/blogs')
-.then(
-    response =>  {
-        for(let i = 0; i < response.data.length; i++) {
-            blogs[i] = response.data[i];
-        }
-    })
-.catch(err => console.log(err));
+// let user;
+// const getUserById = async (id) => {
+//     await axios.get(baseURL + `/api/users/${id}`)
+//     .then(
+//         response =>  {
+//             user = response.data;
+//         })
+//     .catch(err => console.log(err));
+//     console.log(user.username);
+//     return user.username;
+// }
 
 const Home = () => {
+    const [reviews, setReviews] = useState([]);
+    const [blogs, setBlogs] = useState([]);
+
+    useEffect(() => {
+        const fetchReviews = async () => {
+            try {
+                const response = await axios.get(baseURL + '/homepage/reviews');
+                setReviews(response.data)
+            }
+            catch(error) {
+                console.log(error)
+            }
+        }
+
+        const fetchBlogs = async () => {
+            try {
+                const response = await axios.get(baseURL + '/homepage/blogs');
+                setBlogs(response.data)
+            }
+            catch(error) {
+                console.log(error)
+            }
+        }
+
+        fetchReviews();
+        fetchBlogs();
+    }, []);
 
     return (
         <div className='home'>
@@ -37,8 +55,8 @@ const Home = () => {
                 reviews.map(review => {
                     return (
                         <Post
-                            id={review._id}
-                            user={review.user}
+                            // id={review._id}
+                            user={'filll'}
                             avatar={review.avatar}
                             image={review.image}
                             title={review.title}
@@ -55,8 +73,8 @@ const Home = () => {
                 blogs.map(blog => {
                     return (
                         <Post
-                            id={blog._id}
-                            user={blog.user}
+                            // id={blog._id}
+                            user={'fill'}
                             avatar={blog.avatar}
                             image={blog.image}
                             title={blog.title}
