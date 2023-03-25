@@ -10,10 +10,7 @@ const DashboardDisplay = ({ posts, display }) => {
     else {
         show = 'none'
     }
-
-    console.log(display)
-
-    console.log(posts.length);
+    
     return (
         <>
         {
