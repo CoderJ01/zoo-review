@@ -37,14 +37,6 @@
     color: rgb(34, 191, 41);
 }
 
-.d-b-p-d-f-single-post img {
-    height: 80%;
-} 
-
-.d-b-p-d-f-single-post h3 {
-    text-align: center;
-} 
-
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .dashboard-top-bar {
@@ -93,13 +85,6 @@
     .dashboard-b-buttons button:active {
         opacity: 0.5;
     }
-
-    .d-b-p-d-f-single-post {
-        height: 40%;
-        margin-top: 6vh;
-        width: 30%;
-        border: 1px solid blue;
-    }
 }
 
 /* iPad Pro */
@@ -134,11 +119,6 @@
     .dashboard-b-buttons {
         margin-top: 3vh;
         padding-bottom: 0vh;
-    }
-
-    .d-b-p-d-f-single-post {
-        height: 40vh;
-        margin-top: 5vh;
     }
 }
 
