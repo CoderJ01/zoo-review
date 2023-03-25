@@ -3,10 +3,6 @@ import './Dashboard.style.css'
 import AccessDenied from '../../components/AccessDenied/AcessDenied';
 
 const Dashboard = ({ user }) => {
-    let id;
-
-    console.log(user);
-
     return (
         <div className='dashboard'>
         {
