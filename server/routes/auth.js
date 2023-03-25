@@ -10,6 +10,7 @@ router.post('/register', async (req, res) => {
     const hashedPass = await bcrypt.hash(req.body.password, salt);
     const username = await User.findOne({ username: req.body.username });
     const email = await User.findOne({ email: req.body.email });
+    const hashedCookie = bcrypt.hash(makeCookieValue(80), salt);
    
     if(username) {
         return res.status(400).json({ msg: 'Username must be unique!' });
@@ -27,7 +28,7 @@ router.post('/register', async (req, res) => {
         password: hashedPass,
         bio: req.body.bio,
         avatar: req.body.avatar,
-        randomString: makeCookieValue(80)
+        randomString: hashedCookie
     });
     const sessionUser = { id: newUser._id.toString(), username: newUser.username };
     req.session.user = sessionUser;
@@ -52,7 +53,7 @@ router.post('/login', async (req, res) => {
         return res.status(400).json('Wrong password!');
     }
 
-    user.randomString = makeCookieValue(80);
+    user.randomString = bcrypt.hash(makeCookieValue(80), salt);
     user.save();
 
     const sessionUser = { id: user._id.toString(), username: user.username };
