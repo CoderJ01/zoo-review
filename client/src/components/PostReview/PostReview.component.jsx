@@ -1,12 +1,31 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ratings } from './PostReview.utils';
 import './PostReview.style.css'
+import axios from 'axios';
+
+const baseURL = 'http://localhost:3001';
 
 const PostReview = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [selected, setSelected] = useState(ratings[0]);
+    const [zoos, setZoos] = useState([]);
+    
+    useState(() => { 
+        const fetchZoos = async () => {
+            try {
+                const response = await axios.get(baseURL + '/api/zoos');
+                setZoos(response.data);
+            }   
+            catch(error) {
+                console.log(error)
+            }
+        }
+        fetchZoos();
+    }, []);
+
+    console.log(zoos);
 
     const handleSubmit = (event) => {
         event.preventDefault();
