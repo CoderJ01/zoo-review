@@ -5,21 +5,10 @@ import axios from 'axios';
 
 const baseURL = 'http://localhost:3001';
 
-// let user;
-// const getUserById = async (id) => {
-//     await axios.get(baseURL + `/api/users/${id}`)
-//     .then(
-//         response =>  {
-//             user = response.data;
-//         })
-//     .catch(err => console.log(err));
-//     console.log(user.username);
-//     return user.username;
-// }
-
 const Home = () => {
     const [reviews, setReviews] = useState([]);
     const [blogs, setBlogs] = useState([]);
+    const [user, setUser] = useState([])
 
     useEffect(() => {
         const fetchReviews = async () => {
@@ -42,8 +31,19 @@ const Home = () => {
             }
         }
 
+        const fetchUserById = async (id) => {
+            try {
+                const response = await axios.get(baseURL + `/api/users/${id}`);
+                setUser(response.data);
+            }
+            catch(error) {
+                console.log(error)
+            }
+        }
+
         fetchReviews();
         fetchBlogs();
+        fetchUserById('');
     }, []);
 
     return (
