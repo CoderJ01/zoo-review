@@ -20,7 +20,7 @@ const PostBlog = ({ user }) => {
         )
         .then(
             response => {
-                console.log(response);
+                alert(response.data.msg);
             },
         )
         .catch(
