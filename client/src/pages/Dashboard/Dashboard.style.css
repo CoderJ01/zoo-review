@@ -64,15 +64,6 @@
         width: 20%;
     }
 
-    .dashboard-b-posts-display {
-        border: 1px solid green;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        margin-top: -6vh;
-        width: 78%;
-    }
-
     .dashboard-b-buttons {
         display: flex;
         justify-content: space-around;
