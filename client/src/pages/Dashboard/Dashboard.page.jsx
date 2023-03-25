@@ -1,6 +1,7 @@
 import React from 'react';
 import './Dashboard.style.css'
 import AccessDenied from '../../components/AccessDenied/AcessDenied.component';
+import DashboardDisplay from '../../components/DashboardDisplay/DashboardDisplay.component';
 
 const Dashboard = ({ user }) => {
     return (
@@ -30,12 +31,7 @@ const Dashboard = ({ user }) => {
                             <button>See your reviews</button>
                             <button>See your blog posts</button>
                         </div>
-                        <div className='dashboard-b-posts-display'>
-                            <div className='d-b-p-d-f-single-post'>
-                                <img alt='' src=''/>
-                                {/* <h3><a href={`/your-post/${id}`}>{currentUser.reviews[0].title}</a></h3> */}
-                            </div>
-                        </div>
+                        <DashboardDisplay/>
                     </div>
                 </div>
             )
