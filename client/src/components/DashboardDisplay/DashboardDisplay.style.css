@@ -8,6 +8,16 @@
 
 /* Desktop */
 @media screen and (min-width: 1280px) {
+
+    .dashboard-zero-posts {
+        width: 100%;
+    }
+
+    .dashboard-zero-posts text {
+        font-size: 40px;
+        margin-left: 28%;
+        text-align: center;
+    }
     
     .dashboard-posts {
         display: flex;
@@ -31,6 +41,14 @@
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
+    .dashboard-zero-posts {
+        margin-top: 2vh;
+        text-align: center;
+    }
+
+    .dashboard-zero-posts text {
+        font-size: 2rem;
+    }
 
     .d-b-p-d-f-single-post {
         height: 40vh;
