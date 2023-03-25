@@ -1,8 +1,18 @@
 import React from 'react';
 import './Dashboard.style.css'
 
-const Dashboard = ({ id }) => {
-    id = 1;
+const Dashboard = ({ user }) => {
+    let id;
+
+    let currentUser = user || ' '
+
+    for(let i = 0; i < 100; i++) {
+        currentUser.reviews[i].title = currentUser?.reviews[i]?.title || ' '
+        currentUser.blogs[i].title = currentUser?.blogs[i]?.title || ' '
+    }
+
+    console.log(currentUser[50]);
+
     return (
         <div className='dashboard'>
             <div className='dashboard-top-bar'>
@@ -16,7 +26,7 @@ const Dashboard = ({ id }) => {
                     </div>
                     <h2 style={{ marginTop: '7%'}}>Your Bio</h2>
                     <div className='dashboard-b-u-i-bio'>
-                        <text>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</text>
+                        <text>{currentUser.bio}</text>
                     </div>
                 </div>
                 <div className='dashboard-b-buttons'>
@@ -25,9 +35,12 @@ const Dashboard = ({ id }) => {
                 </div>
                 <div className='dashboard-b-posts-display'>
                     <div className='dashboard-b-p-d-flex'>
+                        {
+                            currentUser
+                        }
                         <div className='d-b-p-d-f-single-post'>
                             <img alt='' src=''/>
-                            <h3><a href={`/your-post/${id}`}>Title</a></h3>
+                            {/* <h3><a href={`/your-post/${id}`}>{currentUser.reviews[0].title}</a></h3> */}
                         </div>
                     </div>
                 </div>
