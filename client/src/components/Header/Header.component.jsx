@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import RegistrationForm from '../RegistrationForm/RegistrationForm.component';
 import LoginForm from '../LoginForm/LoginForm';
 import cookie from 'js-cookie';
-import axios from 'axios';
 
 const buttonStyle = {
     backgroundColor: 'white', 
@@ -16,12 +15,7 @@ const buttonStyle = {
     width: '100%' 
 }
 
-const baseURL = 'http://localhost:3001';
-
-let userCookie = cookie.get('zelp-cookie');
-let username;
-
-const Header = () => {
+const Header = ({ user }) => {
     const [showSignup, setShowSignup] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
 
@@ -31,17 +25,6 @@ const Header = () => {
     const handleCloseSignup = () => setShowSignup(false);
     const handleCloseLogin = () => setShowLogin(false);
 
-    axios.get(baseURL + '/api/users')
-    .then(
-        response => {
-            for(let i = 0; i < response.data.length; i++) {
-                if(response.data[i].randomString === userCookie) {
-                    username = response.data[i].username;
-                }
-            }
-        }
-    );
-       
     const handleLogout = (event) => {
         event.preventDefault();
         cookie.remove('zelp-cookie');
@@ -53,7 +36,7 @@ const Header = () => {
             <nav>
                 <NavLink to='/'><h1>Zelp</h1></NavLink>
                 {
-                    !username ? 
+                    !user ? 
                     (
                         <>
                             <div className='header-buttons'>
@@ -74,7 +57,7 @@ const Header = () => {
                     ) : 
                     (
                         <>
-                            <text className='header-greeting'>Hello, {username}</text>
+                            <text className='header-greeting'>Hello, {user.username}</text>
                             <div className='header-links'>
                                 <NavLink to='/post-blog'><text>Post a Blog</text></NavLink>
                                 <NavLink to='/write-review'><text>Write a Review</text></NavLink>
