@@ -1,12 +1,23 @@
 import React from 'react';
 import './Review.style.css'
 import PostReview from '../../components/PostReview/PostReview.component';
+import AccessDenied from '../../components/AccessDenied/AccessDenied.component';
 
-const Review = () => {
+const Review = ({ user }) => {
     return (
-        <div className='review'>
-            <PostReview/>
-        </div>
+        <>
+        {
+            user.length === 0 ? 
+            (
+                <AccessDenied/>
+            ) : 
+            (
+                <div className='review'>
+                    <PostReview user={user}/>
+                </div>
+            )
+        }
+        </>
     );
 }
 
