@@ -41,7 +41,7 @@ function App() {
             <Route index element={<Home/>}/>
             <Route path='/write-review' element={<Review/>}/>
             <Route path='/post-blog' element={<Blog/>}/>
-            <Route path='/dashboard' element={<Dashboard/>}/>
+            <Route path='/dashboard' element={<Dashboard user={user}/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
