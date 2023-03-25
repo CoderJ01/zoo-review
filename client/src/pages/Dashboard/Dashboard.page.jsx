@@ -31,7 +31,7 @@ const Dashboard = ({ user }) => {
                             <button>See your reviews</button>
                             <button>See your blog posts</button>
                         </div>
-                        <DashboardDisplay/>
+                        <DashboardDisplay posts={user.reviews} display={''}/>
                     </div>
                 </div>
             )
