@@ -2,6 +2,17 @@ import React from 'react';
 import './DashboardDisplay.style.css'
 
 const DashboardDisplay = ({ posts, display }) => {
+    let show;
+
+    if(display === true) {
+        show = '';
+    }
+    else {
+        show = 'none'
+    }
+
+    console.log(display)
+
     console.log(posts.length);
     return (
         <>
@@ -13,7 +24,7 @@ const DashboardDisplay = ({ posts, display }) => {
                 </div>
             ) : 
             (
-                <div className='dashboard-posts'>
+                <div className='dashboard-posts' style={{ display: show }}>
                 {
                     posts.map(post => {
                         return (
