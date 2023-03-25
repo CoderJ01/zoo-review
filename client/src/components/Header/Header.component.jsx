@@ -30,9 +30,7 @@ const Header = ({ user }) => {
         cookie.remove('zelp-cookie');
         window.location.reload(false);
     }
-
-    console.log(user);
-
+    
     return (
         <header>
             <nav>
