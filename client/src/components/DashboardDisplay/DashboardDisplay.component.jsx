@@ -1,14 +1,33 @@
 import React from 'react';
 import './DashboardDisplay.style.css'
 
-const DashboardDisplay = () => {
+const DashboardDisplay = ({ posts, display }) => {
+    console.log(posts.length);
     return (
-        <div className='dashboard-posts'>
-            <div className='dashboard-post'>
-                <img alt='' src=''/>
-                {/* <h3><a href={`/your-post/${id}`}>{currentUser.reviews[0].title}</a></h3> */}
-            </div>
-        </div>
+        <>
+        {
+            posts.length === 0 ? 
+            (
+                <div className='dashboard-zero-posts'>
+                    <text>You currently have no posts</text>
+                </div>
+            ) : 
+            (
+                <div className='dashboard-posts'>
+                {
+                    posts.map(post => {
+                        return (
+                            <div className='dashboard-post'>
+                                <img alt='' src=''/>
+                                <h3><a href={`/your-post/${post.id}`}>{post.title}</a></h3>
+                            </div>
+                        );
+                    })
+                }
+                </div>
+            )
+        }
+        </>
     );
 }
 
