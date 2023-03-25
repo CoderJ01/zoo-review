@@ -8,7 +8,7 @@ const baseURL = 'http://localhost:3001';
 const Home = () => {
     const [reviews, setReviews] = useState([]);
     const [blogs, setBlogs] = useState([]);
-    const [user, setUser] = useState([])
+    const [user, setUser] = useState('')
 
     useEffect(() => {
         const fetchReviews = async () => {
@@ -31,20 +31,20 @@ const Home = () => {
             }
         }
 
-        const fetchUserById = async (id) => {
-            try {
-                const response = await axios.get(baseURL + `/api/users/${id}`);
-                setUser(response.data);
-            }
-            catch(error) {
-                console.log(error)
-            }
-        }
-
         fetchReviews();
         fetchBlogs();
-        fetchUserById('');
+
     }, []);
+
+    const fetchUserById = async (id) => {
+        try {
+            const response = await axios.get(baseURL + `/api/users/${id}`);
+            setUser(response.data.username);
+        }
+        catch(error) {
+            console.log(error)
+        }
+    }
 
     return (
         <div className='home'>
@@ -53,10 +53,11 @@ const Home = () => {
             <div className='home-posts'>
             {
                 reviews.map(review => {
+                    fetchUserById(review.user);
                     return (
                         <Post
                             id={review._id}
-                            user={'filll'}
+                            user={user}
                             avatar={review.avatar}
                             image={review.image}
                             title={review.title}
@@ -74,7 +75,7 @@ const Home = () => {
                     return (
                         <Post
                             id={blog._id}
-                            user={'fill'}
+                            user={user}
                             avatar={blog.avatar}
                             image={blog.image}
                             title={blog.title}
