@@ -1,4 +1,5 @@
 import React from 'react';
+import './DashboardDisplay.style.css'
 
 const DashboardDisplay = () => {
     return (
