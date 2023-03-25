@@ -4,14 +4,14 @@ import AccessDenied from '../../components/AccessDenied/AcessDenied';
 
 const Dashboard = ({ user }) => {
     return (
-        <div className='dashboard'>
+        <>
         {
             user.length === 0 ? 
             (
                 <AccessDenied/>
             ) : 
             (
-                <>
+                <div className='dashboard'>
                 <div className='dashboard-top-bar'>
                     <h1>Your Dashboard</h1>
                 </div>
@@ -39,10 +39,10 @@ const Dashboard = ({ user }) => {
                         </div>
                     </div>
                 </div>
-                </>
+                </div>
             )
         }
-        </div>
+        </>
     );
 }
 
