@@ -11,6 +11,7 @@ const PostReview = () => {
     const [content, setContent] = useState('');
     const [selected, setSelected] = useState(ratings[0]);
     const [zoos, setZoos] = useState([]);
+    const [zooName, setZooName] = useState('');
     
     useEffect(() => { 
         const fetchZoos = async () => {
@@ -34,6 +35,10 @@ const PostReview = () => {
     return (
         <form className='post-form' onSubmit={handleSubmit}>
             <h1>Write a Review</h1>
+            <div>
+                <label htmlFor='zoo-name'>Zoo:</label><br/>
+                <input type='text' name='zoo-name' value={zooName} onChange={(e) => setZooName(e.target.value)}/>
+            </div>
             <div>
                 <label htmlFor='title'>Title:</label><br/>
                 <input type='text' name='title' value={title} onChange={(e) => setTitle(e.target.value)}/>
