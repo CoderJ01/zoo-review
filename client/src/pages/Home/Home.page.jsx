@@ -55,7 +55,7 @@ const Home = () => {
                 reviews.map(review => {
                     return (
                         <Post
-                            // id={review._id}
+                            id={review._id}
                             user={'filll'}
                             avatar={review.avatar}
                             image={review.image}
@@ -73,7 +73,7 @@ const Home = () => {
                 blogs.map(blog => {
                     return (
                         <Post
-                            // id={blog._id}
+                            id={blog._id}
                             user={'fill'}
                             avatar={blog.avatar}
                             image={blog.image}

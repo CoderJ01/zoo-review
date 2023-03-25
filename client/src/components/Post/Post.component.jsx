@@ -3,7 +3,6 @@ import './Post.style.css'
 import { displayRating } from './Post.util';
 
 const Post = ({ id, user, avatar, image, title, post, rating, blog = false }) => {
-    id = 1;
     let ratingDisplay = displayRating(rating);
     return (
         <div className='post'>
