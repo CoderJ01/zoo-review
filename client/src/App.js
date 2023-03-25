@@ -39,7 +39,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Header user={user}/>}>
             <Route index element={<Home/>}/>
-            <Route path='/write-review' element={<Review/>}/>
+            <Route path='/write-review' element={<Review user={user}/>}/>
             <Route path='/post-blog' element={<Blog user={user}/>}/>
             <Route path='/dashboard' element={<Dashboard user={user}/>}/>
           </Route>
