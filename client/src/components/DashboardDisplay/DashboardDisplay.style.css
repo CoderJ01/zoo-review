@@ -50,8 +50,12 @@
         font-size: 2rem;
     }
 
-    .d-b-p-d-f-single-post {
+    .dashboard-post {
         height: 40vh;
         margin-top: 5vh;
+    }
+
+    .dashboard-post h3 {
+        margin-top: -8%;
     }
 }
