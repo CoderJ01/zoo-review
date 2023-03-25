@@ -53,7 +53,8 @@ router.post('/login', async (req, res) => {
         return res.status(400).json('Wrong password!');
     }
 
-    user.randomString = bcrypt.hash(makeCookieValue(80), salt);
+    const salt = await bcrypt.genSalt(10);
+    user.randomString = await bcrypt.hash(makeCookieValue(80), salt);
     user.save();
 
     const sessionUser = { id: user._id.toString(), username: user.username };
