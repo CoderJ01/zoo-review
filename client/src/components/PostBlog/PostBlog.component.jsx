@@ -3,13 +3,31 @@ import { useState } from 'react';
 import axios from 'axios';
 import '../PostReview/PostReview.style.css'
 
-const PostBlog = () => {
+const baseURL = 'http://localhost:3001';
+
+const PostBlog = ({ user }) => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     // const [file, setFile] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        axios.post(baseURL + `/post-blog/${user._id}`, 
+            {
+                title: title,
+                content: content
+            }
+        )
+        .then(
+            response => {
+                console.log(response);
+            },
+        )
+        .catch(
+            error => {
+                console.log(error);
+            }
+        );
     }
 
     return (
