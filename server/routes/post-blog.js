@@ -16,7 +16,10 @@ router.post('/:userId', async (req, res) => {
                 user: req.params.userId
             });
             blog.save();
-            res.send(blog);
+            res.send({
+                data: blog,
+                msg: 'Blog has been successfully created!'
+            });
         
             await User.findByIdAndUpdate(
                 { _id: req.params.userId },
