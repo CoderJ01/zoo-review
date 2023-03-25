@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Dashboard.style.css'
 import AccessDenied from '../../components/AccessDenied/AccessDenied.component';
 import DashboardDisplay from '../../components/DashboardDisplay/DashboardDisplay.component';
 
 const Dashboard = ({ user }) => {
+    const [displayReviews, setDisplayReviews] = useState(true);
+    const [displayBlogs, setDisplayBlogs] = useState(false);
+
+    const seeReviews = () => {
+        setDisplayReviews(true);
+        setDisplayBlogs(false);
+    }
+
+    const seeBlogs = () => {
+        setDisplayReviews(false);
+        setDisplayBlogs(true);
+    }
+
     return (
         <>
         {
@@ -28,10 +41,15 @@ const Dashboard = ({ user }) => {
                             </div>
                         </div>
                         <div className='dashboard-b-buttons'>
-                            <button>See your reviews</button>
-                            <button>See your blog posts</button>
+                            <button onClick={seeReviews}>
+                                See your reviews
+                            </button>
+                            <button onClick={seeBlogs}>
+                                See your blog posts
+                            </button>
                         </div>
-                        <DashboardDisplay posts={user.reviews} display={''}/>
+                        <DashboardDisplay posts={user.reviews} display={displayReviews}/>
+                        <DashboardDisplay posts={user.blogs} display={displayBlogs}/>
                     </div>
                 </div>
             )
