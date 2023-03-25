@@ -10,13 +10,13 @@ const DashboardDisplay = ({ posts, display }) => {
     else {
         show = 'none'
     }
-    
+
     return (
         <>
         {
             posts.length === 0 ? 
             (
-                <div className='dashboard-zero-posts'>
+                <div className='dashboard-zero-posts' style={{ display: show }}>
                     <text>You currently have no posts</text>
                 </div>
             ) : 
