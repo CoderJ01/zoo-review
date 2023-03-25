@@ -18,16 +18,12 @@ function App() {
     const fetchUser = async() => {
       try {
         let userCookie = cookie.get('zelp-cookie');
-        axios.get(baseURL + '/api/users')
-        .then(
-            response => {
-                for(let i = 0; i < response.data.length; i++) {
-                    if(response.data[i].randomString === userCookie) {
-                          setUser(response.data[i]);
-                    }
-                }
+        const response = await axios.get(baseURL + '/api/users')
+        for(let i = 0; i < response.data.length; i++) {
+            if(response.data[i].randomString === userCookie) {
+              setUser(response.data[i]);
             }
-        );
+        }
       }
       catch(error) {
         console.log(error);
@@ -35,7 +31,7 @@ function App() {
     }
     fetchUser();
   }
-  ,[]);
+  , []);
 
   return (
     <div className='App'>

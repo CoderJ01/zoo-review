@@ -31,12 +31,14 @@ const Header = ({ user }) => {
         window.location.reload(false);
     }
 
+    console.log(user);
+
     return (
         <header>
             <nav>
                 <NavLink to='/'><h1>Zelp</h1></NavLink>
                 {
-                    !user ? 
+                    user.length === 0 ? 
                     (
                         <>
                             <div className='header-buttons'>
