@@ -3,8 +3,8 @@ import './DashboardDisplay.style.css'
 
 const DashboardDisplay = () => {
     return (
-        <div className='dashboard-b-posts-display'>
-            <div className='d-b-p-d-f-single-post'>
+        <div className='dashboard-posts'>
+            <div className='dashboard-post'>
                 <img alt='' src=''/>
                 {/* <h3><a href={`/your-post/${id}`}>{currentUser.reviews[0].title}</a></h3> */}
             </div>
