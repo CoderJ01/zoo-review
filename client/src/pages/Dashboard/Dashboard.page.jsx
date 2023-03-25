@@ -1,6 +1,6 @@
 import React from 'react';
 import './Dashboard.style.css'
-import AccessDenied from '../../components/AccessDenied/AcessDenied.component';
+import AccessDenied from '../../components/AccessDenied/AccessDenied.component';
 import DashboardDisplay from '../../components/DashboardDisplay/DashboardDisplay.component';
 
 const Dashboard = ({ user }) => {
