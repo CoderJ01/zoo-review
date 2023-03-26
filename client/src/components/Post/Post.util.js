@@ -42,7 +42,7 @@ const starColor = (rating) => {
             color = 'rgb(34, 191, 41)'
             break;
         case 5:
-            color = 'rgb(14, 168, 79)'
+            color = 'rgb(46, 182, 225)'
             break;
         default:
     }
