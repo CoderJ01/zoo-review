@@ -35,7 +35,7 @@ const DashboardDisplay = ({ posts, display, blog = false }) => {
                         return (
                             <div className='dashboard-post'>
                                 <img alt='' src=''/>
-                                <h3><a href={`/your-post/${post._id}`}>{post.title}</a></h3>
+                                <h3><a href={`/your-post/${post._id}`} target="_blank" rel="noreferrer">{post.title}</a></h3>
                             </div>
                         );
                     })

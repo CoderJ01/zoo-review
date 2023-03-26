@@ -31,7 +31,7 @@ const Post = ({ id, user, avatar, image, title, post, rating, blog = false }) =>
                     !blog ? 
                     (
                         <>
-                            <h1><a href={`review/${id}`}>{title}</a></h1>
+                            <h1><a href={`review/${id}`} target="_blank" rel="noreferrer">{title}</a></h1>
                             <div className='post-info-rating'>
                                 {ratingDisplay}
                             </div>
@@ -39,7 +39,7 @@ const Post = ({ id, user, avatar, image, title, post, rating, blog = false }) =>
                     ) : 
                     (
                         <>
-                            <h1><a href={`blog-post/${id}`}>{title}</a></h1>
+                            <h1><a href={`blog-post/${id}`} target="_blank" rel="noreferrer">{title}</a></h1>
                             <div className='post-info-thumbs'>
                                 <i class="fa fa-thumbs-up"></i>
                                 <i class="fa fa-thumbs-down" style={{marginLeft: '1vw'}}></i>
