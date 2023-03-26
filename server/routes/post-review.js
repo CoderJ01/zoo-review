@@ -6,7 +6,7 @@ const User = require('../../models/User');
 const Zoo = require('../../models/Zoo');
 const { retrieveSession } = require('../MongoDB/data');
 
-router.post('/post-review/:userId/:zooId', async (req, res) => {
+router.post('/:userId/:zooId', async (req, res) => {
     try {
         let user = retrieveSession(req.params.userId);
         if(user) {
