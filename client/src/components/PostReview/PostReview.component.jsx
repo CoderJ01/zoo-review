@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const baseURL = 'http://localhost:3001';
 
-const PostReview = () => {
+const PostReview = ({ user }) => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [selected, setSelected] = useState(ratings[0]);
@@ -50,6 +50,24 @@ const PostReview = () => {
             }
         }
         console.log(zooId);
+
+        axios.post(baseURL + `/post-review/${user._id}/${zooId}`, 
+            {
+                title: title,
+                content: content,
+                rating: selected
+            }
+        )
+        .then(
+            response => {
+                console.log(response);
+            }
+        )
+        .catch(
+            error => {
+                console.log(error);
+            }
+        )
     }
 
     return (
