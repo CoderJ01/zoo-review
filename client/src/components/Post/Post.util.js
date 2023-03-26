@@ -1,8 +1,10 @@
 export const displayRating = (rating) => {
+    let color = starColor(rating);
+
     let filled = [];
 
     for(let i = 0; i < rating; i++) {
-        filled[i] =  <span class='fa fa-star checked'></span>
+        filled[i] =  <span class='fa fa-star checked' style={{ color: color }}></span>
     }
 
     let empty = [];
@@ -22,4 +24,27 @@ export const displayRating = (rating) => {
     }
 
     return display;
+}
+
+const starColor = (rating) => {
+    let color;
+    switch(rating) {
+        case 1:
+            color = 'red';
+            break;
+        case 2:
+            color = 'rgb(238, 161, 18)';
+            break;
+        case 3:
+            color = 'rgb(226, 226, 38)';
+            break;
+        case 4:
+            color = 'rgb(34, 191, 41)'
+            break;
+        case 5:
+            color = 'rgb(14, 168, 79)'
+            break;
+        default:
+    }
+    return color;
 }
