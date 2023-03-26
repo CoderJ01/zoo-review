@@ -1,7 +1,7 @@
 import React from 'react';
 import './DashboardDisplay.style.css'
 
-const DashboardDisplay = ({ posts, display }) => {
+const DashboardDisplay = ({ posts, display, blog = false }) => {
     let show;
 
     if(display === true) {
@@ -17,7 +17,15 @@ const DashboardDisplay = ({ posts, display }) => {
             posts.length === 0 ? 
             (
                 <div className='dashboard-zero-posts' style={{ display: show }}>
-                    <text>You currently have no posts</text>
+                    {
+                        !blog ? 
+                        (
+                            <text>You currently have no reviews</text>
+                        ) : 
+                        (
+                            <text>You currently have no blogs</text>
+                        )
+                    }
                 </div>
             ) : 
             (
