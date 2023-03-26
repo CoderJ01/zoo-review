@@ -41,16 +41,22 @@ const PostReview = ({ user }) => {
         retrieveNames();
    }, [retrieveNames]);
 
+   const getZooId = useCallback(() => {
+        zoos.filter(zoo => {
+            if(pickedZoo === zoo.name) {
+                setZooId(zoo._id)
+            }
+            return zoo.name;
+        })
+   }, [zoos, pickedZoo, setZooId]);
+
+   useEffect(() => {
+        getZooId();
+   }, [getZooId]);
+
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        for(let i = 0; i < zoos.length; i++) {
-            if(pickedZoo === zoos[i].name) {
-                setZooId(zoos[i]._id);
-            }
-        }
-        console.log(zooId);
-
+        
         axios.post(baseURL + `/post-review/${user._id}/${zooId}`, 
             {
                 title: title,
@@ -60,7 +66,7 @@ const PostReview = ({ user }) => {
         )
         .then(
             response => {
-                console.log(response);
+                alert(response.data.msg);
             }
         )
         .catch(
