@@ -11,7 +11,7 @@ const PostReview = () => {
     const [content, setContent] = useState('');
     const [selected, setSelected] = useState(ratings[0]);
     const [zoos, setZoos] = useState([]);
-    const [zooName, setZooName] = useState('');
+    const [zooNames, setZooNames] = useState([]);
     
     useEffect(() => { 
         const fetchZoos = async () => {
@@ -26,7 +26,20 @@ const PostReview = () => {
         fetchZoos();
     }, []);
 
-    console.log(zoos);
+   useEffect(() => {
+        const retrieveNames = () => {
+            let names = [];
+            zoos.filter(zoo => {
+                names.push(zoo.name);
+            });
+            console.log(names);
+            console.log(names[0]);
+            return names;
+        }
+        retrieveNames();
+   });
+
+    // console.log(zooNames);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -37,7 +50,7 @@ const PostReview = () => {
             <h1>Write a Review</h1>
             <div>
                 <label htmlFor='zoo-name'>Zoo:</label><br/>
-                <input type='text' name='zoo-name' value={zooName} onChange={(e) => setZooName(e.target.value)}/>
+                {/* <input type='text' name='zoo-name' value={zooName} onChange={(e) => setZooName(e.target.value)}/> */}
             </div>
             <div>
                 <label htmlFor='title'>Title:</label><br/>
