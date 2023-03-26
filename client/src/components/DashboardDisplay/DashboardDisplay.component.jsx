@@ -27,7 +27,7 @@ const DashboardDisplay = ({ posts, display }) => {
                         return (
                             <div className='dashboard-post'>
                                 <img alt='' src=''/>
-                                <h3><a href={`/your-post/${post.id}`}>{post.title}</a></h3>
+                                <h3><a href={`/your-post/${post._id}`}>{post.title}</a></h3>
                             </div>
                         );
                     })
