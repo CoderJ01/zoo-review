@@ -33,10 +33,6 @@ img {
     font-size: 25px;
 }
 
-.checked {
-    color: rgb(34, 191, 41);
-}
-
 .post-info {
     height: 28%;
     overflow: hidden;
