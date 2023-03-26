@@ -77,7 +77,14 @@ img {
     .post {
         height: 30vh;
         margin-top: 1vh;
-        width: 30vh;
+        width: 40vw;
+    }
+}
+
+/* iPad */
+@media screen and (max-width: 768px) {
+    .post {
+        height: 35vh;
     }
 }
 
