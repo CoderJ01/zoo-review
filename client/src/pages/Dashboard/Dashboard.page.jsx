@@ -49,7 +49,7 @@ const Dashboard = ({ user }) => {
                             </button>
                         </div>
                         <DashboardDisplay posts={user.reviews} display={displayReviews}/>
-                        <DashboardDisplay posts={user.blogs} display={displayBlogs}/>
+                        <DashboardDisplay posts={user.blogs} display={displayBlogs} blog={true}/>
                     </div>
                 </div>
             )
