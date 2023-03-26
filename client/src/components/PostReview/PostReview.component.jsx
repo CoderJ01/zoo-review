@@ -12,7 +12,7 @@ const PostReview = () => {
     const [selected, setSelected] = useState(ratings[0]);
     const [zoos, setZoos] = useState([]);
     const [zooNames, setZooNames] = useState([]);
-    const [pickedZoo, setPickedZoo] = useState(zooNames[1]);
+    const [pickedZoo, setPickedZoo] = useState(zooNames[0]);
     
     useEffect(() => { 
         const fetchZoos = async () => {
@@ -52,7 +52,7 @@ const PostReview = () => {
             <div>
                 <label htmlFor='zoo-name'>Zoo:</label><br/>
                 <select 
-                    value={selected} 
+                    value={pickedZoo} 
                     onChange={e => setPickedZoo(e.target.value)}
                 >
                     {zooNames.map((value) => (
