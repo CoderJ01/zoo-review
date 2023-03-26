@@ -30,7 +30,7 @@ const starColor = (rating) => {
     let color;
     switch(rating) {
         case 1:
-            color = 'red';
+            color = 'rgb(223, 33, 33)';
             break;
         case 2:
             color = 'rgb(238, 161, 18)';
