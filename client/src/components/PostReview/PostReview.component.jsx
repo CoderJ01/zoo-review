@@ -12,6 +12,7 @@ const PostReview = () => {
     const [selected, setSelected] = useState(ratings[0]);
     const [zoos, setZoos] = useState([]);
     const [zooNames, setZooNames] = useState([]);
+    const [pickedZoo, setPickedZoo] = useState(zooNames[1]);
     
     useEffect(() => { 
         const fetchZoos = async () => {
@@ -50,7 +51,16 @@ const PostReview = () => {
             <h1>Write a Review</h1>
             <div>
                 <label htmlFor='zoo-name'>Zoo:</label><br/>
-                {/* <input type='text' name='zoo-name' value={zooName} onChange={(e) => setZooName(e.target.value)}/> */}
+                <select 
+                    value={selected} 
+                    onChange={e => setPickedZoo(e.target.value)}
+                >
+                    {zooNames.map((value) => (
+                    <option value={value} key={value}>
+                        {value}
+                    </option>
+                    ))}
+                </select>
             </div>
             <div>
                 <label htmlFor='title'>Title:</label><br/>
@@ -60,19 +70,19 @@ const PostReview = () => {
                 <label htmlFor='content'>Content:</label><br/>
                 <textarea maxLength={1000} type='text' name='content' value={content} onChange={(e) => setContent(e.target.value)}/>
             </div>
-                <div>
-                    <label htmlFor='rating'>Rating:</label><br/>
-                    <select 
-                        value={selected} 
-                        onChange={e => setSelected(e.target.value)}
-                    >
-                        {ratings.map((value) => (
-                        <option value={value} key={value}>
-                            {value}
-                        </option>
-                        ))}
-                    </select>
-                </div>
+            <div>
+                <label htmlFor='rating'>Rating:</label><br/>
+                <select 
+                    value={selected} 
+                    onChange={e => setSelected(e.target.value)}
+                >
+                    {ratings.map((value) => (
+                    <option value={value} key={value}>
+                        {value}
+                    </option>
+                    ))}
+                </select>
+            </div>
             <button type='submit'>+ New Review</button>
         </form>
     );
