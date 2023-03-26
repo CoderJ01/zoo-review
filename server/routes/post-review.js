@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const mongoose = require('mongoose');
-const ReviewSchema = require('../../models/Review');
+const ReviewSchema = require('../models/Review');
 const Review = mongoose.model('Review', ReviewSchema);
-const User = require('../../models/User');
-const Zoo = require('../../models/Zoo');
+const User = require('../models/User');
+const Zoo = require('../models/Zoo');
 const { retrieveSession } = require('../MongoDB/data');
 
 router.post('/:userId/:zooId', async (req, res) => {
