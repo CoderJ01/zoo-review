@@ -4,7 +4,20 @@
 
 .dashboard-post h3 {
     text-align: center;
-} 
+}
+
+.dashboard-post a {
+    text-decoration: none;
+}
+
+.dashboard-post a:hover {
+    text-decoration: underline;
+}
+
+.dashboard-post a:active {
+    font-style: italic;
+    text-decoration: underline;
+}
 
 /* Desktop */
 @media screen and (min-width: 1280px) {
@@ -37,6 +50,10 @@
     .dashboard-post h3 {
         margin-top: -3vh;
     } 
+
+    .dashboard-post a {
+        color: rgb(27, 165, 42);
+    }
 }
 
 /* iPad Pro */
@@ -57,5 +74,9 @@
 
     .dashboard-post h3 {
         margin-top: -8%;
+    }
+
+    .dashboard-post a {
+        color: black;
     }
 }
