@@ -35,21 +35,15 @@ const Post = ({ id, user, avatar, image, title, post, rating, blog = false }) =>
                             <div className='post-info-rating'>
                                 {ratingDisplay}
                             </div>
-                            <text>
-                                {post}
-                            </text>
                         </>
                     ) : 
                     (
                         <>
-                         <h1><a href={`blog-post/${id}`}>{title}</a></h1>
-                        <div className='post-info-thumbs'>
-                            <i class="fa fa-thumbs-up"></i>
-                            <i class="fa fa-thumbs-down" style={{marginLeft: '1vw'}}></i>
+                            <h1><a href={`blog-post/${id}`}>{title}</a></h1>
+                            <div className='post-info-thumbs'>
+                                <i class="fa fa-thumbs-up"></i>
+                                <i class="fa fa-thumbs-down" style={{marginLeft: '1vw'}}></i>
                             </div>
-                        <text>
-                            {post}
-                        </text>
                         </>
                     )
                 }
