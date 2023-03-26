@@ -13,6 +13,7 @@ const PostReview = () => {
     const [zoos, setZoos] = useState([]);
     const [zooNames, setZooNames] = useState([]);
     const [pickedZoo, setPickedZoo] = useState(zooNames[0]);
+    const [zooId, setZooId] = useState('');
     
     useEffect(() => { 
         const fetchZoos = async () => {
@@ -40,10 +41,15 @@ const PostReview = () => {
         retrieveNames();
    }, [retrieveNames]);
 
-    console.log(zooNames);
-
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        for(let i = 0; i < zoos.length; i++) {
+            if(pickedZoo === zoos[i].name) {
+                setZooId(zoos[i]._id);
+            }
+        }
+        console.log(zooId);
     }
 
     return (
