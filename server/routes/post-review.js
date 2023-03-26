@@ -29,7 +29,10 @@ router.post('/:userId/:zooId', async (req, res) => {
                 { new: true }
             );
         
-            res.send(review);
+            res.send({
+                data: review,
+                msg: 'Review has been successfully created!'
+            });
         }
     }
     catch(err) {
