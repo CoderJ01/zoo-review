@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ratings } from './PostReview.utils';
 import './PostReview.style.css'
 import axios from 'axios';
@@ -26,20 +26,20 @@ const PostReview = () => {
         fetchZoos();
     }, []);
 
-   useEffect(() => {
-        const retrieveNames = () => {
-            let names = [];
-            zoos.filter(zoo => {
-                names.push(zoo.name);
-            });
-            console.log(names);
-            console.log(names[0]);
-            return names;
-        }
-        retrieveNames();
-   });
+    const retrieveNames = useCallback(() => {
+        let names = [];
+        zoos.filter(zoo => {
+            names.push(zoo.name);
+            return zoo.name;
+        });
+        setZooNames(names);
+    },[zoos, setZooNames]);
 
-    // console.log(zooNames);
+   useEffect(() => { 
+        retrieveNames();
+   }, [retrieveNames]);
+
+    console.log(zooNames);
 
     const handleSubmit = (event) => {
         event.preventDefault();
