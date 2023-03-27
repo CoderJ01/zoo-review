@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-const { retrieveSession } = require('../MongoDB/data');
 const makeCookieValue = require('../cookie/randomString');
 
 router.post('/register', async (req, res) => {
