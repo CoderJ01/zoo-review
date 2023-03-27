@@ -44,7 +44,6 @@ const DashboardDisplay = ({ posts, display, blog = false }) => {
                                     <img alt='' src={blogImage}/>
                                 ) 
                             }
-                                <img alt='' src=''/>
                                 <h3><a href={`/your-post/${post._id}`} target="_blank" rel="noreferrer">{post.title}</a></h3>
                             </div>
                         );
