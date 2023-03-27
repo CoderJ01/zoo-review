@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Dashboard.style.css'
 import AccessDenied from '../../components/AccessDenied/AccessDenied.component';
 import DashboardDisplay from '../../components/DashboardDisplay/DashboardDisplay.component';
+import { defaultProfileImage } from '../../components/Post/Post.util';
 
 const Dashboard = ({ user }) => {
     const [displayReviews, setDisplayReviews] = useState(true);
@@ -33,7 +34,7 @@ const Dashboard = ({ user }) => {
                         <div className='dashboard-b-user-info'>
                             <h2>Your Avatar</h2>
                             <div className='dashboard-b-u-i-avatar'>
-                                <img alt='' src=''/>
+                                <img alt='' src={defaultProfileImage}/>
                             </div>
                             <h2 style={{ marginTop: '7%'}}>Your Bio</h2>
                             <div className='dashboard-b-u-i-bio'>
