@@ -22,44 +22,4 @@ async function retrieveSession(id) {
     return object;
 }
 
-async function deleteSession(id) {
-    let object;
-    
-    await client.connect()
-    const db = client.db(process.env.DB);
-    const coll = db.collection('mySessions');
-    const cursor = coll.find({ 'session.user.id': id });
-    await cursor.forEach(
-        session => {
-            object = session
-        }
-    );
-    
-    await coll.deleteOne({ _id: object._id });
-   
-    setTimeout(() => {
-        client.close();
-    }, 1500)
-}
-
-async function getAllSessions() {
-    let object;
-
-    await client.connect()
-    const db = client.db(process.env.DB);
-    const coll = db.collection('mySessions');
-    const cursor = coll.find();
-    await cursor.forEach(
-        session => {
-            object = session
-        }
-    );
-
-    setTimeout(() => {
-        client.close();
-    }, 1500)
-
-    return object;
-}
-
-module.exports = { retrieveSession, deleteSession, getAllSessions };
+module.exports = { retrieveSession };
