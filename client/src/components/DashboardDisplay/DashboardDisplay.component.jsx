@@ -1,5 +1,6 @@
 import React from 'react';
 import './DashboardDisplay.style.css'
+import { blogImage } from '../Post/Post.util';
 
 const DashboardDisplay = ({ posts, display, blog = false }) => {
     let show;
@@ -34,6 +35,15 @@ const DashboardDisplay = ({ posts, display, blog = false }) => {
                     posts.map(post => {
                         return (
                             <div className='dashboard-post'>
+                            {
+                                !blog ? 
+                                (
+                                    <img alt='' src=''/>
+                                ) : 
+                                (
+                                    <img alt='' src={blogImage}/>
+                                ) 
+                            }
                                 <img alt='' src=''/>
                                 <h3><a href={`/your-post/${post._id}`} target="_blank" rel="noreferrer">{post.title}</a></h3>
                             </div>
