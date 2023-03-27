@@ -13,7 +13,6 @@
     height: 80%;
     margin-left: 3%;
     margin-top: 1%;
-    width: 15%;
 }
 
 img {
@@ -72,10 +71,14 @@ img {
 
 /* Desktop */
 @media screen and (min-width: 1280px) {
+    .post-heading-avatar {
+        width: 15%;
+    }
+
     .post-info h1 {
         font-size: 25px;
     }
-    
+
     .post {
         height: 60vh;
         margin-top: 10vh;
@@ -94,16 +97,26 @@ img {
 
 /* iPad */
 @media screen and (max-width: 768px) {
+    .post-heading-avatar {
+        width: 20%;
+    }
+
     .post {
-        height: 35vh;
+        height: 50vh;
+        margin-top: 3vh;
+        width: 60%;
     }
 }
 
 /* Surface Duo */
 @media screen and (max-width: 540px) {
+    .post-heading-avatar {
+        height: 85%;
+        width: 18%;
+    }
+
     .post {
-        height: 50vh;
         margin-top: 4vh;
-        width: 90%;
+        width: 75%;
     }
 }
