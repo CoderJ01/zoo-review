@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-const { retrieveSession, deleteSession, getAllSessions } = require('../MongoDB/data');
+const { retrieveSession } = require('../MongoDB/data');
 const makeCookieValue = require('../cookie/randomString');
 
 router.post('/register', async (req, res) => {
@@ -65,29 +65,6 @@ router.post('/login', async (req, res) => {
         data: user,
         session: req.session
     });
-});
-
-router.delete('/logout/:userId', async (req, res) => {
-    try {
-        let session = await retrieveSession(req.params.userId);
-        let sessionId = session._id;
-        if(sessionId) {
-            let sessionExists = session.session.user.id;
-            deleteSession(sessionExists);
-            res.send({ msg: 'Session has been successfully removed '});
-        }
-    }
-    catch(err) {
-        res.send({
-            error: err,
-            msg: 'Session does not exist!'
-        });
-    }
-});
-
-router.get('/sessions', async (req, res) => {
-    let sessions = await getAllSessions();
-    res.send(sessions)
 });
 
 module.exports = router;
