@@ -1,5 +1,6 @@
 .dashboard-post img {
-    height: 80%;
+    height: 60%;
+    width: 100%;
 } 
 
 .dashboard-post h3 {
@@ -36,19 +37,18 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        margin-top: -6vh;
+        margin-top: 0vh;
         width: 78%;
     }
     
     .dashboard-post {
-        border: 1px solid gray;
         height: 40%;
-        margin-top: 6vh;
+        margin-top: 0vh;
         width: 30%;
     }
 
     .dashboard-post h3 {
-        margin-top: -3vh;
+        margin-top: 0;
     } 
 
     .dashboard-post a {
@@ -67,16 +67,26 @@
         font-size: 2rem;
     }
 
-    .dashboard-post {
-        height: 40vh;
-        margin-top: 5vh;
+    .dashboard-posts {
+        margin-top: 10vh;
     }
 
-    .dashboard-post h3 {
-        margin-top: -8%;
+    .dashboard-post {
+        height: 40vh;
+        margin-left: 20%;
+        margin-top: -5vh;
+        width: 60%;
     }
 
     .dashboard-post a {
         color: black;
+    }
+}
+
+/* iPhone 6/7/8 Plus */
+@media screen and (max-width: 414px) {
+    .dashboard-post {
+        margin-left: 13%;
+        width: 74%;
     }
 }
