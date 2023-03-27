@@ -63,6 +63,7 @@ const Home = () => {
                             title={review.title}
                             rating={review.rating}
                             post={review.content}
+                            zoo={review.zoo}
                         />
                     );
                 })
