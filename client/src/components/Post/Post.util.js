@@ -48,3 +48,5 @@ const starColor = (rating) => {
     }
     return color;
 }
+
+export const defaultProfileImage = 'https://raw.githubusercontent.com/CoderJ01/popular-zoos/main/other/default-profile-image.JPG';
