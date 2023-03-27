@@ -1,6 +1,6 @@
 import React from 'react';
 import './Post.style.css'
-import { displayRating, defaultProfileImage } from './Post.util';
+import { displayRating, defaultProfileImage, blogImage } from './Post.util';
 
 const Post = ({ id, user, avatar, image, title, post, rating, blog = false }) => {
     let ratingDisplay = displayRating(rating);
@@ -24,7 +24,15 @@ const Post = ({ id, user, avatar, image, title, post, rating, blog = false }) =>
                 </div>
             </div>
             <div className='post-picture'>
-                <img alt='' src={image}></img>
+            {
+                !blog ? 
+                (
+                    <img alt='' src={image}></img>
+                ) : 
+                (
+                    <img alt='' src={blogImage}></img>
+                )
+            }
             </div>
             <div className='post-info'>
                 {
