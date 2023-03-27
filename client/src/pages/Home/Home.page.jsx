@@ -72,6 +72,7 @@ const Home = () => {
             <div className='home-posts'>
             {
                 blogs.map(blog => {
+                    fetchUserById(blog.user);
                     return (
                         <Post
                             id={blog._id}
