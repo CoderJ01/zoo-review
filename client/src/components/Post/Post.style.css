@@ -40,8 +40,15 @@ img {
 
 .post-info h1 {
     display: flex;
-    font-size: 2rem;
     text-align: left;
+}
+
+.post-info text {
+    color: black
+}
+
+.post-info text:hover {
+    text-decoration: none;
 }
 
 .post-info a {
@@ -65,6 +72,10 @@ img {
 
 /* Desktop */
 @media screen and (min-width: 1280px) {
+    .post-info h1 {
+        font-size: 25px;
+    }
+    
     .post {
         height: 60vh;
         margin-top: 10vh;
