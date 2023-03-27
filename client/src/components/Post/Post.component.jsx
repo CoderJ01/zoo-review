@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect} from 'react';
 import './Post.style.css'
 import { displayRating, defaultProfileImage, blogImage } from './Post.util';
 import axios from 'axios';
