@@ -1,7 +1,7 @@
 .single-blog-display {
-    border: 1rem solid rgb(153, 234, 187);
-    -o-border-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgb(153, 234, 187) 6px, rgb(153, 234, 187) 15px, transparent 16px, transparent 20px) 20/1rem;
-       border-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgb(153, 234, 187) 6px, rgb(153, 234, 187) 15px, transparent 16px, transparent 20px) 20/1rem;
+    border: 1rem solid rgb(198, 255, 222);
+    -o-border-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgb(198, 255, 222) 6px, rgb(198, 255, 222) 15px, transparent 16px, transparent 20px) 20/1rem;
+       border-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgb(198, 255, 222) 6px, rgb(198, 255, 222) 15px, transparent 16px, transparent 20px) 20/1rem;
 }
 
 .single-blog-display-header {
@@ -25,9 +25,17 @@
 
 /* Desktop */
 @media screen and (min-width: 1280px) {
+    .single-blog {
+        background-image: url('../../../images/single-blog.jpg');
+        background-size: 1440px 960px;
+        height: 90vh;
+    }
+
     .single-blog-display {
+        background-color: white;
         margin-left: 23%;
         margin-top: 5vh;
+        position: absolute;
         width: 54%;
     }
 
