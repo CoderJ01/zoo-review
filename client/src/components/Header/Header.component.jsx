@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Outlet, NavLink } from 'react-router-dom'; 
 import './Header.style.css'
 import Button from 'react-bootstrap/Button';
 import RegistrationForm from '../RegistrationForm/RegistrationForm.component';
 import LoginForm from '../LoginForm/LoginForm';
 import cookie from 'js-cookie';
+import axios from 'axios';
+
+const baseURL = 'http://localhost:3001';
 
 const buttonStyle = {
     backgroundColor: 'white', 
@@ -18,6 +21,52 @@ const buttonStyle = {
 const Header = ({ user }) => {
     const [showSignup, setShowSignup] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
+    const [zooNames, setZooNames] = useState([]);
+    const [pickedZoo, setPickedZoo] = useState(zooNames[0]);
+    const [zoos, setZoos] = useState([]);
+    const [zooId, setZooId] = useState('');
+
+    useEffect(() => { 
+        const fetchZoos = async () => {
+            try {
+                const response = await axios.get(baseURL + '/api/zoos');
+                setZoos(response.data);
+            }   
+            catch(error) {
+                console.log(error)
+            }
+        }
+        fetchZoos();
+    }, []);
+
+    const retrieveNames = useCallback(() => {
+        let names = [];
+        zoos.filter(zoo => {
+            names.push(zoo.name);
+            return zoo.name;
+        });
+        setZooNames(names);
+    },[zoos, setZooNames]);
+
+   useEffect(() => { 
+        retrieveNames();
+   }, [retrieveNames]);
+
+   const getZooId = useCallback(() => {
+        zoos.filter(zoo => {
+            if(pickedZoo === zoo.name) {
+                setZooId(zoo._id)
+            }
+            return zoo.name;
+        })
+    }, [zoos, pickedZoo, setZooId]);
+
+    useEffect(() => {
+        getZooId();
+    }, [getZooId]);
+
+    console.log(pickedZoo);
+    console.log(zooId);
 
     const handleShowSignup = () => setShowSignup(true);
     const handleShowLogin = () => setShowLogin(true);
@@ -73,6 +122,16 @@ const Header = ({ user }) => {
                         </>
                     )
                 }
+                <select 
+                    value={pickedZoo} 
+                    onChange={e => setPickedZoo(e.target.value)}
+                >
+                    {zooNames.map((value) => (
+                    <option value={value} key={value}>
+                        {value}
+                    </option>
+                    ))}
+                </select>
             </nav>
             <Outlet/>
         </header>
