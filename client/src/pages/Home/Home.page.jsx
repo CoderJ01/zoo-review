@@ -8,7 +8,6 @@ const baseURL = 'http://localhost:3001';
 const Home = () => {
     const [reviews, setReviews] = useState([]);
     const [blogs, setBlogs] = useState([]);
-    const [user, setUser] = useState('')
 
     useEffect(() => {
         const fetchReviews = async () => {
@@ -36,16 +35,6 @@ const Home = () => {
 
     }, []);
 
-    const fetchUserById = async (id) => {
-        try {
-            const response = await axios.get(baseURL + `/api/users/${id}`);
-            setUser(response.data.username);
-        }
-        catch(error) {
-            console.log(error)
-        }
-    }
-
     return (
         <div className='home'>
             <div className='home-top-image'/>
@@ -53,11 +42,9 @@ const Home = () => {
             <div className='home-posts'>
             {
                 reviews.map(review => {
-                    fetchUserById(review.user);
                     return (
                         <Post
                             id={review._id}
-                            user={user}
                             avatar={review.avatar}
                             image={review.image}
                             title={review.title}
@@ -73,11 +60,9 @@ const Home = () => {
             <div className='home-posts'>
             {
                 blogs.map(blog => {
-                    fetchUserById(blog.user);
                     return (
                         <Post
                             id={blog._id}
-                            user={user}
                             avatar={blog.avatar}
                             image={blog.image}
                             title={blog.title}
