@@ -65,9 +65,6 @@ const Header = ({ user }) => {
         getZooId();
     }, [getZooId]);
 
-    console.log(pickedZoo);
-    console.log(zooId);
-
     const handleShowSignup = () => setShowSignup(true);
     const handleShowLogin = () => setShowLogin(true);
 
