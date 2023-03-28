@@ -71,7 +71,7 @@ const Post = ({ id, avatar, image, title, post, rating, blog = false, zoo }) => 
                     ) : 
                     (
                         <>
-                            <h1><a href={`blog-post/${id}`} target="_blank" rel="noreferrer">{title}</a></h1>
+                            <h1><a href={`blog/${id}`} target="_blank" rel="noreferrer">{title}</a></h1>
                             <div className='post-info-thumbs'>
                                 <i class="fa fa-thumbs-up"></i>
                                 <i class="fa fa-thumbs-down" style={{marginLeft: '1vw'}}></i>
