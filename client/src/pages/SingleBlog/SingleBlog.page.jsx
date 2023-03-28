@@ -21,7 +21,6 @@ const SingleBlog = () => {
         if(id) {
             try {
                 const response = await axios.get(baseURL + `/single-blog/${id}`);
-                console.log(response.data);
                 setTitle(response.data.data.title);
                 setUser(response.data.user);
                 setContent(response.data.data.content);
