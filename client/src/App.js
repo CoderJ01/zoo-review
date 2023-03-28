@@ -6,6 +6,7 @@ import Review from './pages/Review/Review.page';
 import Blog from './pages/Blog/Blog.page';
 import Dashboard from './pages/Dashboard/Dashboard.page';
 import SingleReview from './pages/SingleReview/SingleReview.page';
+import SingleBlog from './pages/SingleBlog/SingleBlog';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import cookie from 'js-cookie';
 import axios from 'axios';
@@ -44,6 +45,7 @@ function App() {
             <Route path='/post-blog' element={<Blog user={user}/>}/>
             <Route path='/dashboard' element={<Dashboard user={user}/>}/>
             <Route path='/review/:reviewId' element={<SingleReview/>}/>
+            <Route path='/blog/:blogId' element={<SingleBlog/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
