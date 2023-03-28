@@ -34,15 +34,15 @@ const Post = ({ id, avatar, image, title, post, rating, blog = false, zoo }) => 
                     <img alt='' src={defaultProfileImage}/>
                 </div>
                 <div className='post-heading-info'>
-                    {
-                        !blog ? 
-                        (
-                            <text>Wrote a review</text>
-                        ) : 
-                        (
-                            <text>Wrote a blog</text>
-                        )
-                    }
+                {
+                    !blog ? 
+                    (
+                        <text>Wrote a review</text>
+                    ) : 
+                    (
+                        <text>Wrote a blog</text>
+                    )
+                }
                 </div>
             </div>
             <div className='post-picture'>
