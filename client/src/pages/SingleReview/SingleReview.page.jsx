@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { displayRating } from '../../components/Post/Post.util';
 import './SingleReview.style.css';
+import { defaultProfileImage } from '../../components/Post/Post.util';
 
 const baseURL = 'http://localhost:3001';
 
@@ -49,7 +50,7 @@ const SingleReview = () => {
                         <p>{review.data.updatedAt.toString().substring(0, 10)}</p>
                     </div>
                     <div className='srdf-avatar'>
-                        <img alt='' src=''></img>
+                        <img alt='' src={defaultProfileImage}></img>
                     </div>   
                 </div>
             </div>
