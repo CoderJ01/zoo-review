@@ -129,7 +129,7 @@ const Header = ({ user }) => {
                     </option>
                     ))}
                 </select>
-                <div>
+                 <div className='header-button-see-zoo'>
                     <Button href={baseURL + `/zoo/${zooId}`} style={buttonStyle}>
                         See Zoo
                     </Button>
