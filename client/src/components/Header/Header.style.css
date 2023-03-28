@@ -20,6 +20,7 @@ nav input {
     nav {
         background-color: rgb(34, 191, 41);
         display: flex;
+        z-index: 999;
     }
 
     nav h1 {
