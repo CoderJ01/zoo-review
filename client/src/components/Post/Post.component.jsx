@@ -6,7 +6,6 @@ import axios from 'axios';
 const baseURL = 'http://localhost:3001';
 
 const Post = ({ id, user, avatar, image, title, post, rating, blog = false, zoo }) => {
-    const [zooImage, setZooImage] = useState('');
     const [zooName, setZooName] =useState('');
 
     let ratingDisplay = displayRating(rating);
@@ -18,7 +17,6 @@ const Post = ({ id, user, avatar, image, title, post, rating, blog = false, zoo 
             const fetchZooImage = async () => {
                 try {
                     const response = await axios.get(baseURL + `/api/zoos/${id}`);
-                    setZooImage(response.data.image);
                     setZooName(response.data.name);
                 }
                 catch(error) {
@@ -27,7 +25,7 @@ const Post = ({ id, user, avatar, image, title, post, rating, blog = false, zoo 
             }
             fetchZooImage();
         }
-    }, [zoo, setZooImage, setZooName])
+    }, [zoo, setZooName])
 
     return (
         <div className='post'>
