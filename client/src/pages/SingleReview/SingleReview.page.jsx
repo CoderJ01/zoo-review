@@ -44,11 +44,13 @@ const SingleReview = () => {
                     {rating}
                 </div>
                 <div className='single-review-display-footer'>
-                    <p>{review.data.updatedAt.toString().substring(0, 10)}</p>
-                        <div className='srdf-avatar'>
-                            <img alt='' src=''></img>
-                        </div>
-                    <p>{review.user}</p> 
+                    <div className='srdf-text'>
+                        <text>{review.user}</text>  
+                        <p>{review.data.updatedAt.toString().substring(0, 10)}</p>
+                    </div>
+                    <div className='srdf-avatar'>
+                        <img alt='' src=''></img>
+                    </div>   
                 </div>
             </div>
         </div>

@@ -26,6 +26,16 @@
     .single-review-display {
         margin-top: 20vh;
     }
+
+    .sfdf-text {
+        display: flex;
+    }
+
+    .srdf-avatar {
+        height: 60px;
+        margin-right: 10px;
+        width: 60px;
+    }
 }
 
 /* iPad Pro */
