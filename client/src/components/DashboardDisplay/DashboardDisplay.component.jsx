@@ -38,13 +38,18 @@ const DashboardDisplay = ({ posts, display, blog = false }) => {
                             {
                                 !blog ? 
                                 (
-                                    <img alt='' src={reviewImage}/>
+                                    <>
+                                        <img alt='' src={reviewImage}/>
+                                        <h3><a href={`/review/${post._id}`} target="_blank" rel="noreferrer">{post.title}</a></h3>
+                                    </>
                                 ) : 
-                                (
-                                    <img alt='' src={blogImage}/>
+                                (   
+                                    <>
+                                        <img alt='' src={blogImage}/>
+                                        <h3><a href={`/blog/${post._id}`} target="_blank" rel="noreferrer">{post.title}</a></h3>
+                                    </>
                                 ) 
                             }
-                                <h3><a href={`/your-post/${post._id}`} target="_blank" rel="noreferrer">{post.title}</a></h3>
                             </div>
                         );
                     })
