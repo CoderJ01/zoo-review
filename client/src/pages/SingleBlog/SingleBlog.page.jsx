@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
 import './SingleBlog.style.css';
@@ -8,6 +8,13 @@ const baseURL = 'http://localhost:3001';
 const SingleBlog = () => {
     const { blogId } = useParams();
 
+    const [title, setTitle] = useState('');
+    const [user, setUser] = useState('');
+    const [content, setContent] = useState('');
+    const [date, setDate] = useState('');
+    const [email, setEmail] = useState('');
+    const [likes, setLikes] = useState(0);
+
     const fetchBlogById = useCallback(async () => {
         const id = blogId;
 
@@ -15,6 +22,12 @@ const SingleBlog = () => {
             try {
                 const response = await axios.get(baseURL + `/single-blog/${id}`);
                 console.log(response.data);
+                setTitle(response.data.data.title);
+                setUser(response.data.user);
+                setContent(response.data.data.content);
+                setDate(response.data.data.updatedAt.toString().substring(0, 10));
+                setEmail(response.data.data.email);
+                setLikes(response.data.data.thumbs);
             }
             catch(error) {
                 console.log(error);
@@ -30,19 +43,19 @@ const SingleBlog = () => {
         <div className='single-blog'>
             <div className='single-blog-display'>
                 <div className='single-blog-display-header'>
-                    <h1>Title</h1>
-                    <h2>by username</h2>
+                    <h1>{title}</h1>
+                    <h2>by {user}</h2>
                 </div>
                 <div className='single-blog-display-body'>
-                    <p>content</p>
+                    <p>{content}</p>
                 </div>
                 <div className='single-blog-display-footer'>
                     <div className='sbdf-static-info'>
-                        <text>date</text>
-                        <p>email</p>
+                        <text>{date}</text>
+                        <p>{email}</p>
                     </div>
                     <div className='sbdf-dynamic-info'>
-                    <p>likes</p>
+                    <p>{likes} likes</p>
                     </div>
                 </div>
             </div>
