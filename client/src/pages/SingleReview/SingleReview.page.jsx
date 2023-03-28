@@ -45,6 +45,9 @@ const SingleReview = () => {
                 </div>
                 <div className='single-review-display-footer'>
                     <p>{review.data.updatedAt.toString().substring(0, 10)}</p>
+                        <div className='srdf-avatar'>
+                            <img alt='' src=''></img>
+                        </div>
                     <p>{review.user}</p> 
                 </div>
             </div>
