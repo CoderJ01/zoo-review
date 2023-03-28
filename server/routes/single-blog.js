@@ -10,7 +10,8 @@ router.get('/:id', async (req, res) => {
 
     res.send({
         data: blog,
-        user: user.username
+        user: user.username,
+        email: user.email
     });
 });
 
