@@ -26,7 +26,24 @@ const SingleBlog = () => {
     }, [fetchBlogById]);
 
     return (
-        <></>
+        <div className='single-blog'>
+            <div className='single-blog-display'>
+                <div className='single-blog-display-header'>
+                    <h1>Title</h1>
+                    <h2>by username</h2>
+                </div>
+                <div className='single-blog-display-body'>
+                    <p>content</p>
+                </div>
+                <div className='single-blog-display-footer'>
+                    <div className='sbdf-static-info'>
+                        <p>date</p>
+                        <p>email</p>
+                    </div>
+                    <p>likes</p>
+                </div>
+            </div>
+        </div>
     );
 }
 
