@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
+import './SingleBlog.style.css';
 
 const baseURL = 'http://localhost:3001';
 
