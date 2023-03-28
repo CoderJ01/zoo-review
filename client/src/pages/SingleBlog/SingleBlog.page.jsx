@@ -38,10 +38,12 @@ const SingleBlog = () => {
                 </div>
                 <div className='single-blog-display-footer'>
                     <div className='sbdf-static-info'>
-                        <p>date</p>
+                        <text>date</text>
                         <p>email</p>
                     </div>
+                    <div className='sbdf-dynamic-info'>
                     <p>likes</p>
+                    </div>
                 </div>
             </div>
         </div>
