@@ -2,10 +2,19 @@ const router = require('express').Router();
 const mongoose = require('mongoose');
 const ReviewSchema = require('../models/Review');
 const Review = mongoose.model('Review', ReviewSchema);
+const User = require('../models/User');
+const Zoo = require('../models/Zoo');
 
 router.get('/:id', async (req, res) => {
-    let review = await Review.find({ _id: req.params.id });
-    res.send(review);
+    const review = await Review.findOne({ _id: req.params.id });
+    const user = await User.findOne({ _id: review.user.toString() });
+    const zoo = await Zoo.findOne({ _id: review.zoo.toString() });
+    
+    res.send({
+        data: review,
+        user: user.username,
+        zoo: zoo.name
+    });
 });
 
 module.exports = router;
