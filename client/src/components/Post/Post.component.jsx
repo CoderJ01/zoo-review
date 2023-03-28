@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import './Post.style.css'
-import { displayRating, defaultProfileImage, blogImage } from './Post.util';
+import { displayRating, defaultProfileImage, blogImage, reviewImage } from './Post.util';
 import axios from 'axios';
 
 const baseURL = 'http://localhost:3001';
@@ -52,7 +52,7 @@ const Post = ({ id, user, avatar, image, title, post, rating, blog = false, zoo 
             {
                 !blog ? 
                 (
-                    <img alt='' src={zooImage}></img>
+                    <img alt='' src={reviewImage}></img>
                 ) : 
                 (
                     <img alt='' src={blogImage}></img>
