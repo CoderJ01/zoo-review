@@ -42,7 +42,7 @@ const SingleReview = () => {
                     <p>{review.data.content}</p>
                     {rating}
                 </div>
-                <div className='single-review-display-body'>
+                <div className='single-review-display-footer'>
                     <p>{review.data.updatedAt.toString().substring(0, 10)}</p>
                     <p>{review.user}</p> 
                 </div>
