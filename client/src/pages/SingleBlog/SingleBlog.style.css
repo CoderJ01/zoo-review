@@ -1,5 +1,5 @@
 .single-blog-display {
-    border: 1rem solid #aaaaff;
+    border: 1rem solid rgb(153, 234, 187);
     -o-border-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgb(153, 234, 187) 6px, rgb(153, 234, 187) 15px, transparent 16px, transparent 20px) 20/1rem;
        border-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgb(153, 234, 187) 6px, rgb(153, 234, 187) 15px, transparent 16px, transparent 20px) 20/1rem;
 }
