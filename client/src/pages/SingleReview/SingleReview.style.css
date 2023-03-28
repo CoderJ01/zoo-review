@@ -98,13 +98,3 @@
         margin-right: 15px;
     }
 }
-
-/* iPhone 12 Pro */
-@media screen and (max-width: 390px) {
-
-}
-
-/* iPhone X */
-@media screen and (max-width: 375px) and (max-height: 812px) {
-
-}
