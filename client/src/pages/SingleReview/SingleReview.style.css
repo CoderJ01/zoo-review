@@ -23,8 +23,16 @@
 
 /* Desktop */
 @media screen and (min-width: 1280px) {
+    .single-review {
+        background-image: url('../../../images/single-review-page.jpg');
+        background-size: 1400px 950px;
+        height: 90vh;
+        margin-top: 0px;
+    }
+
     .single-review-display {
         margin-top: 20vh;
+        position: absolute;
     }
 
     .sfdf-text {
