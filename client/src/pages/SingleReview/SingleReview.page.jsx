@@ -9,12 +9,13 @@ const baseURL = 'http://localhost:3001';
 
 const SingleReview = () => {
     const { reviewId } = useParams();
-    const [ title, setTitle ] = useState('');
-    const [ zoo, setZoo ] = useState('');
-    const [ content, setContent ] = useState('');
-    const [ rating, setRating ] = useState(0);
-    const [ user, setUser ] = useState('');
-    const [ date, setDate ] = useState('');
+    
+    const [title, setTitle] = useState('');
+    const [zoo, setZoo] = useState('');
+    const [content, setContent] = useState('');
+    const [rating, setRating] = useState(0);
+    const [user, setUser] = useState('');
+    const [date, setDate] = useState('');
 
     const fetchReviewById = useCallback(async () => {
         const id = reviewId;
