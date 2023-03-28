@@ -5,7 +5,7 @@ import Header from './components/Header/Header.component';
 import Review from './pages/Review/Review.page';
 import Blog from './pages/Blog/Blog.page';
 import Dashboard from './pages/Dashboard/Dashboard.page';
-import SingleReview from './pages/SingleReview.page';
+import SingleReview from './pages/SingleReview/SingleReview.page';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import cookie from 'js-cookie';
 import axios from 'axios';
