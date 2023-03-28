@@ -26,7 +26,7 @@ const SingleBlog = () => {
                 setUser(response.data.user);
                 setContent(response.data.data.content);
                 setDate(response.data.data.updatedAt.toString().substring(0, 10));
-                setEmail(response.data.data.email);
+                setEmail(response.data.email);
                 setLikes(response.data.data.thumbs);
             }
             catch(error) {
