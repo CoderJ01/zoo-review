@@ -6,7 +6,7 @@ import Review from './pages/Review/Review.page';
 import Blog from './pages/Blog/Blog.page';
 import Dashboard from './pages/Dashboard/Dashboard.page';
 import SingleReview from './pages/SingleReview/SingleReview.page';
-import SingleBlog from './pages/SingleBlog/SingleBlog';
+import SingleBlog from './pages/SingleBlog/SingleBlog.page';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import cookie from 'js-cookie';
 import axios from 'axios';
