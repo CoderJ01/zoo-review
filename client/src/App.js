@@ -5,6 +5,7 @@ import Header from './components/Header/Header.component';
 import Review from './pages/Review/Review.page';
 import Blog from './pages/Blog/Blog.page';
 import Dashboard from './pages/Dashboard/Dashboard.page';
+import SingleReview from './pages/SingleReview.page';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import cookie from 'js-cookie';
 import axios from 'axios';
@@ -42,6 +43,7 @@ function App() {
             <Route path='/write-review' element={<Review user={user}/>}/>
             <Route path='/post-blog' element={<Blog user={user}/>}/>
             <Route path='/dashboard' element={<Dashboard user={user}/>}/>
+            <Route path='/review/:id' element={<SingleReview/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
