@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const baseURL = 'http://localhost:3001';
 
-const Post = ({ id, user, avatar, image, title, post, rating, blog = false, zoo }) => {
+const Post = ({ id, avatar, image, title, post, rating, blog = false, zoo }) => {
     const [zooName, setZooName] =useState('');
 
     let ratingDisplay = displayRating(rating);
@@ -34,7 +34,6 @@ const Post = ({ id, user, avatar, image, title, post, rating, blog = false, zoo 
                     <img alt='' src={defaultProfileImage}/>
                 </div>
                 <div className='post-heading-info'>
-                    <div className='post-username'>{user}</div>
                     {
                         !blog ? 
                         (
