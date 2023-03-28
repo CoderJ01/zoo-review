@@ -129,6 +129,9 @@ const Header = ({ user }) => {
                     </option>
                     ))}
                 </select>
+                <Button href={'https://en.wikipedia.org/wiki/Jaguar'} style={buttonStyle}>
+                    Test
+                </Button>
             </nav>
             <Outlet/>
         </header>
