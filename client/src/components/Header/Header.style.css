@@ -73,7 +73,7 @@ nav input {
         margin-top: -4px;
     }
 
-    nav input {
+    nav select {
         height: 2rem;
         margin-left: 27vw;
         margin-top: 17px;
@@ -127,7 +127,7 @@ nav input {
         min-width: 25%
     }
 
-    nav input {
+    nav select {
         border: 5px solid black;
         height: 4vh;
         margin-top: 2vh;
@@ -151,7 +151,7 @@ nav input {
         width: 70%;
     }
 
-    nav input {
+    nav select {
         height: 5vh;
         width: 75vw;
     }
@@ -164,7 +164,7 @@ nav input {
         font-size: 22px;
     }
 
-    nav input {
+    nav select {
         height: 4vh;
     }
 }
