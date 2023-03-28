@@ -1,6 +1,6 @@
 import React from 'react';
 import './DashboardDisplay.style.css'
-import { blogImage } from '../Post/Post.util';
+import { blogImage, reviewImage } from '../Post/Post.util';
 
 const DashboardDisplay = ({ posts, display, blog = false }) => {
     let show;
@@ -38,7 +38,7 @@ const DashboardDisplay = ({ posts, display, blog = false }) => {
                             {
                                 !blog ? 
                                 (
-                                    <img alt='' src=''/>
+                                    <img alt='' src={reviewImage}/>
                                 ) : 
                                 (
                                     <img alt='' src={blogImage}/>
