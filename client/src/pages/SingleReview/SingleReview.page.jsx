@@ -9,45 +9,52 @@ const baseURL = 'http://localhost:3001';
 
 const SingleReview = () => {
     const { reviewId } = useParams();
-    const [ review, setReview ] = useState([]);
+    const [ title, setTitle ] = useState('');
+    const [ zoo, setZoo ] = useState('');
+    const [ content, setContent ] = useState('');
+    const [ rating, setRating ] = useState(0);
+    const [ user, setUser ] = useState('');
+    const [ date, setDate ] = useState('');
 
     const fetchReviewById = useCallback(async () => {
         const id = reviewId;
         if(id) {
             try {
                 const response = await axios.get(baseURL + `/single-review/${id}`);
-                console.log(response.data)
-                setReview(response.data);
+                setTitle(response.data.data.title);
+                setRating(response.data.data.rating);
+                setZoo(response.data.zoo)
+                setContent(response.data.data.content);
+                setUser(response.data.user);
+                setDate(response.data.data.updatedAt.toString().substring(0, 10))
             }
             catch(error) {
                 console.log(error);
             }
         }
-    }, [reviewId, setReview]);
+    }, [reviewId]);
 
     useEffect(() => {
         fetchReviewById();
     }, [fetchReviewById]);
 
-    let rating = displayRating(review.data.rating);
-
-    console.log(review.data);
+    let ratingDisplay = displayRating(rating);
 
     return (
         <div className='single-review'>
             <div className='single-review-display'>
                 <div className='single-review-display-header'>
-                    <h1>{review.data.title}</h1>
-                    <p>{review.zoo}</p>
+                    <h1>{title}</h1>
+                    <p>{zoo}</p>
                 </div>
                 <div className='single-review-display-body'>
-                    <p>{review.data.content}</p>
-                    {rating}
+                    <p>{content}</p>
+                    {ratingDisplay}
                 </div>
                 <div className='single-review-display-footer'>
                     <div className='srdf-text'>
-                        <text>{review.user}</text>  
-                        <p>{review.data.updatedAt.toString().substring(0, 10)}</p>
+                        <text>{user}</text>  
+                        <p>{date}</p>
                     </div>
                     <div className='srdf-avatar'>
                         <img alt='' src={defaultProfileImage}></img>
