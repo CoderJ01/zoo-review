@@ -21,6 +21,10 @@
         margin-top: 5vh;
     }
 
+    .sz-list-of-reviews {
+        margin-top: -3vh;
+    }
+
     .single-zoo h2,
     .sz-list-of-reviews text {
         margin-left: 15%;
