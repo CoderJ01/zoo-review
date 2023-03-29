@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
 
@@ -6,7 +6,10 @@ const baseURL = 'http://localhost:3001';
 
 const SingleZoo = () => {
     const { zooId } = useParams();
-    console.log(zooId);
+
+    const [name, setName] = useState('');
+    const [image, setImage] = useState('');
+    const [reviews, setReviews] = useState([]);
 
     const fetchZooById = useCallback(async () => {
         const id = zooId;
@@ -14,7 +17,9 @@ const SingleZoo = () => {
         if(id) {
             try {
                 const response = await axios.get(baseURL + `/single-zoo/${id}`);
-                console.log(response.data);
+                setName(response.data.name);
+                setImage(response.data.image);
+                setReviews(response.data.reviews);
             }
             catch(error) {
                 console.log(error);
@@ -25,6 +30,10 @@ const SingleZoo = () => {
     useEffect(() => {
         fetchZooById();
     }, [fetchZooById]);
+
+    console.log(name);
+    console.log(image);
+    console.log(reviews);
 
     return (
         <div className='single-zoo'>
