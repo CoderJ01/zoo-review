@@ -30,20 +30,20 @@ const ZooReview = ({ review }) => {
     }, [fetchUserById]);
 
     return (
-        <div className='single-review-display'>
-            <div className='single-review-display-header'>
+        <div className='zoo-review'>
+            <div className='zoo-review-header'>
                 <h1>{review.title}</h1>
             </div>
-            <div className='single-review-display-body'>
+            <div className='zoo-review-body'>
                 <p>{review.content}</p>
                 {ratingDisplay}
             </div>
-            <div className='single-review-display-footer'>
-                <div className='srdf-text'>
+            <div className='zoo-review-footer'>
+                <div className='zrf-text'>
                     <text>{username}</text>  
                     <p>{review.updatedAt.toString().substring(0, 10)}</p>
                 </div>
-                <div className='srdf-avatar'>
+                <div className='zrf-avatar'>
                     <img alt='' src={defaultProfileImage}></img>
                 </div>   
             </div>
