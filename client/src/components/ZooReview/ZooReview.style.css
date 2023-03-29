@@ -28,6 +28,7 @@
 @media screen and (min-width: 1280px) {
     .zoo-review {
         margin-left: 15%;
+        margin-top: 6vh;
         width: 50%;
     }
 
