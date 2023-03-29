@@ -38,11 +38,11 @@ const SingleZoo = () => {
 
     return (
         <div className='single-zoo'>
-            <h1>Name of Zoo</h1>
+            <h1>{name}</h1>
             <div className='single-zoo-photo'>
-                <img alt='' src=''></img>
+                <img alt='' src={image}></img>
+                <text>Average rating: </text>
             </div>
-            <text>Average rating: </text>
             <h2>Reviews</h2>
             <div className='sz-list-of-reviews'>
 
