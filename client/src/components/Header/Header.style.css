@@ -11,7 +11,8 @@ nav select {
     color: white;
 }
 
-.header-buttons button:active {
+.header-buttons button:active,
+.header-button-see-zoo:active {
     opacity: 0.5;
 }
 
