@@ -1,18 +1,28 @@
+// React
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// CSS
 import './App.css';
+
+// pages
 import Home from './pages/Home/Home.page';
-import Header from './components/Header/Header.component';
 import Review from './pages/Review/Review.page';
 import Blog from './pages/Blog/Blog.page';
 import Dashboard from './pages/Dashboard/Dashboard.page';
 import SingleReview from './pages/SingleReview/SingleReview.page';
 import SingleBlog from './pages/SingleBlog/SingleBlog.page';
 import SingleZoo from './pages/SingleZoo/SingleZoo.page';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import cookie from 'js-cookie';
-import axios from 'axios';
 
-const baseURL = 'http://localhost:3001';
+// component
+import Header from './components/Header/Header.component';
+
+// URL
+import { baseURL } from './URLs/urls';
+
+// other imports
+import axios from 'axios';
+import cookie from 'js-cookie';
 
 function App() {
   const [user, setUser] = useState([]);
