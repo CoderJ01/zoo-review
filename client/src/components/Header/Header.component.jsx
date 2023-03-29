@@ -7,7 +7,8 @@ import LoginForm from '../LoginForm/LoginForm';
 import cookie from 'js-cookie';
 import axios from 'axios';
 
-const baseURL = 'http://localhost:3000';
+const baseURL = 'http://localhost:3001';
+const baseURL_frontend = 'http://localhost:3000';
 
 const buttonStyle = {
     backgroundColor: 'white', 
@@ -131,7 +132,7 @@ const Header = ({ user }) => {
                         ))}
                     </select>
                     <div className='header-button-see-zoo'>
-                        <Button href={baseURL + `/zoo/${zooId}`} style={buttonStyle}>
+                        <Button href={baseURL_frontend + `/zoo/${zooId}`} style={buttonStyle}>
                             <div className='header-vanilla-button-text'>See Zoo</div>
                         </Button>
                     </div>
