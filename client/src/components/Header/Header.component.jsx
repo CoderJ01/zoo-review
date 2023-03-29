@@ -119,20 +119,22 @@ const Header = ({ user }) => {
                         </>
                     )
                 }
-                <select 
-                    value={pickedZoo} 
-                    onChange={e => setPickedZoo(e.target.value)}
-                >
-                    {zooNames.map((value) => (
-                    <option value={value} key={value}>
-                        {value}
-                    </option>
-                    ))}
-                </select>
-                 <div className='header-button-see-zoo'>
-                    <Button href={baseURL + `/zoo/${zooId}`} style={buttonStyle}>
-                        See Zoo
-                    </Button>
+                <div className='header-zoo-selection'>
+                    <select 
+                        value={pickedZoo} 
+                        onChange={e => setPickedZoo(e.target.value)}
+                    >
+                        {zooNames.map((value) => (
+                        <option value={value} key={value}>
+                            {value}
+                        </option>
+                        ))}
+                    </select>
+                    <div className='header-button-see-zoo'>
+                        <Button href={baseURL + `/zoo/${zooId}`} style={buttonStyle}>
+                            See Zoo
+                        </Button>
+                    </div>
                 </div>
             </nav>
             <Outlet/>
