@@ -132,7 +132,7 @@ const Header = ({ user }) => {
                     </select>
                     <div className='header-button-see-zoo'>
                         <Button href={baseURL + `/zoo/${zooId}`} style={buttonStyle}>
-                            See Zoo
+                            <div className='header-vanilla-button-text'>See Zoo</div>
                         </Button>
                     </div>
                 </div>
