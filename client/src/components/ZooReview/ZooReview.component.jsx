@@ -1,9 +1,29 @@
-import React from 'react';
-import { displayRating } from '../Post/Post.util';
-import { defaultProfileImage } from '../Post/Post.util';
+import React, { useEffect, useCallback } from 'react';
+import { displayRating, defaultProfileImage } from '../Post/Post.util';
+import axios from 'axios';
+
+const baseURL = 'http://localhost:3001';
 
 const ZooReview = ({ review }) => {
     let ratingDisplay = displayRating(review.rating);
+
+    const fetchUserById = useCallback(async () => {
+        const id = review.user;
+
+        if(id) {
+            try {
+                const response = await axios.get(baseURL + `/api/users/${id}`);
+                console.log(response.data.username);
+            }
+            catch(error) {
+                console.log(error);
+            }
+        }
+    }, [review.user]);
+
+    useEffect(() => {
+        fetchUserById();
+    }, [fetchUserById]);
     return (
         <div className='single-review-display'>
             <div className='single-review-display-header'>
