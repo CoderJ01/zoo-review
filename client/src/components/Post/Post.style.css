@@ -14,6 +14,10 @@
     margin-top: 1%;
 }
 
+.post-heading-avatar img {
+    border-radius: 50%;
+}
+
 img {
     height: 100%;
     width: 100%;
@@ -121,5 +125,19 @@ img {
     .post {
         margin-top: 4vh;
         width: 75%;
+    }
+}
+
+/* iPhone 6/7/8 Plus */
+@media screen and (max-width: 414px) {
+    .post-heading-avatar {
+        width: 22%;
+    }
+}
+
+/* iPhone 12 Pro */
+@media screen and (max-width: 414px) {
+    .post-heading-avatar {
+        width: 26%;
     }
 }
