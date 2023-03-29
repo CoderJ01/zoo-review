@@ -33,10 +33,6 @@ const SingleZoo = () => {
         fetchZooById();
     }, [fetchZooById]);
 
-    console.log(name);
-    console.log(image);
-    console.log(reviews);
-
     return (
         <div className='single-zoo'>
             <h1>{name}</h1>
