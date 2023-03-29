@@ -18,10 +18,10 @@
     }
     
     .single-zoo h2 {
-        margin-left: 15%;
         margin-top: 5vh;
     }
 
+    .single-zoo h2,
     .sz-list-of-reviews text {
         margin-left: 15%;
     }
@@ -43,11 +43,10 @@
     }
 
     .single-zoo h2 {
-        font-size: 2rem;
-        margin-left: 5%;
         margin-top: 2vh;
     }
 
+    .single-zoo h2, 
     .sz-list-of-reviews text {
         font-size: 2rem;
         margin-left: 5%;
@@ -73,10 +72,7 @@
 
 /* iPhone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
-    .single-zoo text {
-        font-size: 25px;
-    }
-
+    .single-zoo text,
     .single-zoo h2,
     .sz-list-of-reviews text {
         font-size: 25px;
