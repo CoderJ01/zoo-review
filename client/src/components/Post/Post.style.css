@@ -1,5 +1,4 @@
 .post {
-    background-color: rgb(207, 250, 209);
     border-radius: 20px;
     box-shadow: 8px 8px 4px  rgb(174, 182, 191);
 }
@@ -70,6 +69,10 @@ img {
 
 /* Desktop */
 @media screen and (min-width: 1280px) {
+    .post {
+        background-color: rgb(207, 250, 209);
+    }
+    
     .post-heading-avatar {
         width: 15%;
     }
@@ -88,6 +91,7 @@ img {
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
     .post {
+        background-color: white;
         height: 30vh;
         margin-top: 1vh;
         width: 40vw;
