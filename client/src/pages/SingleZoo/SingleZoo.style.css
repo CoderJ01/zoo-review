@@ -21,6 +21,10 @@
         margin-left: 15%;
         margin-top: 5vh;
     }
+
+    .sz-list-of-reviews text {
+        margin-left: 15%;
+    }
 }
 
 /* iPad Pro */
@@ -42,6 +46,11 @@
         font-size: 2rem;
         margin-left: 5%;
         margin-top: 2vh;
+    }
+
+    .sz-list-of-reviews text {
+        font-size: 2rem;
+        margin-left: 5%;
     }
 }
 
@@ -68,7 +77,8 @@
         font-size: 25px;
     }
 
-    .single-zoo h2 {
+    .single-zoo h2,
+    .sz-list-of-reviews text {
         font-size: 25px;
     }
 }
