@@ -58,6 +58,11 @@
     .sbdf-dynamic-info p {
         margin-top: 4vh;
     }
+
+    .post-info-thumbs {
+        font-size: 20px;
+        margin-top: 20px;
+    }
 }
 
 /* iPad Pro */
@@ -88,5 +93,9 @@
 @media screen and (max-width: 540px) {
     .single-blog-display-body {
         font-size: 23px;
+    }
+
+    .post-info-thumbs {
+        margin-top: 10px;
     }
 }
