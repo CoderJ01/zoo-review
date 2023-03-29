@@ -49,22 +49,75 @@
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
+    .zoo-review {
+        background-color: white;
+        margin-left: 5%;
+        margin-top: 6vh;
+        width: 70%;
+    }
 
+    .zoo-review h1 {
+        font-size: 3rem;
+    }
+
+    .zrf-avatar {
+        height: 10%;
+        margin-top: 25px;
+        width: 10%;
+    }
+
+    .zoo-review text,
+    .zrf-text {
+        font-size: 20px;
+    }
+
+    .zoo-review-body p {
+        font-size: 35px;
+    }
 }
 
 /* iPad */
 @media screen and (max-width: 768px) {
+    .zoo-review h1 {
+        font-size: 2rem;
+    }
 
+    .zoo-review text,
+    .zrf-text {
+        font-size: 15px;
+    }
+
+    .zoo-review-body p {
+        font-size: 25px;
+    }
+
+    .zrf-avatar {
+        margin-top: -5px;
+    }
 }
 
 /* Surface Duo */
 @media screen and (max-width: 540px) {
+    .zoo-review h1 {
+        font-size: 22px;
+    }
 
+    .zoo-review {
+        width: 80%;
+    }
+
+    .zrf-avatar {
+        height: 60px;
+        margin-top: 0px;
+        width: 15%;
+    }
 }
 
 /* iPhone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
-
+    .zoo-review {
+        width: 90%;
+    }
 }
 
 /* iPhone 12 Pro */
