@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { displayRating, defaultProfileImage } from '../Post/Post.util';
 import axios from 'axios';
 import '../../pages/SingleReview/SingleReview.style.css';
+import './ZooReview.style.css';
 
 const baseURL = 'http://localhost:3001';
 
