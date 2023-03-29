@@ -5,13 +5,19 @@ import axios from 'axios';
 
 const baseURL = 'http://localhost:3001';
 
-const Post = ({ id, avatar, image, title, likes, post, rating, blog = false, zoo }) => {
+const Post = ({ post, blog = false }) => {
     const [zooName, setZooName] =useState('');
 
-    let ratingDisplay = displayRating(rating);
+    let ratingDisplay
+    if(post.rating) {
+        ratingDisplay = displayRating(post.rating);
+    }
+    else {
+        ratingDisplay = '';
+    }
 
     useEffect(() => {
-        const id = zoo;
+        const id = post.zoo;
 
         if(id) {
             const fetchZooImage = async () => {
@@ -25,7 +31,7 @@ const Post = ({ id, avatar, image, title, likes, post, rating, blog = false, zoo
             }
             fetchZooImage();
         }
-    }, [zoo, setZooName])
+    }, [post.zoo])
 
     return (
         <div className='post'>
@@ -51,7 +57,7 @@ const Post = ({ id, avatar, image, title, likes, post, rating, blog = false, zoo
                     (
                         <>
                             <h1>
-                                <text>{zooName}: <a href={`review/${id}`} target='_blank' rel='noreferrer'>{title}</a></text>
+                                <text>{zooName}: <a href={`review/${post._id}`} target='_blank' rel='noreferrer'>{[post.title]}</a></text>
                             </h1>
                             <div className='post-info-rating'>
                                 {ratingDisplay}
@@ -60,8 +66,8 @@ const Post = ({ id, avatar, image, title, likes, post, rating, blog = false, zoo
                     ) : 
                     (
                         <>
-                            <h1><a href={`blog/${id}`} target='_blank' rel='noreferrer'>{title}</a></h1>
-                            <p>{likes} likes</p>
+                            <h1><a href={`blog/${post._id}`} target='_blank' rel='noreferrer'>{post.title}</a></h1>
+                            <p>{post.thumbs} likes</p>
                         </>
                     )
                 }
