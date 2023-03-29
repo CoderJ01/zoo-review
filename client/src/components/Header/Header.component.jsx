@@ -7,7 +7,7 @@ import LoginForm from '../LoginForm/LoginForm';
 import cookie from 'js-cookie';
 import axios from 'axios';
 
-const baseURL = 'http://localhost:3001';
+const baseURL = 'http://localhost:3000';
 
 const buttonStyle = {
     backgroundColor: 'white', 
