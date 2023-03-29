@@ -13,7 +13,6 @@ const SingleBlog = () => {
     const [content, setContent] = useState('');
     const [date, setDate] = useState('');
     const [email, setEmail] = useState('');
-    const [likes, setLikes] = useState(0);
 
     const fetchBlogById = useCallback(async () => {
         const id = blogId;
@@ -26,7 +25,6 @@ const SingleBlog = () => {
                 setContent(response.data.data.content);
                 setDate(response.data.data.updatedAt.toString().substring(0, 10));
                 setEmail(response.data.email);
-                setLikes(response.data.data.thumbs);
             }
             catch(error) {
                 console.log(error);
