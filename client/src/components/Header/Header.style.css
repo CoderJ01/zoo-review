@@ -107,6 +107,11 @@ nav select {
         font-size: 4rem;
     }
 
+    .header-button-see-zoo {
+        margin-top: 5%;
+        height: 40px;
+    }
+
     .header-links {
         display: flex;
         font-size: 2rem;
@@ -145,10 +150,30 @@ nav select {
     .header-links text:active {
         color: rgb(34, 191, 41);
     }
+
+    .header-zoo-selection {
+        display: flex;
+        justify-content: space-evenly;
+        margin-left: 15%;
+        width: 70%;
+    }
+}
+
+/* iPad */
+@media screen and (max-width: 768px) {
+    .header-button-see-zoo {
+        margin-top: 4%;
+        height: 37px;
+    }
 }
 
 /* Surface Duo */
 @media screen and (max-width: 540px) {
+    .header-button-see-zoo {
+        margin-top: 3%;
+        height: 35px;
+    }
+
     .header-links {
         font-size: 2rem;
     }
@@ -162,10 +187,23 @@ nav select {
         height: 5vh;
         width: 75vw;
     }
+
+    .header-zoo-selection {
+        margin-left: 0%;
+        width: 100%;
+    }
 }
 
 /* iPhone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
+    nav select {
+        width: 60%;
+    }
+
+    .header-button-see-zoo {
+       width: 30%;
+    }
+
     .header-links, 
     .header-buttons button {
         font-size: 22px;
@@ -173,5 +211,12 @@ nav select {
 
     nav select {
         height: 4vh;
+    }
+}
+
+/* iPhone 12 Pro */
+@media screen and (max-width: 390px) {
+    .header-button-see-zoo {
+        margin-top: 4%;
     }
 }
