@@ -53,11 +53,6 @@
     }
 }
 
-/* iPad */
-@media screen and (max-width: 768px) {
-
-}
-
 /* Surface Duo */
 @media screen and (max-width: 540px) {
     .single-zoo h1 {
@@ -77,14 +72,4 @@
     .sz-list-of-reviews text {
         font-size: 25px;
     }
-}
-
-/* iPhone 12 Pro */
-@media screen and (max-width: 390px) {
-   
-}
-
-/* iPhone X */
-@media screen and (max-width: 375px) and (max-height: 812px) {
-
 }
