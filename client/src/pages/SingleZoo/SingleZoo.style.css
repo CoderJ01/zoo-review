@@ -1,6 +1,26 @@
+.single-zoo h1 {
+    text-align: center;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
+    .single-zoo h1 {
+        font-size: 50px;
+    }
 
+    .single-zoo text {
+        font-size: 25px;
+    }
+    
+    .single-zoo-photo {
+        margin-left: 15%;
+        width: 70%;
+    }
+    
+    .single-zoo h2 {
+        margin-left: 15%;
+        margin-top: 5vh;
+    }
 }
 
 /* iPad Pro */
