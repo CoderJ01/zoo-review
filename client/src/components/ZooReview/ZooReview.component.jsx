@@ -3,7 +3,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 
 // CSS
 import './ZooReview.style.css';
-import '../../pages/SingleReview/SingleReview.style.css';
 
 // utils
 import { displayRating, defaultProfileImage } from '../Post/Post.util';
