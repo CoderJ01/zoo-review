@@ -54,7 +54,10 @@ const SingleZoo = () => {
             {
                 reviews.length === 0 ? 
                 (
-                    <text>This zoo has yet to be reviewed!</text>
+                    <>
+                        <br/>
+                       <text>This zoo has yet to be reviewed!</text>
+                    </>
                 ) : 
                 (
                     reviews.map(review => {
