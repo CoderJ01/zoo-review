@@ -40,13 +40,13 @@ const DashboardDisplay = ({ posts, display, blog = false }) => {
                                 (
                                     <>
                                         <img alt='' src={reviewImage}/>
-                                        <h3><a href={`/review/${post._id}`} target="_blank" rel="noreferrer">{post.title}</a></h3>
+                                        <h3><a href={`/review/${post._id}`} target='_blank' rel='noreferrer'>{post.title}</a></h3>
                                     </>
                                 ) : 
                                 (   
                                     <>
                                         <img alt='' src={blogImage}/>
-                                        <h3><a href={`/blog/${post._id}`} target="_blank" rel="noreferrer">{post.title}</a></h3>
+                                        <h3><a href={`/blog/${post._id}`} target='_blank' rel='noreferrer'>{post.title}</a></h3>
                                     </>
                                 ) 
                             }
