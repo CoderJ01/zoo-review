@@ -75,10 +75,17 @@ nav select {
 
     nav select {
         height: 2rem;
-        margin-left: 27vw;
+        margin-left: -75vw;
         margin-top: 17px;
         position: absolute;
         width: 25vw;
+    }
+
+    .header-button-see-zoo {
+        height: 30px;
+        margin-left: -49vw;
+        margin-top: 17px;
+        position: absolute;
     }
 
     nav h1:active, 
