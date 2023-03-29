@@ -1,14 +1,21 @@
+// React
 import React, { useState, useEffect, useCallback } from 'react';
 import { Outlet, NavLink } from 'react-router-dom'; 
-import './Header.style.css'
-import Button from 'react-bootstrap/Button';
-import RegistrationForm from '../RegistrationForm/RegistrationForm.component';
-import LoginForm from '../LoginForm/LoginForm.component';
-import cookie from 'js-cookie';
-import axios from 'axios';
 
-const baseURL = 'http://localhost:3001';
-const baseURL_frontend = 'http://localhost:3000';
+// CSS
+import './Header.style.css';
+
+// components
+import LoginForm from '../LoginForm/LoginForm.component';
+import RegistrationForm from '../RegistrationForm/RegistrationForm.component';
+
+// URLs
+import { baseURL, baseURL_frontend } from '../../URLs/urls';
+
+// other imports
+import Button from 'react-bootstrap/Button';
+import axios from 'axios';
+import cookie from 'js-cookie';
 
 const buttonStyle = {
     backgroundColor: 'white', 

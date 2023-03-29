@@ -1,10 +1,17 @@
-import React from 'react';
-import { useState, useEffect, useCallback } from 'react';
-import { ratings } from './PostReview.utils';
-import './PostReview.style.css'
-import axios from 'axios';
+// React
+import React, { useState, useEffect, useCallback }from 'react';
 
-const baseURL = 'http://localhost:3001';
+// CSS
+import './PostReview.style.css';
+
+// utils
+import { ratings } from './PostReview.utils';
+
+// URLs 
+import { baseURL } from '../../URLs/urls';
+
+// other imports
+import axios from 'axios';
 
 const PostReview = ({ user }) => {
     const [title, setTitle] = useState('');

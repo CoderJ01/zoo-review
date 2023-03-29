@@ -1,9 +1,17 @@
+// React
 import React, { useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+
+// CSS
 import '../RegistrationForm/RegistrationForm.style.css';
-import axios from 'axios';
+
+// URLs
+import { baseURL } from '../../URLs/urls';
+
+// others
+import Button from 'react-bootstrap/Button';
 import Cookie from 'universal-cookie';
+import Modal from 'react-bootstrap/Modal';
+import axios from 'axios';
 
 const modalHeaderStyle = {
     display: 'flex', 
@@ -17,8 +25,6 @@ const buttonStyle = {
     marginLeft: '80%',
     marginTop: '3vh'
 }
-
-const baseURL = 'http://localhost:3001';
 
 const LoginForm = ({ showLogin, handleCloseLogin }) => {
     const [username, setUsername] = useState('');

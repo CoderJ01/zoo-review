@@ -1,4 +1,7 @@
+// React
 import React from 'react';
+
+// CSS
 import './AccessDenied.style.css';
 
 const AccessDenied = () => {

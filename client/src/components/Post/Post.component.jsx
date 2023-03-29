@@ -1,5 +1,10 @@
+// React
 import React from 'react';
+
+// CSS
 import './Post.style.css'
+
+// util
 import { displayRating, defaultProfileImage, blogImage, reviewImage } from './Post.util';
 
 const Post = ({ post, blog = false }) => {

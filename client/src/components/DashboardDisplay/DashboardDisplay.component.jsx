@@ -1,5 +1,10 @@
+// React
 import React from 'react';
-import './DashboardDisplay.style.css'
+
+// CSS
+import './DashboardDisplay.style.css';
+
+// utils
 import { blogImage, reviewImage } from '../Post/Post.util';
 
 const DashboardDisplay = ({ posts, display, blog = false }) => {

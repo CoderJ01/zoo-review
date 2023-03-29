@@ -1,9 +1,14 @@
-import React from 'react';
-import { useState } from 'react';
-import axios from 'axios';
-import '../PostReview/PostReview.style.css'
+// React
+import React, { useState} from 'react';
 
-const baseURL = 'http://localhost:3001';
+// CSS
+import '../PostReview/PostReview.style.css';
+
+// URL
+import { baseURL } from '../../URLs/urls';
+
+// other imports
+import axios from 'axios';
 
 const PostBlog = ({ user }) => {
     const [title, setTitle] = useState('');
