@@ -1,6 +1,49 @@
+.zoo-review {
+    background-color: rgb(232, 248, 245);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    padding: 5px;
+}
+
+.zoo-review-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.zoo-review h1 {
+    font-weight: bold;
+    text-align: left;
+}
+
+.zoo-review text {
+    font-size: 17px;
+}
+
+.zoo-review-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
+    .zoo-review {
+        margin-left: 15%;
+        width: 50%;
+    }
 
+    .zoo-review h1 {
+        font-size: 20px;
+    }
+
+    .zrf-text {
+        margin-top: 35px;
+    }
+
+    .zrf-avatar {
+        height: 10%;
+        margin-top: 30px;
+        width: 10%;
+    }
 }
 
 /* iPad Pro */

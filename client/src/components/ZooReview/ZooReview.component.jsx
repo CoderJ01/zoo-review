@@ -33,14 +33,17 @@ const ZooReview = ({ review }) => {
         <div className='zoo-review'>
             <div className='zoo-review-header'>
                 <h1>{review.title}</h1>
+                <text>{username}</text>  
             </div>
             <div className='zoo-review-body'>
                 <p>{review.content}</p>
-                {ratingDisplay}
+            </div>
+            <div className='zoo-review-rating'>
+               
             </div>
             <div className='zoo-review-footer'>
                 <div className='zrf-text'>
-                    <text>{username}</text>  
+                    {ratingDisplay}
                     <p>{review.updatedAt.toString().substring(0, 10)}</p>
                 </div>
                 <div className='zrf-avatar'>
