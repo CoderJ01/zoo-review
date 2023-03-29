@@ -33,6 +33,10 @@
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
+    .single-zoo {
+        background-color: rgb(232, 248, 245);
+    }
+
     .single-zoo h1 {
         font-size: 4rem;
     }
@@ -48,6 +52,10 @@
 
     .single-zoo h2 {
         margin-top: 2vh;
+    }
+
+    .sz-list-of-reviews {
+        margin-top: -3vh;
     }
 
     .single-zoo h2, 
