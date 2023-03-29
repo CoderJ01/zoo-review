@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
 import './SingleZoo.style.css';
+import ZooReview from '../../components/ZooReview/ZooReview.component';
 
 const baseURL = 'http://localhost:3001';
 
@@ -45,7 +46,13 @@ const SingleZoo = () => {
             </div>
             <h2>Reviews</h2>
             <div className='sz-list-of-reviews'>
-
+            {
+                reviews.map(review => {
+                    return (
+                        <ZooReview review={review}/>
+                    );
+                })
+            }
             </div>
         </div>
     );
