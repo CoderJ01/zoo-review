@@ -1,10 +1,18 @@
+// React
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router';
-import axios from 'axios';
+
+// CSS
 import './SingleZoo.style.css';
+
+// component
 import ZooReview from '../../components/ZooReview/ZooReview.component';
 
-const baseURL = 'http://localhost:3001';
+// URL
+import { baseURL } from '../../URLs/urls';
+
+// other imports
+import axios from 'axios';
 
 const SingleZoo = () => {
     const { zooId } = useParams();

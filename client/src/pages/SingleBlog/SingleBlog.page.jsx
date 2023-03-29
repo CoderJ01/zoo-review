@@ -1,9 +1,15 @@
+// React
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router';
-import axios from 'axios';
+
+// CSS 
 import './SingleBlog.style.css';
 
-const baseURL = 'http://localhost:3001';
+// URL
+import { baseURL } from '../../URLs/urls';
+
+// other imports
+import axios from 'axios';
 
 const SingleBlog = ({ loggedUser }) => {
     const { blogId } = useParams();

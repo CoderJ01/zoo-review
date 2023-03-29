@@ -1,7 +1,12 @@
+// React
 import React from 'react';
+
+// CSS
 import '../Review/Review.style.css'
-import PostBlog from '../../components/PostBlog/PostBlog.component';
+
+// components
 import AccessDenied from '../../components/AccessDenied/AccessDenied.component';
+import PostBlog from '../../components/PostBlog/PostBlog.component';
 
 const Blog = ({ user }) => {
     return (

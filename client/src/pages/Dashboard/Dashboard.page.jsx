@@ -1,7 +1,14 @@
+// React
 import React, { useState } from 'react';
+
+// CSS
 import './Dashboard.style.css'
+
+// components
 import AccessDenied from '../../components/AccessDenied/AccessDenied.component';
 import DashboardDisplay from '../../components/DashboardDisplay/DashboardDisplay.component';
+
+// utils
 import { defaultProfileImage } from '../../components/Post/Post.util';
 
 const Dashboard = ({ user }) => {

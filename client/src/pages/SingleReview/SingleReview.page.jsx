@@ -1,11 +1,18 @@
+// React
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import { displayRating } from '../../components/Post/Post.util';
-import './SingleReview.style.css';
-import { defaultProfileImage } from '../../components/Post/Post.util';
 
-const baseURL = 'http://localhost:3001';
+// CSS
+import './SingleReview.style.css';
+
+// utils
+import { displayRating, defaultProfileImage } from '../../components/Post/Post.util';
+
+// URL
+import { baseURL } from '../../URLs/urls';
+
+// other import
+import axios from 'axios';
 
 const SingleReview = () => {
     const { reviewId } = useParams();

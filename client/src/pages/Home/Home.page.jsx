@@ -1,9 +1,17 @@
+// React
 import React, {useState, useEffect} from 'react';
-import Post from '../../components/Post/Post.component';
-import './Home.style.css'
-import axios from 'axios';
 
-const baseURL = 'http://localhost:3001';
+// CSS
+import './Home.style.css'
+
+// component
+import Post from '../../components/Post/Post.component';
+
+// URL
+import { baseURL } from '../../URLs/urls';
+
+// other imports
+import axios from 'axios';
 
 const Home = () => {
     const [reviews, setReviews] = useState([]);
