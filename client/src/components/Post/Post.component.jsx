@@ -3,6 +3,7 @@ import './Post.style.css'
 import { displayRating, defaultProfileImage, blogImage, reviewImage } from './Post.util';
 
 const Post = ({ post, blog = false }) => {
+    console.log(post._id);
 
     let ratingDisplay
 
@@ -31,19 +32,21 @@ const Post = ({ post, blog = false }) => {
                 )
             }
             </div>
-            <div className='post-info'>
-                <h1><a href={`review/${post._id}`} target='_blank' rel='noreferrer'>{[post.title]}</a></h1>
-                <div className='post-info-rating'>{ratingDisplay}</div>
-                {
-                    !blog ? 
-                    (
-                        ''
-                    ) : 
-                    (
+            {
+                !blog ? 
+                (
+                    <div className='post-info'>
+                        <h1><a href={`review/${post._id}`} target='_blank' rel='noreferrer'>{[post.title]}</a></h1>
+                        <div className='post-info-rating'>{ratingDisplay}</div>
+                    </div>
+                ) : 
+                (
+                    <div className='post-info'>
+                        <h1><a href={`blog/${post._id}`} target='_blank' rel='noreferrer'>{[post.title]}</a></h1>
                         <p>{post.thumbs} likes</p>
-                    )
-                }
-            </div>
+                    </div>
+                )
+            }
         </div>
     );
 }
