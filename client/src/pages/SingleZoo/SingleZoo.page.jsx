@@ -10,6 +10,7 @@ const SingleZoo = () => {
             <div className='single-zoo-photo'>
                 <img alt='' src=''></img>
             </div>
+            <text>Average rating: </text>
             <h2>Reviews</h2>
             <div className='sz-list-of-reviews'>
 
