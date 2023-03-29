@@ -54,7 +54,10 @@ const SingleBlog = () => {
                         <p>{email}</p>
                     </div>
                     <div className='sbdf-dynamic-info'>
-                    <p>{likes} likes</p>
+                    <div className='post-info-thumbs'>
+                        <i class="fa fa-thumbs-up"></i>
+                        <i class="fa fa-thumbs-down" style={{marginLeft: '1vw'}}></i>
+                    </div>
                     </div>
                 </div>
             </div>
