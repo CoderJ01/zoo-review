@@ -12,6 +12,8 @@ const SingleZoo = () => {
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
     const [reviews, setReviews] = useState([]);
+    const [totalReviews, setTotalReviews] = useState(0);
+    const [totalRatings, setTotalRatings] = useState(0);
 
     const fetchZooById = useCallback(async () => {
         const id = zooId;
@@ -22,6 +24,13 @@ const SingleZoo = () => {
                 setName(response.data.name);
                 setImage(response.data.image);
                 setReviews(response.data.reviews);
+                setTotalReviews(response.data.reviews.length);
+
+                let sumOfRatings = 0;
+                for(let i = 0; i < response.data.reviews.length; i++) {
+                    sumOfRatings += response.data.reviews[i].rating;
+                }
+                setTotalRatings(sumOfRatings);
             }
             catch(error) {
                 console.log(error);
@@ -38,7 +47,7 @@ const SingleZoo = () => {
             <h1>{name}</h1>
             <div className='single-zoo-photo'>
                 <img alt='' src={image}></img>
-                <text>Average rating: </text>
+                <text>Average rating: {totalRatings/totalReviews}</text>
             </div>
             <h2>Reviews</h2>
             <div className='sz-list-of-reviews'>
