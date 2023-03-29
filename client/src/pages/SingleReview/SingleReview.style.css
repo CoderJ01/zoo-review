@@ -21,6 +21,11 @@
     margin-top: 2vh;
 }
 
+
+.srdf-avatar img {
+    border-radius: 50%;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .single-review {
@@ -66,6 +71,7 @@
 
     .srdf-avatar {
         height: 10%;
+        margin-top: -5%;
         margin-right: 4%;
         width: 23%;
     }
@@ -84,6 +90,10 @@
     .single-review-display p,
     .single-review-display text {
       font-size: 17px;
+    }
+
+    .srdf-avatar {
+        margin-top: -1%;
     }
 }
 
