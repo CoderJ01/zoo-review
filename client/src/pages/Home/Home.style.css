@@ -28,6 +28,11 @@
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
+    .home {
+        background-color: rgb(207, 250, 209);
+        border: 1px solid rgb(207, 250, 209);
+    }
+
     .home-posts {
         display: flex;
         flex-wrap: wrap;
