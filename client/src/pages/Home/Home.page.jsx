@@ -41,37 +41,38 @@ const Home = () => {
             <h1>Zoo Reviews</h1>
             <div className='home-posts'>
             {
-                reviews.map(review => {
-                    return (
-                        <Post
-                            id={review._id}
-                            avatar={review.avatar}
-                            image={review.image}
-                            title={review.title}
-                            rating={review.rating}
-                            post={review.content}
-                            zoo={review.zoo}
-                        />
-                    );
-                })
+                reviews.length === 0 ? 
+                (
+                    ''
+                ) : 
+                (
+                    reviews.map(review => {
+                        return (
+                            <Post
+                               post={review}
+                            />
+                        );
+                    })
+                )
             }
             </div>
             <h1>Blogs</h1>
             <div className='home-posts'>
             {
-                blogs.map(blog => {
-                    return (
-                        <Post
-                            id={blog._id}
-                            avatar={blog.avatar}
-                            image={blog.image}
-                            title={blog.title}
-                            post={blog.post}
-                            likes={blog.thumbs}
-                            blog={true}
-                        />
-                    );
-                })
+                blogs.length === 0 ? 
+                (
+                    ''
+                ) :
+                (
+                    blogs.map(blog => {
+                        return (
+                            <Post
+                                post={blog}
+                                blog={true}
+                            />
+                        );
+                    })
+                )
             }
             </div>
         </div>
