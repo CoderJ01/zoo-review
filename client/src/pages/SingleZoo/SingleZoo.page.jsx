@@ -47,11 +47,17 @@ const SingleZoo = () => {
             <h2>Reviews</h2>
             <div className='sz-list-of-reviews'>
             {
-                reviews.map(review => {
-                    return (
-                        <ZooReview review={review}/>
-                    );
-                })
+                reviews.length === 0 ? 
+                (
+                    <text>This zoo has yet to be reviewed!</text>
+                ) : 
+                (
+                    reviews.map(review => {
+                        return (
+                            <ZooReview review={review}/>
+                        );
+                    })
+                )
             }
             </div>
         </div>
