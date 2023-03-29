@@ -32,17 +32,17 @@ const Post = ({ post, blog = false }) => {
             }
             </div>
             <div className='post-info'>
-            <h1><a href={`review/${post._id}`} target='_blank' rel='noreferrer'>{[post.title]}</a></h1>
-            <div className='post-info-rating'>{ratingDisplay}</div>
-            {
-                !blog ? 
-                (
-                    ''
-                ) : 
-                (
-                    <p>{post.thumbs} likes</p>
-                )
-            }
+                <h1><a href={`review/${post._id}`} target='_blank' rel='noreferrer'>{[post.title]}</a></h1>
+                <div className='post-info-rating'>{ratingDisplay}</div>
+                {
+                    !blog ? 
+                    (
+                        ''
+                    ) : 
+                    (
+                        <p>{post.thumbs} likes</p>
+                    )
+                }
             </div>
         </div>
     );
