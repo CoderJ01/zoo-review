@@ -3,7 +3,7 @@ import { Outlet, NavLink } from 'react-router-dom';
 import './Header.style.css'
 import Button from 'react-bootstrap/Button';
 import RegistrationForm from '../RegistrationForm/RegistrationForm.component';
-import LoginForm from '../LoginForm/LoginForm';
+import LoginForm from '../LoginForm/LoginForm.component';
 import cookie from 'js-cookie';
 import axios from 'axios';
 
