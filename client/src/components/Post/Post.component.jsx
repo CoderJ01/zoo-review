@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const baseURL = 'http://localhost:3001';
 
-const Post = ({ id, avatar, image, title, post, rating, blog = false, zoo }) => {
+const Post = ({ id, avatar, image, title, likes, post, rating, blog = false, zoo }) => {
     const [zooName, setZooName] =useState('');
 
     let ratingDisplay = displayRating(rating);
@@ -61,10 +61,7 @@ const Post = ({ id, avatar, image, title, post, rating, blog = false, zoo }) => 
                     (
                         <>
                             <h1><a href={`blog/${id}`} target='_blank' rel='noreferrer'>{title}</a></h1>
-                            <div className='post-info-thumbs'>
-                                <i class="fa fa-thumbs-up"></i>
-                                <i class="fa fa-thumbs-down" style={{marginLeft: '1vw'}}></i>
-                            </div>
+                            <p>{likes} likes</p>
                         </>
                     )
                 }
