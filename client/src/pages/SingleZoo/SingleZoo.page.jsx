@@ -47,7 +47,15 @@ const SingleZoo = () => {
             <h1>{name}</h1>
             <div className='single-zoo-photo'>
                 <img alt='' src={image}></img>
-                <text>Average rating: {totalRatings/totalReviews}</text>
+                {
+                    reviews.length === 0 ? 
+                    (
+                        ''
+                    ) : 
+                    (
+                        <text>Average rating: {totalRatings/totalReviews}</text>
+                    )
+                }
             </div>
             <h2>Reviews</h2>
             <div className='sz-list-of-reviews'>
