@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
+import './SingleZoo.style.css';
 
 const baseURL = 'http://localhost:3001';
 
