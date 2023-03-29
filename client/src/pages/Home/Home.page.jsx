@@ -67,6 +67,7 @@ const Home = () => {
                             image={blog.image}
                             title={blog.title}
                             post={blog.post}
+                            likes={blog.thumbs}
                             blog={true}
                         />
                     );
