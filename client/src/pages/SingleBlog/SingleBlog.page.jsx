@@ -5,7 +5,7 @@ import './SingleBlog.style.css';
 
 const baseURL = 'http://localhost:3001';
 
-const SingleBlog = () => {
+const SingleBlog = ({ loggedUser }) => {
     const { blogId } = useParams();
 
     const [title, setTitle] = useState('');
@@ -52,10 +52,18 @@ const SingleBlog = () => {
                         <p>{email}</p>
                     </div>
                     <div className='sbdf-dynamic-info'>
-                    <div className='post-info-thumbs'>
-                        <i class="fa fa-thumbs-up"></i>
-                        <i class="fa fa-thumbs-down" style={{marginLeft: '1vw'}}></i>
-                    </div>
+                    {
+                        loggedUser.length === 0 ? 
+                        (
+                            ''
+                        ) : 
+                        (
+                            <div className='post-info-thumbs'>
+                                <i class="fa fa-thumbs-up"></i>
+                                <i class="fa fa-thumbs-down" style={{marginLeft: '1vw'}}></i>
+                            </div>
+                        )
+                    }
                     </div>
                 </div>
             </div>
