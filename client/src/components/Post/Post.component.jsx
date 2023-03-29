@@ -8,9 +8,8 @@ import './Post.style.css'
 import { displayRating, defaultProfileImage, blogImage, reviewImage } from './Post.util';
 
 const Post = ({ post, blog = false }) => {
-    console.log(post._id);
 
-    let ratingDisplay
+    let ratingDisplay;
 
     if(post.rating) {
         ratingDisplay = displayRating(post.rating);
