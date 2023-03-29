@@ -25,7 +25,24 @@
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
+    .single-zoo h1 {
+        font-size: 4rem;
+    }
 
+    .single-zoo-photo {
+        margin-left: 5%;
+        width: 90%;
+    }
+
+    .single-zoo text {
+        font-size: 3rem;
+    }
+
+    .single-zoo h2 {
+        font-size: 2rem;
+        margin-left: 5%;
+        margin-top: 2vh;
+    }
 }
 
 /* iPad */
@@ -35,12 +52,25 @@
 
 /* Surface Duo */
 @media screen and (max-width: 540px) {
+    .single-zoo h1 {
+        font-size: 3rem;
+    }
 
+    .single-zoo text {
+        font-size: 2rem;
+    }
+    
 }
 
 /* iPhone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
+    .single-zoo text {
+        font-size: 25px;
+    }
 
+    .single-zoo h2 {
+        font-size: 25px;
+    }
 }
 
 /* iPhone 12 Pro */
