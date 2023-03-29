@@ -46,7 +46,7 @@ function App() {
             <Route path='/post-blog' element={<Blog user={user}/>}/>
             <Route path='/dashboard' element={<Dashboard user={user}/>}/>
             <Route path='/review/:reviewId' element={<SingleReview/>}/>
-            <Route path='/blog/:blogId' element={<SingleBlog/>}/>
+            <Route path='/blog/:blogId' element={<SingleBlog user={user}/>}/>
             <Route path='/zoo/:zooId' element={<SingleZoo/>}/>
           </Route>
         </Routes>
