@@ -37,4 +37,26 @@ router.put('/like/:userId/:blogId', async (req, res) => {
     });
 });
 
+router.put('/dislike/:userId/:blogId', async (req, res) => {
+    const user = await User.findOne({ _id: req.params.userId });
+    console.log(user);
+    
+    if(!user.dislikedBlogs.includes(req.params.blogId)) {
+        user.dislikedBlogs.push(req.params.blogId);
+        if(user.likedBlogs.includes(req.params.blogId)) {
+            user.likedBlogs.pull(req.params.blogId);
+        }
+    }
+    else {
+        user.dislikedBlogs.pull(req.params.blogId);
+    }
+
+    user.save();
+
+    res.send({
+        liked: user.likedBlogs,
+        disliked: user.dislikedBlogs
+    });
+});
+
 module.exports = router;
