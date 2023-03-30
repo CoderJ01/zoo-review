@@ -86,7 +86,7 @@ const SingleBlog = ({ loggedUser }) => {
                         (
                             <div className='post-info-thumbs'>
                                 <i class='fa fa-thumbs-up' onClick={handleThumbsUp}></i>
-                                <i class='fa fa-thumbs-down' style={{marginLeft: '1vw'}} onClick={handleThumbsDown}></i>
+                                <i class='fa fa-thumbs-down' onClick={handleThumbsDown}></i>
                             </div>
                         )
                     }
