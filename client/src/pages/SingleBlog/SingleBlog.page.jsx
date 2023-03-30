@@ -90,7 +90,8 @@ const SingleBlog = ({ loggedUser }) => {
         dislikedColor = '';
     }
 
-    const handleThumbsUp = async () => {
+    const handleThumbsUp = async (event) => {
+        event.preventDefault(); 
         axios.put(baseURL + `/single-blog/like/${loggedUser._id}/${blogId}`)
         .then(response => {
             console.log(response.data);
@@ -101,7 +102,8 @@ const SingleBlog = ({ loggedUser }) => {
         window.location.reload(false);
     }
 
-    const handleThumbsDown = () => {
+    const handleThumbsDown = (event) => {
+        event.preventDefault(); 
         axios.put(baseURL + `/single-blog/dislike/${loggedUser._id}/${blogId}`)
         .then(response => {
             console.log(response.data);
