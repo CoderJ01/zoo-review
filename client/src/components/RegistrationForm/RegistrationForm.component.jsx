@@ -55,7 +55,8 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
         //     console.log(error);
         // }
 
-        axios.post(baseURL + '/auth/register', {
+        axios.post(baseURL + '/auth/register', 
+        {
             firstname: firstName,
             lastname: lastName,
             username: username,
@@ -63,7 +64,12 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
             password: password,
             bio: bio,
             // avatar: file
-        })
+        }, 
+        {
+            withCredentials: true,
+            credentials: 'include'
+        }
+        )
         .then(
             response => {
                 const cookies = new Cookie();
@@ -80,7 +86,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
                 window.location.reload(false);
             }, 
             error => {
-                alert(error.response.data.msg);
+                alert(error);
             }
         );
     }
