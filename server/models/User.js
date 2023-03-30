@@ -36,6 +36,12 @@ const UserSchema = new mongoose.Schema(
         randomString: {
             type: String
         },
+        likedBlogs: {
+            type: [String]
+        },
+        dislikedBlogs: {
+            type: [String]
+        },
         reviews: [ReviewSchema],
         blogs: [BlogSchema],
     }, 
