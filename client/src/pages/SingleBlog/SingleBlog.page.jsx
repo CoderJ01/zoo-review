@@ -42,6 +42,14 @@ const SingleBlog = ({ loggedUser }) => {
         fetchBlogById();
     }, [fetchBlogById]);
 
+    const handleThumbsUp = () => {
+        console.log('Thumbs up');
+    }
+
+    const handleThumbsDown = () => {
+        console.log('Thumbs down');
+    }
+
     return (
         <div className='single-blog'>
             <div className='single-blog-display'>
@@ -65,8 +73,8 @@ const SingleBlog = ({ loggedUser }) => {
                         ) : 
                         (
                             <div className='post-info-thumbs'>
-                                <i class="fa fa-thumbs-up"></i>
-                                <i class="fa fa-thumbs-down" style={{marginLeft: '1vw'}}></i>
+                                <i class='fa fa-thumbs-up' onClick={handleThumbsUp}></i>
+                                <i class='fa fa-thumbs-down' style={{marginLeft: '1vw'}} onClick={handleThumbsDown}></i>
                             </div>
                         )
                     }
