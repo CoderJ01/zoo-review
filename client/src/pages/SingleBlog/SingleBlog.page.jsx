@@ -42,8 +42,14 @@ const SingleBlog = ({ loggedUser }) => {
         fetchBlogById();
     }, [fetchBlogById]);
 
-    const handleThumbsUp = () => {
-        
+    const handleThumbsUp = async () => {
+        axios.put(baseURL + `/single-blog/like/${loggedUser._id}/${blogId}`)
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.log(error);
+        })
     }
 
     const handleThumbsDown = () => {
