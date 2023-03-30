@@ -43,11 +43,11 @@ const SingleBlog = ({ loggedUser }) => {
     }, [fetchBlogById]);
 
     const handleThumbsUp = () => {
-        console.log('Thumbs up');
+        
     }
 
     const handleThumbsDown = () => {
-        console.log('Thumbs down');
+        
     }
 
     return (
