@@ -18,7 +18,6 @@ router.get('/:id', async (req, res) => {
 router.put('/like/:userId/:blogId', async (req, res) => {
     const user = await User.findOne({ _id: req.params.userId });
     const blog = await Blog.findOne({ _id: req.params.blogId });
-    console.log(user);
     
     if(!user.likedBlogs.includes(req.params.blogId)) {
         user.likedBlogs.push(req.params.blogId);
