@@ -19,6 +19,8 @@ const SingleBlog = ({ loggedUser }) => {
     const [content, setContent] = useState('');
     const [date, setDate] = useState('');
     const [email, setEmail] = useState('');
+    const [liked, setLiked] = useState(false);
+    const [disliked, setDisliked] = useState(false);
 
     const fetchBlogById = useCallback(async () => {
         const id = blogId;
@@ -41,6 +43,46 @@ const SingleBlog = ({ loggedUser }) => {
     useEffect(() => {
         fetchBlogById();
     }, [fetchBlogById]);
+
+    useEffect(() => {
+        if(loggedUser !== 0) {
+            const checkLiked = () => {
+                if(loggedUser.likedBlogs?.includes(blogId)) {
+                    setLiked(true);
+                }
+                else {
+                    setLiked(false)
+                }
+            }
+            const checkDislike = () => {
+                if(loggedUser.dislikedBlogs?.includes(blogId)) {
+                    setDisliked(true);
+                }
+                else {
+                    setDisliked(false)
+                }
+            }
+            checkLiked();
+            checkDislike();
+        }
+    }, [loggedUser, loggedUser.likedBlogs, loggedUser.dislikedBlogs, blogId]);
+
+    let likedColor;
+    let dislikedColor;
+
+    if(liked === true) {
+        likedColor = 'rgb(34, 191, 41)';
+    }
+    else {
+        likedColor = '';
+    }
+
+    if(disliked === true) {
+        dislikedColor = 'rgb(223, 33, 33)';
+    }
+    else {
+        dislikedColor = '';
+    }
 
     const handleThumbsUp = async () => {
         axios.put(baseURL + `/single-blog/like/${loggedUser._id}/${blogId}`)
@@ -85,8 +127,8 @@ const SingleBlog = ({ loggedUser }) => {
                         ) : 
                         (
                             <div className='post-info-thumbs'>
-                                <i class='fa fa-thumbs-up' onClick={handleThumbsUp}></i>
-                                <i class='fa fa-thumbs-down' onClick={handleThumbsDown}></i>
+                                <i class='fa fa-thumbs-up' onClick={handleThumbsUp} style={{ color: likedColor }}></i>
+                                <i class='fa fa-thumbs-down' onClick={handleThumbsDown} style={{ color: dislikedColor }}></i>
                             </div>
                         )
                     }
