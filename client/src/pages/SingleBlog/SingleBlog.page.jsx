@@ -5,6 +5,9 @@ import { useParams } from 'react-router';
 // CSS 
 import './SingleBlog.style.css';
 
+// util 
+import { colorThumbUp, colorThumbDown } from './SingleBlog.util';
+
 // URL
 import { baseURL } from '../../URLs/urls';
 
@@ -66,6 +69,9 @@ const SingleBlog = ({ loggedUser }) => {
             checkDislike();
         }
     }, [loggedUser, loggedUser.likedBlogs, loggedUser.dislikedBlogs, blogId]);
+
+    let upColor = colorThumbUp(liked);
+    let downColor = colorThumbDown(disliked);
 
     let likedColor;
     let dislikedColor;
@@ -129,8 +135,8 @@ const SingleBlog = ({ loggedUser }) => {
                         ) : 
                         (
                             <div className='post-info-thumbs'>
-                                <i class='fa fa-thumbs-up' onClick={handleThumbsUp} style={{ color: likedColor }}></i>
-                                <i class='fa fa-thumbs-down' onClick={handleThumbsDown} style={{ color: dislikedColor }}></i>
+                                <i class='fa fa-thumbs-up' onClick={handleThumbsUp} style={{ color: upColor }}></i>
+                                <i class='fa fa-thumbs-down' onClick={handleThumbsDown} style={{ color: downColor }}></i>
                             </div>
                         )
                     }
