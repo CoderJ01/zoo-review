@@ -139,7 +139,7 @@ const Header = ({ user }) => {
                         ))}
                     </select>
                     <div className='header-button-see-zoo'>
-                        <Button href={baseURL_frontend + `/zoo/${zooId}`} style={buttonStyle} target='_blank' rel='noreferrer'>
+                        <Button href={baseURL_frontend + `/zoo/${zooId}`} style={buttonStyle}>
                             <div className='header-vanilla-button-text'>See Zoo</div>
                         </Button>
                     </div>
