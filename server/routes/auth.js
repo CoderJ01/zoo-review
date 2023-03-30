@@ -9,7 +9,7 @@ router.post('/register', async (req, res) => {
     const hashedPass = await bcrypt.hash(req.body.password, salt);
     const username = await User.findOne({ username: req.body.username });
     const email = await User.findOne({ email: req.body.email });
-    const hashedCookie = bcrypt.hash(makeCookieValue(80), salt);
+    const hashedCookie = await bcrypt.hash(makeCookieValue(80), salt);
    
     if(username) {
         return res.status(400).json({ msg: 'Username must be unique!' });
