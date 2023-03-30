@@ -25,6 +25,7 @@ router.put('/like/:userId/:blogId', async (req, res) => {
         blog.thumbs++;
         if(user.dislikedBlogs.includes(req.params.blogId)) {
             user.dislikedBlogs.pull(req.params.blogId);
+            blog.thumbs++;
         }
     }
     else {
@@ -52,6 +53,7 @@ router.put('/dislike/:userId/:blogId', async (req, res) => {
         blog.thumbs--;
         if(user.likedBlogs.includes(req.params.blogId)) {
             user.likedBlogs.pull(req.params.blogId);
+            blog.thumbs--;
         }
     }
     else {
