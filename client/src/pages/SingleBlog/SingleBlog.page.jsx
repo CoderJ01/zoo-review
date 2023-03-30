@@ -73,23 +73,6 @@ const SingleBlog = ({ loggedUser }) => {
     let upColor = colorThumbUp(liked);
     let downColor = colorThumbDown(disliked);
 
-    let likedColor;
-    let dislikedColor;
-
-    if(liked === true) {
-        likedColor = 'rgb(34, 191, 41)';
-    }
-    else {
-        likedColor = '';
-    }
-
-    if(disliked === true) {
-        dislikedColor = 'rgb(223, 33, 33)';
-    }
-    else {
-        dislikedColor = '';
-    }
-
     const handleThumbsUp = async (event) => {
         event.preventDefault(); 
         axios.put(baseURL + `/single-blog/like/${loggedUser._id}/${blogId}`)
