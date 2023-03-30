@@ -25,6 +25,9 @@ const SingleBlog = ({ loggedUser }) => {
     const [liked, setLiked] = useState(false);
     const [disliked, setDisliked] = useState(false);
 
+    let upColor = colorThumbUp(liked);
+    let downColor = colorThumbDown(disliked);
+
     const fetchBlogById = useCallback(async () => {
         const id = blogId;
 
@@ -69,9 +72,6 @@ const SingleBlog = ({ loggedUser }) => {
             checkDislike();
         }
     }, [loggedUser, loggedUser.likedBlogs, loggedUser.dislikedBlogs, blogId]);
-
-    let upColor = colorThumbUp(liked);
-    let downColor = colorThumbDown(disliked);
 
     const handleThumbsUp = async (event) => {
         event.preventDefault(); 
