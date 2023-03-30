@@ -53,7 +53,13 @@ const SingleBlog = ({ loggedUser }) => {
     }
 
     const handleThumbsDown = () => {
-        
+        axios.put(baseURL + `/single-blog/dislike/${loggedUser._id}/${blogId}`)
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.log(error);
+        })
     }
 
     return (
