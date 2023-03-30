@@ -23,6 +23,11 @@
     margin-top: 5vh;
 }
 
+.fa-thumbs-up:active,
+.fa-thumbs-down:active {
+    opacity: 0.5;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .single-blog {
@@ -63,6 +68,10 @@
         font-size: 20px;
         margin-top: 20px;
     }
+
+    .fa-thumbs-down {
+        margin-left: 2vw;
+    }
 }
 
 /* iPad Pro */
@@ -87,6 +96,10 @@
     .single-blog-display-body {
         font-size: 2rem;
     }
+
+    .fa-thumbs-down {
+        margin-left: 3vw;
+    }
 }
 
 /* Surface Duo */
@@ -97,5 +110,9 @@
 
     .post-info-thumbs {
         margin-top: 10px;
+    }
+
+    .fa-thumbs-down {
+        margin-left: 5vw;
     }
 }
