@@ -47,7 +47,21 @@ const Post = ({ post, blog = false }) => {
                 (
                     <div className='post-info'>
                         <h1><a href={`blog/${post._id}`} target='_blank' rel='noreferrer'>{[post.title]}</a></h1>
-                        <p>{post.thumbs} likes</p>
+                        {
+                            post.thumbs < 1 ? 
+                            (
+                                ''
+                            ) : 
+                            (
+                                post.thumbs === 1 ? 
+                                (
+                                    <p>{post.thumbs} like</p>
+                                ) : 
+                                (
+                                    <p>{post.thumbs} likes</p>
+                                )
+                            )
+                        }
                     </div>
                 )
             }
