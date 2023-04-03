@@ -33,8 +33,9 @@ const Post = ({ post, blog = false }) => {
                             <img alt='' src={reviewImage}></img> 
                         </div>
                         <div className='post-info'>
-                            <h1><a href={`review/${post._id}`} target='_blank' rel='noreferrer'>{[post.title]}</a></h1>
+                            <h1>{post.title}</h1>
                             <div className='post-info-rating'>{ratingDisplay}</div>
+                            <a href={`review/${post._id}`} target='_blank' rel='noreferrer'>Click here for more details</a>
                         </div>
                     </>
                 ) : 
@@ -44,7 +45,7 @@ const Post = ({ post, blog = false }) => {
                             <img alt='' src={blogImage}></img> 
                         </div>
                         <div className='post-info'>
-                            <h1><a href={`blog/${post._id}`} target='_blank' rel='noreferrer'>{[post.title]}</a></h1>
+                            <h1>{post.title}</h1>
                             {
                                 post.thumbs < 1 ? 
                                 (
@@ -60,6 +61,7 @@ const Post = ({ post, blog = false }) => {
                                     )
                                 )
                             }
+                            <a href={`blog/${post._id}`} target='_blank' rel='noreferrer'>Click here for more details</a>
                         </div>
                     </>
                 )
