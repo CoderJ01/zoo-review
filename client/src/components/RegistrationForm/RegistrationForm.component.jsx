@@ -44,7 +44,6 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
             email: email,
             password: password,
             bio: bio,
-            // avatar: file
         }, 
         {
             withCredentials: true,
