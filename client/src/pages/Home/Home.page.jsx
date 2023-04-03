@@ -40,49 +40,56 @@ const Home = () => {
 
         fetchReviews();
         fetchBlogs();
-
     }, []);
 
     return (
         <div className='home'>
             <div className='home-top-image'/>
-            <h1>Zoo Reviews</h1>
-            <div className='home-posts'>
             {
                 reviews.length === 0 ? 
                 (
                     ''
                 ) : 
                 (
-                    reviews.map(review => {
-                        return (
-                            <Post
-                               post={review}
-                            />
-                        );
-                    })
+                    <>
+                        <h1>Zoo Reviews</h1>
+                        <div className='home-posts'>
+                        {
+                            reviews.map(review => {
+                                return (
+                                    <Post
+                                    post={review}
+                                    />
+                                );
+                            })
+                        }
+                        </div>
+                    </>
                 )
             }
-            </div>
-            <h1>Blogs</h1>
-            <div className='home-posts'>
             {
                 blogs.length === 0 ? 
                 (
                     ''
-                ) :
+                ) : 
                 (
-                    blogs.map(blog => {
-                        return (
-                            <Post
-                                post={blog}
-                                blog={true}
-                            />
-                        );
-                    })
+                    <>
+                        <h1>Blogs</h1>
+                        <div className='home-posts'>
+                        {
+                            blogs.map(blog => {
+                                return (
+                                    <Post
+                                        post={blog}
+                                        blog={true}
+                                    />
+                                );
+                            })
+                        }
+                        </div>
+                    </>
                 )
             }
-            </div>
         </div>
     );
 }
