@@ -26,7 +26,6 @@ router.post('/register', async (req, res) => {
         email: req.body.email,
         password: hashedPass,
         bio: req.body.bio,
-        avatar: req.body.avatar,
         randomString: hashedCookie
     });
     const sessionUser = { id: newUser._id.toString(), username: newUser.username };

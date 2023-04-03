@@ -66,7 +66,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
                 window.location.reload(false);
             }, 
             error => {
-                alert(error);
+                alert(error.response.data.msg);
             }
         );
     }
