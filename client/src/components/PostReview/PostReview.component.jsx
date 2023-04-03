@@ -16,6 +16,7 @@ import axios from 'axios';
 const PostReview = ({ user }) => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const [count, setCount] = useState(0);
     const [selected, setSelected] = useState(ratings[0]);
     const [zoos, setZoos] = useState([]);
     const [zooNames, setZooNames] = useState([]);
@@ -83,6 +84,11 @@ const PostReview = ({ user }) => {
         )
     }
 
+    const handleContent = (e) => {
+        setContent(e.target.value);
+        setCount(e.target.value.length);
+    }
+
     return (
         <form className='post-form' onSubmit={handleSubmit}>
             <h1>Write a Review</h1>
@@ -104,8 +110,8 @@ const PostReview = ({ user }) => {
                 <input type='text' name='title' value={title} onChange={(e) => setTitle(e.target.value)}/>
             </div>
             <div>
-                <label htmlFor='content'>Content:</label><br/>
-                <textarea maxLength={1000} type='text' name='content' value={content} onChange={(e) => setContent(e.target.value)}/>
+                <label htmlFor='content'>Content ({count}/1000):</label><br/>
+                <textarea maxLength={1000} type='text' name='content' value={content} onChange={handleContent}/>
             </div>
             <div>
                 <label htmlFor='rating'>Rating:</label><br/>
