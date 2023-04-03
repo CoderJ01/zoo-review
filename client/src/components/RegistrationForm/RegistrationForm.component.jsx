@@ -40,6 +40,11 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
             alert('All required fields need to be filled in!');
             return;
         }
+
+        if(password.length < 8) {
+            alert('Password must be at least 8 characters!');
+            return;
+        }
        
         axios.post(baseURL + '/auth/register', 
         {
@@ -100,7 +105,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
                         <input type='text' name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                     <div>
-                        <label htmlFor='passowrd'>Password:</label><br/>
+                        <label htmlFor='passowrd'>Password (8+ characters):</label><br/>
                         <input type='text' name='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
                     </div>
                     <div>
