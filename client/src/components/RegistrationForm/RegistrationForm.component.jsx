@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 // CSS
 import './RegistrationForm.style.css';
 
+// util
+import { isValidEmail } from './RegistrationForm.util';
+
 // URL
 import { baseURL } from '../../URLs/urls';
 
@@ -38,6 +41,11 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
 
         if(!firstName || !lastName || !username || !email || !password) {
             alert('All required fields need to be filled in!');
+            return;
+        }
+
+        if(!isValidEmail(email)) {
+            alert('Email is not valid!');
             return;
         }
 
