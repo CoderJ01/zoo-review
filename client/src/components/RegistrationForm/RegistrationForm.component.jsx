@@ -35,6 +35,11 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        if(!firstName || !lastName || !username || !email || !password) {
+            alert('All required fields need to be filled in!');
+            return;
+        }
        
         axios.post(baseURL + '/auth/register', 
         {
@@ -99,7 +104,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
                         <input type='text' name='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
                     </div>
                     <div>
-                        <label htmlFor='bio'>Bio:</label><br/>
+                        <label htmlFor='bio'>Bio (optional):</label><br/>
                         <textarea maxLength={200} type='text' name='bio' value={bio} onChange={(e) => setBio(e.target.value)}/>
                     </div>
                     <Button type='submit' style={buttonStyle} onClick={handleCloseSignup}>
