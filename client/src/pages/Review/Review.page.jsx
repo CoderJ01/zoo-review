@@ -1,7 +1,12 @@
+// React
 import React from 'react';
-import './Review.style.css'
-import PostReview from '../../components/PostReview/PostReview.component';
+
+// CSS
+import './Review.style.css';
+
+// components
 import AccessDenied from '../../components/AccessDenied/AccessDenied.component';
+import PostReview from '../../components/PostReview/PostReview.component';
 
 const Review = ({ user }) => {
     return (
