@@ -21,7 +21,7 @@ const Home = () => {
         const fetchReviews = async () => {
             try {
                 const response = await axios.get(baseURL + '/homepage/reviews');
-                setReviews(response.data)
+                setReviews(response.data.reverse());
             }
             catch(error) {
                 console.log(error)
@@ -31,7 +31,7 @@ const Home = () => {
         const fetchBlogs = async () => {
             try {
                 const response = await axios.get(baseURL + '/homepage/blogs');
-                setBlogs(response.data)
+                setBlogs(response.data.reverse());
             }
             catch(error) {
                 console.log(error)

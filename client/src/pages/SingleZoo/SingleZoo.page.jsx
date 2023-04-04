@@ -31,7 +31,7 @@ const SingleZoo = () => {
                 const response = await axios.get(baseURL + `/single-zoo/${id}`);
                 setName(response.data.name);
                 setImage(response.data.image);
-                setReviews(response.data.reviews);
+                setReviews(response.data.reviews.reverse());
                 setTotalReviews(response.data.reviews.length);
 
                 let sumOfRatings = 0;
