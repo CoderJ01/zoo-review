@@ -114,7 +114,7 @@ const SingleBlog = ({ loggedUser }) => {
                     </div>
                     <div className='sbdf-dynamic-info'>
                     {
-                        loggedUser.length === 0 ? 
+                        loggedUser.length === 0 || loggedUser.username === user ? 
                         (
                             ''
                         ) : 
