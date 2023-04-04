@@ -120,7 +120,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
                     </div>
                     <div>
                         <label htmlFor='passowrd'>Password (8+ characters):</label><br/>
-                        <input type='text' name='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+                        <input type='password' name='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
                     </div>
                     <div>
                         <label htmlFor='bio'>Bio (optional, {count}/200):</label><br/>

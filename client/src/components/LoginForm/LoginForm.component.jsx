@@ -76,7 +76,7 @@ const LoginForm = ({ showLogin, handleCloseLogin }) => {
                     </div>
                     <div>
                         <label htmlFor='passowrd'>Password:</label><br/>
-                        <input type='text' name='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+                        <input type='password' name='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
                     </div>
                     <Button type='submit' style={buttonStyle} onClick={handleCloseLogin}>
                         Login in
