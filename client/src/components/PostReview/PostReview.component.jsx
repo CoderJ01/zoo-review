@@ -21,7 +21,7 @@ const PostReview = ({ user }) => {
     const [zoos, setZoos] = useState([]);
     const [zooNames, setZooNames] = useState([]);
     const [pickedZoo, setPickedZoo] = useState(zooNames[0]);
-    const [zooId, setZooId] = useState('');
+    const [zooId, setZooId] = useState(process.env.REACT_APP_DEFAULT_ZOO_ID);
     
     useEffect(() => { 
         const fetchZoos = async () => {
