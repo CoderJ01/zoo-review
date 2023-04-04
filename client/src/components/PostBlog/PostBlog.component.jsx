@@ -16,6 +16,17 @@ const PostBlog = ({ user }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        if(!title) {
+            alert('A title is needed!');
+            return;
+        }
+
+        if(content.length < 500) {
+            alert('The blog needs to be at least 500 characters!');
+            return;
+        }
+
         axios.post(baseURL + `/post-blog/${user._id}`, 
             {
                 title: title,
@@ -42,7 +53,7 @@ const PostBlog = ({ user }) => {
                 <input type='text' name='title' value={title} onChange={(e) => setTitle(e.target.value)}/>
             </div>
             <div>
-                <label htmlFor='content'>Content:</label><br/>
+                <label htmlFor='content'>Content (500+ characters):</label><br/>
                 <textarea type='text' name='content' value={content} onChange={(e) => setContent(e.target.value)}/>
             </div>
             <button type='submit'>+ New Blog</button>
