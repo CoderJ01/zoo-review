@@ -6,16 +6,11 @@ import './DashboardDisplay.style.css';
 
 // utils
 import { blogImage, reviewImage } from '../Post/Post.util';
+import { displayPosts } from './DashboardDisplay.util';
 
 const DashboardDisplay = ({ posts, display, blog = false }) => {
-    let show;
-
-    if(display === true) {
-        show = '';
-    }
-    else {
-        show = 'none'
-    }
+    
+    let show = displayPosts(display);
 
     return (
         <>
