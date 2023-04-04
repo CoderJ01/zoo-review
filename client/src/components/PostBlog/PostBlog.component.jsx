@@ -13,6 +13,7 @@ import axios from 'axios';
 const PostBlog = ({ user }) => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const [count, setCount] = useState(0);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -45,6 +46,11 @@ const PostBlog = ({ user }) => {
         );
     }
 
+    const handleContent = (e) => {
+        setContent(e.target.value);
+        setCount(e.target.value.length);
+    }
+
     return (
         <form className='post-form' onSubmit={handleSubmit}>
             <h1>Write a Blog Post</h1>
@@ -53,8 +59,28 @@ const PostBlog = ({ user }) => {
                 <input type='text' name='title' value={title} onChange={(e) => setTitle(e.target.value)}/>
             </div>
             <div>
-                <label htmlFor='content'>Content (500+ characters):</label><br/>
-                <textarea type='text' name='content' value={content} onChange={(e) => setContent(e.target.value)}/>
+            {
+                count === 0 ? 
+                (
+                    <>
+                        <label htmlFor='content'>Content (500+ characters, {count}):</label><br/>
+                    </>
+                ) : 
+                (
+                    count > 0 && count < 500 ? 
+                    (
+                        <>
+                            <label htmlFor='content'>Content (500+ characters, <span style={{ color: 'rgb(223, 33, 33)' }}>{count}</span>):</label><br/>
+                        </>
+                    ) : 
+                    (
+                        <>
+                            <label htmlFor='content'>Content (500+ characters, <span style={{ color: 'rgb(34, 191, 41)' }}>{count}</span>):</label><br/>
+                        </>
+                    )
+                )
+            }
+                <textarea type='text' name='content' value={content} onChange={handleContent}/>
             </div>
             <button type='submit'>+ New Blog</button>
         </form>
