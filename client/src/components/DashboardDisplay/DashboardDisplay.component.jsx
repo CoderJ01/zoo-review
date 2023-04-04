@@ -6,16 +6,17 @@ import './DashboardDisplay.style.css';
 
 // utils
 import { blogImage, reviewImage } from '../Post/Post.util';
-import { displayPosts } from './DashboardDisplay.util';
+import { displayPosts, reversePostOrder } from './DashboardDisplay.util';
 
 const DashboardDisplay = ({ posts, display, blog = false }) => {
     
     let show = displayPosts(display);
+    let reversedPosts = reversePostOrder(posts);
 
     return (
         <>
         {
-            posts.length === 0 ? 
+            reversedPosts.length === 0 ? 
             (
                 <div className='dashboard-zero-posts' style={{ display: show }}>
                     {
@@ -32,7 +33,7 @@ const DashboardDisplay = ({ posts, display, blog = false }) => {
             (
                 <div className='dashboard-posts' style={{ display: show }}>
                 {
-                    posts.map(post => {
+                    reversedPosts.map(post => {
                         return (
                             <div className='dashboard-post'>
                             {

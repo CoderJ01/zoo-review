@@ -10,3 +10,13 @@ export const displayPosts = (display) => {
 
     return show;
 }
+
+export const reversePostOrder = (posts) => {
+    let x = [];
+
+    for(let i = (posts.length - 1); i >= 0; i--) {
+        x.push(posts[i]);
+    }
+
+    return x;
+}
