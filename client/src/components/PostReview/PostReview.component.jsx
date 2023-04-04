@@ -64,6 +64,16 @@ const PostReview = ({ user }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        if(!title) {
+            alert('A title is needed!');
+            return;
+        }
+
+        if(content.length < 15) {
+            alert('The review needs to be at least 15 characters!');
+            return;
+        }
         
         axios.post(baseURL + `/post-review/${user._id}/${zooId}`, 
             {
