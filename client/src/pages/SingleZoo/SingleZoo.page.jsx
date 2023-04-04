@@ -54,7 +54,7 @@ const SingleZoo = () => {
         <div className='single-zoo'>
             <h1>{name}</h1>
             <div className='single-zoo-photo'>
-                <img alt='' src={image}></img>
+                <img alt='' src={image} draggable='false'></img>
                 {
                     reviews.length === 0 ? 
                     (

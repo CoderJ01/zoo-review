@@ -22,7 +22,7 @@ const Post = ({ post, blog = false }) => {
         <div className='post'>
             <div className='post-heading'>
                 <div className='post-heading-avatar'>
-                    <img alt='' src={defaultProfileImage}/>
+                    <img alt='' src={defaultProfileImage} draggable='false'/>
                 </div>
             </div>
             {

@@ -65,7 +65,7 @@ const SingleReview = () => {
                         <p>{date}</p>
                     </div>
                     <div className='srdf-avatar'>
-                        <img alt='' src={defaultProfileImage}></img>
+                        <img alt='' src={defaultProfileImage} draggable='false'></img>
                     </div>   
                 </div>
             </div>

@@ -54,7 +54,7 @@ const ZooReview = ({ review }) => {
                     <p>{review.updatedAt.toString().substring(0, 10)}</p>
                 </div>
                 <div className='zrf-avatar'>
-                    <img alt='' src={defaultProfileImage}></img>
+                    <img alt='' src={defaultProfileImage} draggable='false'></img>
                 </div>   
             </div>
         </div>

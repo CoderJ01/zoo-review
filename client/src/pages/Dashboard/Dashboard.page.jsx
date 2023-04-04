@@ -41,7 +41,7 @@ const Dashboard = ({ user }) => {
                         <div className='dashboard-b-user-info'>
                             <h2>Your Avatar</h2>
                             <div className='dashboard-b-u-i-avatar'>
-                                <img alt='' src={defaultProfileImage}/>
+                                <img alt='' src={defaultProfileImage} draggable='false'/>
                             </div>
                             <h2 style={{ marginTop: '7%'}}>Your Bio</h2>
                             <div className='dashboard-b-u-i-bio'>
