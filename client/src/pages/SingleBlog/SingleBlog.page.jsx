@@ -78,11 +78,20 @@ const SingleBlog = ({ loggedUser }) => {
         axios.put(baseURL + `/single-blog/like/${loggedUser._id}/${blogId}`)
         .then(response => {
             console.log(response.data);
+            
+            if(liked === false) {
+                setLiked(true);
+                if(disliked === true) {
+                    setDisliked(false);
+                }
+            }
+            else {
+                setLiked(false);
+            }
         })
         .catch(error => {
             console.log(error);
         });
-        window.location.reload(false);
     }
 
     const handleThumbsDown = (event) => {
@@ -90,11 +99,20 @@ const SingleBlog = ({ loggedUser }) => {
         axios.put(baseURL + `/single-blog/dislike/${loggedUser._id}/${blogId}`)
         .then(response => {
             console.log(response.data);
+            
+            if(disliked === false) {
+                setDisliked(true);
+                if(liked === true) {
+                    setLiked(false);
+                }
+            }
+            else {
+                setDisliked(false);
+            }
         })
         .catch(error => {
             console.log(error);
         });
-        window.location.reload(false);
     }
 
     return (
