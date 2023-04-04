@@ -35,6 +35,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [bio, setBio] = useState('');
+    const [count, setCount] = useState(0);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -89,6 +90,11 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
         );
     }
 
+    const handleBio = (e) => {
+        setBio(e.target.value)
+        setCount(e.target.value.length);
+    }
+
     return (
         <Modal show={showSignup} onHide={handleCloseSignup}>
             <Modal.Header style={modalHeaderStyle}>
@@ -117,8 +123,8 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
                         <input type='text' name='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
                     </div>
                     <div>
-                        <label htmlFor='bio'>Bio (optional):</label><br/>
-                        <textarea maxLength={200} type='text' name='bio' value={bio} onChange={(e) => setBio(e.target.value)}/>
+                        <label htmlFor='bio'>Bio (optional, {count}/200):</label><br/>
+                        <textarea maxLength={200} type='text' name='bio' value={bio} onChange={handleBio}/>
                     </div>
                     <Button type='submit' style={buttonStyle} onClick={handleCloseSignup}>
                         Sign up
