@@ -55,12 +55,17 @@ const Home = () => {
                         <h1>Zoo Reviews</h1>
                         <div className='home-posts'>
                         {
-                            reviews.map(review => {
-                                return (
-                                    <Post
-                                        post={review}
-                                    />
-                                );
+                            reviews.map((review, i = 0) => {
+                                if(i < 4) {
+                                    return (
+                                        <Post
+                                            post={review}
+                                        />
+                                    );
+                                }
+                                else {
+                                    return (<></>);
+                                }
                             })
                         }
                         </div>
@@ -77,13 +82,18 @@ const Home = () => {
                         <h1>Blogs</h1>
                         <div className='home-posts'>
                         {
-                            blogs.map(blog => {
-                                return (
-                                    <Post
-                                        post={blog}
-                                        blog={true}
-                                    />
-                                );
+                            blogs.map((blog, i = 0) => {
+                                if(i < 4) {
+                                    return (
+                                        <Post
+                                            post={blog}
+                                            blog={true}
+                                        />
+                                    );
+                                }
+                                else {
+                                    return (<></>);
+                                }
                             })
                         }
                         </div>
