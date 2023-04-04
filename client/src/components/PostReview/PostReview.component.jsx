@@ -131,12 +131,12 @@ const PostReview = ({ user }) => {
                     count > 0 && count < 15 ? 
                     (
                         <>
-                          <label htmlFor='content' style={{ color: 'rgb(223, 33, 33)' }}>Content ({count}/1000):</label><br/>
+                          <label htmlFor='content'>Content (<span style={{ color: 'rgb(223, 33, 33)' }}>{count}/1000</span>):</label><br/>
                         </>
                     ) : 
                     (
                         <>
-                          <label htmlFor='content' style={{ color: 'rgb(34, 191, 41)' }}>Content ({count}/1000):</label><br/>
+                          <label htmlFor='content'>Content (<span style={{ color: 'rgb(34, 191, 41)' }}>{count}/1000</span>):</label><br/>
                         </>
                     )
                 )
