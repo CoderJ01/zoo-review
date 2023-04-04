@@ -13,7 +13,6 @@ import axios from 'axios';
 const PostBlog = ({ user }) => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-    // const [file, setFile] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -46,10 +45,6 @@ const PostBlog = ({ user }) => {
                 <label htmlFor='content'>Content:</label><br/>
                 <textarea type='text' name='content' value={content} onChange={(e) => setContent(e.target.value)}/>
             </div>
-            {/* <div>
-                <label htmlFor='file'></label><br/>
-                <input type='file' name='file' onChange={(e) => setFile(e.target.files[0])}/>
-            </div> */}
             <button type='submit'>+ New Blog</button>
         </form>
     );
