@@ -1,3 +1,7 @@
+.single-review {
+    padding-bottom: 10vh;
+}
+
 .single-review-display {
     background-color: rgb(232, 248, 245);
     border-radius: 20px;
@@ -9,6 +13,10 @@
 .single-review-display-header {
     display: flex;
     justify-content: space-between;
+}
+
+.single-review-display-body {
+    word-wrap: break-word;
 }
 
 .single-review-display-header h1 {
@@ -29,15 +37,17 @@
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .single-review {
+        background-attachment: fixed;
         background-image: url('../../../images/single-review-page.jpg');
         background-size: 1400px 950px;
-        height: 90vh;
+        border: 1px solid transparent;
+        min-height: 90vh;
     }
 
     .single-review-display {
         margin-top: 20vh;
         padding: 5px;
-        position: absolute;
+        /* position: absolute; */
     }
 
     .sfdf-text {
