@@ -120,7 +120,27 @@ const PostReview = ({ user }) => {
                 <input type='text' name='title' value={title} onChange={(e) => setTitle(e.target.value)}/>
             </div>
             <div>
-                <label htmlFor='content'>Content ({count}/1000):</label><br/>
+            {
+                count === 0 ? 
+                (
+                    <>
+                      <label htmlFor='content'>Content ({count}/1000):</label><br/>
+                    </>
+                ) : 
+                (
+                    count > 0 && count < 15 ? 
+                    (
+                        <>
+                          <label htmlFor='content' style={{ color: 'rgb(223, 33, 33)' }}>Content ({count}/1000):</label><br/>
+                        </>
+                    ) : 
+                    (
+                        <>
+                          <label htmlFor='content' style={{ color: 'rgb(34, 191, 41)' }}>Content ({count}/1000):</label><br/>
+                        </>
+                    )
+                )
+            }
                 <textarea maxLength={1000} type='text' name='content' value={content} onChange={handleContent}/>
             </div>
             <div>
