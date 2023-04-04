@@ -58,7 +58,7 @@ const Home = () => {
                             reviews.map(review => {
                                 return (
                                     <Post
-                                    post={review}
+                                        post={review}
                                     />
                                 );
                             })
