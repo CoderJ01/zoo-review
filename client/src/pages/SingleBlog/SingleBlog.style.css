@@ -34,13 +34,15 @@
     .single-blog {
         background-image: url('../../../images/single-blog.jpg');
         background-size: 1440px 960px;
-        height: 90vh;
+        border: 1px solid transparent;
+        border-top: 1px solid rgb(34, 191, 41);
+        min-height: 90vh;
+        padding-bottom: 10vh;
     }
 
     .single-blog-display {
         background-color: white;
         margin-left: 23%;
-        position: absolute;
         width: 54%;
     }
 
