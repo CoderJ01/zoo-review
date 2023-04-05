@@ -26,6 +26,7 @@ const PostReview = ({ user }) => {
     const [pickedZoo, setPickedZoo] = useState(zooNames[0]);
     const [zooId, setZooId] = useState(process.env.REACT_APP_DEFAULT_ZOO_ID);
     const [imageUpload, setImageUpload] = useState(null);
+    const [imageUrl, setImageUrl] = useState('');
     
     useEffect(() => { 
         const fetchZoos = async () => {
@@ -68,20 +69,6 @@ const PostReview = ({ user }) => {
 
     const uploadImage = (e) => {
         setImageUpload(e.target.files[0]);
-
-        // if(imageUpload == null) {
-        //     return;
-        // }
-        
-        // const imageRef = ref(storage, `images/reviews/${imageUpload.name + v4()}`);
-
-        // uploadBytes(imageRef, imageUpload)
-        // .then(() => {
-        //     alert('Image uploaded!');
-        // })
-        // .catch(error => {
-        //     console.log(error);
-        // });
     }
 
     const handleSubmit = (event) => {
