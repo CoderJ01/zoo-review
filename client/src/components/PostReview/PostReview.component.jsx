@@ -86,41 +86,39 @@ const PostReview = ({ user }) => {
             return;
         }
 
-        if(imageUpload == null) {
-            return;
-        }
-        
-        const imageRef = ref(storage, `images/reviews/${imageUpload.name + v4()}`);
+        if(imageUpload != null) {
+            const imageRef = ref(storage, `images/reviews/${imageUpload.name + v4()}`);
 
-        uploadBytes(imageRef, imageUpload)
-        .then(() => {
-            alert('Image uploaded!');
-        })
-        .catch(error => {
-            console.log(error);
-        });
-
-        listAll(imageListRef)
-        .then(response => {
-            response.items.forEach(item => {
-                getDownloadURL(item).then(url => {
-                    setImageUrl(url);
-                });
+            uploadBytes(imageRef, imageUpload)
+            .then(() => {
+                alert('Image uploaded!');
             })
-        });
-
-        console.log(imageUrl);
+            .catch(error => {
+                console.log(error);
+            });
+    
+            listAll(imageListRef)
+            .then(response => {
+                response.items.forEach(item => {
+                    getDownloadURL(item).then(url => {
+                        setImageUrl(url);
+                    });
+                })
+            });
+        }
         
         axios.post(baseURL + `/post-review/${user._id}/${zooId}`, 
             {
                 title: title,
                 content: content,
-                rating: selected
+                rating: selected,
+                image: imageUrl
             }
         )
         .then(
             response => {
                 alert(response.data.msg);
+                window.location.reload(false);
             }
         )
         .catch(
@@ -195,7 +193,7 @@ const PostReview = ({ user }) => {
             <div className='pf-upload-image'>
                 <input 
                     type='file'
-                    onClick={uploadImage} 
+                    onChange={uploadImage} 
                 />
             </div>
             <button type='submit'>+ New Review</button>
