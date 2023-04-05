@@ -67,11 +67,11 @@ const PostReview = ({ user }) => {
             getZooId();
     }, [getZooId]);
 
-    const imageListRef = ref(storage, 'images/reviews/')
-
     const uploadImage = (e) => {
         setImageUpload(e.target.files[0]);
     }
+
+    const imageListRef = ref(storage, 'images/reviews/');
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -96,15 +96,6 @@ const PostReview = ({ user }) => {
             .catch(error => {
                 console.log(error);
             });
-    
-            listAll(imageListRef)
-            .then(response => {
-                response.items.forEach(item => {
-                    getDownloadURL(item).then(url => {
-                        setImageUrl(url);
-                    });
-                })
-            });
         }
         
         axios.post(baseURL + `/post-review/${user._id}/${zooId}`, 
@@ -118,7 +109,7 @@ const PostReview = ({ user }) => {
         .then(
             response => {
                 alert(response.data.msg);
-                window.location.reload(false);
+                // window.location.reload(false);
             }
         )
         .catch(
@@ -127,6 +118,17 @@ const PostReview = ({ user }) => {
             }
         )
     }
+
+    useEffect(() => {
+        listAll(imageListRef)
+        .then(response => {
+            response.items.forEach(item => {
+                getDownloadURL(item).then(url => {
+                    setImageUrl(url);
+                });
+            })
+        });
+    });
 
     const handleContent = (e) => {
         setContent(e.target.value);
