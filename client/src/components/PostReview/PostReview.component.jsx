@@ -67,6 +67,8 @@ const PostReview = ({ user }) => {
             getZooId();
     }, [getZooId]);
 
+    const imageListRef = ref(storage, 'images/reviews/')
+
     const uploadImage = (e) => {
         setImageUpload(e.target.files[0]);
     }
@@ -96,6 +98,15 @@ const PostReview = ({ user }) => {
         })
         .catch(error => {
             console.log(error);
+        });
+
+        listAll(imageListRef)
+        .then(response => {
+            response.items.forEach(item => {
+                getDownloadURL(item).then(url => {
+                    setImageUrl(url);
+                });
+            })
         });
         
         axios.post(baseURL + `/post-review/${user._id}/${zooId}`, 
