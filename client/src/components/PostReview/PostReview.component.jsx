@@ -12,6 +12,9 @@ import { baseURL } from '../../URLs/urls';
 
 // other imports
 import axios from 'axios';
+import { ref, uploadBytes, listAll, getDownloadURL, deleteObject, getStorage } from 'firebase/storage';
+import { storage } from '../../config/firebase';
+import { v4 } from 'uuid';
 
 const PostReview = ({ user }) => {
     const [title, setTitle] = useState('');
@@ -22,6 +25,7 @@ const PostReview = ({ user }) => {
     const [zooNames, setZooNames] = useState([]);
     const [pickedZoo, setPickedZoo] = useState(zooNames[0]);
     const [zooId, setZooId] = useState(process.env.REACT_APP_DEFAULT_ZOO_ID);
+    const [imageUpload, setImageUpload] = useState(null);
     
     useEffect(() => { 
         const fetchZoos = async () => {
@@ -155,6 +159,12 @@ const PostReview = ({ user }) => {
                     </option>
                     ))}
                 </select>
+            </div>
+            <div className='pf-upload-image'>
+                <input 
+                    type="file" 
+                    onChange={(e) => {setImageUpload(e.target.files[0])}}
+                />
             </div>
             <button type='submit'>+ New Review</button>
         </form>
