@@ -198,6 +198,10 @@ const PostReview = ({ user }) => {
                     onChange={uploadImage} 
                 />
             </div>
+            <div className='pf-confirm-upload'>
+                <label htmlFor='radio'>Confirm</label><br/>
+                <input type='radio' name='radio'/>
+            </div>
             <button type='submit'>+ New Review</button>
         </form>
     );
