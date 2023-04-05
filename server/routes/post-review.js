@@ -14,6 +14,7 @@ router.post('/:userId/:zooId', async (req, res) => {
                 title: req.body.title,
                 content: req.body.content,
                 rating: req.body.rating,
+                image: req.body.image,
                 user: req.params.userId,
                 zoo: req.params.zooId
             });
