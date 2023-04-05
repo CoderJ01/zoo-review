@@ -12,7 +12,7 @@ import { baseURL } from '../../URLs/urls';
 
 // other imports
 import axios from 'axios';
-import { ref, uploadBytes, listAll, getDownloadURL, deleteObject, getStorage } from 'firebase/storage';
+import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../config/firebase';
 import { v4 } from 'uuid';
 
@@ -108,6 +108,8 @@ const PostReview = ({ user }) => {
                 });
             })
         });
+
+        console.log(imageUrl);
         
         axios.post(baseURL + `/post-review/${user._id}/${zooId}`, 
             {
