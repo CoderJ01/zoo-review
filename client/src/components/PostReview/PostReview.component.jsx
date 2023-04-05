@@ -49,22 +49,40 @@ const PostReview = ({ user }) => {
         setZooNames(names);
     },[zoos, setZooNames]);
 
-   useEffect(() => { 
-        retrieveNames();
-   }, [retrieveNames]);
+    useEffect(() => { 
+            retrieveNames();
+    }, [retrieveNames]);
 
-   const getZooId = useCallback(() => {
-        zoos.filter(zoo => {
-            if(pickedZoo === zoo.name) {
-                setZooId(zoo._id)
-            }
-            return zoo.name;
-        })
-   }, [zoos, pickedZoo, setZooId]);
+    const getZooId = useCallback(() => {
+            zoos.filter(zoo => {
+                if(pickedZoo === zoo.name) {
+                    setZooId(zoo._id)
+                }
+                return zoo.name;
+            })
+    }, [zoos, pickedZoo, setZooId]);
 
-   useEffect(() => {
-        getZooId();
-   }, [getZooId]);
+    useEffect(() => {
+            getZooId();
+    }, [getZooId]);
+
+    const uploadImage = (e) => {
+        setImageUpload(e.target.files[0]);
+
+        // if(imageUpload == null) {
+        //     return;
+        // }
+        
+        // const imageRef = ref(storage, `images/reviews/${imageUpload.name + v4()}`);
+
+        // uploadBytes(imageRef, imageUpload)
+        // .then(() => {
+        //     alert('Image uploaded!');
+        // })
+        // .catch(error => {
+        //     console.log(error);
+        // });
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -78,6 +96,20 @@ const PostReview = ({ user }) => {
             alert('The review needs to be at least 15 characters!');
             return;
         }
+
+        if(imageUpload == null) {
+            return;
+        }
+        
+        const imageRef = ref(storage, `images/reviews/${imageUpload.name + v4()}`);
+
+        uploadBytes(imageRef, imageUpload)
+        .then(() => {
+            alert('Image uploaded!');
+        })
+        .catch(error => {
+            console.log(error);
+        });
         
         axios.post(baseURL + `/post-review/${user._id}/${zooId}`, 
             {
@@ -162,8 +194,8 @@ const PostReview = ({ user }) => {
             </div>
             <div className='pf-upload-image'>
                 <input 
-                    type="file" 
-                    onChange={(e) => {setImageUpload(e.target.files[0])}}
+                    type='file'
+                    onClick={uploadImage} 
                 />
             </div>
             <button type='submit'>+ New Review</button>
