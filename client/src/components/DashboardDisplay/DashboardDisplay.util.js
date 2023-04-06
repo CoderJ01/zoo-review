@@ -1,3 +1,5 @@
+import { blogImage, reviewImage } from '../../utils/images';
+
 export const displayPosts = (display) => {
     let show;
 
@@ -20,3 +22,15 @@ export const reversePostOrder = (posts) => {
 
     return x;
 }
+
+export const displayImage = (postImage, blog) => {
+    let image;
+    if(!blog) {
+        image = postImage || reviewImage;
+    }
+    else {
+        image = postImage || blogImage;
+    }
+
+    return image;
+} 
