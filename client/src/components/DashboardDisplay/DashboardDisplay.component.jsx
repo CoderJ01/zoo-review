@@ -5,8 +5,7 @@ import React from 'react';
 import './DashboardDisplay.style.css';
 
 // utils
-import { blogImage, reviewImage } from '../../utils/images';
-import { displayPosts, reversePostOrder } from './DashboardDisplay.util';
+import { displayPosts, reversePostOrder, displayImage } from './DashboardDisplay.util';
 
 const DashboardDisplay = ({ posts, display, blog = false }) => {
     
@@ -34,13 +33,7 @@ const DashboardDisplay = ({ posts, display, blog = false }) => {
                 <div className='dashboard-posts' style={{ display: show }}>
                 {
                     reversedPosts.map(post => {
-                        let image;
-                        if(!blog) {
-                            image = post.image || reviewImage;
-                        }
-                        else {
-                            image = post.image || blogImage;
-                        }
+                        let image = displayImage(post.image, blog);
                         return (
                             <div className='dashboard-post'>
                             {
