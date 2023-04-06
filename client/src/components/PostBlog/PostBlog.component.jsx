@@ -76,6 +76,11 @@ const PostBlog = ({ user }) => {
             return;
         }
 
+        if(confirmed && imageUrl === '') {
+            alert('Image has not been fully processed yet! Wait a few more seconds!');
+            return;
+        }
+
         axios.post(baseURL + `/post-blog/${user._id}`, 
             {
                 title: title,
