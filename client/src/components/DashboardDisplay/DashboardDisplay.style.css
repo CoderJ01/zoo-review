@@ -5,6 +5,7 @@
 
 .dashboard-post h3 {
     text-align: center;
+    word-wrap: break-word;
 }
 
 .dashboard-post a {
