@@ -199,7 +199,7 @@ const PostReview = ({ user }) => {
                 />
             </div>
             <div className='pf-confirm-upload'>
-                <label htmlFor='radio'>Confirm</label><br/>
+                <label htmlFor='radio'>Confirm image</label><br/>
                 <input type='radio' name='radio'/>
             </div>
             <button type='submit'>+ New Review</button>
