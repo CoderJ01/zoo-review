@@ -25,6 +25,7 @@ export const reversePostOrder = (posts) => {
 
 export const displayImage = (postImage, blog) => {
     let image;
+    
     if(!blog) {
         image = postImage || reviewImage;
     }
