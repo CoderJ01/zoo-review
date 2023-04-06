@@ -118,7 +118,8 @@ const PostReview = ({ user }) => {
         }
 
         if(imageUpload != null && confirmed === false) {
-            alert('The upload needs to be confirmed so that image will process successfully!')
+            alert('The upload needs to be confirmed so that image will process successfully!');
+            return;
         }
         
         axios.post(baseURL + `/post-review/${user._id}/${zooId}`, 
