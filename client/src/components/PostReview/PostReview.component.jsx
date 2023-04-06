@@ -134,7 +134,7 @@ const PostReview = ({ user }) => {
         .then(
             response => {
                 alert(response.data.msg);
-                // window.location.reload(false);
+                window.location.reload(false);
             }
         )
         .catch(
