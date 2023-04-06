@@ -61,7 +61,7 @@ const SingleZoo = () => {
                         ''
                     ) : 
                     (
-                        <text>Average Rating: {totalRatings/totalReviews}</text>
+                        <text>Average Rating: {(totalRatings/totalReviews).toFixed(1)}</text>
                     )
                 }
             </div>
