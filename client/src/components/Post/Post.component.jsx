@@ -19,8 +19,12 @@ const Post = ({ post, blog = false }) => {
         ratingDisplay = '';
     }
 
-    if(post.image === '') {
+    if(!blog && post.image === '') {
         post.image = reviewImage;
+    }
+
+    if(blog && post.image === '') {
+        post.image = blogImage;
     }
 
     return (
@@ -47,7 +51,7 @@ const Post = ({ post, blog = false }) => {
                 (
                     <>
                         <div className='post-picture'>
-                            <img alt='' src={blogImage}></img> 
+                            <img alt='' src={post.image}></img> 
                         </div>
                         <div className='post-info'>
                             <h1>{post.title}</h1>
