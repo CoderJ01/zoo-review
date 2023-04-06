@@ -70,6 +70,7 @@ const PostReview = ({ user }) => {
 
     const uploadImage = (e) => {
         setImageUpload(e.target.files[0]);
+        alert('The image has been uploaded! Confirm the upload, then wait a few seconds to submit the review!');
     }
 
     const confirmUpload = () => {
@@ -80,7 +81,7 @@ const PostReview = ({ user }) => {
 
             uploadBytes(imageRef, imageUpload)
             .then(() => {
-                alert('Image uploaded! Wait a few seconds for it to process!');
+                alert('Image confirmed! Wait a few seconds for it to process!');
             })
             .catch(error => {
                 console.log(error);
