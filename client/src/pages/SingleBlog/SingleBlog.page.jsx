@@ -119,7 +119,7 @@ const SingleBlog = ({ loggedUser }) => {
         <div className='single-blog'>
             <div className='single-blog-display'>
                 <div className='single-blog-display-header'>
-                    <h1>{title}</h1>
+                    <h1>{title}</h1><br/>
                     <h2>by {user}</h2>
                 </div>
                 <div className='single-blog-display-body'>
