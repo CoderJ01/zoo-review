@@ -29,13 +29,9 @@
     margin-top: 3vh;
 }
 
-.pf-confirm-upload label {
-    margin-top: 2vh;
+.pf-confirm-upload {
+    display: flex;
 }
-
-.pf-confirm-upload input {
-    position: absolute;
-}    
 
 .post-form button {
     background-color: rgb(29, 146, 34);
@@ -69,12 +65,22 @@
 
     .post-form button {
         font-size: 17px;
+    } 
+
+    .pf-confirm-upload {
+        margin-top: 3vh;
+    } 
+    
+    .pf-confirm-upload label {
+        width: 12%;
     }
 
     .pf-confirm-upload input {
-        margin-left: -325px;
-        margin-top: -21px;
-    }    
+        height: 15px;
+        margin-left: -360px;
+        margin-top: 8px;
+        /* width: 10px; */
+    }
 }
 
 /* iPad Pro */
@@ -103,11 +109,15 @@
         width: 20%;
     }
 
+    .pf-confirm-upload {
+        display: flex;
+    }  
+
     .post-form button {
         font-size: 30px;
         margin-left: 35%;
         width: 30%;
-    }
+    } 
 }
 
 /* iPad */
