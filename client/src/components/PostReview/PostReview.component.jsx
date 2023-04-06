@@ -27,6 +27,7 @@ const PostReview = ({ user }) => {
     const [zooId, setZooId] = useState(process.env.REACT_APP_DEFAULT_ZOO_ID);
     const [imageUpload, setImageUpload] = useState(null);
     const [imageUrl, setImageUrl] = useState('');
+    const [confirmed, setConfirmed] = useState(false);
     
     useEffect(() => { 
         const fetchZoos = async () => {
@@ -71,6 +72,36 @@ const PostReview = ({ user }) => {
         setImageUpload(e.target.files[0]);
     }
 
+    const confirmUpload = () => {
+
+        if(imageUpload != null) {
+            setConfirmed(true);
+            const imageRef = ref(storage, `images/reviews/${imageUpload.name + v4()}`);
+
+            uploadBytes(imageRef, imageUpload)
+            .then(() => {
+                alert('Image uploaded! Wait a few seconds for it to process!');
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }
+        else {
+            alert('You have not uploaded an image!');
+            window.location.reload(false);
+            return;
+        }
+
+        listAll(imageListRef)
+        .then(response => {
+            response.items.forEach(item => {
+                getDownloadURL(item).then(url => {
+                    setImageUrl(url);
+                });
+            })
+        });
+    }
+
     const imageListRef = ref(storage, 'images/reviews/');
 
     const handleSubmit = (event) => {
@@ -86,16 +117,8 @@ const PostReview = ({ user }) => {
             return;
         }
 
-        if(imageUpload != null) {
-            const imageRef = ref(storage, `images/reviews/${imageUpload.name + v4()}`);
-
-            uploadBytes(imageRef, imageUpload)
-            .then(() => {
-                alert('Image uploaded!');
-            })
-            .catch(error => {
-                console.log(error);
-            });
+        if(imageUpload != null && confirmed === false) {
+            alert('The upload needs to be confirmed so that image will process successfully!')
         }
         
         axios.post(baseURL + `/post-review/${user._id}/${zooId}`, 
@@ -118,17 +141,6 @@ const PostReview = ({ user }) => {
             }
         )
     }
-
-    useEffect(() => {
-        listAll(imageListRef)
-        .then(response => {
-            response.items.forEach(item => {
-                getDownloadURL(item).then(url => {
-                    setImageUrl(url);
-                });
-            })
-        });
-    });
 
     const handleContent = (e) => {
         setContent(e.target.value);
@@ -200,7 +212,7 @@ const PostReview = ({ user }) => {
             </div>
             <div className='pf-confirm-upload'>
                 <label htmlFor='radio'>Confirm image</label><br/>
-                <input type='radio' name='radio'/>
+                <input type='radio' name='radio' onChange={confirmUpload}/>
             </div>
             <button type='submit'>+ New Review</button>
         </form>
