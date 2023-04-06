@@ -1,15 +1,12 @@
+.review {
+    padding-bottom: 10vh;
+}
+
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
     .review {
         background-color: rgb(207, 250, 209);
         min-height: 80vh;
         border: 1px solid rgb(207, 250, 209);
-    }
-}
-
-/* Surface Duo */
-@media screen and (max-width: 540px) {
-    .review {
-        padding-bottom: 10vh;
     }
 }
