@@ -167,7 +167,7 @@ const PostReview = ({ user }) => {
             </div>
             <div>
                 <label htmlFor='title'>Title:</label><br/>
-                <input type='text' name='title' value={title} onChange={(e) => setTitle(e.target.value)}/>
+                <input maxLength={50} type='text' name='title' value={title} onChange={(e) => setTitle(e.target.value)}/>
             </div>
             <div>
             {
