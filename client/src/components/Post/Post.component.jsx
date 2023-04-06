@@ -5,20 +5,13 @@ import React from 'react';
 import './Post.style.css'
 
 // util
-import { displayRating } from './Post.util';
-import { defaultProfileImage, blogImage, reviewImage } from '../../utils/images';
+import { displayRating, displayImage } from './Post.util';
+import { defaultProfileImage } from '../../utils/images';
 
 const Post = ({ post, blog = false }) => {
 
     let ratingDisplay = displayRating(post.rating);
-    
-    if(!blog && post.image === '') {
-        post.image = reviewImage;
-    }
-
-    if(blog && post.image === '') {
-        post.image = blogImage;
-    }
+    let image = displayImage(blog, post);
 
     return (
         <div className='post'>
@@ -32,7 +25,7 @@ const Post = ({ post, blog = false }) => {
                 (
                     <>
                         <div className='post-picture'>
-                            <img alt='' src={post.image}></img> 
+                            <img alt='' src={image}></img> 
                         </div>
                         <div className='post-info'>
                             <h1>{post.title}</h1>
@@ -44,7 +37,7 @@ const Post = ({ post, blog = false }) => {
                 (
                     <>
                         <div className='post-picture'>
-                            <img alt='' src={post.image}></img> 
+                            <img alt='' src={image}></img> 
                         </div>
                         <div className='post-info'>
                             <h1>{post.title}</h1>
