@@ -5,7 +5,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import './ZooReview.style.css';
 
 // utils
-import { displayRating, defaultProfileImage } from '../Post/Post.util';
+import { displayRating } from '../Post/Post.util';
+import { defaultProfileImage } from '../../utils/images';
 
 // URL
 import { baseURL } from '../../URLs/urls';

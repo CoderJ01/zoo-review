@@ -5,7 +5,7 @@ import React from 'react';
 import './DashboardDisplay.style.css';
 
 // utils
-import { blogImage, reviewImage } from '../Post/Post.util';
+import { blogImage, reviewImage } from '../../utils/images';
 import { displayPosts, reversePostOrder } from './DashboardDisplay.util';
 
 const DashboardDisplay = ({ posts, display, blog = false }) => {

@@ -6,7 +6,8 @@ import { useParams } from 'react-router-dom';
 import './SingleReview.style.css';
 
 // utils
-import { displayRating, defaultProfileImage } from '../../components/Post/Post.util';
+import { displayRating } from '../../components/Post/Post.util';
+import { defaultProfileImage } from '../../utils/images';
 
 // URL
 import { baseURL } from '../../URLs/urls';

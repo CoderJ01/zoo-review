@@ -5,7 +5,8 @@ import React from 'react';
 import './Post.style.css'
 
 // util
-import { displayRating, defaultProfileImage, blogImage, reviewImage } from './Post.util';
+import { displayRating } from './Post.util';
+import { defaultProfileImage, blogImage, reviewImage } from '../../utils/images';
 
 const Post = ({ post, blog = false }) => {
 

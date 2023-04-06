@@ -9,7 +9,7 @@ import AccessDenied from '../../components/AccessDenied/AccessDenied.component';
 import DashboardDisplay from '../../components/DashboardDisplay/DashboardDisplay.component';
 
 // utils
-import { defaultProfileImage } from '../../components/Post/Post.util';
+import { defaultProfileImage } from '../../utils/images';
 
 const Dashboard = ({ user }) => {
     const [displayReviews, setDisplayReviews] = useState(true);
