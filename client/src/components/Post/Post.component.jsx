@@ -10,15 +10,8 @@ import { defaultProfileImage, blogImage, reviewImage } from '../../utils/images'
 
 const Post = ({ post, blog = false }) => {
 
-    let ratingDisplay;
-
-    if(post.rating) {
-        ratingDisplay = displayRating(post.rating);
-    }
-    else {
-        ratingDisplay = '';
-    }
-
+    let ratingDisplay = displayRating(post.rating);
+    
     if(!blog && post.image === '') {
         post.image = reviewImage;
     }
