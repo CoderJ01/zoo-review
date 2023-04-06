@@ -1,3 +1,5 @@
+import { blogImage, reviewImage } from "../../utils/images";
+
 export const displayRating = (rating) => {
     let color = starColor(rating);
 
@@ -48,3 +50,15 @@ const starColor = (rating) => {
     }
     return color;
 }
+
+export const displayImage = (blog, post) => {
+    if(!blog && post.image === '') {
+        post.image = reviewImage;
+    }
+
+    if(blog && post.image === '') {
+        post.image = blogImage;
+    }
+
+    return post.image
+} 
