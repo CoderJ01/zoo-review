@@ -17,6 +17,7 @@
     height: 55%;
     margin-left: 10%;
     width: 80%;
+    word-wrap: break-word;
 }
 
 .dashboard-b-u-i-avatar img {
