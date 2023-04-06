@@ -1,5 +1,4 @@
 .dashboard-post img {
-    height: 60%;
     width: 100%;
 } 
 
@@ -23,7 +22,7 @@
 
 /* Desktop */
 @media screen and (min-width: 1280px) {
-
+  
     .dashboard-zero-posts {
         width: 100%;
     }
@@ -47,6 +46,10 @@
         width: 30%;
     }
 
+    .dashboard-post img {
+        height: 180px;
+    } 
+    
     .dashboard-post h3 {
         margin-top: 0;
     } 
@@ -58,6 +61,10 @@
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
+    .dashboard-post img {
+        height: 60%;
+    }
+
     .dashboard-zero-posts {
         margin-top: 2vh;
         text-align: center;
