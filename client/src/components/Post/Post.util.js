@@ -39,18 +39,12 @@ const starColor = (rating) => {
             color = 'rgb(226, 226, 38)';
             break;
         case 4:
-            color = 'rgb(34, 191, 41)'
+            color = 'rgb(34, 191, 41)';
             break;
         case 5:
-            color = 'rgb(46, 182, 225)'
+            color = 'rgb(46, 182, 225)';
             break;
         default:
     }
     return color;
 }
-
-export const defaultProfileImage = 'https://raw.githubusercontent.com/CoderJ01/popular-zoos/main/other/default-profile-image.JPG';
-
-export const blogImage = 'https://raw.githubusercontent.com/CoderJ01/popular-zoos/main/other/blog-post-default-image.jpg';
-
-export const reviewImage = 'https://raw.githubusercontent.com/CoderJ01/popular-zoos/main/other/review-post-image.jpg';
