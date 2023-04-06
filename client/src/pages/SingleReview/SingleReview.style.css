@@ -21,6 +21,8 @@
 
 .single-review-display-header h1 {
     text-shadow: 0 0 3px rgb(34, 191, 41), 0 0 5px rgb(34, 191, 41);
+    width: 80%;
+    word-wrap: break-word;
 }
 
 .single-review-display-footer {
