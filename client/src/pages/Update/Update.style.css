@@ -11,6 +11,10 @@
     display: flex;
 }
 
+.uf-button:active {
+    opacity: 0.5;
+}
+
 /* Desktop */
 @media screen and (min-width: 1280px) {
     .update-form {
@@ -69,12 +73,28 @@
         margin-top: 3px;
         width: 2vw;
     }
+
+    .uf-button {
+        margin-left: -15%;
+    }
+
+    .uf-button text {
+        font-size: 2rem;
+    }
 }
 
 /* iPad */
 @media screen and (max-width: 768px) {
+    .update-form {
+        padding: 20px;
+    }
+
     .u-confirm-upload input {
         width: 3vw;
+    }
+
+    .uf-button {
+        margin-left: -55%;
     }
 }
 
@@ -82,7 +102,6 @@
 @media screen and (max-width: 540px) {
     .update-form {
         margin-left: 10%;
-        padding: 20px;
         width: 80%;
     }
 
@@ -97,16 +116,37 @@
     .u-confirm-upload input {
         width: 4vw;
     }
+
+    .uf-button {
+        margin-left: -40%;
+    }
 }
 
 /* iPhone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
+    .update-form {
+        padding: 30px;
+    }
+
     .u-confirm-upload label {
-        width: 65%;
+        width: 75%;
     }
 
     .u-confirm-upload input {
         width: 5vw;
+    }
+
+    .u-confirm-upload label {
+        width: 70%;
+    }
+
+    .u-upload-image,
+    .u-confirm-upload {
+        margin-top: 4vh;
+    }
+
+    .uf-button {
+        margin-left: -80%;
     }
 }
 
@@ -119,11 +159,23 @@
     .u-confirm-upload label {
         width: 70%;
     }
+
+    .uf-button {
+        margin-left: -100%;
+    }
 }
 
 /* iPhone X */
 @media screen and (max-width: 375px) and (max-height: 812px) {
     .u-confirm-upload label {
         width: 80%;
+    }
+
+    .u-confirm-upload label {
+        width: 80%;
+    }
+
+    .uf-button {
+        margin-left: -115%;
     }
 }
