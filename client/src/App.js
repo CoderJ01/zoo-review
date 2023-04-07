@@ -13,6 +13,7 @@ import Dashboard from './pages/Dashboard/Dashboard.page';
 import SingleReview from './pages/SingleReview/SingleReview.page';
 import SingleBlog from './pages/SingleBlog/SingleBlog.page';
 import SingleZoo from './pages/SingleZoo/SingleZoo.page';
+import Update from './pages/Update/Update.page';
 
 // component
 import Header from './components/Header/Header.component';
@@ -58,6 +59,7 @@ function App() {
             <Route path='/review/:reviewId' element={<SingleReview/>}/>
             <Route path='/blog/:blogId' element={<SingleBlog loggedUser={user}/>}/>
             <Route path='/zoo/:zooId' element={<SingleZoo/>}/>
+            <Route path='/update/:userId' element={<Update user={user}/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
