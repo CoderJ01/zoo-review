@@ -93,7 +93,7 @@ const Update = ({ user }) => {
         )
         .then(
             response => {
-                console.log(response.data);
+                alert(response.data.msg);
             }, 
             error => {
                 alert(error);
