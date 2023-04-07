@@ -58,6 +58,9 @@ const Dashboard = ({ user }) => {
                         </div>
                         <DashboardDisplay posts={user.reviews} display={displayReviews}/>
                         <DashboardDisplay posts={user.blogs} display={displayBlogs} blog={true}/>
+                        <div className='dashboard-update-button'>
+                            <button>Update Info</button>
+                        </div>
                     </div>
                 </div>
             )
