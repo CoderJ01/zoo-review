@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 // CSS
-import './Dashboard.style.css'
+import './Dashboard.style.css';
 
 // components
 import AccessDenied from '../../components/AccessDenied/AccessDenied.component';
@@ -10,6 +10,21 @@ import DashboardDisplay from '../../components/DashboardDisplay/DashboardDisplay
 
 // utils
 import { defaultProfileImage } from '../../utils/images';
+
+// URL
+import { baseURL_frontend } from '../../URLs/urls';
+
+// other imports
+import Button from 'react-bootstrap/esm/Button';
+
+const buttonStyle = {
+    backgroundColor: 'white', 
+    border: '1px solid white',
+    borderRadius: '10px',
+    color: 'rgb(29, 146, 34)',
+    height: '100%', 
+    width: '100%' 
+}
 
 const Dashboard = ({ user }) => {
     const [displayReviews, setDisplayReviews] = useState(true);
@@ -59,7 +74,7 @@ const Dashboard = ({ user }) => {
                         <DashboardDisplay posts={user.reviews} display={displayReviews}/>
                         <DashboardDisplay posts={user.blogs} display={displayBlogs} blog={true}/>
                         <div className='dashboard-update-button'>
-                            <button>Update Info</button>
+                            <Button href={baseURL_frontend + `/update/${user._id}`} style={buttonStyle}>Update Info</Button>
                         </div>
                     </div>
                 </div>
