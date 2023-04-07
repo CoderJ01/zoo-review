@@ -1,4 +1,4 @@
-import { blogImage, reviewImage } from "../../utils/images";
+import { blogImage, reviewImage, defaultProfileImage } from "../../utils/images";
 
 export const displayRating = (rating) => {
     let color = starColor(rating);
@@ -49,6 +49,19 @@ const starColor = (rating) => {
         default:
     }
     return color;
+}
+
+export const displayAvatar = (avatar) => {
+    let profileImage;
+    
+    if(avatar === '') {
+        profileImage = defaultProfileImage;
+    }
+    else {
+        profileImage = avatar;
+    }
+
+    return profileImage;
 }
 
 export const displayImage = (blog, post) => {
