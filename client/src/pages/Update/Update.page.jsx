@@ -118,13 +118,13 @@ const Update = ({ user }) => {
                             <label htmlFor='email'>Email:</label><br/>
                             <input type='text' name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
                         </div>
-                        <div className='u-upload-image'>
+                        <div className='uf-upload-image'>
                         <input 
                             type='file'
                             onChange={uploadImage} 
                         />
                         </div>
-                        <div className='u-confirm-upload'>
+                        <div className='uf-confirm-upload'>
                             <label htmlFor='radio'>Confirm image</label><br/>
                             <input type='radio' name='radio' onChange={confirmUpload}/>
                         </div>
