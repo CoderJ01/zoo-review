@@ -54,6 +54,11 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
             alert('Password must be at least 8 characters!');
             return;
         }
+
+        if(username.length > 15) {
+            alert('Username cannot be more than 15 characters!');
+            return;
+        }
        
         axios.post(baseURL + '/auth/register', 
         {
@@ -111,7 +116,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
                         <input type='text' name='lastname' value={lastName} onChange={(e) => setLastName(e.target.value)}/>
                     </div>
                     <div>
-                        <label htmlFor='username'>Username:</label><br/>
+                        <label htmlFor='username'>Username (15 characters or less):</label><br/>
                         <input type='text' name='username' value={username} onChange={(e) => setUsername(e.target.value)}/>
                     </div>
                     <div>
