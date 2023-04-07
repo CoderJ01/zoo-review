@@ -25,8 +25,7 @@
     width: 100%;
 }
 
-.dashboard-b-buttons button,
-.dashboard-update-button button {
+.dashboard-b-buttons button {
     background-color: white;
     border: 2px solid white;
     border-radius: 20px;
@@ -86,11 +85,10 @@
     }
 
     .dashboard-update-button {
-        margin-left: 72px;
+        margin-left: 50px;
         margin-top: 70vh;
         position: absolute;
     }
-    
 }
 
 /* iPad Pro */
