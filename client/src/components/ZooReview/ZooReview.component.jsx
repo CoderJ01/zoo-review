@@ -4,9 +4,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 // CSS
 import './ZooReview.style.css';
 
-// utils
-import { displayRating } from '../Post/Post.util';
-import { displayAvatar } from '../../utils/avatar';
+// util
+import { displayAvatar, displayRating } from '../../utils/display';
 
 // URL
 import { baseURL } from '../../URLs/urls';

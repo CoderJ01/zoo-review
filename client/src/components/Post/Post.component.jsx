@@ -5,7 +5,8 @@ import React, { useState, useEffect } from 'react';
 import './Post.style.css';
 
 // util
-import { displayRating, displayImage, displayAvatar } from './Post.util';
+import { displayImage } from './Post.util';
+import { displayAvatar, displayRating } from '../../utils/display';
 
 // URL
 import { baseURL } from '../../URLs/urls';
