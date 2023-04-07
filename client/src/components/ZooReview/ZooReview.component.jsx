@@ -6,7 +6,7 @@ import './ZooReview.style.css';
 
 // utils
 import { displayRating } from '../Post/Post.util';
-import { defaultProfileImage } from '../../utils/images';
+import { displayAvatar } from '../../utils/avatar';
 
 // URL
 import { baseURL } from '../../URLs/urls';
@@ -19,7 +19,7 @@ const ZooReview = ({ review }) => {
     const [avatar, setAvatar] = useState('');
 
     let ratingDisplay = displayRating(review.rating);
-    let profileImage = avatar || defaultProfileImage;
+    let profileImage = displayAvatar(avatar);
 
     const fetchUserById = useCallback(async () => {
         const id = review.user;

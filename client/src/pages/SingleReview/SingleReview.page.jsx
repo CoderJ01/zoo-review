@@ -7,7 +7,7 @@ import './SingleReview.style.css';
 
 // utils
 import { displayRating } from '../../components/Post/Post.util';
-import { defaultProfileImage } from '../../utils/images';
+import { displayAvatar } from '../../utils/avatar';
 
 // URL
 import { baseURL } from '../../URLs/urls';
@@ -26,7 +26,7 @@ const SingleReview = () => {
     const [date, setDate] = useState('');
     const [avatar, setAvatar] = useState('');
 
-    let profileImage = avatar || defaultProfileImage;
+    let profileImage = displayAvatar(avatar);
 
     const fetchReviewById = useCallback(async () => {
         const id = reviewId;
