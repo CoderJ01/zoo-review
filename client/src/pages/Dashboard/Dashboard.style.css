@@ -34,7 +34,7 @@
 }
 
 .dashboard-b-buttons button:active,
-.dashboard-update-button button:active {
+.dashboard-update-button:active {
     opacity: 0.5;
 }
 
@@ -86,7 +86,7 @@
     }
 
     .dashboard-update-button {
-        margin-left: 78px;
+        margin-left: 72px;
         margin-top: 70vh;
         position: absolute;
     }
@@ -131,11 +131,9 @@
 
     .dashboard-update-button {
         display: flex;
-        justify-content: center;
-    }
-
-    .dashboard-update-button button {
         height: 3vh;
+        justify-content: center;
+        margin-left: 30%;
         width: 40%;
     }
 }
@@ -147,7 +145,7 @@
       width: 80%;
     }
 
-    .dashboard-update-button button {
+    .dashboard-update-button {
         height: 5vh;
     }
 }
