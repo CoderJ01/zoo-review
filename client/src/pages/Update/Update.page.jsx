@@ -9,6 +9,7 @@ import AccessDenied from '../../components/AccessDenied/AccessDenied.component';
 
 // URL
 import { baseURL } from '../../URLs/urls';
+import { isValidEmail } from '../../utils/emailValidation';
 
 // other imports
 import Button from 'react-bootstrap/Button';
@@ -77,6 +78,11 @@ const Update = ({ user }) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        if(!isValidEmail(email)) {
+            alert('Email is not valid!');
+            return;
+        }
 
         if(imageUpload != null && confirmed === false) {
             alert('The upload needs to be confirmed so that image will process successfully!');
