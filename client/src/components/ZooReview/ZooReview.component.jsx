@@ -16,8 +16,10 @@ import axios from 'axios';
 
 const ZooReview = ({ review }) => {
     const [username, setUsername] = useState('');
+    const [avatar, setAvatar] = useState('');
 
     let ratingDisplay = displayRating(review.rating);
+    let profileImage = avatar || defaultProfileImage;
 
     const fetchUserById = useCallback(async () => {
         const id = review.user;
@@ -26,6 +28,7 @@ const ZooReview = ({ review }) => {
             try {
                 const response = await axios.get(baseURL + `/api/users/${id}`);
                 setUsername(response.data.username);
+                setAvatar(response.data.avatar);
             }
             catch(error) {
                 console.log(error);
@@ -55,7 +58,7 @@ const ZooReview = ({ review }) => {
                     <p>{review.updatedAt.toString().substring(0, 10)}</p>
                 </div>
                 <div className='zrf-avatar'>
-                    <img alt='' src={defaultProfileImage} draggable='false'></img>
+                    <img alt='' src={profileImage} draggable='false'></img>
                 </div>   
             </div>
         </div>

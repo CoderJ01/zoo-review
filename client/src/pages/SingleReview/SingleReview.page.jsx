@@ -24,6 +24,9 @@ const SingleReview = () => {
     const [rating, setRating] = useState(0);
     const [user, setUser] = useState('');
     const [date, setDate] = useState('');
+    const [avatar, setAvatar] = useState('');
+
+    let profileImage = avatar || defaultProfileImage;
 
     const fetchReviewById = useCallback(async () => {
         const id = reviewId;
@@ -35,6 +38,7 @@ const SingleReview = () => {
                 setZoo(response.data.zoo)
                 setContent(response.data.data.content);
                 setUser(response.data.user);
+                setAvatar(response.data.avatar);
                 setDate(response.data.data.updatedAt.toString().substring(0, 10))
             }
             catch(error) {
@@ -66,7 +70,7 @@ const SingleReview = () => {
                         <p>{date}</p>
                     </div>
                     <div className='srdf-avatar'>
-                        <img alt='' src={defaultProfileImage} draggable='false'></img>
+                        <img alt='' src={profileImage} draggable='false'></img>
                     </div>   
                 </div>
             </div>

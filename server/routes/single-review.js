@@ -13,6 +13,7 @@ router.get('/:id', async (req, res) => {
     res.send({
         data: review,
         user: user.username,
+        avatar: user.avatar,
         zoo: zoo.name
     });
 });
