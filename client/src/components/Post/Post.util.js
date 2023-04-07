@@ -54,7 +54,7 @@ const starColor = (rating) => {
 export const displayAvatar = (avatar) => {
     let profileImage;
     
-    if(avatar === '') {
+    if(avatar === '' || avatar === undefined) {
         profileImage = defaultProfileImage;
     }
     else {
