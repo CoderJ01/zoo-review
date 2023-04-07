@@ -9,7 +9,7 @@ import { baseURL } from '../../URLs/urls';
 
 // other imports
 import axios from 'axios';
-import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytes, listAll, getDownloadURL, deleteObject, getStorage } from 'firebase/storage';
 import { storage } from '../../config/firebase';
 import { v4 } from 'uuid';
 
@@ -25,6 +25,13 @@ const Update = ({ user }) => {
     }
 
     const confirmUpload = () => {
+        if(user.avatar !== '') {
+            const stored = getStorage();
+            const imageRef = ref(stored, user.avatar);
+            deleteObject(imageRef).then(() => {
+                console.log('Old avatar has been deleted!');
+            }).catch(error => console.log(error))
+        }
 
         if(imageUpload != null) {
             setConfirmed(true);
