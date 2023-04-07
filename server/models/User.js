@@ -36,6 +36,9 @@ const UserSchema = new mongoose.Schema(
         randomString: {
             type: String
         },
+        admin: {
+            type: Boolean
+        },
         likedBlogs: {
             type: [String]
         },
