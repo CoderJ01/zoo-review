@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 // CSS
 import './Update.style.css';
 
+// components
+import AccessDenied from '../../components/AccessDenied/AccessDenied.component';
+
 // URL
 import { baseURL } from '../../URLs/urls';
 
@@ -101,30 +104,40 @@ const Update = ({ user }) => {
         );
     }
     return (
-        <div className='update'>
-            <form className='update-form' onSubmit={handleSubmit}>
-                <h1>Update Info</h1>
-                <div>
-                    <label htmlFor='email'>Email:</label><br/>
-                    <input type='text' name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+        <>
+        {
+            user.length === 0 ? 
+            (
+                <AccessDenied/>
+            ) : 
+            (
+                <div className='update'>
+                    <form className='update-form' onSubmit={handleSubmit}>
+                        <h1>Update Info</h1>
+                        <div>
+                            <label htmlFor='email'>Email:</label><br/>
+                            <input type='text' name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                        </div>
+                        <div className='u-upload-image'>
+                        <input 
+                            type='file'
+                            onChange={uploadImage} 
+                        />
+                        </div>
+                        <div className='u-confirm-upload'>
+                            <label htmlFor='radio'>Confirm image</label><br/>
+                            <input type='radio' name='radio' onChange={confirmUpload}/>
+                        </div>
+                        <div className='uf-button'>
+                            <Button type='submit' style={buttonStyle} >
+                                <text>Update</text>
+                            </Button>
+                        </div>
+                    </form>
                 </div>
-                <div className='u-upload-image'>
-                <input 
-                    type='file'
-                    onChange={uploadImage} 
-                />
-                </div>
-                <div className='u-confirm-upload'>
-                    <label htmlFor='radio'>Confirm image</label><br/>
-                    <input type='radio' name='radio' onChange={confirmUpload}/>
-                </div>
-                <div className='uf-button'>
-                    <Button type='submit' style={buttonStyle} >
-                        <text>Update</text>
-                    </Button>
-                </div>
-            </form>
-        </div>
+            )
+        }
+        </>
     );
 }
 
