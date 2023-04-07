@@ -59,7 +59,7 @@ function App() {
             <Route path='/review/:reviewId' element={<SingleReview/>}/>
             <Route path='/blog/:blogId' element={<SingleBlog loggedUser={user}/>}/>
             <Route path='/zoo/:zooId' element={<SingleZoo/>}/>
-            <Route path='/update/:userId' element={<Update user={user}/>}/>
+            <Route path='/update' element={<Update user={user}/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
