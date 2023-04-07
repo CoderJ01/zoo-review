@@ -6,6 +6,11 @@
 .post-heading {
     display: flex;
     height: 20%;
+    justify-content: space-between;
+}
+
+.post-heading text {
+    margin-right: 1vw;
 }
 
 .post-heading-avatar {
