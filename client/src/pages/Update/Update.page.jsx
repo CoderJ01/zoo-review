@@ -79,6 +79,7 @@ const Update = ({ user }) => {
         axios.put(baseURL + `/update/${user._id}`, 
         {
             email: email,
+            avatar: imageUrl
         },  
         )
         .then(
