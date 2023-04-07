@@ -32,30 +32,98 @@
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
+    .update {
+        background-color: rgb(207, 250, 209);
+        border: 1px solid rgb(207, 250, 209);
+        min-height: 90vh;
+    }
 
+    .update-form {
+        background-color: white;
+        margin-left: 25%;
+        margin-top: 5vh;
+        padding: 15px;
+        width: 50%;
+    }
+
+    .update-form h1 {
+        font-size: 3rem;
+    }
+
+    .update-form label,
+    .update-form input {
+        font-size: 2rem;
+    }
+
+    .u-upload-image,
+    .u-confirm-upload {
+        margin-top: 2vh;
+    }
+
+    .u-upload-image {
+        font-size: 2rem;
+    }
+
+    .u-confirm-upload input {
+        margin-left: 3%;
+        margin-top: 3px;
+        width: 2vw;
+    }
 }
 
 /* iPad */
 @media screen and (max-width: 768px) {
-
+    .u-confirm-upload input {
+        width: 3vw;
+    }
 }
 
 /* Surface Duo */
 @media screen and (max-width: 540px) {
+    .update-form {
+        margin-left: 10%;
+        padding: 20px;
+        width: 80%;
+    }
 
+    .update-form input {
+        width: 90%;
+    }
+
+    .u-confirm-upload label {
+        width: 46%;
+    }
+
+    .u-confirm-upload input {
+        width: 4vw;
+    }
 }
 
 /* iPhone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
+    .u-confirm-upload label {
+        width: 65%;
+    }
 
+    .u-confirm-upload input {
+        width: 5vw;
+    }
 }
 
 /* iPhone 12 Pro */
 @media screen and (max-width: 390px) {
- 
+    .update-form {
+        padding: 25px;
+    }
+
+    .u-confirm-upload label {
+        width: 70%;
+    }
 }
 
 /* iPhone X */
 @media screen and (max-width: 375px) and (max-height: 812px) {
-
+    .u-confirm-upload label {
+        width: 80%;
+    }
 }
