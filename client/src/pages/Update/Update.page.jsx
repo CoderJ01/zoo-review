@@ -1,6 +1,9 @@
 // React
 import React, { useState } from 'react';
 
+// CSS
+import './Update.style.css';
+
 // URL
 import { baseURL } from '../../URLs/urls';
 
