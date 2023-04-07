@@ -25,14 +25,16 @@
     width: 100%;
 }
 
-.dashboard-b-buttons button {
+.dashboard-b-buttons button,
+.dashboard-update-button button {
     background-color: white;
     border: 2px solid white;
     border-radius: 20px;
     color: rgb(34, 191, 41);
 }
 
-.dashboard-b-buttons button:active {
+.dashboard-b-buttons button:active,
+.dashboard-update-button button:active {
     opacity: 0.5;
 }
 
@@ -82,6 +84,12 @@
         margin-left: 20%;
         width: 60%;
     }
+
+    .dashboard-update-button {
+        margin-left: 78px;
+        margin-top: 70vh;
+        position: absolute;
+    }
     
 }
 
@@ -120,6 +128,16 @@
         margin-top: 3vh;
         padding-bottom: 0vh;
     }
+
+    .dashboard-update-button {
+        display: flex;
+        justify-content: center;
+    }
+
+    .dashboard-update-button button {
+        height: 3vh;
+        width: 40%;
+    }
 }
 
 /* Surface Duo */
@@ -127,6 +145,10 @@
     .dashboard-b-buttons {
       margin-left: 10%;
       width: 80%;
+    }
+
+    .dashboard-update-button button {
+        height: 5vh;
     }
 }
 
