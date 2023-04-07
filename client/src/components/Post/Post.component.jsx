@@ -5,19 +5,19 @@ import React from 'react';
 import './Post.style.css'
 
 // util
-import { displayRating, displayImage } from './Post.util';
-import { defaultProfileImage } from '../../utils/images';
+import { displayRating, displayImage, displayAvatar } from './Post.util';
 
 const Post = ({ post, blog = false }) => {
 
     let ratingDisplay = displayRating(post.rating);
+    let avatar = displayAvatar(post.avatar);
     let image = displayImage(blog, post);
 
     return (
         <div className='post'>
             <div className='post-heading'>
                 <div className='post-heading-avatar'>
-                    <img alt='' src={defaultProfileImage} draggable='false'/>
+                    <img alt='' src={avatar} draggable='false'/>
                 </div>
             </div>
             {
