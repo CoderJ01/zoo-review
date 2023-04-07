@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import './RegistrationForm.style.css';
 
 // util
-import { isValidEmail } from './RegistrationForm.util';
+import { isValidEmail } from '../../utils/emailValidation';
 
 // URL
 import { baseURL } from '../../URLs/urls';
