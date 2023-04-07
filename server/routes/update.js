@@ -4,6 +4,11 @@ const User = require('../models/User');
 
 router.put('/:id', async (req, res) => {
     const user = await User.findOne({ _id: req.params.id });
+    const email = await User.findOne({ email: req.body.email });
+
+    if(email) {
+        return res.status(400).json({ msg: 'Email must be unique!' });
+    }
     
     if(req.body.email !== '') {
         user.email = req.body.email;
