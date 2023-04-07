@@ -1,17 +1,46 @@
 // React
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // CSS
-import './Post.style.css'
+import './Post.style.css';
 
 // util
 import { displayRating, displayImage, displayAvatar } from './Post.util';
 
+// URL
+import { baseURL } from '../../URLs/urls';
+
+// other imports
+import axios from 'axios';
+
 const Post = ({ post, blog = false }) => {
+    const [profileImage, setProfileImage] = useState('');
+    const [username, setUsername] = useState('');
 
     let ratingDisplay = displayRating(post.rating);
-    let avatar = displayAvatar(post.avatar);
+    let avatar = displayAvatar(profileImage);
     let image = displayImage(blog, post);
+
+    useEffect(() => {
+        const id = post.user;
+
+        if(id) {
+            const getUserInfo = async () => {
+                try {
+                    const response = await axios.get(baseURL + `/api/users/${id}`);
+                    setProfileImage(response.data.avatar);
+                    setUsername(response.data.username);
+                }
+                catch(error) {
+                    console.log(error);
+                }
+            }
+            getUserInfo();
+        }
+    }, [post.user]);
+
+    console.log(profileImage);
+    console.log(username);
 
     return (
         <div className='post'>
@@ -19,6 +48,7 @@ const Post = ({ post, blog = false }) => {
                 <div className='post-heading-avatar'>
                     <img alt='' src={avatar} draggable='false'/>
                 </div>
+                <text>{username}</text>
             </div>
             {
                 !blog ? 
