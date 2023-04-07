@@ -8,10 +8,19 @@ import './Update.style.css';
 import { baseURL } from '../../URLs/urls';
 
 // other imports
+import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { ref, uploadBytes, listAll, getDownloadURL, deleteObject, getStorage } from 'firebase/storage';
 import { storage } from '../../config/firebase';
 import { v4 } from 'uuid';
+
+const buttonStyle = {
+    backgroundColor: 'rgb(34, 191, 41)', 
+    border: '2px solid rgb(34, 191, 41)', 
+    color: 'white',
+    marginLeft: '80%',
+    marginTop: '2vh'
+}
 
 const Update = ({ user }) => {
     const [email, setEmail] = useState('');
@@ -108,6 +117,11 @@ const Update = ({ user }) => {
                 <div className='u-confirm-upload'>
                     <label htmlFor='radio'>Confirm image</label><br/>
                     <input type='radio' name='radio' onChange={confirmUpload}/>
+                </div>
+                <div className='uf-button'>
+                    <Button type='submit' style={buttonStyle} >
+                        <text>Update</text>
+                    </Button>
                 </div>
             </form>
         </div>
