@@ -103,6 +103,7 @@ const Update = ({ user }) => {
         .then(
             response => {
                 alert(response.data.msg);
+                window.location.reload(false);
             }, 
             error => {
                 alert(error);
