@@ -86,6 +86,7 @@ const Update = ({ user }) => {
     return (
         <div className='update'>
             <form className='update-form' onSubmit={handleSubmit}>
+                <h1>Update Info</h1>
                 <div>
                     <label htmlFor='email'>Email:</label><br/>
                     <input type='text' name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
