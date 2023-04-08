@@ -79,7 +79,7 @@ const Update = ({ user }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        if(!isValidEmail(email)) {
+        if(email !== '' && !isValidEmail(email)) {
             alert('Email is not valid!');
             return;
         }
