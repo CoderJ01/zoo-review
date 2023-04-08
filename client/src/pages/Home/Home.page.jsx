@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react';
 
 // CSS
-import './Home.style.css'
+import './Home.style.css';
 
 // component
 import Post from '../../components/Post/Post.component';
@@ -13,9 +13,19 @@ import { baseURL } from '../../URLs/urls';
 // other imports
 import axios from 'axios';
 
-const Home = () => {
+const Home = ({ user }) => {
     const [reviews, setReviews] = useState([]);
     const [blogs, setBlogs] = useState([]);
+
+    let numberDisplayed;
+    console.log(user.admin);
+
+    if(user.admin === true) {
+        numberDisplayed = reviews.length;
+    }
+    else {
+        numberDisplayed = 4;
+    }
 
     useEffect(() => {
         const fetchReviews = async () => {
@@ -56,7 +66,7 @@ const Home = () => {
                         <div className='home-posts'>
                         {
                             reviews.map((review, i = 0) => {
-                                if(i < 4) {
+                                if(i < numberDisplayed) {
                                     return (
                                         <Post
                                             post={review}
@@ -83,7 +93,7 @@ const Home = () => {
                         <div className='home-posts'>
                         {
                             blogs.map((blog, i = 0) => {
-                                if(i < 4) {
+                                if(i < numberDisplayed) {
                                     return (
                                         <Post
                                             post={blog}
