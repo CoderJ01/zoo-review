@@ -43,13 +43,13 @@ const Post = ({ user, post, blog = false }) => {
     const handlePostDelete = async () => {
         if(!blog) {
             try {
-                let response = await axios.delete(baseURL + `/homepage/review/${user._id}/${post._id}`);
-                console.log(response);
+                await axios.delete(baseURL + `/homepage/review/${user._id}/${post._id}`);
             }
             catch(error) {
                 console.log(error);
             }
         }
+        window.location.reload(false);
     }
     
     return (
