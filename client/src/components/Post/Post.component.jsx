@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import './Post.style.css';
 
 // util
-import { displayImage } from './Post.util';
+import { displayImage, trashIcon } from './Post.util';
 import { displayAvatar, displayRating } from '../../utils/display';
 
 // URL
@@ -46,7 +46,7 @@ const Post = ({ post, blog = false }) => {
                 <div className='post-heading-avatar'>
                     <img alt='' src={avatar} draggable='false'/>
                 </div>
-                <text>{username}</text>
+                <text>{username} <span onClick={() => {console.log('clicked')}}>{trashIcon}</span></text>
             </div>
             {
                 !blog ? 
