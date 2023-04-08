@@ -19,17 +19,7 @@ import axios from 'axios';
 const Home = ({ user }) => {
     const [reviews, setReviews] = useState([]);
     const [blogs, setBlogs] = useState([]);
-
-    let numberDisplayed;
-    console.log(user.admin);
-
-    if(user.admin === true) {
-        numberDisplayed = reviews.length;
-    }
-    else {
-        numberDisplayed = 4;
-    }
-
+    
     let maxReviewsDisplayed = displayPosts(user.admin, reviews.length);
     let maxBlogsDisplayed = displayPosts(user.admin, blogs.length);
 
