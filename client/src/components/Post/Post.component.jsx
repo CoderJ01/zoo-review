@@ -14,7 +14,7 @@ import { baseURL } from '../../URLs/urls';
 // other imports
 import axios from 'axios';
 
-const Post = ({ post, blog = false }) => {
+const Post = ({ user, post, blog = false }) => {
     const [profileImage, setProfileImage] = useState('');
     const [username, setUsername] = useState('');
 
@@ -46,7 +46,15 @@ const Post = ({ post, blog = false }) => {
                 <div className='post-heading-avatar'>
                     <img alt='' src={avatar} draggable='false'/>
                 </div>
-                <text>{username} <span onClick={() => {console.log('clicked')}}>{trashIcon}</span></text>
+                {
+                    user.admin === true ? 
+                    (
+                        <text>{username} <span onClick={() => {console.log('clicked')}}>{trashIcon}</span></text>
+                    ) : 
+                    (
+                        <text>{username}</text>
+                    )
+                }
             </div>
             {
                 !blog ? 

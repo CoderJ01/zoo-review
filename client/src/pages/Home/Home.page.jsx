@@ -65,6 +65,7 @@ const Home = ({ user }) => {
                                 if(i < maxReviewsDisplayed) {
                                     return (
                                         <Post
+                                            user={user}
                                             post={review}
                                         />
                                     );
@@ -92,6 +93,7 @@ const Home = ({ user }) => {
                                 if(i < maxBlogsDisplayed) {
                                     return (
                                         <Post
+                                            user={user}
                                             post={blog}
                                             blog={true}
                                         />
