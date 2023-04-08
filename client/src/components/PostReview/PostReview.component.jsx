@@ -73,7 +73,7 @@ const PostReview = ({ user }) => {
 
     const confirmUpload = () => {
         storeFirebaseImage(imageUpload, setConfirmed, 'reviews');
-        retrieveFirebaseURL('blogs', setImageUrl);
+        retrieveFirebaseURL('reviews', setImageUrl);
     }
 
     const handleSubmit = (event) => {
