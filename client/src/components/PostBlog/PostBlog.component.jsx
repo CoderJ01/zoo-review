@@ -8,12 +8,10 @@ import '../PostReview/PostReview.style.css';
 import { baseURL } from '../../URLs/urls';
 
 // utils
-import { storeFirebaseImage } from '../../utils/processFirebaseImage';
+import { storeFirebaseImage, retrieveFirebaseURL } from '../../utils/processFirebaseImage';
 
 // other imports
 import axios from 'axios';
-import { ref, listAll, getDownloadURL } from 'firebase/storage';
-import { storage } from '../../config/firebase';
 
 const PostBlog = ({ user }) => {
     const [title, setTitle] = useState('');
@@ -29,20 +27,9 @@ const PostBlog = ({ user }) => {
     }
 
     const confirmUpload = () => {
-
         storeFirebaseImage(imageUpload, setConfirmed, 'blogs');
-
-        listAll(imageListRef)
-        .then(response => {
-            response.items.forEach(item => {
-                getDownloadURL(item).then(url => {
-                    setImageUrl(url);
-                });
-            })
-        });
+        retrieveFirebaseURL('blogs', setImageUrl);
     }
-
-    const imageListRef = ref(storage, 'images/blogs/');
 
     const handleSubmit = (event) => {
         event.preventDefault();
