@@ -41,7 +41,6 @@ const Update = ({ user }) => {
 
     const confirmUpload = () => {
         deleteFirebaseImage(user.avatar);
-        console.log(imageUpload);
         storeFirebaseImage(imageUpload, setConfirmed, 'avatar');
 
         listAll(imageListRef)
