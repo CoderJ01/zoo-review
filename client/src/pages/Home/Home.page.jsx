@@ -7,6 +7,9 @@ import './Home.style.css';
 // component
 import Post from '../../components/Post/Post.component';
 
+// util
+import { displayPosts } from './Home.util';
+
 // URL
 import { baseURL } from '../../URLs/urls';
 
@@ -26,6 +29,9 @@ const Home = ({ user }) => {
     else {
         numberDisplayed = 4;
     }
+
+    let maxReviewsDisplayed = displayPosts(user.admin, reviews.length);
+    let maxBlogsDisplayed = displayPosts(user.admin, blogs.length);
 
     useEffect(() => {
         const fetchReviews = async () => {
@@ -66,7 +72,7 @@ const Home = ({ user }) => {
                         <div className='home-posts'>
                         {
                             reviews.map((review, i = 0) => {
-                                if(i < numberDisplayed) {
+                                if(i < maxReviewsDisplayed) {
                                     return (
                                         <Post
                                             post={review}
@@ -93,7 +99,7 @@ const Home = ({ user }) => {
                         <div className='home-posts'>
                         {
                             blogs.map((blog, i = 0) => {
-                                if(i < numberDisplayed) {
+                                if(i < maxBlogsDisplayed) {
                                     return (
                                         <Post
                                             post={blog}
