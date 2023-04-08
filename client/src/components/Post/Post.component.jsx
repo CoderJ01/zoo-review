@@ -39,6 +39,18 @@ const Post = ({ user, post, blog = false }) => {
             getUserInfo();
         }
     }, [post.user]);
+
+    const handlePostDelete = async () => {
+        if(!blog) {
+            try {
+                let response = await axios.delete(baseURL + `/homepage/review/${user._id}/${post._id}`);
+                console.log(response);
+            }
+            catch(error) {
+                console.log(error);
+            }
+        }
+    }
     
     return (
         <div className='post'>
@@ -49,7 +61,7 @@ const Post = ({ user, post, blog = false }) => {
                 {
                     user.admin === true ? 
                     (
-                        <text>{username} <span className='post-heading-trashcan' onClick={() => {console.log('clicked')}}>{trashIcon}</span></text>
+                        <text>{username} <span className='post-heading-trashcan' onClick={handlePostDelete}>{trashIcon}</span></text>
                     ) : 
                     (
                         <text>{username}</text>
