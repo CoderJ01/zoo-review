@@ -41,7 +41,7 @@ const Update = ({ user }) => {
 
     const confirmUpload = () => {
         deleteFirebaseImage(user.avatar);
-        storeFirebaseImage(imageUpload, setConfirmed, 'avatar');
+        storeFirebaseImage(imageUpload, setConfirmed, 'avatars');
 
         listAll(imageListRef)
         .then(response => {
