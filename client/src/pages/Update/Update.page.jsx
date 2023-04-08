@@ -17,8 +17,6 @@ import { deleteFirebaseImage, storeFirebaseImage, retrieveFirebaseURL } from '..
 // other imports
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
-import { ref, listAll, getDownloadURL } from 'firebase/storage';
-import { storage } from '../../config/firebase';
 
 const buttonStyle = {
     backgroundColor: 'rgb(34, 191, 41)', 
@@ -43,18 +41,7 @@ const Update = ({ user }) => {
         deleteFirebaseImage(user.avatar);
         storeFirebaseImage(imageUpload, setConfirmed, 'avatars');
         retrieveFirebaseURL('avatars', setImageUrl);
-
-        listAll(imageListRef)
-        .then(response => {
-            response.items.forEach(item => {
-                getDownloadURL(item).then(url => {
-                    setImageUrl(url);
-                });
-            })
-        });
     }
-
-    const imageListRef = ref(storage, 'images/avatars/');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
