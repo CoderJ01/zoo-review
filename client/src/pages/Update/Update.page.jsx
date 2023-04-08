@@ -13,7 +13,7 @@ import { isValidEmail } from '../../utils/emailValidation';
 
 // utils
 import { cloudString } from '../../utils/cloudString';
-import { deleteFirebaseImage } from '../../utils/processFirebaseImage';
+import { deleteFirebaseImage, storeFirebaseImage } from '../../utils/processFirebaseImage';
 
 // other imports
 import Button from 'react-bootstrap/Button';
@@ -43,24 +43,26 @@ const Update = ({ user }) => {
 
     const confirmUpload = () => {
         deleteFirebaseImage(user.avatar);
+        console.log(imageUpload);
+        storeFirebaseImage(imageUpload, setConfirmed, 'avatar');
 
-        if(imageUpload != null) {
-            setConfirmed(true);
-            const imageRef = ref(storage, `images/avatars/${imageUpload.name + cloudString + v4()}`);
+        // if(imageUpload != null) {
+        //     setConfirmed(true);
+        //     const imageRef = ref(storage, `images/avatars/${imageUpload.name + cloudString + v4()}`);
 
-            uploadBytes(imageRef, imageUpload)
-            .then(() => {
-                alert('Image confirmed! Wait a few seconds for it to process!');
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        }
-        else {
-            alert('You have not uploaded an image!');
-            window.location.reload(false);
-            return;
-        }
+        //     uploadBytes(imageRef, imageUpload)
+        //     .then(() => {
+        //         alert('Image confirmed! Wait a few seconds for it to process!');
+        //     })
+        //     .catch(error => {
+        //         console.log(error);
+        //     });
+        // }
+        // else {
+        //     alert('You have not uploaded an image!');
+        //     window.location.reload(false);
+        //     return;
+        // }
 
         listAll(imageListRef)
         .then(response => {
