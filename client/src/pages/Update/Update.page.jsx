@@ -41,7 +41,7 @@ const Update = ({ user }) => {
     }
 
     const confirmUpload = () => {
-        if(user.avatar !== '') {
+        if(user.avatar.includes(cloudString)) {
             const stored = getStorage();
             const imageRef = ref(stored, user.avatar);
             deleteObject(imageRef).then(() => {
@@ -112,7 +112,12 @@ const Update = ({ user }) => {
                 alert(error);
             }
         );
+        
+        // This ensures that the correct image is uploaded. At times, the wrong image is oddly stored in the 
+        // User object
+        setImageUpload(null); 
     }
+
     return (
         <>
         {
