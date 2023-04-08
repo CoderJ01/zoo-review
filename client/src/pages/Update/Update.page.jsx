@@ -12,15 +12,13 @@ import { baseURL } from '../../URLs/urls';
 import { isValidEmail } from '../../utils/emailValidation';
 
 // utils
-import { cloudString } from '../../utils/cloudString';
 import { deleteFirebaseImage, storeFirebaseImage } from '../../utils/processFirebaseImage';
 
 // other imports
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
-import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
+import { ref, listAll, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../config/firebase';
-import { v4 } from 'uuid';
 
 const buttonStyle = {
     backgroundColor: 'rgb(34, 191, 41)', 
@@ -45,24 +43,6 @@ const Update = ({ user }) => {
         deleteFirebaseImage(user.avatar);
         console.log(imageUpload);
         storeFirebaseImage(imageUpload, setConfirmed, 'avatar');
-
-        // if(imageUpload != null) {
-        //     setConfirmed(true);
-        //     const imageRef = ref(storage, `images/avatars/${imageUpload.name + cloudString + v4()}`);
-
-        //     uploadBytes(imageRef, imageUpload)
-        //     .then(() => {
-        //         alert('Image confirmed! Wait a few seconds for it to process!');
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     });
-        // }
-        // else {
-        //     alert('You have not uploaded an image!');
-        //     window.location.reload(false);
-        //     return;
-        // }
 
         listAll(imageListRef)
         .then(response => {
