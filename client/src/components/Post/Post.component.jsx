@@ -7,6 +7,7 @@ import './Post.style.css';
 // util
 import { displayImage, trashIcon } from './Post.util';
 import { displayAvatar, displayRating } from '../../utils/display';
+import { deleteFirebaseImage } from '../../utils/deleteFirebaseImage';
 
 // URL
 import { baseURL } from '../../URLs/urls';
@@ -21,6 +22,8 @@ const Post = ({ user, post, blog = false }) => {
     let ratingDisplay = displayRating(post.rating);
     let avatar = displayAvatar(profileImage);
     let image = displayImage(blog, post);
+
+    console.log(post.image);
 
     useEffect(() => {
         const id = post.user;
@@ -57,6 +60,7 @@ const Post = ({ user, post, blog = false }) => {
                 console.log(error);
             }
         }
+        deleteFirebaseImage(post.image);
         window.location.reload(false);
     }
     
