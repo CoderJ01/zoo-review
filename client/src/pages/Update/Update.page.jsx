@@ -13,11 +13,12 @@ import { isValidEmail } from '../../utils/emailValidation';
 
 // utils
 import { cloudString } from '../../utils/cloudString';
+import { deleteFirebaseImage } from '../../utils/deleteFirebaseImage';
 
 // other imports
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
-import { ref, uploadBytes, listAll, getDownloadURL, deleteObject, getStorage } from 'firebase/storage';
+import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../config/firebase';
 import { v4 } from 'uuid';
 
@@ -41,13 +42,7 @@ const Update = ({ user }) => {
     }
 
     const confirmUpload = () => {
-        if(user.avatar.includes(cloudString)) {
-            const stored = getStorage();
-            const imageRef = ref(stored, user.avatar);
-            deleteObject(imageRef).then(() => {
-                console.log('Old avatar has been deleted!');
-            }).catch(error => console.log(error))
-        }
+        deleteFirebaseImage(user.avatar);
 
         if(imageUpload != null) {
             setConfirmed(true);
