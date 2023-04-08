@@ -7,7 +7,7 @@ import './Post.style.css';
 // util
 import { displayImage, trashIcon } from './Post.util';
 import { displayAvatar, displayRating } from '../../utils/display';
-import { deleteFirebaseImage } from '../../utils/deleteFirebaseImage';
+import { deleteFirebaseImage } from '../../utils/processFirebaseImage';
 
 // URL
 import { baseURL } from '../../URLs/urls';

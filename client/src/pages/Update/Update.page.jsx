@@ -13,7 +13,7 @@ import { isValidEmail } from '../../utils/emailValidation';
 
 // utils
 import { cloudString } from '../../utils/cloudString';
-import { deleteFirebaseImage } from '../../utils/deleteFirebaseImage';
+import { deleteFirebaseImage } from '../../utils/processFirebaseImage';
 
 // other imports
 import Button from 'react-bootstrap/Button';
