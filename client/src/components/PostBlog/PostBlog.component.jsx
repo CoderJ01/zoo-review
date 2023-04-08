@@ -7,6 +7,9 @@ import '../PostReview/PostReview.style.css';
 // URL
 import { baseURL } from '../../URLs/urls';
 
+// utils
+import { cloudString } from '../../utils/cloudString';
+
 // other imports
 import axios from 'axios';
 import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
@@ -30,7 +33,7 @@ const PostBlog = ({ user }) => {
 
         if(imageUpload != null) {
             setConfirmed(true);
-            const imageRef = ref(storage, `images/blogs/${imageUpload.name + v4()}`);
+            const imageRef = ref(storage, `images/blogs/${imageUpload.name + cloudString + v4()}`);
 
             uploadBytes(imageRef, imageUpload)
             .then(() => {

@@ -6,6 +6,7 @@ import './PostReview.style.css';
 
 // utils
 import { ratings } from './PostReview.utils';
+import { cloudString } from '../../utils/cloudString';
 
 // URLs 
 import { baseURL } from '../../URLs/urls';
@@ -77,7 +78,7 @@ const PostReview = ({ user }) => {
 
         if(imageUpload != null) {
             setConfirmed(true);
-            const imageRef = ref(storage, `images/reviews/${imageUpload.name + v4()}`);
+            const imageRef = ref(storage, `images/reviews/${imageUpload.name + cloudString + v4()}`);
 
             uploadBytes(imageRef, imageUpload)
             .then(() => {

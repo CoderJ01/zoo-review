@@ -11,6 +11,9 @@ import AccessDenied from '../../components/AccessDenied/AccessDenied.component';
 import { baseURL } from '../../URLs/urls';
 import { isValidEmail } from '../../utils/emailValidation';
 
+// utils
+import { cloudString } from '../../utils/cloudString';
+
 // other imports
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
@@ -48,7 +51,7 @@ const Update = ({ user }) => {
 
         if(imageUpload != null) {
             setConfirmed(true);
-            const imageRef = ref(storage, `images/avatars/${imageUpload.name + v4()}`);
+            const imageRef = ref(storage, `images/avatars/${imageUpload.name + cloudString + v4()}`);
 
             uploadBytes(imageRef, imageUpload)
             .then(() => {
