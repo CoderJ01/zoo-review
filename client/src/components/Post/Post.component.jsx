@@ -49,6 +49,14 @@ const Post = ({ user, post, blog = false }) => {
                 console.log(error);
             }
         }
+        else {
+            try {
+                await axios.delete(baseURL + `/homepage/blog/${user._id}/${post._id}`);
+            }
+            catch(error) {
+                console.log(error);
+            }
+        }
         window.location.reload(false);
     }
     
