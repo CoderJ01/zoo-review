@@ -1,7 +1,6 @@
 import { cloudString } from './cloudString';
 import { ref, uploadBytes, deleteObject, getStorage, listAll, getDownloadURL } from 'firebase/storage';
 import { storage } from '../config/firebase';
-import { v4 } from 'uuid';
 
 export const deleteFirebaseImage = async (image) => {
     if(image.includes(cloudString)) {
@@ -13,10 +12,9 @@ export const deleteFirebaseImage = async (image) => {
     }
 }
 
-export const storeFirebaseImage = async (imageUpload, setConfirmed, directory) => {
+export const storeFirebaseImage = async (imageUpload, setConfirmed, imageRef) => {
     if(imageUpload != null) {
         setConfirmed(true);
-        const imageRef = ref(storage, `images/${directory}/${imageUpload.name + cloudString + v4()}`);
 
         uploadBytes(imageRef, imageUpload)
         .then(() => {
@@ -33,13 +31,15 @@ export const storeFirebaseImage = async (imageUpload, setConfirmed, directory) =
     }
 }
 
-export const retrieveFirebaseURL = (directory, setImageUrl) => {
-    const imageListRef = ref(storage, `images/${directory}/`);
-
+export const retrieveFirebaseURL = (imageRef, setImageUrl, folder) => {
+    const imageListRef = ref(storage, `images/${folder}/`);
     listAll(imageListRef)
     .then(response => {
-        response.items.forEach(item => {
-            getDownloadURL(item).then(url => {
+        response.uploadedImage = [];
+        response.uploadedImage.push(imageRef);
+        response.uploadedImage.forEach(image => {
+            getDownloadURL(image).then(url => {
+                console.log(url);
                 setImageUrl(url);
             });
         })
