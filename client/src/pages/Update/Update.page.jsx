@@ -12,7 +12,7 @@ import { baseURL } from '../../URLs/urls';
 import { isValidEmail } from '../../utils/emailValidation';
 
 // utils
-import { deleteFirebaseImage, storeFirebaseImage } from '../../utils/processFirebaseImage';
+import { deleteFirebaseImage, storeFirebaseImage, retrieveFirebaseURL } from '../../utils/processFirebaseImage';
 
 // other imports
 import Button from 'react-bootstrap/Button';
@@ -42,6 +42,7 @@ const Update = ({ user }) => {
     const confirmUpload = () => {
         deleteFirebaseImage(user.avatar);
         storeFirebaseImage(imageUpload, setConfirmed, 'avatars');
+        retrieveFirebaseURL('avatars', setImageUrl);
 
         listAll(imageListRef)
         .then(response => {
