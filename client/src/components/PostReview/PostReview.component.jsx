@@ -6,15 +6,13 @@ import './PostReview.style.css';
 
 // utils
 import { ratings } from './PostReview.utils';
-import { storeFirebaseImage } from '../../utils/processFirebaseImage';
+import { storeFirebaseImage, retrieveFirebaseURL } from '../../utils/processFirebaseImage';
 
 // URLs 
 import { baseURL } from '../../URLs/urls';
 
 // other imports
 import axios from 'axios';
-import { ref, listAll, getDownloadURL } from 'firebase/storage';
-import { storage } from '../../config/firebase';
 
 const PostReview = ({ user }) => {
     const [title, setTitle] = useState('');
@@ -74,20 +72,9 @@ const PostReview = ({ user }) => {
     }
 
     const confirmUpload = () => {
-
         storeFirebaseImage(imageUpload, setConfirmed, 'reviews');
-
-        listAll(imageListRef)
-        .then(response => {
-            response.items.forEach(item => {
-                getDownloadURL(item).then(url => {
-                    setImageUrl(url);
-                });
-            })
-        });
+        retrieveFirebaseURL('blogs', setImageUrl);
     }
-
-    const imageListRef = ref(storage, 'images/reviews/');
 
     const handleSubmit = (event) => {
         event.preventDefault();
