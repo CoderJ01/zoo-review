@@ -13,10 +13,15 @@ import { isValidEmail } from '../../utils/emailValidation';
 
 // utils
 import { deleteFirebaseImage, storeFirebaseImage, retrieveFirebaseURL } from '../../utils/processFirebaseImage';
+import { cloudString } from '../../utils/cloudString';
+
 
 // other imports
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import { ref } from 'firebase/storage';
+import { storage } from '../../config/firebase';
+import { v4 } from 'uuid';
 
 const buttonStyle = {
     backgroundColor: 'rgb(34, 191, 41)', 
@@ -38,9 +43,10 @@ const Update = ({ user }) => {
     }
 
     const confirmUpload = () => {
+        const imageRef = ref(storage, `images/avatars/${imageUpload.name + cloudString + v4()}`);
+        storeFirebaseImage(imageUpload, setConfirmed, imageRef);
+        retrieveFirebaseURL(imageRef, setImageUrl, 'avatars');
         deleteFirebaseImage(user.avatar);
-        storeFirebaseImage(imageUpload, setConfirmed, 'avatars');
-        retrieveFirebaseURL('avatars', setImageUrl);
     }
 
     const handleSubmit = async (event) => {
