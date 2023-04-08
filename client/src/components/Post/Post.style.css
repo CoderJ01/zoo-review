@@ -32,6 +32,10 @@ img {
     margin-left: 4%;
 }
 
+.post-heading-trashcan:active {
+    opacity: 0.5;
+}
+
 .post-picture {
     height: 50%;
 }

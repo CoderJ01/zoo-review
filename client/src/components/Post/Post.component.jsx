@@ -49,7 +49,7 @@ const Post = ({ user, post, blog = false }) => {
                 {
                     user.admin === true ? 
                     (
-                        <text>{username} <span onClick={() => {console.log('clicked')}}>{trashIcon}</span></text>
+                        <text>{username} <span className='post-heading-trashcan' onClick={() => {console.log('clicked')}}>{trashIcon}</span></text>
                     ) : 
                     (
                         <text>{username}</text>
