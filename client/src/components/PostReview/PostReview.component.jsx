@@ -1,21 +1,20 @@
 // React
-import React, { useState, useEffect, useCallback }from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 // CSS
 import './PostReview.style.css';
 
 // utils
 import { ratings } from './PostReview.utils';
-import { cloudString } from '../../utils/cloudString';
+import { storeFirebaseImage } from '../../utils/processFirebaseImage';
 
 // URLs 
 import { baseURL } from '../../URLs/urls';
 
 // other imports
 import axios from 'axios';
-import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
+import { ref, listAll, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../config/firebase';
-import { v4 } from 'uuid';
 
 const PostReview = ({ user }) => {
     const [title, setTitle] = useState('');
@@ -76,23 +75,7 @@ const PostReview = ({ user }) => {
 
     const confirmUpload = () => {
 
-        if(imageUpload != null) {
-            setConfirmed(true);
-            const imageRef = ref(storage, `images/reviews/${imageUpload.name + cloudString + v4()}`);
-
-            uploadBytes(imageRef, imageUpload)
-            .then(() => {
-                alert('Image confirmed! Wait a few seconds for it to process!');
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        }
-        else {
-            alert('You have not uploaded an image!');
-            window.location.reload(false);
-            return;
-        }
+        storeFirebaseImage(imageUpload, setConfirmed, 'reviews');
 
         listAll(imageListRef)
         .then(response => {
