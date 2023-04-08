@@ -1,5 +1,5 @@
 import { cloudString } from './cloudString';
-import { ref, uploadBytes, deleteObject, getStorage } from 'firebase/storage';
+import { ref, uploadBytes, deleteObject, getStorage, listAll, getDownloadURL } from 'firebase/storage';
 import { storage } from '../config/firebase';
 import { v4 } from 'uuid';
 
@@ -31,4 +31,17 @@ export const storeFirebaseImage = async (imageUpload, setConfirmed, directory) =
         window.location.reload(false);
         return;
     }
+}
+
+export const retrieveFirebaseURL = (directory, setImageUrl) => {
+    const imageListRef = ref(storage, `images/${directory}/`);
+
+    listAll(imageListRef)
+    .then(response => {
+        response.items.forEach(item => {
+            getDownloadURL(item).then(url => {
+                setImageUrl(url);
+            });
+        })
+    });
 }
