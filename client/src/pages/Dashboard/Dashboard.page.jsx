@@ -9,7 +9,7 @@ import AccessDenied from '../../components/AccessDenied/AccessDenied.component';
 import DashboardDisplay from '../../components/DashboardDisplay/DashboardDisplay.component';
 
 // utils
-import { defaultProfileImage } from '../../utils/images';
+import { displayAvatar } from '../../utils/display';
 
 // URL
 import { baseURL_frontend } from '../../URLs/urls';
@@ -29,6 +29,8 @@ const buttonStyle = {
 const Dashboard = ({ user }) => {
     const [displayReviews, setDisplayReviews] = useState(true);
     const [displayBlogs, setDisplayBlogs] = useState(false);
+
+    let avatar = displayAvatar(user.avatar);
 
     const seeReviews = () => {
         setDisplayReviews(true);
@@ -56,7 +58,7 @@ const Dashboard = ({ user }) => {
                         <div className='dashboard-b-user-info'>
                             <h2>Your Avatar</h2>
                             <div className='dashboard-b-u-i-avatar'>
-                                <img alt='' src={defaultProfileImage} draggable='false'/>
+                                <img alt='' src={avatar} draggable='false'/>
                             </div>
                             <h2 style={{ marginTop: '7%'}}>Your Bio</h2>
                             <div className='dashboard-b-u-i-bio'>
