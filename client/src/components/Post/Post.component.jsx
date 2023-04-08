@@ -39,10 +39,7 @@ const Post = ({ post, blog = false }) => {
             getUserInfo();
         }
     }, [post.user]);
-
-    console.log(profileImage);
-    console.log(username);
-
+    
     return (
         <div className='post'>
             <div className='post-heading'>
