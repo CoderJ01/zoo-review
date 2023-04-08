@@ -33,4 +33,20 @@ router.delete('/review/:userId/:reviewId', async (req, res) => {
     res.status(204).send();
 });
 
+router.delete('/blog/:userId/:blogId', async (req, res) => {
+    const user = await User.findOne({ _id: req.params.userId });
+    
+    if(user.admin === false) {
+        return res.status(400).json({ msg: 'Unauthorized request!' });
+    }
+
+    const blog = await Blog.findOne({ _id: req.params.blogId });
+
+    await User.findOneAndUpdate({ _id: blog.user.toString() }, { $pull: {blogs: {_id: req.params.blogId }} }).exec();
+    await Blog.findOneAndDelete({ _id: req.params.blogId });
+    
+    res.status(204).send();
+});
+
+
 module.exports = router;
