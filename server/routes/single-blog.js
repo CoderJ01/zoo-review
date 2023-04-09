@@ -6,6 +6,11 @@ const User = require('../models/User');
 
 router.get('/:id', async (req, res) => {
     const blog = await Blog.findOne({ _id: req.params.id });
+    if(!blog) {
+        res.send('Blog does not exist!');
+        return;
+    }
+
     const user = await User.findOne({ _id: blog.user.toString() });
 
     res.send({
