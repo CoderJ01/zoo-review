@@ -46,6 +46,8 @@ const Post = ({ user, post, blog = false }) => {
     }, [post.user]);
 
     const handlePostDelete = async () => {
+        deleteFirebaseImage(post.image);
+        
         if(!blog) {
             try {
                 await axios.delete(baseURL + `/homepage/review/${user._id}/${post._id}`);
@@ -62,7 +64,6 @@ const Post = ({ user, post, blog = false }) => {
                 console.log(error);
             }
         }
-        deleteFirebaseImage(post.image);
         window.location.reload(false);
     }
     
