@@ -12,7 +12,7 @@ import { baseURL } from '../../URLs/urls';
 import { isValidEmail } from '../../utils/emailValidation';
 
 // utils
-import { deleteFirebaseImage, storeFirebaseImage, retrieveFirebaseURL } from '../../utils/processFirebaseImage';
+import { deleteFirebaseImage, storeFirebaseImage } from '../../utils/processFirebaseImage';
 import { cloudString } from '../../utils/cloudString';
 
 
@@ -44,8 +44,7 @@ const Update = ({ user }) => {
 
     const confirmUpload = () => {
         const imageRef = ref(storage, `images/avatars/${imageUpload.name + cloudString + v4()}`);
-        storeFirebaseImage(imageUpload, setConfirmed, imageRef);
-        retrieveFirebaseURL(imageRef, setImageUrl, 'avatars');
+        storeFirebaseImage(imageUpload, setConfirmed, imageRef, setImageUrl);
         deleteFirebaseImage(user.avatar);
     }
 

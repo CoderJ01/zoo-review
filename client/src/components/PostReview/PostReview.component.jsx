@@ -6,7 +6,7 @@ import './PostReview.style.css';
 
 // utils
 import { ratings } from './PostReview.utils';
-import { storeFirebaseImage, retrieveFirebaseURL } from '../../utils/processFirebaseImage';
+import { storeFirebaseImage } from '../../utils/processFirebaseImage';
 import { cloudString } from '../../utils/cloudString';
 
 // URLs 
@@ -77,8 +77,7 @@ const PostReview = ({ user }) => {
 
     const confirmUpload = () => {
         const imageRef = ref(storage, `images/reviews/${imageUpload.name + cloudString + v4()}`);
-        storeFirebaseImage(imageUpload, setConfirmed, imageRef);
-        retrieveFirebaseURL(imageRef, setImageUrl, 'reviews');
+        storeFirebaseImage(imageUpload, setConfirmed, imageRef, setImageUrl);
     }
 
     const handleSubmit = (event) => {

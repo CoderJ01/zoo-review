@@ -8,7 +8,7 @@ import '../PostReview/PostReview.style.css';
 import { baseURL } from '../../URLs/urls';
 
 // utils
-import { storeFirebaseImage, retrieveFirebaseURL } from '../../utils/processFirebaseImage';
+import { storeFirebaseImage } from '../../utils/processFirebaseImage';
 import { cloudString } from '../../utils/cloudString';
 
 // other imports
@@ -32,8 +32,7 @@ const PostBlog = ({ user }) => {
 
     const confirmUpload = () => {
         const imageRef = ref(storage, `images/blogs/${imageUpload.name + cloudString + v4()}`);
-        storeFirebaseImage(imageUpload, setConfirmed, imageRef);
-        retrieveFirebaseURL(imageRef, setImageUrl, 'blogs');
+        storeFirebaseImage(imageUpload, setConfirmed, imageRef, setImageUrl);
     }
 
     const handleSubmit = (event) => {
