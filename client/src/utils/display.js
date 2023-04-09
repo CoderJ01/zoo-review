@@ -63,3 +63,5 @@ const starColor = (rating) => {
     }
     return color;
 }
+
+export const displayAdminText = <span> (<span style={{ color: 'rgb(50, 179, 50)'}}>ADMIN</span>)</span>
