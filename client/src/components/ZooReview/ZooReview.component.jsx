@@ -5,7 +5,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import './ZooReview.style.css';
 
 // util
-import { displayAvatar, displayRating } from '../../utils/display';
+import { displayAvatar, displayRating, displayAdminText } from '../../utils/display';
 
 // URL
 import { baseURL } from '../../URLs/urls';
@@ -16,6 +16,7 @@ import axios from 'axios';
 const ZooReview = ({ review }) => {
     const [username, setUsername] = useState('');
     const [avatar, setAvatar] = useState('');
+    const [admin, setAdmin] = useState(false);
 
     let ratingDisplay = displayRating(review.rating);
     let profileImage = displayAvatar(avatar);
@@ -28,6 +29,7 @@ const ZooReview = ({ review }) => {
                 const response = await axios.get(baseURL + `/api/users/${id}`);
                 setUsername(response.data.username);
                 setAvatar(response.data.avatar);
+                setAdmin(response.data.admin);
             }
             catch(error) {
                 console.log(error);
@@ -43,7 +45,15 @@ const ZooReview = ({ review }) => {
         <div className='zoo-review'>
             <div className='zoo-review-header'>
                 <h1>{review.title}</h1>
-                <text>{username}</text>  
+                {
+                    admin === true ? 
+                    (
+                        <text>{username}{displayAdminText}</text>  
+                    ) : 
+                    (
+                        <text>{username}</text>  
+                    )
+                }
             </div>
             <div className='zoo-review-body'>
                 <p>{review.content}</p>

@@ -7,6 +7,7 @@ import './SingleBlog.style.css';
 
 // util 
 import { colorThumbUp, colorThumbDown } from './SingleBlog.util';
+import { displayAdminText } from '../../utils/display';
 
 // URL
 import { baseURL } from '../../URLs/urls';
@@ -24,6 +25,7 @@ const SingleBlog = ({ loggedUser }) => {
     const [email, setEmail] = useState('');
     const [liked, setLiked] = useState(false);
     const [disliked, setDisliked] = useState(false);
+    const [admin, setAdmin] = useState(false);
 
     let upColor = colorThumbUp(liked);
     let downColor = colorThumbDown(disliked);
@@ -39,6 +41,7 @@ const SingleBlog = ({ loggedUser }) => {
                 setContent(response.data.data.content);
                 setDate(response.data.data.updatedAt.toString().substring(0, 10));
                 setEmail(response.data.email);
+                setAdmin(response.data.admin);
             }
             catch(error) {
                 console.log(error);
@@ -120,7 +123,15 @@ const SingleBlog = ({ loggedUser }) => {
             <div className='single-blog-display'>
                 <div className='single-blog-display-header'>
                     <h1>{title}</h1><br/>
-                    <h2>by {user}</h2>
+                    {
+                        admin === true ? 
+                        (
+                            <h2>by {user}{displayAdminText}</h2>
+                        ) : 
+                        (
+                            <h2>by {user}</h2>
+                        )
+                    }
                 </div>
                 <div className='single-blog-display-body'>
                     <p>{content}</p>

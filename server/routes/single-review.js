@@ -14,6 +14,7 @@ router.get('/:id', async (req, res) => {
         data: review,
         user: user.username,
         avatar: user.avatar,
+        admin: user.admin,
         zoo: zoo.name
     });
 });
