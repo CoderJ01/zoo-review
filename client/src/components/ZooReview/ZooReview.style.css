@@ -10,6 +10,15 @@
     justify-content: space-between;
 }
 
+.zrf-bio {
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    background-color: white;
+    display: none;
+    position: absolute;
+}
+
 .zoo-review h1 {
     font-weight: bold;
     text-align: left;
@@ -40,6 +49,16 @@
         font-size: 20px;
     }
 
+    .zrf-bio {
+        background-color: rgb(232, 248, 245);
+        border: 2px solid black;
+        margin-left: 47%;
+        margin-top: 5%;
+        padding-left: 15px;
+        padding-right: 5px;
+        width: 7%;
+    }
+
     .zrf-text {
         margin-top: 35px;
     }
@@ -48,6 +67,10 @@
         height: 10%;
         margin-top: 25px;
         width: 10%;
+    }
+
+    .zrf-avatar:hover + .zrf-bio {
+        display: block;
     }
 }
 
