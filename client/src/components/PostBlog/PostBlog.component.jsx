@@ -9,9 +9,13 @@ import { baseURL } from '../../URLs/urls';
 
 // utils
 import { storeFirebaseImage, retrieveFirebaseURL } from '../../utils/processFirebaseImage';
+import { cloudString } from '../../utils/cloudString';
 
 // other imports
 import axios from 'axios';
+import { ref } from 'firebase/storage';
+import { storage } from '../../config/firebase';
+import { v4 } from 'uuid';
 
 const PostBlog = ({ user }) => {
     const [title, setTitle] = useState('');
@@ -27,8 +31,9 @@ const PostBlog = ({ user }) => {
     }
 
     const confirmUpload = () => {
-        storeFirebaseImage(imageUpload, setConfirmed, 'blogs');
-        retrieveFirebaseURL('blogs', setImageUrl);
+        const imageRef = ref(storage, `images/blogs/${imageUpload.name + cloudString + v4()}`);
+        storeFirebaseImage(imageUpload, setConfirmed, imageRef);
+        retrieveFirebaseURL(imageRef, setImageUrl, 'blogs');
     }
 
     const handleSubmit = (event) => {
