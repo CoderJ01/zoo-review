@@ -7,17 +7,12 @@
     word-wrap: break-word;
 }
 
-.dashboard-post a {
-    text-decoration: none;
-}
-
 .dashboard-post a:hover {
-    text-decoration: underline;
+    opacity: 0.5;
 }
 
 .dashboard-post a:active {
-    font-style: italic;
-    text-decoration: underline;
+    opacity: 1.0;
 }
 
 /* Desktop */
@@ -55,7 +50,7 @@
         margin-top: 0;
     } 
 
-    .dashboard-post a {
+    .dashboard-post h3 {
         color: rgb(27, 165, 42);
     }
 }
@@ -86,7 +81,7 @@
         width: 60%;
     }
 
-    .dashboard-post a {
+    .dashboard-post h3 {
         color: black;
     }
 }
