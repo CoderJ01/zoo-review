@@ -24,8 +24,6 @@ const Post = ({ user, post, blog = false }) => {
     let avatar = displayAvatar(profileImage);
     let image = displayImage(blog, post);
 
-    console.log(post.image);
-
     useEffect(() => {
         const id = post.user;
 
