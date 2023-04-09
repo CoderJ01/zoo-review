@@ -65,6 +65,11 @@ const Update = ({ user }) => {
             alert('Image has not been fully processed yet! Wait a few more seconds!');
             return;
         }
+
+        if(email === '' && bio === '' && imageUrl === '') {
+            alert('Please fill in at least one field!');
+            return;
+        }
        
         axios.put(baseURL + `/update/${user._id}`, 
         {
