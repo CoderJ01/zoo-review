@@ -7,6 +7,11 @@ const Zoo = require('../models/Zoo');
 
 router.get('/:id', async (req, res) => {
     const review = await Review.findOne({ _id: req.params.id });
+    if(!review) {
+        res.send('Review does not exist!');
+        return;
+    }
+
     const user = await User.findOne({ _id: review.user.toString() });
     const zoo = await Zoo.findOne({ _id: review.zoo.toString() });
     
