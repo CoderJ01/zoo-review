@@ -44,9 +44,16 @@ const Update = ({ user }) => {
     }
 
     const confirmUpload = () => {
-        const imageRef = ref(storage, `images/avatars/${imageUpload.name + cloudString + v4()}`);
-        storeFirebaseImage(imageUpload, setConfirmed, imageRef, setImageUrl);
-        deleteFirebaseImage(user.avatar);
+        if(imageUpload !== null) {
+            const imageRef = ref(storage, `images/avatars/${imageUpload.name + cloudString + v4()}`);
+            storeFirebaseImage(imageUpload, setConfirmed, imageRef, setImageUrl);
+            deleteFirebaseImage(user.avatar);
+        }
+        else {
+            alert('An upload is needed for a confirmation!');
+            window.location.reload(false);
+            return;
+        }
     }
 
     const handleSubmit = async (event) => {

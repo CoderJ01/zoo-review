@@ -31,8 +31,15 @@ const PostBlog = ({ user }) => {
     }
 
     const confirmUpload = () => {
-        const imageRef = ref(storage, `images/blogs/${imageUpload.name + cloudString + v4()}`);
-        storeFirebaseImage(imageUpload, setConfirmed, imageRef, setImageUrl);
+        if(imageUpload !== null) {
+            const imageRef = ref(storage, `images/blogs/${imageUpload.name + cloudString + v4()}`);
+            storeFirebaseImage(imageUpload, setConfirmed, imageRef, setImageUrl);
+        }
+        else {
+            alert('An upload is needed for a confirmation!');
+            window.location.reload(false);
+            return;
+        }
     }
 
     const handleSubmit = (event) => {
