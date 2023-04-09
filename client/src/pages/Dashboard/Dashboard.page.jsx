@@ -76,7 +76,11 @@ const Dashboard = ({ user }) => {
                         <DashboardDisplay posts={user.reviews} display={displayReviews}/>
                         <DashboardDisplay posts={user.blogs} display={displayBlogs} blog={true}/>
                         <div className='dashboard-update-button'>
-                            <Button href={baseURL_frontend + '/update'} style={buttonStyle}>Update Info</Button>
+                            <Button href={baseURL_frontend + '/update'} style={buttonStyle}>
+                                <div className='dub-label'>
+                                    Update Info
+                                </div>
+                            </Button>
                         </div>
                     </div>
                 </div>

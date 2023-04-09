@@ -1,3 +1,7 @@
+.dashboard {
+    padding-bottom: 5vh;
+}
+
 .dashboard-top-bar,
 .dashboard-bottom {
     margin-left: 5%;
@@ -39,12 +43,10 @@
 
 /* Desktop */
 @media screen and (min-width: 1280px) {
-    .dashboard {
-        padding-bottom: 5vh;
-    }
-
     .dashboard-top-bar {
-        background-color: rgb(133, 146, 158);
+        background: rgb(52,73,94);
+        background: linear-gradient(90deg, rgba(52,73,94,1) 0%, rgba(133,146,158,1) 50%, rgba(52,73,94,1) 100%);
+        color: white;
         display: flex;
         justify-content: space-between;
         margin-left: 5%;
@@ -64,7 +66,8 @@
     }
 
     .dashboard-bottom-user-info {
-        background-color: rgb(133, 146, 158);
+        background-color: rgb(86, 101, 115);
+        color: white;
         height: 80vh;
         width: 20%;
     }
@@ -79,6 +82,9 @@
     }
 
     .dbui-avatar {
+        border-image: linear-gradient(to right, rgb(34, 191, 41), rgb(6, 106, 9)) 1;
+        border-width: 4px;
+        border-style: solid;
         height: 27%;
         margin-left: 20%;
         width: 60%;
@@ -100,6 +106,7 @@
     }
 
     .dashboard-top-bar h1 {
+        font-size: 3rem;
         margin-top: 1vh;
         text-align: center;
     }
@@ -107,9 +114,9 @@
     .dashboard-bottom-buttons {
         display: flex;
         justify-content: space-around;
-        margin-left: 25%;
+        margin-left: 5%;
         margin-top: 1vh;
-        width: 50%;
+        width: 90%;
     }
 
     .dashboard-bottom {
@@ -117,22 +124,31 @@
     }
 
     .dbui-avatar {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
         height: 20vh;
         margin-left: 35%;
         width: 30%;
     }
 
+    .dashboard-bottom-user-info h2,
+    .dashboard-bottom-user-info text {
+        font-size: 2rem;
+    }
+
     .dashboard-bottom-buttons {
+        font-size: 2rem;
         margin-top: 3vh;
         padding-bottom: 0vh;
     }
 
     .dashboard-update-button {
-        display: flex;
-        height: 3vh;
-        justify-content: center;
+        margin-top: -4vh;
         margin-left: 30%;
         width: 40%;
+    }
+
+    .dub-label {
+        font-size: 2rem;
     }
 }
 

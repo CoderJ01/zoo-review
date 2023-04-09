@@ -47,6 +47,7 @@
     }
 
     .dashboard-post img {
+        border: 3px solid rgb(86, 101, 115);
         height: 180px;
     } 
     
