@@ -1,6 +1,5 @@
 import { cloudString } from './cloudString';
-import { ref, uploadBytes, deleteObject, getStorage, listAll, getDownloadURL } from 'firebase/storage';
-import { storage } from '../config/firebase';
+import { ref, uploadBytes, deleteObject, getStorage, getDownloadURL } from 'firebase/storage';
 
 export const deleteFirebaseImage = async (image) => {
     if(image.includes(cloudString)) {
@@ -12,12 +11,16 @@ export const deleteFirebaseImage = async (image) => {
     }
 }
 
-export const storeFirebaseImage = async (imageUpload, setConfirmed, imageRef) => {
+export const storeFirebaseImage = async (imageUpload, setConfirmed, imageRef, setImageUrl) => {
     if(imageUpload != null) {
         setConfirmed(true);
 
         uploadBytes(imageRef, imageUpload)
         .then(() => {
+            getDownloadURL(imageRef).then(function(url) {
+                console.log(url);
+                setImageUrl(url);
+            })
             alert('Image confirmed! Wait a few seconds for it to process!');
         })
         .catch(error => {
@@ -29,19 +32,4 @@ export const storeFirebaseImage = async (imageUpload, setConfirmed, imageRef) =>
         window.location.reload(false);
         return;
     }
-}
-
-export const retrieveFirebaseURL = (imageRef, setImageUrl, folder) => {
-    const imageListRef = ref(storage, `images/${folder}/`);
-    listAll(imageListRef)
-    .then(response => {
-        response.uploadedImage = [];
-        response.uploadedImage.push(imageRef);
-        response.uploadedImage.forEach(image => {
-            getDownloadURL(image).then(url => {
-                console.log(url);
-                setImageUrl(url);
-            });
-        })
-    });
 }
