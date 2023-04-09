@@ -55,17 +55,17 @@ const Dashboard = ({ user }) => {
                         <h1>Your Dashboard</h1>
                     </div>
                     <div className='dashboard-bottom'>
-                        <div className='dashboard-b-user-info'>
+                        <div className='dashboard-bottom-user-info'>
                             <h2>Your Avatar</h2>
-                            <div className='dashboard-b-u-i-avatar'>
+                            <div className='dbui-avatar'>
                                 <img alt='' src={avatar} draggable='false'/>
                             </div>
                             <h2 style={{ marginTop: '7%'}}>Your Bio</h2>
-                            <div className='dashboard-b-u-i-bio'>
+                            <div className='dbui-bio'>
                                 <text>{user.bio}</text>
                             </div>
                         </div>
-                        <div className='dashboard-b-buttons'>
+                        <div className='dashboard-bottom-buttons'>
                             <button onClick={seeReviews}>
                                 See your reviews
                             </button>

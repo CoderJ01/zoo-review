@@ -8,31 +8,31 @@
     margin-top: 2vh;
 }
 
-.dashboard-b-user-info h2 {
+.dashboard-bottom-user-info h2 {
     font-size: 25px;
     text-align: center;
 }
 
-.dashboard-b-u-i-bio {
+.dbui-bio {
     height: 55%;
     margin-left: 10%;
     width: 80%;
     word-wrap: break-word;
 }
 
-.dashboard-b-u-i-avatar img {
+.dbui-avatar img {
     height: 100%;
     width: 100%;
 }
 
-.dashboard-b-buttons button {
+.dashboard-bottom-buttons button {
     background-color: white;
     border: 2px solid white;
     border-radius: 20px;
     color: rgb(34, 191, 41);
 }
 
-.dashboard-b-buttons button:active,
+.dashboard-bottom-buttons button:active,
 .dashboard-update-button:active {
     opacity: 0.5;
 }
@@ -63,13 +63,13 @@
         justify-content: space-between;
     }
 
-    .dashboard-b-user-info {
+    .dashboard-bottom-user-info {
         background-color: rgb(133, 146, 158);
         height: 80vh;
         width: 20%;
     }
 
-    .dashboard-b-buttons {
+    .dashboard-bottom-buttons {
         display: flex;
         justify-content: space-around;
         margin-left: 125vh;
@@ -78,7 +78,7 @@
         width: 25%;
     }
 
-    .dashboard-b-u-i-avatar {
+    .dbui-avatar {
         height: 27%;
         margin-left: 20%;
         width: 60%;
@@ -104,7 +104,7 @@
         text-align: center;
     }
 
-    .dashboard-b-buttons {
+    .dashboard-bottom-buttons {
         display: flex;
         justify-content: space-around;
         margin-left: 25%;
@@ -116,13 +116,13 @@
         min-height: 75vh;
     }
 
-    .dashboard-b-u-i-avatar {
+    .dbui-avatar {
         height: 20vh;
         margin-left: 35%;
         width: 30%;
     }
 
-    .dashboard-b-buttons {
+    .dashboard-bottom-buttons {
         margin-top: 3vh;
         padding-bottom: 0vh;
     }
@@ -138,7 +138,7 @@
 
 /* Surface Duo */
 @media screen and (max-width: 540px) {
-    .dashboard-b-buttons {
+    .dashboard-bottom-buttons {
       margin-left: 10%;
       width: 80%;
     }
@@ -150,7 +150,7 @@
 
 /* iPhone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
-    .dashboard-b-u-i-avatar {
+    .dbui-avatar {
         margin-left: 30%;
         width: 40%;
     }
@@ -158,7 +158,7 @@
 
 /* iPhone 12 Pro */
 @media screen and (max-width: 390px) {
-    .dashboard-b-u-i-avatar {
+    .dbui-avatar {
         height: 17vh;
     }
 }
