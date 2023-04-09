@@ -92,7 +92,7 @@ const Update = ({ user }) => {
                 window.location.reload(false);
             }, 
             error => {
-                alert(error);
+                alert(error.response.data.msg);
             }
         );
         
