@@ -6,7 +6,7 @@ import './Post.style.css';
 
 // util
 import { displayImage, trashIcon } from './Post.util';
-import { displayAvatar, displayRating } from '../../utils/display';
+import { displayAvatar, displayRating, displayAdminText } from '../../utils/display';
 import { deleteFirebaseImage } from '../../utils/processFirebaseImage';
 
 // URL
@@ -18,6 +18,7 @@ import axios from 'axios';
 const Post = ({ user, post, blog = false }) => {
     const [profileImage, setProfileImage] = useState('');
     const [username, setUsername] = useState('');
+    const [admin, setAdmin] = useState(false);
 
     let ratingDisplay = displayRating(post.rating);
     let avatar = displayAvatar(profileImage);
@@ -34,6 +35,7 @@ const Post = ({ user, post, blog = false }) => {
                     const response = await axios.get(baseURL + `/api/users/${id}`);
                     setProfileImage(response.data.avatar);
                     setUsername(response.data.username);
+                    setAdmin(response.data.admin);
                 }
                 catch(error) {
                     console.log(error);
@@ -73,10 +75,24 @@ const Post = ({ user, post, blog = false }) => {
                 {
                     user.admin === true ? 
                     (
-                        <text>{username} <span className='post-heading-trashcan' onClick={handlePostDelete}>{trashIcon}</span></text>
+                        admin === true ?
+                        (
+                            <text>{username}{displayAdminText}<span className='post-heading-trashcan' onClick={handlePostDelete}>{trashIcon}</span></text>
+
+                        ) : 
+                        (
+                            <text>{username} <span className='post-heading-trashcan' onClick={handlePostDelete}>{trashIcon}</span></text>
+                        )
                     ) : 
                     (
-                        <text>{username}</text>
+                        admin === true ?
+                        (
+                            <text>{username}{displayAdminText}</text>
+
+                        ) : 
+                        (
+                            <text>{username}</text>
+                        )
                     )
                 }
             </div>
