@@ -33,6 +33,7 @@ const buttonStyle = {
 const Update = ({ user }) => {
     const [email, setEmail] = useState('');
     const [bio, setBio] = useState('');
+    const [count, setCount] = useState(0);
     const [imageUpload, setImageUpload] = useState(null);
     const [imageUrl, setImageUrl] = useState('');
     const [confirmed, setConfirmed] = useState(false);
@@ -93,6 +94,11 @@ const Update = ({ user }) => {
         setImageUpload(null); 
     }
 
+    const handleBio = (e) => {
+        setBio(e.target.value)
+        setCount(e.target.value.length);
+    }
+
     return (
         <>
         {
@@ -109,8 +115,8 @@ const Update = ({ user }) => {
                             <input type='text' name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
                         </div>
                         <div className='update-form-bio'>
-                            <label htmlFor='bio'>Bio (200 characters or less):</label><br/>
-                            <textarea maxLength={200} type='text' name='bio' value={bio} onChange={(e) => setBio(e.target.value)}/>
+                            <label htmlFor='bio'>Bio ({count}/200):</label><br/>
+                            <textarea maxLength={200} type='text' name='bio' value={bio} onChange={handleBio}/>
                         </div>
                         <div className='uf-upload-image'>
                         <input 
