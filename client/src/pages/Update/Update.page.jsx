@@ -15,7 +15,6 @@ import { isValidEmail } from '../../utils/emailValidation';
 import { deleteFirebaseImage, storeFirebaseImage } from '../../utils/processFirebaseImage';
 import { cloudString } from '../../utils/cloudString';
 
-
 // other imports
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
@@ -33,6 +32,7 @@ const buttonStyle = {
 
 const Update = ({ user }) => {
     const [email, setEmail] = useState('');
+    const [bio, setBio] = useState('');
     const [imageUpload, setImageUpload] = useState(null);
     const [imageUrl, setImageUrl] = useState('');
     const [confirmed, setConfirmed] = useState(false);
@@ -69,7 +69,8 @@ const Update = ({ user }) => {
         axios.put(baseURL + `/update/${user._id}`, 
         {
             email: email,
-            avatar: imageUrl
+            avatar: imageUrl,
+            bio: bio
         },  
         )
         .then(
@@ -101,6 +102,10 @@ const Update = ({ user }) => {
                         <div>
                             <label htmlFor='email'>Email:</label><br/>
                             <input type='text' name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                        </div>
+                        <div className='update-form-bio'>
+                            <label htmlFor='bio'>Bio (200 characters or less):</label><br/>
+                            <textarea maxLength={200} type='text' name='bio' value={bio} onChange={(e) => setBio(e.target.value)}/>
                         </div>
                         <div className='uf-upload-image'>
                         <input 

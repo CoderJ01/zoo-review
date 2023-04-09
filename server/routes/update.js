@@ -14,6 +14,10 @@ router.put('/:id', async (req, res) => {
         user.email = req.body.email;
     }
 
+    if(req.body.bio !== '') {
+        user.bio = req.body.bio;
+    }
+
     if(req.body.avatar !== '') {
         user.avatar = req.body.avatar;
     }
