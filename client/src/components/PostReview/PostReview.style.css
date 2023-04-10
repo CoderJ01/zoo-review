@@ -21,6 +21,7 @@
 }
 
 .post-form select {
+    color: black;
     margin-left: 10%;
     width: 10%;
 }
@@ -105,13 +106,17 @@
         width: 20%;
     }
 
+    .pf-confirm-upload {
+        justify-content: space-between;
+    }
+
     .pf-confirm-upload label {
-        width: 42%;
+        width: 100%;
     }
 
     .pf-confirm-upload input {
         height: 2rem;
-        margin-left: -50%;
+        margin-left: 0%;;
         margin-top: 11px;
     }
 
@@ -128,8 +133,12 @@
         height: 4vh;
     }
 
+    .pf-confirm-upload {
+        justify-content: space-between;
+    }
+
     .pf-confirm-upload input {
-        margin-left: -40%;
+        margin-left: 0%;
     }
 
     .post-form button {
@@ -145,11 +154,11 @@
     }
 
     .pf-confirm-upload label {
-        width: 70%;
+        width: 150%;
     }
 
     .pf-confirm-upload input {
-        margin-left: -22%;
+        margin-left: 9%;
         margin-top: 12px;
     }
 
@@ -178,10 +187,10 @@
     }
 
     .pf-confirm-upload label {
-        width: 100%;
+        width: 200%;
     }
 
     .pf-confirm-upload input {
-        margin-left: -15%;
+        margin-left: 10%;
     }
 }
