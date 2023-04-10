@@ -11,6 +11,10 @@ nav select {
     color: white;
 }
 
+.header-zoo-selection select {
+    color: black;
+}
+
 .header-buttons button:active,
 .header-button-see-zoo:active {
     opacity: 0.5;
@@ -106,10 +110,6 @@ nav select {
     nav h1 {
         color: white;
         font-size: 4rem;
-    }
-
-    .header-zoo-selection select {
-        color: rgb(34, 191, 41);
     }
 
     .header-button-see-zoo {
