@@ -1,3 +1,3 @@
-export const baseURL = 'http://localhost:3001';
+export const baseURL = process.env.REACT_APP_DEPLOYED_BACKEND;
 
-export const baseURL_frontend = 'http://localhost:3000';
+export const baseURL_frontend = process.env.REACT_APP_DEPLOYED_FRONTEND;
