@@ -87,7 +87,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
                 //         sameSite: response.data.session.cookie.sameSite
                 //     }
                 // );
-                setCookie('zelp-cookie', response.data.data.randomString);
+                setCookie('zelp-cookie', response.data.data.randomString, 1);
                 console.log(response.data.data.randomString);
                 window.location.reload(false);
             }, 
