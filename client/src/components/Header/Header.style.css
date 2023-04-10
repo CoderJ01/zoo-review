@@ -108,6 +108,10 @@ nav select {
         font-size: 4rem;
     }
 
+    .header-zoo-selection select {
+        color: rgb(34, 191, 41);
+    }
+
     .header-button-see-zoo {
         margin-top: 5%;
         height: 40px;
