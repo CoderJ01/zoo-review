@@ -168,8 +168,12 @@
         width: 40%;
     }
 
+    .dashboard-bottom-user-info {
+        padding-bottom: 5vh;
+    }
+
     .dashboard-bottom-buttons {
-        height: 20vh;
+        height: 25vh;
         margin-left: 15%;
         width: 70%;
     }
