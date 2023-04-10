@@ -39,7 +39,7 @@ app.use(
 
 app.use(
   cors({
-    origin: '*',
+    origin: ['http://localhost:3000', process.env.DEPLOYED_FRONTEND],
     methods:['POST', 'GET', 'PUT', 'DELETE'],
     credentials: true
   })
