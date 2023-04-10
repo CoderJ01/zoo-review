@@ -74,14 +74,19 @@
         font-size: 2rem;
     }
 
+    .uf-confirm-upload {
+        justify-content: space-between;
+    }
+
     .uf-confirm-upload input {
-        margin-left: 3%;
+        margin-right: 35%;
         margin-top: 3px;
         width: 2vw;
     }
 
     .uf-button {
-        margin-left: -15%;
+        display: flex;
+        justify-content: center;
     }
 
     .uf-button text {
@@ -96,11 +101,8 @@
     }
 
     .uf-confirm-upload input {
+        margin-right: 25%;
         width: 3vw;
-    }
-
-    .uf-button {
-        margin-left: -55%;
     }
 }
 
@@ -122,10 +124,6 @@
 
     .uf-confirm-upload input {
         width: 4vw;
-    }
-
-    .uf-button {
-        margin-left: -40%;
     }
 }
 
@@ -153,8 +151,8 @@
         margin-top: 4vh;
     }
 
-    .uf-button {
-        margin-left: -80%;
+    .uf-confirm-upload input {
+        margin-right: 5%;
     }
 }
 
@@ -167,10 +165,6 @@
     .uf-confirm-upload label {
         width: 70%;
     }
-
-    .uf-button {
-        margin-left: -100%;
-    }
 }
 
 /* iPhone X */
@@ -181,9 +175,5 @@
 
     .uf-confirm-upload label {
         width: 80%;
-    }
-
-    .uf-button {
-        margin-left: -115%;
     }
 }

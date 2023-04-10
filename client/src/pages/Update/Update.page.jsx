@@ -26,7 +26,6 @@ const buttonStyle = {
     backgroundColor: 'rgb(34, 191, 41)', 
     border: '2px solid rgb(34, 191, 41)', 
     color: 'white',
-    marginLeft: '80%',
     marginTop: '2vh'
 }
 
