@@ -9,9 +9,10 @@ import { baseURL } from '../../URLs/urls';
 
 // others
 import Button from 'react-bootstrap/Button';
-import Cookie from 'universal-cookie';
+// import Cookie from 'universal-cookie';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
+import { setCookie } from '../../utils/cookie';
 
 const modalHeaderStyle = {
     display: 'flex', 
@@ -44,16 +45,17 @@ const LoginForm = ({ showLogin, handleCloseLogin }) => {
         )
         .then(
             response => {
-                const cookie = new Cookie();
-                cookie.set(
-                    'zelp-cookie', 
-                    response.data.data.randomString, 
-                    { 
-                        path: baseURL,
-                        maxAge: response.data.session.cookie.originalMaxAge,
-                        sameSite: response.data.session.cookie.sameSite
-                    }
-                );
+                // const cookie = new Cookie();
+                // cookie.set(
+                //     'zelp-cookie', 
+                //     response.data.data.randomString, 
+                //     { 
+                //         path: baseURL,
+                //         maxAge: response.data.session.cookie.originalMaxAge,
+                //         sameSite: response.data.session.cookie.sameSite
+                //     }
+                // );
+                setCookie('zelp-cookie', response.data.data.randomString);
                 console.log(response.data.data.randomString);
                 window.location.reload(false);
             }, 
