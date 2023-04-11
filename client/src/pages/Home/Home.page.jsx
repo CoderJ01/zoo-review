@@ -21,7 +21,6 @@ const Home = ({ user }) => {
     const [blogs, setBlogs] = useState([]);
     
     let maxReviewsDisplayed = displayPosts(user.admin, reviews.length);
-    let maxBlogsDisplayed = displayPosts(user.admin, blogs.length);
 
     useEffect(() => {
         const fetchReviews = async () => {
@@ -89,19 +88,14 @@ const Home = ({ user }) => {
                         <h1>Blogs</h1>
                         <div className='home-posts'>
                         {
-                            blogs.map((blog, i = 0) => {
-                                if(i < maxBlogsDisplayed) {
-                                    return (
-                                        <Post
-                                            user={user}
-                                            post={blog}
-                                            blog={true}
-                                        />
-                                    );
-                                }
-                                else {
-                                    return (<></>);
-                                }
+                            blogs.map((blog) => {
+                                return (
+                                    <Post
+                                        user={user}
+                                        post={blog}
+                                        blog={true}
+                                    />
+                                );
                             })
                         }
                         </div>
