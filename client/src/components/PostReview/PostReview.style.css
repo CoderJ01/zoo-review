@@ -61,6 +61,10 @@
         font-size: 25px;
     }
 
+    .pf-zoo-field select {
+        width: 26%;
+    }
+
     .post-form label {
         font-size: 20px;
     }
@@ -106,6 +110,10 @@
         width: 20%;
     }
 
+    .pf-zoo-field select {
+        width: 65%;
+    }
+
     .pf-confirm-upload {
         justify-content: space-between;
     }
@@ -131,6 +139,10 @@
 @media screen and (max-width: 768px) {
     .post-form select {
         height: 4vh;
+    }
+
+    .pf-zoo-field select {
+        width: 80%;
     }
 
     .pf-confirm-upload {
@@ -177,6 +189,10 @@
 
     .post-form select {
         width: 30%
+    }
+
+    .pf-zoo-field select {
+        width: 80%;
     }
 }
 

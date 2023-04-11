@@ -139,7 +139,7 @@ const PostReview = ({ user }) => {
     return (
         <form className='post-form' onSubmit={handleSubmit}>
             <h1>Write a Review</h1>
-            <div>
+            <div className='pf-zoo-field'>
                 <label htmlFor='zoo-name'>Zoo:</label><br/>
                 <select 
                     value={pickedZoo} 
