@@ -26,6 +26,7 @@ const SingleBlog = ({ loggedUser }) => {
     const [liked, setLiked] = useState(false);
     const [disliked, setDisliked] = useState(false);
     const [admin, setAdmin] = useState(false);
+    const [likes, setLikes] = useState(0);
 
     let upColor = colorThumbUp(liked);
     let downColor = colorThumbDown(disliked);
@@ -42,6 +43,7 @@ const SingleBlog = ({ loggedUser }) => {
                 setDate(response.data.data.updatedAt.toString().substring(0, 10));
                 setEmail(response.data.email);
                 setAdmin(response.data.admin);
+                setLikes(response.data.data.thumbs);
             }
             catch(error) {
                 console.log(error);
@@ -143,15 +145,21 @@ const SingleBlog = ({ loggedUser }) => {
                     </div>
                     <div className='sbdf-dynamic-info'>
                     {
-                        loggedUser.length === 0 || loggedUser.username === user ? 
+                        loggedUser.length === 0 ? 
                         (
                             ''
                         ) : 
                         (
-                            <div className='post-info-thumbs'>
-                                <i class='fa fa-thumbs-up' onClick={handleThumbsUp} style={{ color: upColor }}></i>
-                                <i class='fa fa-thumbs-down' onClick={handleThumbsDown} style={{ color: downColor }}></i>
-                            </div>
+                            loggedUser.username !== user ? 
+                            (
+                                <div className='post-info-thumbs'>
+                                    <i class='fa fa-thumbs-up' onClick={handleThumbsUp} style={{ color: upColor }}></i>
+                                    <i class='fa fa-thumbs-down' onClick={handleThumbsDown} style={{ color: downColor }}></i>
+                                </div>
+                            ) : 
+                            (
+                                <text>Total likes: {likes}</text>
+                            )
                         )
                     }
                     </div>
