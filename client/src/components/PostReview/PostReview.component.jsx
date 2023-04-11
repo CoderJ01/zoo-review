@@ -30,6 +30,8 @@ const PostReview = ({ user }) => {
     const [imageUpload, setImageUpload] = useState(null);
     const [imageUrl, setImageUrl] = useState('');
     const [confirmed, setConfirmed] = useState(false);
+
+    const characterMin = 15;
     
     useEffect(() => { 
         const fetchZoos = async () => {
@@ -96,7 +98,7 @@ const PostReview = ({ user }) => {
         }
 
         if(content.length < 15) {
-            alert('The review needs to be at least 15 characters!');
+            alert(`The review needs to be at least ${characterMin} characters!`);
             return;
         }
 
@@ -165,7 +167,7 @@ const PostReview = ({ user }) => {
                     </>
                 ) : 
                 (
-                    count > 0 && count < 15 ? 
+                    count > 0 && count < characterMin ? 
                     (
                         <>
                           <label htmlFor='content'>Content (<span style={{ color: 'rgb(223, 33, 33)' }}>{count}/1000</span>):</label><br/>

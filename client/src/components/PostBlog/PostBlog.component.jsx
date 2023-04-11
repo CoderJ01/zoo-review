@@ -25,6 +25,8 @@ const PostBlog = ({ user }) => {
     const [imageUrl, setImageUrl] = useState('');
     const [confirmed, setConfirmed] = useState(false);
 
+    const characterMin = 100;
+
     const uploadImage = (e) => {
         setImageUpload(e.target.files[0]);
         alert('The image has been uploaded! Confirm the upload, then wait a few seconds to submit the blog!');
@@ -50,8 +52,8 @@ const PostBlog = ({ user }) => {
             return;
         }
 
-        if(content.length < 500) {
-            alert('The blog needs to be at least 500 characters!');
+        if(content.length < characterMin) {
+            alert(`The blog needs to be at least ${characterMin} characters!`);
             return;
         }
 
@@ -102,19 +104,19 @@ const PostBlog = ({ user }) => {
                 count === 0 ? 
                 (
                     <>
-                        <label htmlFor='content'>Content (500+ characters, {count}):</label><br/>
+                        <label htmlFor='content'>Content ({characterMin}+ characters, {count}):</label><br/>
                     </>
                 ) : 
                 (
-                    count > 0 && count < 500 ? 
+                    count > 0 && count < characterMin ? 
                     (
                         <>
-                            <label htmlFor='content'>Content (500+ characters, <span style={{ color: 'rgb(223, 33, 33)' }}>{count}</span>):</label><br/>
+                            <label htmlFor='content'>Content ({characterMin}+ characters, <span style={{ color: 'rgb(223, 33, 33)' }}>{count}</span>):</label><br/>
                         </>
                     ) : 
                     (
                         <>
-                            <label htmlFor='content'>Content (500+ characters, <span style={{ color: 'rgb(34, 191, 41)' }}>{count}</span>):</label><br/>
+                            <label htmlFor='content'>Content ({characterMin}+ characters, <span style={{ color: 'rgb(34, 191, 41)' }}>{count}</span>):</label><br/>
                         </>
                     )
                 )
