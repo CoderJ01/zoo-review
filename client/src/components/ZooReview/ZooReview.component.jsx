@@ -17,7 +17,6 @@ const ZooReview = ({ review }) => {
     const [username, setUsername] = useState('');
     const [avatar, setAvatar] = useState('');
     const [admin, setAdmin] = useState(false);
-    const [bio, setBio] = useState('');
 
     let ratingDisplay = displayRating(review.rating);
     let profileImage = displayAvatar(avatar);
@@ -31,7 +30,6 @@ const ZooReview = ({ review }) => {
                 setUsername(response.data.username);
                 setAvatar(response.data.avatar);
                 setAdmin(response.data.admin);
-                setBio(response.data.bio);
             }
             catch(error) {
                 console.log(error);
@@ -60,9 +58,6 @@ const ZooReview = ({ review }) => {
             <div className='zoo-review-body'>
                 <p>{review.content}</p>
             </div>
-            <div className='zoo-review-rating'>
-               
-            </div>
             <div className='zoo-review-footer'>
                 <div className='zrf-text'>
                     {ratingDisplay}
@@ -71,9 +66,6 @@ const ZooReview = ({ review }) => {
                 <div className='zrf-avatar'>
                     <img alt='' src={profileImage} draggable='false'></img>
                 </div> 
-                <div className='zrf-bio'>
-                    {bio}
-                </div>  
             </div>
         </div>
     );
