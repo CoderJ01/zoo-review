@@ -24,6 +24,10 @@
     text-align: left;
 }
 
+.zoo-review-body {
+    word-wrap: break-word;
+}
+
 .zoo-review text {
     font-size: 17px;
 }
