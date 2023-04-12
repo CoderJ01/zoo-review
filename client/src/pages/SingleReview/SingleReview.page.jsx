@@ -25,6 +25,7 @@ const SingleReview = () => {
     const [date, setDate] = useState('');
     const [avatar, setAvatar] = useState('');
     const [admin, setAdmin] = useState(false);
+    const [bio, setBio] = useState('');
 
     let profileImage = displayAvatar(avatar);
 
@@ -41,6 +42,7 @@ const SingleReview = () => {
                 setAvatar(response.data.avatar);
                 setDate(response.data.data.updatedAt.toString().substring(0, 10));
                 setAdmin(response.data.admin);
+                setBio(response.data.bio);
             }
             catch(error) {
                 console.log(error);
@@ -81,6 +83,9 @@ const SingleReview = () => {
                     <div className='srdf-avatar'>
                         <img alt='' src={profileImage} draggable='false'></img>
                     </div>   
+                    <div className='srdf-bio'>
+                        {bio}
+                    </div>
                 </div>
             </div>
         </div>
