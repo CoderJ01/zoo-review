@@ -20,6 +20,7 @@ router.get('/:id', async (req, res) => {
         user: user.username,
         avatar: user.avatar,
         admin: user.admin,
+        bio: user.bio,
         zoo: zoo.name
     });
 });
