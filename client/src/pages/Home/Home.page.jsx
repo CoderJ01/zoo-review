@@ -6,6 +6,7 @@ import './Home.style.css';
 
 // component
 import Post from '../../components/Post/Post.component';
+import Loader from '../../components/Loader/Loader.component';
 
 // util
 import { displayPosts } from './Home.util';
@@ -46,6 +47,13 @@ const Home = ({ user }) => {
         fetchReviews();
         fetchBlogs();
     }, []);
+
+    if(reviews === [] || blogs === [])
+    {
+        return (
+            <Loader/>
+        );
+    }
 
     return (
         <div className='home'>
