@@ -20,6 +20,7 @@ import axios from 'axios';
 const Home = ({ user }) => {
     const [reviews, setReviews] = useState([]);
     const [blogs, setBlogs] = useState([]);
+    const [fetched, setFetched] = useState(false);
     
     let maxReviewsDisplayed = displayPosts(user.admin, reviews.length);
 
@@ -28,6 +29,7 @@ const Home = ({ user }) => {
             try {
                 const response = await axios.get(baseURL + '/homepage/reviews');
                 setReviews(response.data.reverse());
+                setFetched(true);
             }
             catch(error) {
                 console.log(error)
@@ -38,6 +40,7 @@ const Home = ({ user }) => {
             try {
                 const response = await axios.get(baseURL + '/homepage/blogs');
                 setBlogs(response.data.reverse());
+                setFetched(true);
             }
             catch(error) {
                 console.log(error)
@@ -48,8 +51,7 @@ const Home = ({ user }) => {
         fetchBlogs();
     }, []);
 
-    if(reviews === [] || blogs === [])
-    {
+    if(fetched === false) {
         return (
             <Loader/>
         );
