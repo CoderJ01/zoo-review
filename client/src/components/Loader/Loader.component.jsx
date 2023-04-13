@@ -1,6 +1,9 @@
 // React
 import React from 'react';
-import { Oval } from  'react-loader-spinner'
+import { Oval } from  'react-loader-spinner';
+
+// CSS
+import './Loader.style.css';
 
 const Loader = () => {
     return (
