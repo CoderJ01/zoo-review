@@ -14,7 +14,6 @@ import { baseURL } from '../../URLs/urls';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
-import { setCookie } from '../../utils/cookie';
 
 const modalHeaderStyle = {
     display: 'flex', 
@@ -76,9 +75,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
         )
         .then(
             response => {
-                setCookie('zelp-cookie', response.data.data.randomString, 1);
-                console.log(response.data.data.randomString);
-                window.location.reload(false);
+                console.log(response);
             }, 
             error => {
                 alert(error.response.data.msg);
