@@ -39,6 +39,9 @@ const UserSchema = new mongoose.Schema(
         admin: {
             type: Boolean
         },
+        verified: {
+            type: Boolean
+        },
         likedBlogs: {
             type: [String]
         },
