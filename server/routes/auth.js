@@ -3,6 +3,8 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const makeCookieValue = require('../util/randomString');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 router.post('/register', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
@@ -64,6 +66,20 @@ router.post('/login', async (req, res) => {
         msg: 'You have logged in successfully!',
         data: user,
         session: req.session
+    });
+});
+
+router.get('/verify/:token', (req, res)=>{
+    const {token} = req.params;
+
+    jwt.verify(token, process.env.SECRET_KEY, function(err, decoded) {
+        if (err) {
+            console.log(err);
+            res.send('Email verification failed, possibly the link is invalid or expired');
+        }
+        else {
+            res.send('Email verifified successfully. You are able to login now!');
+        }
     });
 });
 
