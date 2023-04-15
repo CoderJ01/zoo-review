@@ -59,7 +59,8 @@ router.post('/login', async (req, res) => {
     }
 
     if(!user.verified) {
-        return res.status(400).json('User is not verified!');
+        validateEmail(user.email);
+        return res.status(400).json('User is not verified! A verification link has been sent to your email inbox! Wait about 5 minutes to receive the link!');
     }
 
     const salt = await bcrypt.genSalt(10);
