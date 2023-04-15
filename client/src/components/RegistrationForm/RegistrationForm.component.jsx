@@ -76,7 +76,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
         .then(
             response => {
                 console.log(response);
-                alert('An email has been sent to you. Click on the link in the email to complete your registration.');
+                alert('An email has been sent to you. You should receive it in less than 10 minutes. Click on the link in the email to complete your registration.');
             }, 
             error => {
                 alert(error.response.data.msg);
