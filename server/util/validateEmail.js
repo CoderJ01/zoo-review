@@ -23,7 +23,7 @@ const validateEmail = (email) => {
         text: `Hi! There, You have recently visited 
                Zelp and entered your email.
                Please follow the given link to verify your email
-               http://localhost:3000/verify/${token} 
+               http://localhost:3000/auth/verify/${email}/${token} 
                Thanks!`
           
     };

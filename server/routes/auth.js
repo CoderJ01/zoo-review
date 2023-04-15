@@ -69,7 +69,7 @@ router.post('/login', async (req, res) => {
     });
 });
 
-router.get('/verify/:token', (req, res)=>{
+router.get('/verify/:email/:token', (req, res)=>{
     const {token} = req.params;
 
     jwt.verify(token, process.env.SECRET_KEY, function(err, decoded) {
@@ -78,7 +78,7 @@ router.get('/verify/:token', (req, res)=>{
             res.send('Email verification failed, possibly the link is invalid or expired');
         }
         else {
-            res.send('Email verifified successfully. You are able to login now!');
+            res.send('Email verifified successfully. You are able to login now.');
         }
     });
 });
