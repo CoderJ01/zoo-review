@@ -16,7 +16,7 @@ router.put('/:id', async (req, res) => {
         user.email = req.body.email;
         user.verified = false;
         validateEmail(user.email);
-        message = 'You will receive an email with a verification link to confirm updated email.';
+        message = `A verification link will be sent to ${user.email}. Wait 5 - 10 minutes for the link.`;
     }
 
     if(req.body.bio !== '') {
