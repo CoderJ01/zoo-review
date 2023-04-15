@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+const validateEmail = require('../util/validateEmail');
 
 router.put('/:id', async (req, res) => {
     const user = await User.findOne({ _id: req.params.id });
     const email = await User.findOne({ email: req.body.email });
+    let message = 'Infomation has been updated!';
 
     if(email) {
         return res.status(400).json({ msg: 'Email must be unique!' });
@@ -12,6 +14,9 @@ router.put('/:id', async (req, res) => {
     
     if(req.body.email !== '') {
         user.email = req.body.email;
+        user.verified = false;
+        validateEmail(user.email);
+        message = 'You will receive an email with a verification link to confirm updated email.';
     }
 
     if(req.body.bio !== '') {
@@ -27,7 +32,7 @@ router.put('/:id', async (req, res) => {
     res.send({
         email: user.email,
         avatar: user.avatar,
-        msg: 'Infomation has been updated!'
+        msg: message
     });
 });
 
