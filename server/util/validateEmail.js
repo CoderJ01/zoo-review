@@ -5,6 +5,9 @@ require('dotenv').config();
 const validateEmail = (email) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
         auth: {
             user: process.env.EMAIL,
             pass: process.env.PASSWORD
@@ -23,13 +26,14 @@ const validateEmail = (email) => {
         text: `Hi! There, You have recently visited 
                Zelp and entered your email.
                Please follow the given link to verify your email
-               http://localhost:3000/auth/verify/${email}/${token} 
+               http://localhost:3001/auth/verify/${email}/${token} 
                Thanks!`
           
     };
       
     transporter.sendMail(mailConfigurations, function(error, info){
         if (error) {
+            console.log(error);
             throw Error(error);
         }
         else {
@@ -39,4 +43,4 @@ const validateEmail = (email) => {
     });
 }
 
-export default validateEmail;
+module.exports = validateEmail;

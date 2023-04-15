@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const makeCookieValue = require('../util/randomString');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+const validateEmail = require('../util/validateEmail');
 
 router.post('/register', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
@@ -35,13 +36,15 @@ router.post('/register', async (req, res) => {
     const sessionUser = { id: newUser._id.toString(), username: newUser.username };
     req.session.user = sessionUser;
     
-    newUser.save();
+    // newUser.save();
+
+    validateEmail(newUser.email);
     
-    res.status(200).json({
-        msg: 'You have successfully been registered!',
-        data: newUser,
-        session: req.session
-    });
+    // res.status(200).json({
+    //     msg: 'You have successfully been registered!',
+    //     data: newUser,
+    //     session: req.session
+    // });
 });
 
 router.post('/login', async (req, res) => {
@@ -70,9 +73,8 @@ router.post('/login', async (req, res) => {
 });
 
 router.get('/verify/:email/:token', (req, res)=>{
-    const {token} = req.params;
-
-    jwt.verify(token, process.env.SECRET_KEY, function(err, decoded) {
+    console.log(req.params.email);
+    jwt.verify(req.params.token, process.env.SECRET_KEY, function(err, decoded) {
         if (err) {
             console.log(err);
             res.send('Email verification failed, possibly the link is invalid or expired');
