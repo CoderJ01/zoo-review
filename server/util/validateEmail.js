@@ -22,7 +22,7 @@ const validateEmail = (email) => {
     const mailConfigurations = {
         from: 'joshua001zelp@gmail.com',
         to: email,
-        subject: 'Email Verification',
+        subject: 'Email Verification for Zelp',
         text: `Hi! There, You have recently visited 
                Zelp and entered your email.
                Please follow the given link to verify your email
