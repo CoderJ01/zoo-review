@@ -36,15 +36,15 @@ router.post('/register', async (req, res) => {
     const sessionUser = { id: newUser._id.toString(), username: newUser.username };
     req.session.user = sessionUser;
     
-    // newUser.save();
+    newUser.save();
 
     validateEmail(newUser.email);
     
-    // res.status(200).json({
-    //     msg: 'You have successfully been registered!',
-    //     data: newUser,
-    //     session: req.session
-    // });
+    res.status(200).json({
+        msg: 'You have successfully been registered!',
+        data: newUser,
+        session: req.session
+    });
 });
 
 router.post('/login', async (req, res) => {
@@ -56,6 +56,10 @@ router.post('/login', async (req, res) => {
     const validate = await bcrypt.compare(req.body.password, user.password);
     if(!validate) {
         return res.status(400).json('Wrong password!');
+    }
+
+    if(!user.verified) {
+        return res.status(400).json('User is not verified!');
     }
 
     const salt = await bcrypt.genSalt(10);
@@ -72,8 +76,9 @@ router.post('/login', async (req, res) => {
     });
 });
 
-router.get('/verify/:email/:token', (req, res)=>{
-    console.log(req.params.email);
+router.get('/verify/:email/:token', async (req, res)=>{
+    const user = await User.findOne({ email: req.params.email });
+    
     jwt.verify(req.params.token, process.env.SECRET_KEY, function(err, decoded) {
         if (err) {
             console.log(err);
@@ -81,6 +86,8 @@ router.get('/verify/:email/:token', (req, res)=>{
         }
         else {
             res.send('Email verifified successfully. You are able to login now.');
+            user.verified = true;
+            user.save();
         }
     });
 });
