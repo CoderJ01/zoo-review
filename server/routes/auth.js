@@ -38,7 +38,7 @@ router.post('/register', async (req, res) => {
     
     newUser.save();
 
-    validateEmail(newUser.email);
+    validateEmail(newUser.email, 'newUser');
     
     res.status(200).json({
         msg: 'You have successfully been registered!',
@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
     }
 
     if(!user.verified) {
-        validateEmail(user.email);
+        validateEmail(user.email, 'loginAttempt');
         return res.status(400).json(`User is not verified! A verification link has been sent to ${user.email}! Wait about 5 minutes to receive the link!`);
     }
 
