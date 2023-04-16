@@ -120,6 +120,11 @@ const SingleBlog = ({ loggedUser }) => {
         });
     }
 
+    const handleNonVerifiedUser = (event) => {
+        event.preventDefault();
+        alert('You must be verified to like or dislike blogs!');
+    }
+
     return (
         <div className='single-blog'>
             <div className='single-blog-display'>
@@ -152,10 +157,20 @@ const SingleBlog = ({ loggedUser }) => {
                         (
                             loggedUser.username !== user ? 
                             (
-                                <div className='post-info-thumbs'>
-                                    <i class='fa fa-thumbs-up' onClick={handleThumbsUp} style={{ color: upColor }}></i>
-                                    <i class='fa fa-thumbs-down' onClick={handleThumbsDown} style={{ color: downColor }}></i>
-                                </div>
+                                loggedUser.verified === true ? 
+                                (
+                                    <div className='post-info-thumbs'>
+                                        <i class='fa fa-thumbs-up' onClick={handleThumbsUp} style={{ color: upColor }}></i>
+                                        <i class='fa fa-thumbs-down' onClick={handleThumbsDown} style={{ color: downColor }}></i>
+                                    </div>
+                                ) : 
+                                (
+                                    <div className='post-info-thumbs'>
+                                        <i class='fa fa-thumbs-up' onClick={handleNonVerifiedUser} style={{ color: upColor }}></i>
+                                        <i class='fa fa-thumbs-down'onClick={handleNonVerifiedUser} style={{ color: downColor }}></i>
+                                    </div>
+                                )
+                                
                             ) : 
                             (
                                 <text>Total likes: {likes}</text>
