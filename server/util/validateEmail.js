@@ -26,7 +26,7 @@ const validateEmail = (email) => {
         text: `Hi! There, You have recently visited 
                Zelp and entered your email.
                Please follow the given link to verify your email
-               http://localhost:3001/auth/verify/${email}/${token} 
+               ${process.env.REGISTRATION}/auth/verify/${email}/${token} 
                Thanks!`
           
     };
