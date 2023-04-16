@@ -20,7 +20,8 @@ const validateEmail = (email, reason) => {
             data: 'Token Data'  
         }, process.env.SECRET_KEY, { expiresIn: '10m' }  
     ); 
-    
+
+    // The route ${process.env.REGISTRATION}/auth/verify/${email}/${token} is located in another GitHub repository for security reasons
     if(reason === 'newUser') {
         message = `Hi! There, You have recently visited 
         Zelp and entered your email.
