@@ -7,6 +7,11 @@ const { retrieveSession } = require('../MongoDB/data');
 
 router.post('/:userId', async (req, res) => {
     try {
+        const userObj = await User.findOne({ _id: req.params.userId });
+        if (!userObj.verified) {
+            return res.send({ msg: 'User is not verified!' });
+        }
+        
         let user = retrieveSession(req.params.userId);
         if(user) {
             const blog = await Blog.create({
