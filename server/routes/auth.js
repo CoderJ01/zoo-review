@@ -77,20 +77,4 @@ router.post('/login', async (req, res) => {
     });
 });
 
-router.get('/verify/:email/:token', async (req, res)=>{
-    const user = await User.findOne({ email: req.params.email });
-    
-    jwt.verify(req.params.token, process.env.SECRET_KEY, function(err, decoded) {
-        if (err) {
-            console.log(err);
-            res.send('Email verification failed, possibly the link is invalid or expired');
-        }
-        else {
-            res.send('Email verifified successfully. You are able to login now.');
-            user.verified = true;
-            user.save();
-        }
-    });
-});
-
 module.exports = router;
