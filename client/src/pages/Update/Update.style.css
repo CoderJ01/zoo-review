@@ -27,10 +27,9 @@
         font-size: 25px;
     }
 
-    .update-form-bio,
     .uf-upload-image,
     .uf-confirm-upload {
-        margin-top: 3vh;
+        margin-top: 2vh;
     }
 
     .uf-confirm-upload input {
@@ -62,7 +61,6 @@
         font-size: 2rem;
     }
 
-    .update-form-bio,
     .uf-upload-image,
     .uf-confirm-upload {
         margin-top: 2vh;
@@ -143,7 +141,6 @@
         width: 70%;
     }
 
-    .update-form-bio,
     .uf-upload-image,
     .uf-confirm-upload {
         margin-top: 4vh;
