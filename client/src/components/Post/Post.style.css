@@ -5,8 +5,8 @@
 
 .post-heading {
     display: flex;
-    height: 20%;
     justify-content: space-between;
+    padding-bottom: 1vh;
 }
 
 .post-heading text {
@@ -14,7 +14,6 @@
 }
 
 .post-heading-avatar {
-    height: 80%;
     margin-left: 3%;
     margin-top: 1%;
 }
@@ -36,16 +35,8 @@ img {
     opacity: 0.5;
 }
 
-.post-picture {
-    height: 50%;
-}
-
 .post-info-rating {
     font-size: 25px;
-}
-
-.post-info {
-    height: 28%;
 }
 
 .post-info h1 {
@@ -89,7 +80,8 @@ img {
     }
     
     .post-heading-avatar {
-        width: 15%;
+        height: 70px;
+        width: 70px;
     }
 
     .post-info h1 {
@@ -102,66 +94,34 @@ img {
     .post {
         background-color: white;
         margin-top: 1vh;
-        min-height: 40vh;
         width: 40vw;
+    }
+
+    .post-heading-avatar {
+        height: 100px;
+        width: 100px;
     }
 }
 
 /* iPad */
 @media screen and (max-width: 768px) {
-    .post-heading-avatar {
-        width: 25%;
-    }
-
     .post {
         margin-top: 3vh;
-        min-height: 60vh;
         width: 60%;
     }
 }
 
 /* Surface Duo */
 @media screen and (max-width: 540px) {
-    .post-heading-avatar {
-        height: 85%;
-        width: 25%;
-    }
-
     .post {
         margin-top: 4vh;
-        min-height: 80vh;
         width: 75%;
     }
 }
 
-/* iPhone XR */
-@media screen and (max-width: 414px) and (max-height: 896px) {
-    .post {
-        min-height: 45vh;
-    }
-
-    .post-picture {
-        height: 40%;
-    }
-}
-
 /* iPhone 6/7/8 Plus */
-@media screen and (max-width: 414px) and (max-height: 736px){
-    .post-heading {
-        height: 24%;
-    }
-
-    .post-heading-avatar {
-        height: 13vh;
-        width: 30%;
-    }
-
-    .post-picture {
-        height: 40%;
-    }
-
+@media screen and (max-width: 414px) and (max-height: 736px) {
     .post {
-        min-height: 60vh;
         width: 80%;
     }
 }
@@ -169,7 +129,7 @@ img {
 /* iPhone 12 Pro */
 @media screen and (max-width: 390px) {
     .post-heading-avatar {
-        height: 10vh;
-        width: 30%;
+        height: 85px;
+        width: 85px;
     }
 }
