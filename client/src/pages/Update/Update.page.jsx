@@ -132,11 +132,11 @@ const Update = ({ user }) => {
                         </div>
                         <div>
                             <label htmlFor='old-password'>Password (current):</label><br/>
-                            <input type='text' name='old-password' value={oldPassword} onChange={(e) => setOldPassword(e.target.value)}/>
+                            <input type='password' name='old-password' value={oldPassword} onChange={(e) => setOldPassword(e.target.value)}/>
                         </div>
                         <div>
                             <label htmlFor='new-password'>Password (new):</label><br/>
-                            <input type='text' name='new-password' value={newPassword} onChange={(e) => setNewPassword(e.target.value)}/>
+                            <input type='password' name='new-password' value={newPassword} onChange={(e) => setNewPassword(e.target.value)}/>
                         </div>
                         <div className='update-form-bio'>
                             <label htmlFor='bio'>Bio ({count}/200):</label><br/>
