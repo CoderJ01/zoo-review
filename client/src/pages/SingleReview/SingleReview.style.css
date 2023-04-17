@@ -86,12 +86,6 @@
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
-    .single-review {
-        background-color: rgb(207, 250, 209);
-        border: 1px solid rgb(207, 250, 209);
-        min-height: 100vh;
-    }
-
     .single-review-display {
         background-color: white;
         margin-top: 10vh;

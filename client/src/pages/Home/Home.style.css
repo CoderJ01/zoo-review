@@ -28,12 +28,6 @@
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
-    .home {
-        background-color: rgb(207, 250, 209);
-        border: 1px solid rgb(207, 250, 209);
-        min-height: 80vh;
-    }
-
     .home-posts {
         margin-left: 5%;
         margin-top: 1vh;

@@ -99,12 +99,6 @@
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
-    .dashboard {
-        background-color: rgb(207, 250, 209);
-        border: 1px solid rgb(207, 250, 209);
-        min-height: 100vh;
-    }
-
     .dashboard-top-bar h1 {
         font-size: 3rem;
         margin-top: 1vh;

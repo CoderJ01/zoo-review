@@ -41,9 +41,6 @@
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
     .update {
-        background-color: rgb(207, 250, 209);
-        border: 1px solid rgb(207, 250, 209);
-        min-height: 90vh;
         padding-bottom: 10vh;
     }
 

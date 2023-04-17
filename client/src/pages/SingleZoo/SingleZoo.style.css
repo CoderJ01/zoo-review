@@ -37,11 +37,6 @@
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
-    .single-zoo {
-        background-color: rgb(232, 248, 245);
-        min-height: 100vh;
-    }
-
     .single-zoo h1 {
         font-size: 4rem;
     }
