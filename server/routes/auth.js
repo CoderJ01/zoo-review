@@ -3,7 +3,6 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const makeCookieValue = require('../util/randomString');
-const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const validateEmail = require('../util/validateEmail');
 
