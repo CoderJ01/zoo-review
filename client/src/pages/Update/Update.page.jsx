@@ -36,6 +36,8 @@ const Update = ({ user }) => {
     const [imageUpload, setImageUpload] = useState(null);
     const [imageUrl, setImageUrl] = useState('');
     const [confirmed, setConfirmed] = useState(false);
+    const [oldPassword, setOldPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
 
     const uploadImage = (e) => {
         setImageUpload(e.target.files[0]);
@@ -63,6 +65,11 @@ const Update = ({ user }) => {
             return;
         }
 
+        if((oldPassword !== '' && newPassword === '') || (oldPassword === '' && newPassword !== '')) {
+            alert('Please fill in both your current password and your new password!');
+            return;
+        }
+
         if(imageUpload != null && confirmed === false) {
             alert('The upload needs to be confirmed so that image will process successfully!');
             return;
@@ -73,7 +80,8 @@ const Update = ({ user }) => {
             return;
         }
 
-        if(email === '' && bio === '' && imageUrl === '') {
+        if(email === '' && bio === '' && imageUrl === '' && oldPassword === '' && newPassword === '') 
+        {
             alert('Please fill in at least one field!');
             return;
         }
@@ -82,7 +90,9 @@ const Update = ({ user }) => {
         {
             email: email,
             avatar: imageUrl,
-            bio: bio
+            bio: bio,
+            oldPassword: oldPassword,
+            newPassword: newPassword
         },  
         )
         .then(
@@ -119,6 +129,14 @@ const Update = ({ user }) => {
                         <div>
                             <label htmlFor='email'>Email:</label><br/>
                             <input type='text' name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                        </div>
+                        <div>
+                            <label htmlFor='old-password'>Password (current):</label><br/>
+                            <input type='text' name='old-password' value={oldPassword} onChange={(e) => setOldPassword(e.target.value)}/>
+                        </div>
+                        <div>
+                            <label htmlFor='new-password'>Password (new):</label><br/>
+                            <input type='text' name='new-password' value={newPassword} onChange={(e) => setNewPassword(e.target.value)}/>
                         </div>
                         <div className='update-form-bio'>
                             <label htmlFor='bio'>Bio ({count}/200):</label><br/>
