@@ -70,6 +70,11 @@ const Update = ({ user }) => {
             return;
         }
 
+        if(newPassword.length < 8) {
+            alert('New password must be at least 8 characters!');
+            return;
+        }
+
         if(imageUpload != null && confirmed === false) {
             alert('The upload needs to be confirmed so that image will process successfully!');
             return;
