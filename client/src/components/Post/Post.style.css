@@ -46,7 +46,6 @@ img {
 
 .post-info {
     height: 28%;
-    /* overflow: hidden; */
 }
 
 .post-info h1 {
@@ -84,6 +83,9 @@ img {
 @media screen and (min-width: 1280px) {
     .post {
         background-color: rgb(207, 250, 209);
+        margin-top: 10vh;
+        min-height: 60vh;
+        width: 30vw;
     }
     
     .post-heading-avatar {
@@ -93,20 +95,14 @@ img {
     .post-info h1 {
         font-size: 25px;
     }
-
-    .post {
-        min-height: 60vh;
-        margin-top: 10vh;
-        width: 30vw;
-    }
 }
 
 /* iPad Pro */
 @media screen and (max-width: 1024px) {
     .post {
         background-color: white;
-        min-height: 40vh;
         margin-top: 1vh;
+        min-height: 40vh;
         width: 40vw;
     }
 }
@@ -132,8 +128,8 @@ img {
     }
 
     .post {
-        min-height: 80vh;
         margin-top: 4vh;
+        min-height: 80vh;
         width: 75%;
     }
 }

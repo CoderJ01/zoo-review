@@ -4,6 +4,9 @@
 }
 
 .home-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding-bottom: 10vh;
 }
 
@@ -17,9 +20,6 @@
     }
 
     .home-posts {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
         margin-left: 10%;
         margin-top: -6vh;
         width: 80%;
@@ -35,9 +35,6 @@
     }
 
     .home-posts {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
         margin-left: 5%;
         margin-top: 1vh;
         width: 90%;

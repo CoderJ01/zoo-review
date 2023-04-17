@@ -1,4 +1,4 @@
-import { blogImage, reviewImage } from '../../utils/images';
+import { defaultBlogImage, defaultReviewImage } from '../../utils/images';
 
 export const displayPosts = (display) => {
     let show;
@@ -7,7 +7,7 @@ export const displayPosts = (display) => {
         show = '';
     }
     else {
-        show = 'none'
+        show = 'none';
     }
 
     return show;
@@ -27,10 +27,10 @@ export const displayImage = (postImage, blog) => {
     let image;
     
     if(!blog) {
-        image = postImage || reviewImage;
+        image = postImage || defaultReviewImage;
     }
     else {
-        image = postImage || blogImage;
+        image = postImage || defaultBlogImage;
     }
 
     return image;

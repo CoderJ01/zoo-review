@@ -1,12 +1,12 @@
-import { blogImage, reviewImage } from "../../utils/images";
+import { defaultBlogImage, defaultReviewImage } from "../../utils/images";
 
 export const displayImage = (blog, post) => {
     if(!blog && post.image === '') {
-        post.image = reviewImage;
+        post.image = defaultBlogImage;
     }
 
     if(blog && post.image === '') {
-        post.image = blogImage;
+        post.image = defaultReviewImage;
     }
 
     return post.image
