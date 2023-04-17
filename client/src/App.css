@@ -10,14 +10,10 @@
     .review,
     .single-blog,
     .single-review,
+    .single-zoo,
     .update {
         background-color: rgb(207, 250, 209);
         border: 1px solid rgb(207, 250, 209);
-        min-height: 100vh;
-    }
-
-    .single-zoo {
-        background-color: rgb(232, 248, 245);
         min-height: 100vh;
     }
 }
