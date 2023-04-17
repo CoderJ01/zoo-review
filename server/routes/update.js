@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const validateEmail = require('../util/validateEmail');
+const bcrypt = require('bcrypt');
 
 router.put('/:id', async (req, res) => {
     const user = await User.findOne({ _id: req.params.id });
@@ -17,6 +18,16 @@ router.put('/:id', async (req, res) => {
         user.verified = false;
         validateEmail(user.email, 'updateEmail');
         message = `A verification link will be sent to ${user.email}. Wait 5 - 10 minutes for the link.`;
+    }
+
+    if(req.body.oldPassword !== '' && req.body.newPassword !== '') {
+        const validate = await bcrypt.compare(req.body.oldPassword, user.password);
+        if(!validate) {
+            return res.status(400).json({ msg: 'Old password is wrong!' });
+        }
+        const salt = await bcrypt.genSalt(10);
+        const hashedPass = await bcrypt.hash(req.body.newPassword, salt);
+        user.password = hashedPass;
     }
 
     if(req.body.bio !== '') {
