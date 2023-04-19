@@ -60,6 +60,12 @@ const Update = ({ user }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        if(email === '' && bio === '' && imageUrl === '' && oldPassword === '' && newPassword === '') 
+        {
+            alert('Please fill in at least one field!');
+            return;
+        }
+
         if(email !== '' && !isValidEmail(email)) {
             alert('Email is not valid!');
             return;
@@ -82,12 +88,6 @@ const Update = ({ user }) => {
 
         if(confirmed && imageUrl === '') {
             alert('Image has not been fully processed yet! Wait a few more seconds!');
-            return;
-        }
-
-        if(email === '' && bio === '' && imageUrl === '' && oldPassword === '' && newPassword === '') 
-        {
-            alert('Please fill in at least one field!');
             return;
         }
        
