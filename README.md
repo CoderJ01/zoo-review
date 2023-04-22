@@ -13,7 +13,7 @@ The creation of this website was inspired by the popular website Yelp, which all
 ![Alt text](./assets/images/screenshot.JPG?raw=true 'Zelp')
 
 ## Website Link
-https://zelp-for-zoos.netlify.app/
+https://zelp-for-zoos.onrender.com/
 
 If the content of the site does not appear right away, refresh the page a few times and wait about 30 seconds.
 
