@@ -40,10 +40,7 @@ router.post('/register', async (req, res) => {
         randomString: '',
         verified: false,
         admin: false
-    });
-    const sessionUser = { id: newUser._id.toString(), username: newUser.username };
-    req.session.user = sessionUser;
-    
+    });    
     newUser.save();
 
     validateEmail(newUser.email, 'newUser');
@@ -74,9 +71,6 @@ router.post('/login', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     user.randomString = await bcrypt.hash(makeCookieValue(80), salt);
     user.save();
-
-    const sessionUser = { id: user._id.toString(), username: user.username };
-    req.session.user = sessionUser;
 
     res.status(200).json({ 
         msg: 'You have logged in successfully!',
