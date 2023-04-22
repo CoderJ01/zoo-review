@@ -1,4 +1,7 @@
+// Express.js
 const router = require('express').Router();
+
+// routes
 const apiRoutes = require('./api/index');
 const authRoutes = require('./auth');
 const homepageRoutes = require('./homepage');

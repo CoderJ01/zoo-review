@@ -1,6 +1,9 @@
-const nodemailer = require('nodemailer');
-const jwt = require('jsonwebtoken');
+// dotenv
 require('dotenv').config();
+
+// other Node.js packages
+const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
 
 const validateEmail = (email, reason) => {
     let message;

@@ -1,9 +1,18 @@
+// Express.js
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
-const bcrypt = require('bcrypt');
-const makeCookieValue = require('../util/randomString');
+
+// dotenv
 require('dotenv').config();
+
+// other Node.js packages
+const bcrypt = require('bcrypt');
+
+// models
+const User = require('../models/User');
+
+// utils
+const makeCookieValue = require('../util/randomString');
 const validateEmail = require('../util/validateEmail');
 
 router.post('/register', async (req, res) => {

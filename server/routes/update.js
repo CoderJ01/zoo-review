@@ -1,8 +1,15 @@
+// Express.js
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
-const validateEmail = require('../util/validateEmail');
+
+// other Node.js packages
 const bcrypt = require('bcrypt');
+
+// util
+const validateEmail = require('../util/validateEmail');
+
+// other imports
+const User = require('../models/User');
 
 router.put('/:id', async (req, res) => {
     const user = await User.findOne({ _id: req.params.id });

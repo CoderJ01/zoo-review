@@ -1,5 +1,10 @@
+// Express.js
 const router = require('express').Router();
+
+// Mongoose
 const mongoose = require('mongoose');
+
+// other imports
 const ReviewSchema = require('../models/Review');
 const BlogSchema = require('../models/Blog');
 const Review = mongoose.model('Review', ReviewSchema);

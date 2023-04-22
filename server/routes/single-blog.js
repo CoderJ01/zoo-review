@@ -1,5 +1,10 @@
+// Express.js
 const router = require('express').Router();
+
+// Mongoose
 const mongoose = require('mongoose');
+
+// other imports
 const BlogSchema = require('../models/Blog');
 const Blog = mongoose.model('Blog', BlogSchema);
 const User = require('../models/User');

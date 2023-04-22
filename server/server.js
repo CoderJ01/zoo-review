@@ -1,41 +1,24 @@
+// Express.js
 const express = require('express');
+
+// dotenv
 require('dotenv').config();
-require('colors');
+
+// other Node.js packages
 const cors = require('cors');
-const session = require('express-session');
-const MongoDBstore = require('connect-mongodb-session')(session);
+require('colors');
+
+// others imports
+const connectDB = require('./config/connection.js');
 const routes = require('./routes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const connectDB = require('./config/connection.js');
-connectDB();
 
-const mongoDBstore = new MongoDBstore({
-    uri: process.env.MONGO_URI,
-    collection: 'mySessions'
-});
+connectDB();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
-const maxAge = 1000 * 60 * 60 * 8; 
-
-app.use(
-  session({
-    name: 'express-cookie', 
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: false,
-    store: mongoDBstore,
-    cookie: {
-      maxAge: maxAge,
-      sameSite: false,
-      httpOnly: true,
-      secure: false
-    }
-  })
-);
 
 app.use(
   cors({
