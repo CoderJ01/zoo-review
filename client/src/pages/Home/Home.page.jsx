@@ -1,5 +1,5 @@
 // React
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 // CSS
 import './Home.style.css';
@@ -24,32 +24,62 @@ const Home = ({ user }) => {
     
     let maxReviewsDisplayed = displayPosts(user.admin, reviews.length);
 
+    const fetchReviews = useCallback(async () => {
+        try {
+            const response = await axios.get(baseURL + '/homepage/reviews');
+            setReviews(response.data.reverse());
+            setFetched(true);
+        }
+        catch(error) {
+            console.log(error)
+        }
+    }, [setReviews]);
+
     useEffect(() => {
-        const fetchReviews = async () => {
-            try {
-                const response = await axios.get(baseURL + '/homepage/reviews');
-                setReviews(response.data.reverse());
-                setFetched(true);
-            }
-            catch(error) {
-                console.log(error)
-            }
-        }
-
-        const fetchBlogs = async () => {
-            try {
-                const response = await axios.get(baseURL + '/homepage/blogs');
-                setBlogs(response.data.reverse());
-                setFetched(true);
-            }
-            catch(error) {
-                console.log(error)
-            }
-        }
-
         fetchReviews();
+    }, [fetchReviews]);
+
+    const fetchBlogs = useCallback(async () => {
+        try {
+            const response = await axios.get(baseURL + '/homepage/blogs');
+            setBlogs(response.data.reverse());
+            setFetched(true);
+        }
+        catch(error) {
+            console.log(error)
+        }
+    }, [setBlogs]);
+
+    useEffect(() => {
         fetchBlogs();
-    }, []);
+    }, [fetchBlogs]);
+
+    // useEffect(() => {
+    //     const fetchReviews = async () => {
+    //         try {
+    //             const response = await axios.get(baseURL + '/homepage/reviews');
+    //             setReviews(response.data.reverse());
+    //             setFetched(true);
+    //         }
+    //         catch(error) {
+    //             console.log(error)
+    //         }
+    //     }
+
+    //     const fetchBlogs = async () => {
+    //         try {
+    //             const response = await axios.get(baseURL + '/homepage/blogs');
+    //             setBlogs(response.data.reverse());
+    //             setFetched(true);
+    //         }
+    //         catch(error) {
+    //             console.log(error)
+    //         }
+    //     }
+
+    //     fetchReviews();
+    //     fetchBlogs();
+    // }, []);
 
     if(fetched === false) {
         return (
