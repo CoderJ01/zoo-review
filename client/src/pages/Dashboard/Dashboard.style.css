@@ -140,8 +140,20 @@
     }
 }
 
+/* iPad Air */
+@media screen and (max-width: 1180px) {
+    .dbui-avatar {
+        height: 37vh;
+    }
+}
+
+
 /* Surface Duo */
 @media screen and (max-width: 540px) {
+    .dbui-avatar {
+        height: 20vh;
+    }
+
     .dashboard-bottom-buttons {
         flex-direction: column;
         height: 30vh;

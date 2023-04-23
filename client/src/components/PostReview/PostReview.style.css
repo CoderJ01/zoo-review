@@ -133,6 +133,16 @@
     } 
 }
 
+/* iPad Air */
+@media screen and (max-width: 1180px) {
+    .post-form select {
+        height: 5vh;
+    }
+    .pf-confirm-upload label {
+        width: 28%;
+    }
+}
+
 /* iPad */
 @media screen and (max-width: 768px) {
     .post-form select {

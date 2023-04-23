@@ -163,6 +163,13 @@ nav select {
     }
 }
 
+/* iPad Air */
+@media screen and (max-width: 1180px) {
+    .header-button-see-zoo {
+        margin-top: 12px;
+    }
+}
+
 /* iPad */
 @media screen and (max-width: 768px) {
     .header-button-see-zoo {
