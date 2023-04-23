@@ -83,8 +83,7 @@
     }
 }
 
-/* iPad Pro */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1279px) {
     .post-form {
         background-color: white;
         margin-top: 80px;

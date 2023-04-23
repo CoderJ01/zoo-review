@@ -35,8 +35,7 @@
     }
 }
 
-/* iPad Pro */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1279px) {
     .single-zoo h1 {
         font-size: 4rem;
     }

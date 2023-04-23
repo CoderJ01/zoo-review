@@ -37,8 +37,7 @@
     }
 }
 
-/* iPad Pro */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1279px) {
     .update {
         padding-bottom: 10vh;
     }

@@ -84,8 +84,7 @@
     }
 }
 
-/* iPad Pro */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1279px) {
     .single-blog-display {
         background-color: white;
         margin-left: 10%;

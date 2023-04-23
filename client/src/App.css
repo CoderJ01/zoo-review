@@ -3,8 +3,7 @@
     margin: 0;                                      
 }
 
-/* iPad Pro */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1279px) {
     .dashboard, 
     .home,
     .review,

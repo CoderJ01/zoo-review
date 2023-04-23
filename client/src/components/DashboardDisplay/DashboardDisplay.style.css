@@ -52,7 +52,7 @@
 }
 
 /* iPad Pro */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1279px) {
     .dashboard-post img {
         height: 60%;
     }

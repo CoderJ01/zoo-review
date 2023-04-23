@@ -26,8 +26,7 @@
     }
 }
 
-/* iPad Pro */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1279px) {
     .home-posts {
         margin-left: 5%;
         margin-top: 1vh;

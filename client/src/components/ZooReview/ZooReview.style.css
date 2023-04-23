@@ -56,7 +56,7 @@
 }
 
 /* iPad Pro */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1279px) {
     .zoo-review {
         background-color: white;
         margin-left: 5%;
