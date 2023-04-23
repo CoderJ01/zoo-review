@@ -78,6 +78,13 @@
     }
 }
 
+/* iPad Pro */
+@media screen and (max-width: 1024px) {
+    .dashboard-post {
+        height: 30vh;
+    }
+}
+
 /* iPad Air */
 @media screen and (max-width: 820px) {
     .dashboard-post {

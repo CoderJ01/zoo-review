@@ -49,9 +49,9 @@
     .single-review {
         background-attachment: fixed;
         background-image: url('../../../images/single-review-page.jpg');
-        background-size: 1400px 950px;
+        background-size: 1540px 1045px;
         border: 1px solid transparent;
-        min-height: 90vh;
+        min-height: 100vh;
     }
 
     .single-review-display {
