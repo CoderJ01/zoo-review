@@ -54,33 +54,6 @@ const Home = ({ user }) => {
         fetchBlogs();
     }, [fetchBlogs]);
 
-    // useEffect(() => {
-    //     const fetchReviews = async () => {
-    //         try {
-    //             const response = await axios.get(baseURL + '/homepage/reviews');
-    //             setReviews(response.data.reverse());
-    //             setFetched(true);
-    //         }
-    //         catch(error) {
-    //             console.log(error)
-    //         }
-    //     }
-
-    //     const fetchBlogs = async () => {
-    //         try {
-    //             const response = await axios.get(baseURL + '/homepage/blogs');
-    //             setBlogs(response.data.reverse());
-    //             setFetched(true);
-    //         }
-    //         catch(error) {
-    //             console.log(error)
-    //         }
-    //     }
-
-    //     fetchReviews();
-    //     fetchBlogs();
-    // }, []);
-
     if(fetched === false) {
         return (
             <Loader/>
