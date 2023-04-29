@@ -76,7 +76,7 @@ const Update = ({ user }) => {
             return;
         }
 
-        if(newPassword.length < 8) {
+        if(oldPassword !== '' && newPassword.length < 8) {
             alert('New password must be at least 8 characters!');
             return;
         }
