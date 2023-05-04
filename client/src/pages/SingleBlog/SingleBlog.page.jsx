@@ -80,7 +80,7 @@ const SingleBlog = ({ loggedUser }) => {
 
     const handleThumbsUp = async (event) => {
         event.preventDefault(); 
-        axios.put(baseURL + `/single-blog/like/${loggedUser._id}/${blogId}`)
+        axios.put(baseURL + `/blogs/like/${loggedUser._id}/${blogId}`)
         .then(response => {
             console.log(response.data);
             
@@ -101,7 +101,7 @@ const SingleBlog = ({ loggedUser }) => {
 
     const handleThumbsDown = (event) => {
         event.preventDefault(); 
-        axios.put(baseURL + `/single-blog/dislike/${loggedUser._id}/${blogId}`)
+        axios.put(baseURL + `/blogs/dislike/${loggedUser._id}/${blogId}`)
         .then(response => {
             console.log(response.data);
             
