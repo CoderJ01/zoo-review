@@ -30,7 +30,7 @@ const Post = ({ user, post, blog = false }) => {
         if(id) {
             const getUserInfo = async () => {
                 try {
-                    const response = await axios.get(baseURL + `/api/users/${id}`);
+                    const response = await axios.get(baseURL + `/users/${id}`);
                     setProfileImage(response.data.avatar);
                     setUsername(response.data.username);
                     setAdmin(response.data.admin);
@@ -48,7 +48,7 @@ const Post = ({ user, post, blog = false }) => {
         
         if(!blog) {
             try {
-                await axios.delete(baseURL + `/homepage/review/${user._id}/${post._id}`);
+                await axios.delete(baseURL + `/reviews/${user._id}/${post._id}`);
             }
             catch(error) {
                 console.log(error);
@@ -56,7 +56,7 @@ const Post = ({ user, post, blog = false }) => {
         }
         else {
             try {
-                await axios.delete(baseURL + `/homepage/blog/${user._id}/${post._id}`);
+                await axios.delete(baseURL + `/blogs/${user._id}/${post._id}`);
             }
             catch(error) {
                 console.log(error);

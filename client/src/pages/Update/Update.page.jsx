@@ -91,7 +91,7 @@ const Update = ({ user }) => {
             return;
         }
        
-        axios.put(baseURL + `/update/${user._id}`, 
+        axios.put(baseURL + `/users/${user._id}`, 
         {
             email: email,
             avatar: imageUrl,

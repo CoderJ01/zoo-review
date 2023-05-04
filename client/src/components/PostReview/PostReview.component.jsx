@@ -36,7 +36,7 @@ const PostReview = ({ user }) => {
     useEffect(() => { 
         const fetchZoos = async () => {
             try {
-                const response = await axios.get(baseURL + '/api/zoos');
+                const response = await axios.get(baseURL + '/zoos');
                 setZoos(response.data);
             }   
             catch(error) {
@@ -112,7 +112,7 @@ const PostReview = ({ user }) => {
             return;
         }
         
-        axios.post(baseURL + `/post-review/${user._id}/${zooId}`, 
+        axios.post(baseURL + `/reviews/${user._id}/${zooId}`, 
             {
                 title: title,
                 content: content,

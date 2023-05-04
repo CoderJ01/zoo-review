@@ -37,7 +37,7 @@ const Header = ({ user }) => {
     useEffect(() => { 
         const fetchZoos = async () => {
             try {
-                const response = await axios.get(baseURL + '/api/zoos');
+                const response = await axios.get(baseURL + '/zoos');
                 setZoos(response.data);
             }   
             catch(error) {

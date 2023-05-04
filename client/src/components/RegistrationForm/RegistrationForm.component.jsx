@@ -59,7 +59,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
             return;
         }
        
-        axios.post(baseURL + '/auth/register', 
+        axios.post(baseURL + '/users/register', 
         {
             firstname: firstName,
             lastname: lastName,

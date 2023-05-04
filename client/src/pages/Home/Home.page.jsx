@@ -26,7 +26,7 @@ const Home = ({ user }) => {
 
     const fetchReviews = useCallback(async () => {
         try {
-            const response = await axios.get(baseURL + '/homepage/reviews');
+            const response = await axios.get(baseURL + '/reviews');
             setReviews(response.data.reverse());
             setFetched(true);
         }
@@ -41,7 +41,7 @@ const Home = ({ user }) => {
 
     const fetchBlogs = useCallback(async () => {
         try {
-            const response = await axios.get(baseURL + '/homepage/blogs');
+            const response = await axios.get(baseURL + '/blogs');
             setBlogs(response.data.reverse());
             setFetched(true);
         }

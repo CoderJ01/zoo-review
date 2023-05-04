@@ -33,7 +33,7 @@ const SingleReview = () => {
         const id = reviewId;
         if(id) {
             try {
-                const response = await axios.get(baseURL + `/single-review/${id}`);
+                const response = await axios.get(baseURL + `/reviews/${id}`);
                 setTitle(response.data.data.title);
                 setRating(response.data.data.rating);
                 setZoo(response.data.zoo)

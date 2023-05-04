@@ -67,7 +67,7 @@ const PostBlog = ({ user }) => {
             return;
         }
 
-        axios.post(baseURL + `/post-blog/${user._id}`, 
+        axios.post(baseURL + `/blogs/${user._id}`, 
             {
                 title: title,
                 content: content,

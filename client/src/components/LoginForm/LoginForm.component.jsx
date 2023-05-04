@@ -32,7 +32,7 @@ const LoginForm = ({ showLogin, handleCloseLogin }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault(); 
-        axios.post(baseURL + '/auth/login', 
+        axios.post(baseURL + '/users/login', 
         {
             username: username,
             password: password,

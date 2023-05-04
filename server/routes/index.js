@@ -1,27 +1,15 @@
-// Express.js
+// Express.js 
 const router = require('express').Router();
 
 // routes
-const apiRoutes = require('./api/index');
-const authRoutes = require('./auth');
-const homepageRoutes = require('./homepage');
-const dashboardRoutes = require('./dashboard');
-const postBlogRoutes = require('./post-blog');
-const postReviewRoutes = require('./post-review');
-const singleReview = require('./single-review');
-const singleBlog = require('./single-blog');
-const singleZoo = require('./single-zoo');
-const update = require('./update');
+const userRoutes = require('./user');
+const reviewRoutes = require('./review');
+const blogRoutes = require('./blog');
+const zooRoutes = require('./zoo');
 
-router.use('/api', apiRoutes);
-router.use('/auth', authRoutes);
-router.use('/homepage', homepageRoutes);
-router.use('/dashboard', dashboardRoutes);
-router.use('/post-blog', postBlogRoutes);
-router.use('/post-review', postReviewRoutes);
-router.use('/single-review', singleReview);
-router.use('/single-blog', singleBlog);
-router.use('/single-zoo', singleZoo);
-router.use('/update', update);
+router.use('/users', userRoutes);
+router.use('/reviews', reviewRoutes);
+router.use('/blogs', blogRoutes);
+router.use('/zoos', zooRoutes);
 
 module.exports = router;

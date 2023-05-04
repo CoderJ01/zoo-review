@@ -26,7 +26,7 @@ const ZooReview = ({ review }) => {
 
         if(id) {
             try {
-                const response = await axios.get(baseURL + `/api/users/${id}`);
+                const response = await axios.get(baseURL + `/users/${id}`);
                 setUsername(response.data.username);
                 setAvatar(response.data.avatar);
                 setAdmin(response.data.admin);

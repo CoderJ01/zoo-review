@@ -29,22 +29,22 @@ function App() {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
-    const fetchUser = async() => {
-      try {
-        let userCookie = cookie.get('zelp-cookie');
-        const response = await axios.get(baseURL + '/api/users')
-        for(let i = 0; i < response.data.length; i++) {
-            if(response.data[i].randomString === userCookie) {
-              setUser(response.data[i]);
-            }
-        }
-      }
-      catch(error) {
-        console.log(error);
-      }
-    }
-    fetchUser();
-  }
+	const fetchUser = async() => {
+		try {
+			let userCookie = cookie.get('zelp-cookie');
+			const response = await axios.get(baseURL + '/users')
+			for(let i = 0; i < response.data.length; i++) {
+				if(response.data[i].randomString === userCookie) {
+					setUser(response.data[i]);
+				}
+			}
+		}
+		catch(error) {
+			console.log(error);
+		}
+		}
+		fetchUser();
+  	}
   , []);
 
   return (

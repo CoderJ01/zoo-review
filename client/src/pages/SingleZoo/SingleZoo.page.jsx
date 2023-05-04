@@ -28,7 +28,7 @@ const SingleZoo = () => {
 
         if(id) {
             try {
-                const response = await axios.get(baseURL + `/single-zoo/${id}`);
+                const response = await axios.get(baseURL + `/zoos/${id}`);
                 setName(response.data.name);
                 setImage(response.data.image);
                 setReviews(response.data.reviews.reverse());
