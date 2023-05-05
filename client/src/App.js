@@ -26,44 +26,44 @@ import axios from 'axios';
 import cookie from 'js-cookie';
 
 function App() {
-	const [user, setUser] = useState([]);
+    const [user, setUser] = useState([]);
 
-	useEffect(() => {
-		const fetchUser = async() => {
-			try {
-				let userCookie = cookie.get('zelp-cookie');
-				const response = await axios.get(baseURL + '/users')
-				for(let i = 0; i < response.data.length; i++) {
-					if(response.data[i].randomString === userCookie) {
-						setUser(response.data[i]);
-					}
-				}
-			}
-			catch(error) {
-				console.log(error);
-			}
-		}
-		fetchUser();
-	}, []);
+    useEffect(() => {
+        const fetchUser = async() => {
+            try {
+              let userCookie = cookie.get('zelp-cookie');
+              const response = await axios.get(baseURL + '/users')
+              for(let i = 0; i < response.data.length; i++) {
+                  if(response.data[i].randomString === userCookie) {
+                    setUser(response.data[i]);
+                  }
+              }
+            }
+            catch(error) {
+              console.log(error);
+            }
+        }
+        fetchUser();
+    }, []);
 
-  return (
-    <div className='App'>
-    	<BrowserRouter>
-			<Routes>
-				<Route path='/' element={<Header user={user}/>}>
-					<Route index element={<Home user={user}/>}/>
-					<Route path='/write-review' element={<Review user={user}/>}/>
-					<Route path='/post-blog' element={<Blog user={user}/>}/>
-					<Route path='/dashboard' element={<Dashboard user={user}/>}/>
-					<Route path='/review/:reviewId' element={<SingleReview/>}/>
-					<Route path='/blog/:blogId' element={<SingleBlog loggedUser={user}/>}/>
-					<Route path='/zoo/:zooId' element={<SingleZoo/>}/>
-					<Route path='/update' element={<Update user={user}/>}/>
-				</Route>
-			</Routes>
-    	</BrowserRouter>
-    </div>
-  );
+    return (
+        <div className='App'>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<Header user={user}/>}>
+                        <Route index element={<Home user={user}/>}/>
+                        <Route path='/write-review' element={<Review user={user}/>}/>
+                        <Route path='/post-blog' element={<Blog user={user}/>}/>
+                        <Route path='/dashboard' element={<Dashboard user={user}/>}/>
+                        <Route path='/review/:reviewId' element={<SingleReview/>}/>
+                        <Route path='/blog/:blogId' element={<SingleBlog loggedUser={user}/>}/>
+                        <Route path='/zoo/:zooId' element={<SingleZoo/>}/>
+                        <Route path='/update' element={<Update user={user}/>}/>
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
