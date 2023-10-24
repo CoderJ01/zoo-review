@@ -40,7 +40,7 @@ const SingleBlog = ({ loggedUser }) => {
                 setTitle(response.data.data.title);
                 setUser(response.data.user);
                 setContent(response.data.data.content);
-                setDate(response.data.data.updatedAt.toString().substring(0, 10));
+                setDate(response.data.data.createdAt.toString().substring(0, 10));
                 setEmail(response.data.email);
                 setAdmin(response.data.admin);
                 setLikes(response.data.data.thumbs);
