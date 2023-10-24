@@ -40,7 +40,7 @@ const SingleReview = () => {
                 setContent(response.data.data.content);
                 setUser(response.data.user);
                 setAvatar(response.data.avatar);
-                setDate(response.data.data.updatedAt.toString().substring(0, 10));
+                setDate(response.data.data.createdAt.toString().substring(0, 10));
                 setAdmin(response.data.admin);
                 setBio(response.data.bio);
             }
