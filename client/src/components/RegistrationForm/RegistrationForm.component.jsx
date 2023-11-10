@@ -106,7 +106,7 @@ const RegistrationForm = ({ showSignup, handleCloseSignup }) => {
                     </div>
                     <div>
                         <label htmlFor='username'>Username (15 characters or less):</label><br/>
-                        <input type='text' name='username' value={username} onChange={(e) => setUsername(e.target.value)}/>
+                        <input maxLength={15} type='text' name='username' value={username} onChange={(e) => setUsername(e.target.value)}/>
                     </div>
                     <div>
                         <label htmlFor='email'>Email:</label><br/>
