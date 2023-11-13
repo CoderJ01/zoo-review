@@ -56,6 +56,10 @@ const SingleReview = () => {
 
     let ratingDisplay = displayRating(rating);
 
+    if(bio === '') {
+        console.log('No bio');
+    }
+
     return (
         <div className='single-review'>
             <div className='single-review-display'>
@@ -82,10 +86,18 @@ const SingleReview = () => {
                     </div>
                     <div className='srdf-avatar'>
                         <img alt='' src={profileImage} draggable='false'></img>
-                    </div>   
-                    <div className='srdf-bio'>
-                        {bio}
                     </div>
+                    {
+                        bio !== '' ? 
+                        (
+                            <div className='srdf-bio'>
+                                {bio}
+                            </div>
+                        ) : 
+                        (
+                            ''
+                        ) 
+                    }   
                 </div>
             </div>
         </div>
