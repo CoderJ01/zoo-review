@@ -100,7 +100,7 @@ const Post = ({ user, post, blog = false }) => {
                 (
                     <>
                         <div className='post-picture'>
-                            <img alt='' src={image}></img> 
+                            <img alt='' src={image} draggable='false'></img> 
                         </div>
                         <div className='post-info'>
                             <h1>{post.title}</h1>
@@ -112,7 +112,7 @@ const Post = ({ user, post, blog = false }) => {
                 (
                     <>
                         <div className='post-picture'>
-                            <img alt='' src={image}></img> 
+                            <img alt='' src={image} draggable='false'></img> 
                         </div>
                         <div className='post-info'>
                             <h1>{post.title}</h1>
