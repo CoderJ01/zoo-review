@@ -15,10 +15,11 @@ The creation of this website was inspired by the popular website Yelp, which all
 ## Website Link
 https://zelp-for-zoos.onrender.com/
 
+If the content of the site does not appear right away, refresh the page a few times and wait about 30 seconds.
+
 ## Video Demonstration
 https://www.youtube.com/watch?v=TyfVmD1Fldc
 
-If the content of the site does not appear right away, refresh the page a few times and wait about 30 seconds.
 
 ## Contribution
 Made by CoderJ01
