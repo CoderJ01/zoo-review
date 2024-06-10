@@ -105,7 +105,7 @@ const Post = ({ user, post, blog = false }) => {
                         <div className='post-info'>
                             <h1>{post.title}</h1>
                             <div className='post-info-rating'>{ratingDisplay}</div>
-                            <a href={`review/${post._id}`} target='_blank' rel='noreferrer'>Click here for more details</a>
+                            <a href={`review/${post._id}`}>Click here for more details</a>
                         </div>
                     </>
                 ) : 
@@ -131,7 +131,7 @@ const Post = ({ user, post, blog = false }) => {
                                     )
                                 )
                             }
-                            <a href={`blog/${post._id}`} target='_blank' rel='noreferrer'>Click here for more details</a>
+                            <a href={`blog/${post._id}`}>Click here for more details</a>
                         </div>
                     </>
                 )
